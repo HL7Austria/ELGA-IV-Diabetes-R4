@@ -1,16 +1,15 @@
 // -------------------------------------------------------------------------------
-//  Logical Model plan-of-care.fsh
+//  Logical Model planofcare-ips.fsh
 // -------------------------------------------------------------------------------
 Logical: PlanOfCareIps
 Id: PlanOfCare-ips
 Title: "Plan Of Care (IPS)"
-Description: """Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des modularen Rahmenkonzepts für
-Österreich für das Disease-Management bei chronischer Herzinsuffizienz erforderlich sind, auf dem des IPS-Modul "Plan Of Care".
+Description: """Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul "Plan Of Care".
 
-Refer to the **[mapping from the logical model of HI to the logical model based on the International Patient Summary (IPS)](mappings.html)** in order to get an idea how the IPS relates to HI."""
+Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](mappings.html)** in order to get an idea how the IPS relates to diabetes."""
 
 * instantiatesUri 1..1 uri "Instantiates external protocol or definition"
-* instantiatesUri = "https://www.cciv.at/cdscontent/?contentid=10007.864468&portal=ccivportal" (exactly)
+* instantiatesUri = "https://www.sozialministerium.at/Themen/Gesundheit/Gesundheitssystem/Gesundheitssystem-und-Qualitaetssicherung/Qualitaetsstandards/Rahmenkonzept-Integrierte-Versorgung-Diabetes-mellitus-Typ-2.html" (exactly)
 * subject 1..1 SubjectIps "Who the care plan is for"
 * period 0..1 Period "Time period plan covers"
 * author 1..1 Reference(Practitioner or PractitionerRole) "Who is the designated responsible party"
