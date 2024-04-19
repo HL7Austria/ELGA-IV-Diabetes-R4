@@ -1,6 +1,6 @@
-On this page you can find the mapping from the data model based on the "Disease-Management bei chronischer Herzinsuffizienz - Modulares Rahmenkonzept für Österreich" to the data model based on the [International Patient Summary (IPS)](https://build.fhir.org/ig/HL7/fhir-ips/).
+On this page you can find the mapping from the data model based on the "Rahmenkonzept Integrierte Versorgung Diabetes mellitus Typ 2" to the data model based on the [International Patient Summary (IPS)](https://build.fhir.org/ig/HL7/fhir-ips/).
 
-Note, that for each mapping only the relevant modules of the IPS will be included. Furthermore, even if not all modules of the IPS are mentioned in the mappings it is of course allowed to use them, if applicable.
+Note, that only the relevant modules of the IPS will be included. Furthermore, even if not all modules of the IPS are mentioned in the mappings it is of course allowed to use them, if applicable.
 
 <style type="text/css">
 .grid .ips-recommended{background-color:#ffa52a;}
@@ -11,1081 +11,133 @@ Note, that for each mapping only the relevant modules of the IPS will be include
 .grid .ips-optional{background-color:#91cf50;}
 </style>
 
-#### Patient
+#### Diabetes Data Model
 
-Please refer to [Patient (HI)](StructureDefinition-Patient-hi.html) for further details about this data model.
-
-<table class="grid">
-<tbody>
-  <tr>
-    <th class="source-module" rowspan="2"><a href="StructureDefinition-Patient-hi.html"><strong>Patient (HI)</strong></a></th>
-    <th class="target-module" colspan="2"><strong>IPS Modules</strong></th>
-    <th class="source-module" rowspan="2"><strong>Comment</strong></th>
-  </tr>
-  <tr>
-    <th class="ips-header"><a href="StructureDefinition-Subject-ips.html"><strong>Subject (IPS)</strong></a></th>
-    <th class="ips-optional"><a href="StructureDefinition-PlanOfCare-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
-  </tr>
-  <tr>
-    <td>Vorname</td>
-    <td>.name.given</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Zuname</td>
-    <td>.name.family</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Geburtsjahr</td>
-    <td>.birthDate</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>SVNR</td>
-    <td>.identifier</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>KVTraeger</td>
-    <td>.contactInsurance</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Adresse</td>
-    <td>.address</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Telefonnummer</td>
-    <td>.telecom</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Geschlecht</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Geschlecht.gender</td>
-    <td>.gender</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Geschlecht.genderExtension</td>
-    <td>.genderExtension</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Schulung</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Einverstaendnis</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>Einschreibung</td>
-    <td>-</td>
-    <td>.period</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Austritt</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>.period</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Grund</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>Anlaufstelle</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>Betreuungsnetzwerk</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Einbindung</td>
-    <td>see "Kontakt"</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Pflegehilfe</td>
-    <td>see "Kontakt"</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Kontakt</td>
-    <td>.contact in case of Betreuungsnetzwerk.where(Einbindung=true)<br/><br/>.generalPractitioner in case of Betreuungsnetzwerk.where(Pflegehilfe=true)</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Versorgungsnetzwerk</td>
-    <td>-</td>
-    <td>.author and .careTeam</td>
-    <td>.author if it is the case coordinator</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Kontakt</td>
-    <td>-</td>
-    <td>.author and .careTeam.participant.member</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Kontakttyp</td>
-    <td>-</td>
-    <td>.careTeam.participant.role</td>
-    <td></td>
-  </tr>
-</tbody>
-</table>
-
-#### Akteur
-
-Please refer to [Akteur (HI)](StructureDefinition-Akteur-hi.html) for further details about this data model.
+Please refer to [Overview Diabetes](StructureDefinition-Uebersicht-diab.html) for further details about this data model.
 
 <table class="grid">
 <tbody>
   <tr>
-    <th class="source-module" rowspan="2"><a href="StructureDefinition-Akteur-hi.html"><strong>Akteur (HI)</strong></a></th>
-    <th class="target-module"><strong>IPS Modules</strong></th>
-    <th class="target-module"><strong>IPS IG</strong></th>
-    <th class="source-module" rowspan="2"><strong>Comment</strong></th>
+    <th class="source-module" colspan="2" rowspan="2">Diabetes<br> </th>
+    <th class="target-module" colspan="6">IPS Modules</th>
   </tr>
   <tr>
-    <th class="ips-optional"><a href="StructureDefinition-PlanOfCare-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
-    <th><a href="http://hl7.org/fhir/uv/ips/StructureDefinition/PractitionerRole-uv-ips"><strong>PractitionerRole (IPS)</strong></a></th>
+    <th class="ips-required"><a href="StructureDefinition-MedicationSummary-ips.html"><strong>Medication Summary</strong></a></th>
+    <th class="ips-required"><a href="StructureDefinition-AllergiesIntolerances-ips.html"><strong>Allergies and Intolerances</strong></a></th>
+    <th class="ips-required"><a href="StructureDefinition-ProblemList-ips.html"><strong>Problem List</strong></a></th>
+    <th class="ips-recommended"><a href="StructureDefinition-DiagnosticResults-ips.html"><strong>Diagnostic Results</strong></a></th>
+    <th class="ips-optional"><a href="StructureDefinition-VitalSigns-ips.html"><strong>Vital Signs</strong></a></th>
+    <th class="ips-optional"><a href="StructureDefinition-PlanOfCare-ips.html"><strong>Plan of Care</strong></a></th>
   </tr>
   <tr>
-    <td>Einrichtung</td>
-    <td>-</td>
-    <td>.organization.name</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Einrichtungsart</td>
-    <td>-</td>
-    <td>.organization.type</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Fachrichtung</td>
-    <td>-</td>
-    <td>.practitioner.qualification.code</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Adresse</td>
-    <td>-</td>
-    <td>.organization.address or .practitioner.address</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Personalstand</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Anzahl</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>derivable</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Berufsgruppe</td>
-    <td>-</td>
-    <td>.code</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>GDL</td>
-    <td>.author and .careTeam.participant.member</td>
-    <td>.practitioner</td>
-    <td>.author if it is the case coordinator</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Vorname</td>
-    <td>-</td>
-    <td>.practitioner.name.given</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Zuname</td>
-    <td>-</td>
-    <td>.practitioner.name.family</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Vertragspartnernummer</td>
-    <td>-</td>
-    <td>.practitioner.identifier</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Teilnahmebeginn</td>
-    <td>.careTeam.participant.period</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Schulungsnachweis</td>
-    <td>-</td>
-    <td>.practitioner.qualification</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Austritt</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Austrittsanfrage</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Teilnahmeende</td>
-    <td>.careTeam.participant.period</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Schulungen</td>
-    <td>-</td>
-    <td>-</td>
-    <td>derivable from PlanOfCare.activity and its corresponding performer</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;aktiv</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Anzahl</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Konsultationen</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-</tbody>
-</table>
-
-#### Erstdokumentation
-
-Please refer to [Erstdokumentation (HI)](StructureDefinition-Erstdokumentation-hi.html) for further details about this data model.
-
-The "Erstdokumentation" itself should be represented as "PlanOfCare.activity". The results of activities might be documented as "PlanOfCare.activity.outcomeReference" and might as well be documented elsewhere in the patient's summary (e.g. "Problem List"). As has been done with some of the examinations of the "Erstdokumentation" (e.g. "EKG", "Diagnose", ...).
-
-<table class="grid">
-<tbody>
-  <tr>
-    <th class="source-module" rowspan="2"><a href="StructureDefinition-Erstdokumentation-hi.html"><strong>Erstdokumentation (HI)</strong></a></th>
-    <th class="target-module" colspan="6"><strong>IPS Modules</strong></th>
-    <th class="source-module" rowspan="2"><strong>Comment</strong></th>
-  </tr>
-  <tr>
-    <th class="ips-header"><a href="StructureDefinition-Subject-ips.html"><strong>Subject (IPS)</strong></a></th>
-    <th class="ips-required"><a href="StructureDefinition-MedicationSummary-ips.html"><strong>Medication Summary (IPS)</strong></a></th>
-    <th class="ips-required"><a href="StructureDefinition-ProblemList-ips.html"><strong>Problem List (IPS)</strong></a></th>
-    <th class="ips-recommended"><a href="StructureDefinition-DiagnosticResults-ips.html"><strong>Diagnostic Results (IPS)</strong></a></th>
-    <th class="ips-optional"><a href="StructureDefinition-FunctionalStatus-ips.html"><strong>Functional Status (IPS)</strong></a></th>
-    <th class="ips-optional"><a href="StructureDefinition-PlanOfCare-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
-  </tr>
-  <tr>
-    <td>VPNR</td>
-    <td>-</td>
-    <td>.informationSource</td>
-    <td>.asserter</td>
-    <td>.performer</td>
-    <td>.assessor</td>
-    <td>.activity.performer</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Untersuchungsdatum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.recordedDate</td>
-    <td>.effective[x]</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Patient</td>
-    <td>-</td>
-    <td>.subject</td>
-    <td>.subject</td>
-    <td>.subject</td>
-    <td>.subject</td>
-    <td>.subject</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Erstabklärung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Untersuchung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.outcomeReference</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Komorbiditaet</td>
+    <td rowspan="6">Essentielle Daten</td>
+    <td>Diabetes- und Komplikations-Diagnosen</td>
     <td>-</td>
     <td>-</td>
     <td>.code</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td></td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;EKG</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code and .value</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Echokardiogramm</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code and .value</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;NTproBNP</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code and .value</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Symptomatik</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Kardiologe</td>
+    <td>Kontakte &amp; Termine</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>.activity</td>
-    <td></td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;Diagnose</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Behandlungsziel</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.goal</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Labor</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code and .value</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Therapie</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;HITherapie</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Therapie</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Zieldosis</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Komedikation</td>
-    <td>-</td>
+    <td>Diabetesmedikation</td>
     <td>.medication[x]</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
   </tr>
   <tr>
-    <td>Selbstmanagement</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
+    <td>Laborwerte (z.B. HbA1c)</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code<br>.value[x]</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;Ressourcen</td>
+    <td>Vitalparameter (Größe, Gewicht, BMI)</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.finding[x]</td>
+    <td>.code<br>.value[x]</td>
     <td>-</td>
-    <td></td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;Betreuung</td>
-    <td>.contact</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;DMPSchulung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;GewichtSchulung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;ImpfungBeratung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;TelemonitoringSchulung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Lebensqualitaet</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.finding[x]</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-</tbody>
-</table>
-
-#### Folgedokumentation
-
-Please refer to [Folgedokumentation (HI)](StructureDefinition-Folgedokumentation-hi.html) for further details about this data model.
-
-The "Folgedokumentation" itself should be represented as "PlanOfCare.activity". The results of activities might be documented as "PlanOfCare.activity.outcomeReference" and might as well be documented elsewhere in the patient's summary (e.g. "Problem List"). As has been done with some of the examinations of the "Erstdokumentation" (e.g. "EKG", "Diagnose", ...).
-
-<table class="grid">
-<tbody>
-  <tr>
-    <th class="source-module" rowspan="2"><a href="StructureDefinition-Folgedokumentation-hi.html"><strong>Folgedokumentation (HI)</strong></a></th>
-    <th class="target-module" colspan="5"><strong>IPS Modules</strong></th>
-    <th class="source-module" rowspan="2"><strong>Comment</comment></th>
-  </tr>
-  <tr>
-    <th class="ips-header"><a href="StructureDefinition-Subject-ips.html"><strong>Subject (IPS)</strong></a></th>
-    <th class="ips-required"><a href="StructureDefinition-ProblemList-ips.html"><strong>Problem List (IPS)</strong></a></th>
-    <th class="ips-recommended"><a href="StructureDefinition-DiagnosticResults-ips.html"><strong>Diagnostic Results (IPS)</strong></a></th>
-    <th class="ips-optional"><a href="StructureDefinition-FunctionalStatus-ips.html"><strong>Functional Status (IPS)</strong></a></th>
-    <th class="ips-optional"><a href="StructureDefinition-DiagnosticResults-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
-  </tr>
-  <tr>
-    <td>VPNR</td>
-    <td>-</td>
-    <td>.asserter</td>
-    <td>.performer</td>
-    <td>.assessor</td>
-    <td>.activity.performer</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Untersuchungsdatum</td>
-    <td>-</td>
-    <td>.recordedDate</td>
-    <td>.effective[x]</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Patient</td>
-    <td>-</td>
-    <td>.subject</td>
-    <td>.subject</td>
-    <td>.subject</td>
-    <td>.subject</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Versorgung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;geplant</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;AnzahlStationaer</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>derivable from IPS module "History of Procedures"</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Symtomatik</td>
+    <td>Metformin-Unverträglichkeit</td>
     <td>-</td>
     <td>.code</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;Behandlungsziel</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
+    <td rowspan="6">Sinnvolle zusätzliche Daten</td>
+    <td>Nebendiagnosen</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Aenderung</td>
+    <td>Gesamtmedikation</td>
+    <td>.medication[x]</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>unclear</td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Behandlungsziel</td>
+    <td>Laborwerte (z.B. HDL, LDL)</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code<br>.value[x]</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Vitalparameter (Blutdruck)</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code<br>.value[x]</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Medikamentenallergien</td>
+    <td>-</td>
+    <td>.code</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Teilnahme am DMP</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>.goal</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Komorbiditaet</td>
-    <td>-</td>
-    <td>.code</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;EKG</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code and .value</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Kardiologe</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Echokardiogramm</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code and .value</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Labor</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Befund</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.code and .value</td>
-    <td>-</td>
-    <td>.activity.outcomeReference</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.effective[x]</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Therapie</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;ACE</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;ACE</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Zieldosis</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Betablocker</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Betablocker</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Zieldosis</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Antikoagulation</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>unclear</td>
-  </tr>
-  <tr>
-    <td>Selbstmanagement</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td>n/a</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Ressourcen</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.finding[x]</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;Betreuung</td>
-    <td>.contact</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;DMPSchulung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;GewichtSchulung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;ImpfungBeratung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;TelemonitoringSchulung</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.status</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.activity.scheduled[x]</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Lebensqualitaet</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>.finding[x]</td>
-    <td>-</td>
-    <td></td>
   </tr>
 </tbody>
 </table>
