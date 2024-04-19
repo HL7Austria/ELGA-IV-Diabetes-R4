@@ -196,10 +196,7 @@ groups:
     name:  Diabetes Datenmodell
     description: Datenmodell basierend auf Rahmenkonzept.
     resources:
-      - StructureDefinition/Patient-hi
-      - StructureDefinition/Akteur-hi
-      - StructureDefinition/Erstdokumentation-hi
-      - StructureDefinition/Folgedokumentation-hi
+      - StructureDefinition/Patient-diab
 
 #
 #
