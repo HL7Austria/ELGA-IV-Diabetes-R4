@@ -362,10 +362,10 @@ Please refer to [Datamodel Diabetes](StructureDefinition-Datamodel-diab.html) fo
   <tr>
     <td>&nbsp;&nbsp;Untersucher</td>
     <td>n/a</td>
-    <td>.informationSource</td>
+    <td>.informationSource[x]</td>
+    <td>.asserter[x]</td>
     <td>.asserter</td>
-    <td>.asserter</td>
-    <td>.source</td>
+    <td>.source[x]</td>
     <td>.performer</td>
     <td>.performer</td>
     <td>.asserter</td>

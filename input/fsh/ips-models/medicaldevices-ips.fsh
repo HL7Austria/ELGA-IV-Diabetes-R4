@@ -9,5 +9,5 @@ Description: """Abbildung der Datenfelder, die für den Entwurf der Datenspezifi
 Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](mappings.html)** in order to get an idea how the IPS relates to diabetes."""
 
 * subject 1..1 SubjectIps "Patient using device"
-* source 0..1 Reference(SubjectIPS or Practitioner or PractitionerRole or RelatedPerson) "Who made the statement"
+* source[x] 0..1 SubjectIps or Reference(Practitioner or PractitionerRole or RelatedPerson) "Who made the statement"
 * device 1..1 Reference(Device) "Reference to device used"

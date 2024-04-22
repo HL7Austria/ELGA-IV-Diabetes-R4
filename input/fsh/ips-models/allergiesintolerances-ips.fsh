@@ -10,4 +10,4 @@ Refer to the **[mapping from the logical model of diabetes to the logical model 
 
 * code 1..1 CodeableConcept "Type of the substance/product, allergy or intolerance condition or or a code for absent/unknown allergy."
 * patient 1..1 SubjectIps "Who the sensitivity is for"
-* asserter 0..1 Reference(SubjectIPS or Patient or RelatedPerson or Practitioner or PractitionerRole) "Source of the information about the allergy"
+* asserter[x] 0..1 SubjectIps or Reference(RelatedPerson or Practitioner or PractitionerRole) "Source of the information about the allergy"
