@@ -10,3 +10,4 @@ Refer to the **[mapping from the logical model of diabetes to the logical model 
 
 * medication[x] 1..1 Reference(Medication) or CodeableConcept "What medication was taken"
 * subject 1..1 SubjectIps "Who is/was taking the medication"
+* informationSource 0..1 Reference(SubjectIps or Patient or Practitioner or PractitionerRole or RelatedPerson or Organization) "Person or organization that provided the information about the taking of this medication"
