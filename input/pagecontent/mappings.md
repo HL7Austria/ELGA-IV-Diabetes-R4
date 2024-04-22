@@ -13,7 +13,7 @@ Note, that only the relevant modules of the IPS will be included. Furthermore, e
 
 #### Diabetes Data Model
 
-Please refer to [Overview Diabetes](StructureDefinition-Uebersicht-diab.html) for further details about this data model.
+Please refer to [Overview Diabetes](StructureDefinition-Datenarten-diab.html) for further details about this data model.
 
 <table class="grid">
 <tbody>

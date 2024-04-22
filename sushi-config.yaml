@@ -89,7 +89,8 @@ pages:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Logical Model (Diabetes): StructureDefinition-Uebersicht-diab.html
+  Logical Model (Diabetes):
+    Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
   Logical Model (IPS):
     Subject (IPS): StructureDefinition-Subject-ips.html
     Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
@@ -198,7 +199,7 @@ groups:
     name:  Diabetes Datenmodell
     description: Datenmodell basierend auf Rahmenkonzept.
     resources:
-      - StructureDefinition/Uebersicht-diab
+      - StructureDefinition/Datenarten-diab
 
 #
 #

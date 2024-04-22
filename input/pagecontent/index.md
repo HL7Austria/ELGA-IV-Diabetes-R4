@@ -4,7 +4,7 @@
 
 The **logical model of "Diabetes"** has been based on the framework concept for diabetes mellitus type 2:
 
-- [Übersicht Diabetes](StructureDefinition-Uebersicht-diab.html)
+- [Übersicht Diabetes](StructureDefinition-Datenarten-diab.html)
 
 Correspondingly, a **logical model based on the [International Patient Summary (IPS)](https://build.fhir.org/ig/HL7/fhir-ips)** has been created in order to line out which modules of the IPS would be required to resemble the logical model of diabetes.
 
