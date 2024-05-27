@@ -17,3 +17,7 @@ Correspondingly, a **logical model based on the [International Patient Summary (
 - [Plan of Care (IPS)](StructureDefinition-PlanOfCare-ips.html)
 
 Refer to the **[mapping from the logical model of diabetes to the logical model based on the IPS](mappings.html)** in order to get an idea how the IPS can be used in this context.
+
+### Dependency Table
+
+{% include dependency-table.xhtml %}
