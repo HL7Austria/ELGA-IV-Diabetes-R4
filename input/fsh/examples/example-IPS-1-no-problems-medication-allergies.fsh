@@ -8,7 +8,8 @@ Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/alle
 Instance: IPS-1-no-problems-medication-allergies
 InstanceOf: Bundle
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips"
+* meta.profile = "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-document"
+// * meta.profile = "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips"
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f20"
 * type = #document
@@ -29,7 +30,7 @@ Usage: #example
 Instance: IPS-1-no-problems-medication-allergies-composition
 InstanceOf: Composition
 Usage: #inline
-* language = #de-AT
+// * language = #de-AT
 * status = #preliminary
 * type = $loinc#60591-5 "Patient summary Document"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
@@ -55,7 +56,6 @@ Usage: #inline
 Instance: IPS-1-no-problems-medication-allergies-patient
 InstanceOf: Patient
 Usage: #inline
-* meta.profile = "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
 * identifier.type = $v2-0203#SS "Social Security Number"
 * identifier.system = "urn:oid:1.2.40.0.10.1.4.3.1"
 * identifier.value = "1111241261"
