@@ -1,6 +1,14 @@
-### Overview
+### Einleitung
+Dieser Implementierungsleitfaden beschreibt das Datenaustauschformat für das **Leitdokument Diabetes der Integrierten Versorgung** in Österreich. 
+Die Beschreibung enthält Festlegungen, Einschränkungen und Bedingungen auf Grundlage der **Austrian Patient Summary** und ist ein nationaler Standard der HL7 Austria.
+
+Das Konzept der Integrierten Versorgung (IV) zielt darauf ab, die Behandlung von Patienten mit chronischen Erkrankungen zu verbessern. Dies soll durch eine stärkere Vernetzung der verschiedenen Gesundheitsdiensteanbieter und Versorgungsstufen erreicht werden. Im Mittelpunkt steht der Patient, der von der Diagnose bis zur Behandlung durch einen einheitlichen Versorgungsprozess geführt wird.
+
+Wichtigstes Element ist das IV-Leitdokument, welches als standardisiertes Dokument, alle relevanten Informationen zur Behandlung des Patienten wie die Krankengeschichte, Medikation, Allergien, Impfungen, Behandlungspläne und andere wichtige Daten des Patienten zusammenfasst.
 
 [![overview](iv-diab-context.drawio.png){: style="width: 100%"}](iv-diab-context.drawio.png)
+
+### ALTER CONTENT
 
 The **logical model of "Diabetes"** has been based on the framework concept for diabetes mellitus type 2:
 

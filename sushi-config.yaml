@@ -64,6 +64,8 @@ pages:
     title: Mapping from Diabetes to IPS
   terminologies.md:
     title: Terminologies
+  anwendungsfaelle.md:
+    title: Anwendungsfälle
 
 #
 #
@@ -90,6 +92,10 @@ pages:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  TOC: toc.html
+  Anwendungsfälle: anwendungsfaelle.html
+  Terminologies: terminologies.html
+  Artifacts: artifacts.html
   Logical Model (Diabetes):
     Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
   Logical Model (IPS):
@@ -101,8 +107,6 @@ menu:
     Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
     Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
   Mapping Diabetes to IPS: mappings.html
-  Terminologies: terminologies.html
-  Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
