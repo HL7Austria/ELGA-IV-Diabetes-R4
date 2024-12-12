@@ -1,10 +1,11 @@
 // -------------------------------------------------------------------------------
 //  Logical Model allergiesintolerances-ips.fsh
 // -------------------------------------------------------------------------------
-Logical: AllergiesIntolerancesIps
-Id: AllergiesIntolerances-ips
-Title: "Allergies and Intolerances (IPS)"
-Description: """Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul "Allergies and Intolerances".
+Profile: AtIvAllergyIntolerance
+Parent: at-ips-allergyintolerance
+Id: at-iv-allergyintolerance
+Title: "AT IV AllergyIntolerance"
+Description: "Dieses Profil ist von at-ips-allergyintolerance abgeleitet und stellt die IPS-Konformität sicher.“
 
 Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](mappings.html)** in order to get an idea how the IPS relates to diabetes."""
 
