@@ -4,14 +4,15 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: elga.iv.diab
-canonical: https://diab.iv.elga.gv.at
-name: Integrierte Versorgung - Diabetes
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
+canonical: https://fhir.hl7.at/elga-iv-diabetes
+name: ELGA-Integrierte-Versorgung-Diabetes-R4
+title: Integrierte Versorgung Diabetes (R4)
+description: Der FHIR Implementierungsleitfaden Integrierte Versorgung Diabetes (R4) ist abgeleitet von der Austrian Patient Summary (R4). 
 status: draft # draft | active | retired | unknown
+date: 2025-12-13
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
-copyrightYear: 2023+
+copyrightYear: 2024+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
@@ -32,9 +33,9 @@ publisher:
 #     version: 1.0.0
 dependencies:
   # hl7.fhir.uv.ips: current
-  hl7.fhir.uv.ips: 1.1.0
-  hl7.at.fhir.elga.ips: current
-
+  hl7.fhir.uv.ips: 2.0.0-ballot
+  hl7.at.fhir.core.r4: current
+  # hl7.at.fhir.elga.ips: current # hl7 aps
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -59,13 +60,16 @@ dependencies:
 
 pages:
   index.md:
-    title: Implementation Guide for Diabetes
-  mappings.md:
-    title: Mapping from Diabetes to IPS
-  terminologies.md:
-    title: Terminologies
+    title: ELGA Implementierungsleitfaden IV Diabetes
   anwendungsfaelle.md:
     title: Anwendungsfälle
+  profiles.md:
+    title: Profiles
+  mappings.md:
+    title: Mapping Diabetes zu IPS
+  terminologies.md:
+    title: Terminologien
+
 
 #
 #
@@ -78,10 +82,12 @@ pages:
 # For parameters defined by the FHIR Tools IG see:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
-# parameters:
+parameters:
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
-#
+  excludettl: true
+  allow-extensible-warnings: true
+  display-warnings: true
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
 # │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
