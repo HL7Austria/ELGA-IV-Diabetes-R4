@@ -63,8 +63,10 @@ pages:
     title: ELGA Implementierungsleitfaden IV Diabetes
   anwendungsfaelle.md:
     title: Anwendungsfälle
+  info.md:
+    title: Informationen über dieses Dokument
   profiles.md:
-    title: Profiles
+    title: Profile
   mappings.md:
     title: Mapping Diabetes zu IPS
   terminologies.md:
@@ -102,6 +104,7 @@ menu:
   Anwendungsfälle: anwendungsfaelle.html
   Terminologies: terminologies.html
   Artifacts: artifacts.html
+  ELGA IGs: info.html
   Logical Model (Diabetes):
     Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
   Logical Model (IPS):
