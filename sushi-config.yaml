@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: elga.iv.diab
-canonical: https://fhir.hl7.at/elga-iv-diabetes
+canonical: https://diab.iv.elga.gv.at
 name: ELGA-Integrierte-Versorgung-Diabetes-R4
 title: Integrierte Versorgung Diabetes (R4)
 description: Der FHIR Implementierungsleitfaden Integrierte Versorgung Diabetes (R4) ist abgeleitet von der Austrian Patient Summary (R4). 
