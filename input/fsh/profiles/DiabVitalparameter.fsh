@@ -1,4 +1,4 @@
-Profile: SD_DiabVitalparameter
+Profile: DiabVitalparameter
 Parent: AtIpsObservationVitalSigns
 Id: diab-vitalparameter
 Title: "Diabetes Vitalparameter"

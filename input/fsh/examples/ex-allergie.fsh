@@ -1,4 +1,4 @@
-Instance: EX_allergie
+Instance: ex-allergie
 InstanceOf: DiabAllergyIntolerance
 Title: "Beispiel Allergie"
 Description: "Beispiel einer Penicillin Allergie"
@@ -10,9 +10,9 @@ Usage: #example
 * clinicalStatus = $allergyintolerance-clinical#active "Active"
 //* verificationStatus = $allergyintolerance-verification#confirmed "Confirmed"  //add to alias
 * code = $sct#764146007 "Penicillin"
-* patient = Reference(example-patient) //"Andrea Testperson"
+* patient = Reference(ex-patient) //"Andrea Testperson"
 * patient.type = "Patient"
 //* onsetDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 //* onsetDateTime.extension.valueCode = #unknown
 * recordedDate = "2024-04-26"
-* asserter = Reference(example-hausaerztin) //"Sophie Hausärztin"
+* asserter = Reference(ex-hausaerztin) //"Sophie Hausärztin"

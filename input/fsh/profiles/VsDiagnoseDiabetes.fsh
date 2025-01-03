@@ -1,4 +1,4 @@
-ValueSet: VS_DiagnoseDiabetes
+ValueSet: VsDiagnoseDiabetes
 Id: vs-diagnose-diabetes
 Title: "VS Diagnose Diabetes"
 Description: "Value-Set Diabetesdiagnosen"

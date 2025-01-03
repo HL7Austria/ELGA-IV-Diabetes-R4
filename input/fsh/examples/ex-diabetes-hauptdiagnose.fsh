@@ -1,4 +1,4 @@
-Instance: EX_diabetes-hauptdiagnose
+Instance: ex-diabetes-hauptdiagnose
 InstanceOf: DiabHauptdiagnose
 Title: "Diabetes Mellitus Diagnose"
 Description: "Beispiel einer Diabetes Diagnose"
@@ -9,5 +9,5 @@ Usage: #example
 * severity = $sct#6736007 "Moderate (severity modifier) (qualifier value)"
 * code = $sct#46635009 //"Diabetes mellitus Typ 1"
 * recordedDate = "2020-01-01T12:00:00+00:00"
-* subject = Reference(EX_patient)
-* asserter = Reference(EX_hausaerztin)
+* subject = Reference(ex-patient)
+* asserter = Reference(ex-hausaerztin)

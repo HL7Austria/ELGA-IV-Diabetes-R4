@@ -1,4 +1,4 @@
-Instance: EX_patient
+Instance: ex-patient
 InstanceOf: AtIpsPatient
 Title: "Beispiel Diabetes Patientin"
 Description: "Beispiel einer Diabetes Patientin"

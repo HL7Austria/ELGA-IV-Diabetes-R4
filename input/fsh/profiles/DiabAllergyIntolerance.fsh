@@ -1,4 +1,4 @@
-Profile: SD_DiabAllergyIntolerance
+Profile: DiabAllergyIntolerance
 Parent: AtIpsAllergyIntolerance
 Id: diab-allergyintolerance
 Title: "Diabetes Allergien und Intoleranzen"

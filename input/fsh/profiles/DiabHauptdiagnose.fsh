@@ -1,4 +1,4 @@
-Profile: SD_DiabHauptdiagnose
+Profile: DiabHauptdiagnose
 Parent: AtIpsCondition
 Id: diab-diagnose
 Title: "Diabetes Hauptdiagnose"
@@ -6,7 +6,7 @@ Description: "Dieses Profil leitet vom APS Profil Condition ab und dient zur Dok
 * . ^short = "Diabetes Hauptdiagnose"
 * . ^definition = "Dokumentation der Diabetes Hauptdiagnose des Patienten und des Datums der Diagnosestellung durch den Behandler."
 * code 1..1 
-* code from VSDiagnoseDiabetes (required)  //VS von 6 Diabetesdiagnosen
+* code from VsDiagnoseDiabetes (required)  //VS von 6 Diabetesdiagnosen
 * recordedDate 1..1 // dateTime 
 * recordedDate ^short = "Datum der Diagnosestellung"
 * asserter only Reference (DiabPractitioner or AtIpsPractitionerRole)

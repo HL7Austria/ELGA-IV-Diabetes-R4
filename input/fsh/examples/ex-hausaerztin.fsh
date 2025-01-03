@@ -1,4 +1,4 @@
-Instance: EX_hausaerztin
+Instance: ex-hausaerztin
 InstanceOf: DiabPractitioner
 Title: "Diabetes GDA Hausärztin"
 Description: "Beispiel eines Diabetes GDA"

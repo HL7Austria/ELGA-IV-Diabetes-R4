@@ -1,4 +1,4 @@
-Profile: SD_DiabPractitioner
+Profile: DiabPractitioner
 Parent: AtIpsPractitioner
 Id: diab-practitioner
 Title: "Diabetes GDA"
