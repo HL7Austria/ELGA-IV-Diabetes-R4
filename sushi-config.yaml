@@ -4,18 +4,16 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 # change to:
-# id: hl7.at.fhir.elga.ips.diab
-# canonical: https://fhir.hl7.at/elga-iv-diab-r4
-id: elga.iv.diab
-canonical: https://diab.iv.elga.gv.at
+id: hl7.at.fhir.elga.ips.diab
+canonical: https://fhir.hl7.at/elga-iv-diab-r4
 name: ELGA-Integrierte-Versorgung-Diabetes-R4
-title: Integrierte Versorgung Diabetes (R4)
-description: Der FHIR Implementierungsleitfaden Integrierte Versorgung Diabetes (R4) ist abgeleitet von der Austrian Patient Summary (R4). 
-status: draft # draft | active | retired | unknown
+title: "Integrierte Versorgung Diabetes (R4)"
+description: "Der FHIR Implementierungsleitfaden Integrierte Versorgung Diabetes (R4) ist abgeleitet von der Austrian Patient Summary (R4)." 
+status: draft # active | retired | unknown
 date: 2025-12-13
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
-copyrightYear: 2024+
+copyrightYear: 2025+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
@@ -71,6 +69,8 @@ pages:
     title: Profile
   terminologies.md:
     title: Terminologien
+  #  extensions.md:
+#    title: Extensions
 #
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -103,7 +103,7 @@ menu:
   Terminologies: terminologies.html
   Artifacts: artifacts.html
   ELGA IGs: info.html
-  Mapping Diabetes to IPS: mappings.html
+#  Mapping Diabetes to IPS: mappings.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
