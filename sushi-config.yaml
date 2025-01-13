@@ -67,7 +67,7 @@ pages:
     title: Anwendungsfälle
   info.md:
     title: Informationen über dieses Dokument
-  #profiles.md:
+  # profiles.md:
   #  title: Profile
   terminologies.md:
     title: Terminologien
@@ -198,23 +198,23 @@ menu:
 #     resources:
 #     - StructureDefinition/bark-control
 #     - StructureDefinition/bee-sting
-groups:
-  IPS:
-    name: IPS compliant Logical Model
-    description: IPS compliant logical model for Diabetes.
-    resources:
-      - StructureDefinition/Subject-ips
-      - StructureDefinition/MedicationSummary-ips
-      - StructureDefinition/AllergiesIntolerances-ips
-      - StructureDefinition/ProblemList-ips
-      - StructureDefinition/DiagnosticResults-ips
-      - StructureDefinition/VitalSigns-ips
-      - StructureDefinition/PlanOfCare-ips
-  Diabetes:
-    name:  Diabetes Datenmodell
-    description: Datenmodell basierend auf Rahmenkonzept.
-    resources:
-      - StructureDefinition/Datenarten-diab
+# groups:
+#   IPS:
+#     name: IPS compliant Logical Model
+#     description: IPS compliant logical model for Diabetes.
+#     resources:
+#       - StructureDefinition/Subject-ips
+#       - StructureDefinition/MedicationSummary-ips
+#       - StructureDefinition/AllergiesIntolerances-ips
+#       - StructureDefinition/ProblemList-ips
+#       - StructureDefinition/DiagnosticResults-ips
+#       - StructureDefinition/VitalSigns-ips
+#       - StructureDefinition/PlanOfCare-ips
+#   Diabetes:
+#     name:  Diabetes Datenmodell
+#     description: Datenmodell basierend auf Rahmenkonzept.
+#     resources:
+#       - StructureDefinition/Datenarten-diab
 
 #
 #
