@@ -8,9 +8,7 @@ Wichtigstes Element ist das IV-Leitdokument, welches als standardisiertes Dokume
 
 [![overview](iv-diab-context.drawio.png){: style="width: 100%"}](iv-diab-context.drawio.png)
 
-### ALTER CONTENT
-
-The **logical model of "Diabetes"** has been based on the framework concept for diabetes mellitus type 2:
+<!-- The **logical model of "Diabetes"** has been based on the framework concept for diabetes mellitus type 2:
 
 - [Übersicht Diabetes](StructureDefinition-Datenarten-diab.html)
 
@@ -24,7 +22,7 @@ Correspondingly, a **logical model based on the [International Patient Summary (
 - [Vital Signs (IPS)](StructureDefinition-VitalSigns-ips.html)
 - [Plan of Care (IPS)](StructureDefinition-PlanOfCare-ips.html)
 
-Refer to the **[mapping from the logical model of diabetes to the logical model based on the IPS](mappings.html)** in order to get an idea how the IPS can be used in this context.
+Refer to the **[mapping from the logical model of diabetes to the logical model based on the IPS](mappings.html)** in order to get an idea how the IPS can be used in this context. -->
 
 ### Dependency Table
 
