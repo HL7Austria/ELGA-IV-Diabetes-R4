@@ -18,55 +18,24 @@ config:
   layout: fixed
 ---
 flowchart TD
-    A["**15.3.2024**<br>Der Patient erscheint mit<br>Symptomen beim Hausarzt. Anamnese und körperliche Untersuchung führen zur Verdachtsdiagnose Diabetes, eine Laboruntersuchung wird angeordnet."]
-    a1["Körperliche Untersuchung zeigt eine Wundheilungsstörung"]
-    a2["Der Schnelltest zeigt erhöhten<br>Blutzucker"]
-    B["**17.3.2024**<br>Der Hausarzt teilt das Ergebnis der Blutuntersuchung mit: Die Diagnose Diabetes mellitus Typ 2 wird bestätigt.<br>**Therapiebeginn:** Der Hausarzt verordnet Medikamente und gibt Verhaltensempfehlungen. Der Patient erhält ein Blutzuckermessgerät."]
-    b1["Medikation"]
-    b2["Beratung zu Lebensstil"]
-    C["**24.3.2024**<br>Der Patient kommt zur Kontrolle zum Hausarzt. Die medikamentöse Therapie wird angepasst."]
-    c1["Medikation"]
-    D["**2.4.2024**<br>Der Patient nimmt an einer Informationsveranstaltung für Diabetiker teil."]
-    E["**23.4.2024**<br>Der Patient erhält vom Hausarzt einen individuellen Behandlungsplan mit regelmäßigen Schulungen und Kontrollen. Therapieziele werden besprochen."]
-    e1["Ein Ernährungsberater berät zur Gewichtsreduktion."]
-    F["**30.4.2024**<br>Der Patient nimmt an einer Patientenschulung zu Medikamenteneinnahme, Blutzuckerkontrolle, Ernährung und Sport teil."]
-    G["Fortlaufende Betreuung und Kontrolluntersuchungen"]
-    g1["Diabetologische Beratungen"]
-    g2["Optimierung der Medikamenteneinstellung"]
-    g3["Telemonitoring-Berichte der Blutzuckerwerte"]
-    H["**7.10.2028**<br>Der Patient muss ins Krankenhaus. Nach Problemen mit der Blutzuckerkontrolle und der Insulinverabreichung traten Komplikationen wie diabetische Retinopathie und neuropathische Beschwerden auf."]
-    I["**12.1.2029**<br>Der Patient wird aus dem Krankenhaus in die häusliche Krankenpflege entlassen, bleibt weiterhin auf regelmäßige Betreuung angewiesen."]
+A("**15.3.2024**<br/>Hausarzt führt **Gespräch/Untersuchung** durch und ordnet<br/>weitere Blutabnahme an. <br/>**Verdachtsdiagnose Diabetes mellitus**")
+A -.-> a1("**Körperliche Untersuchung**:<br/> der Schnelltest zeigt erhöhten<br/> Blutzuckerwert 250mg/dl") & a2("**Anamnese**: <br/>die Symptome,<br/> Mundtrockenheit, Müdigkeit, häufiges Wasserlassen und verschwommenes Sehen werden erhoben")
+A ==> B("**17.3.2024**<br/>**Laborergebnis: <br/> HbA1C 8,1%** wird besprochen.")
+B -.-> b1("Die **Diagnose<br/> Diabetes mellitus Typ 2** wird bestätigt.<br/>**Therapiebeginn:**")
+b1 -.-> bb1("Medikation") & bb2("Beratung zu Lebensstil") & bb3("Patient erhält<br/> Blutzuckermessgerät und Schulung zur Handhabung")
+B ==> C("**10.7.2024**<br/>**Nachkontrolle beim <br/>Hausarzt**. <br/> Weiterhin erhöhte BZ-Werte, <br/>die medikamentöse Therapie<br/> wird angepasst.")
+C -.-> c1("Medikation adaptiert")
+C ==> D("**Fortlaufende Therapie**<br/>Engmaschige Kontrollen beim <br/>Hausarzt. Patient nimmt<br/> regelmäßig an Schulungen und Beratungen teil.")
     
-    A -.-> a1 & a2
-    A ==> B
-    B -.-> b1 & b2
-    B ==> C
-    C -.-> c1
-    C ==> D
-    D ==> E
-    E -.-> e1
-    E ==> F
-    F ==> G
-    G -.-> g1 & g2 & g3
-    G ==> H
-    H ==> I
-    
-    style A fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style B fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style C fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style D fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style E fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style F fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style G fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style H fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style I fill:#BBDEFB,stroke-width:4px,stroke-dasharray: 5
-    style a1 fill:#FFE0B2
-    style a2 fill:#FFE0B2
-    style b1 fill:#FFE0B2
-    style b2 fill:#FFE0B2
-    style c1 fill:#FFE0B2
-    style e1 fill:#FFE0B2
-    style g1 fill:#FFE0B2
-    style g2 fill:#FFE0B2
-    style g3 fill:#FFE0B2
+style A fill:#BBDEFB,stroke-width:4px
+style a1 fill:#FFE0B2
+style a2 fill:#FFE0B2
+style B fill:#BBDEFB,stroke-width:4px
+style b1 fill:#FFE0B2
+style bb1 fill:#FFE0B2
+style bb2 fill:#FFE0B2
+style bb3 fill:#FFE0B2
+style C fill:#BBDEFB,stroke-width:4px
+style c1 fill:#FFE0B2
+style D fill:#BBDEFB,stroke-width:4px
 </pre>
