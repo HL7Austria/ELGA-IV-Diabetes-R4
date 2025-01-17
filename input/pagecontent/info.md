@@ -87,6 +87,13 @@ Das Redaktionsteam bestand aus folgenden Personen[1]:
 </td>
 <td> Autor
 </td></tr>
+<tr>
+<td> Sonja Gradwohl
+</td>
+<td> ELGA GmbH
+</td>
+<td> Autorin
+</td></tr>
 </tbody></table>
 
 
