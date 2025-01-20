@@ -19,7 +19,7 @@ config:
 ---
 flowchart TD
 A("**15.3.2024**<br/>Hausarzt führt **Gespräch/Untersuchung** durch und ordnet<br/>weitere Blutabnahme an. <br/>**Verdachtsdiagnose Diabetes mellitus**")
-A -.-> a1("**Körperliche Untersuchung**:<br/> der Schnelltest zeigt erhöhten<br/> Blutzuckerwert 250mg/dl") & a2("**Anamnese**: <br/>die Symptome,<br/> Mundtrockenheit, Müdigkeit, häufiges Wasserlassen und verschwommenes Sehen werden erhoben")
+A -.-> a1("**Körperliche Untersuchung**:<br/> der Schnelltest zeigt erhöhten<br/> Blutzuckerwert 250mg/dl") & a2("**Anamnese**: <br/>die Symptome,<br/> Mundtrockenheit, Müdigkeit,<br/> häufiges Wasserlassen und <br/>verschwommenes Sehen <br/>werden erhoben")
 A ==> B("**17.3.2024**<br/>**Laborergebnis: <br/> HbA1C 8,1%** wird besprochen.")
 B -.-> b1("Die **Diagnose<br/> Diabetes mellitus Typ 2** wird bestätigt.<br/>**Therapiebeginn:**")
 b1 -.-> bb1("Medikation") & bb2("Beratung zu Lebensstil") & bb3("Patient erhält<br/> Blutzuckermessgerät und Schulung zur Handhabung")
