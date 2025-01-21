@@ -2,7 +2,7 @@ ValueSet: VsNebendiagnosenDiabetes
 Id: vs-nebendiagnosen-diabetes
 Title: "VS Nebendiagnosen Diabetes"
 Description: "Value-Set Nebendiagnosen Diabetes"
-* ^url = "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-nebendiagnosen-diabetes"
+* ^url = "https://diab.iv.elga.gv.at/ValueSet/vs-nebendiagnosen-diabetes"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2024-12-30T18:23:44+01:00"

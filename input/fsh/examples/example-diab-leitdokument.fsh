@@ -73,13 +73,13 @@ InstanceOf: DiabComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
-* type = $loinc#60591-5 "Patient summary Document"
+* type = $loinc#60591-5 "Patientenkurzakte - Dokument"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susi Testpatientin"
 * date = "2024-02-08T14:01:30+00:00"
-* author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztint"
+* author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 * title = "Diabetes Leitdokument"
 * attester.mode = #personal
-* attester.party = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* attester.party = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susi Testpatientin"
 * attester.party.display = "Validiert von"
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6)
 //* extension[countryOfAffiliation].valueString = "AT"  //todo checken
@@ -91,7 +91,7 @@ Usage: #inline
 * section[sectionProblems].entry[0] = Reference(urn:uuid:72e85b9d-004d-4104-b166-86d129948bae)
 * section[sectionProblems].entry[+] = Reference(urn:uuid:82fa32f6-39d6-4fc9-9624-90a48fd3d3a5)
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) 
-* section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) 
+//* section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) 
 * section[sectionProblems].entry[+] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) 
 // Problem List - Family history
 * section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91)
@@ -129,7 +129,7 @@ Usage: #inline
 * section[sectionResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
 * section[sectionResults].text.status = #empty
 * section[sectionResults].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Relevant diagnostic tests/laboratory data Narrative</p></div>"
-* section[sectionResults].entry[0] = Reference(urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654)
+//* section[sectionResults].entry[0] = Reference(urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654)
 * section[sectionResults].entry[+] = Reference(urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91)
 // Vital Signs
 * section[sectionVitalSigns].title = "Vital Signs"
@@ -161,9 +161,9 @@ Usage: #inline
 * identifier[localPatientId].system = "urn:oid:1.2.3.4.5"
 * identifier[localPatientId].value = "0002"
 * identifier[localPatientId].assigner.display = "Ein GDA in Österreich"
-* name.family = "Test"
-* name.given[0] = "Arnold"
-* gender = #male // 1..1 in AT Core
+* name.family = "Testpatientin"
+* name.given[0] = "Susi"
+* gender = #female // 1..1 in AT Core
 * birthDate = "1950-11-12" // 1..1 in IPS
 * address.line = "Am Schulweg 5"
 * address.use = #home
@@ -177,9 +177,9 @@ Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
 * identifier.assigner.display = "Bundesministerium für Gesundheit"
-* name.prefix[0] = "Dr"
-* name.family = "Hausarzt"
-* name.given[0] = "Hannes"
+* name.prefix[0] = "Dr."
+* name.family = "IV-Ärztin"
+* name.given[0] = "Gabriele"
 
 // Problem List
 
@@ -322,14 +322,14 @@ Usage: #inline
 * encounter = Reference(Encounter/home)
 * period.end = "2024-04-12"
 * created = "2024-03-29"
-* author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztint"
+* author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 * careTeam = Reference(CareTeam/example)
 //* addresses = Reference(p1) "Bluthochdruck"
 * goal = Reference(Goal/example)
 * activity.outcomeCodeableConcept = $sct#408443003 "Bereitstellung von Patienteninformationen"
 * activity.outcomeReference = Reference(Observation/example) "Patient ist über das Ereignis informiert"
 * activity.detail.code.coding[0] = $sct#409063005 "Beratung"
-* activity.detail.code.coding[+] = $sct#1293061000168108 "Dienst zur Förderung der Gesundheit"
+* activity.detail.code.coding[+] = $sct#1293061000168108 "Dient zur Förderung der Gesundheit"
 * activity.detail.status = #completed
 * activity.detail.statusReason.text = "Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit."
 * activity.detail.doNotPerform = false
@@ -337,7 +337,7 @@ Usage: #inline
 * activity.detail.scheduledTiming.repeat.period = 1
 * activity.detail.scheduledTiming.repeat.periodUnit = #d
 * activity.detail.location.display = "Informationsveranstaltung des Herzverbandes"
-* activity.detail.performer = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Test"
+* activity.detail.performer = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susi Testpatientin"
 
 
 // Medication Summary
@@ -367,9 +367,9 @@ InstanceOf: AtIpsAllergyIntolerance // DiabAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $allergy-intolerance-clinicalStatus#55561003 "bestehend"
 * code = $allergy-intolerance#89055006 "Benzylpenicillin Natrium"
-* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susi Testpatientin"
 //* text.div = "Das ist eine optionale Beschreibung der Allergie des Arztes." // ??
-* asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
+* asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 
 
 
@@ -424,7 +424,7 @@ InstanceOf: AtIpsObservationVitalSigns
 Usage: #inline
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#8302-2 "Body height"
+* code = $loinc#8302-2 "Körpergröße"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susi Testpatientin"
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueQuantity.value = 173
@@ -461,8 +461,8 @@ Usage: #inline
 * status = #final
 * code = $loinc#72166-2 "Tobacco smoking status"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susi Testpatientin"
-* effectiveDateTime = "2024-02-08T08:30:00+01:00"
-* valueCodeableConcept = $loinc#LA18978-9 "Never smoker"
+* effectiveDateTime = "2019-07-15"
+* valueCodeableConcept = $current-smoking-status#8517006 "Ex-smoker"
 
 Instance: example-diab-leitdokument-social-history-2
 InstanceOf: Observation

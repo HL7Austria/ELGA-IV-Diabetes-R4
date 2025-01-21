@@ -2,7 +2,7 @@ ValueSet: VsAlleDiagnosenTest
 Id: vs-allediagnosentest
 Title: "VS Alle Diagnosen Test"
 Description: "Value-Set alle Diagnosen"
-* ^url = "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-allediagnosentest"
+* ^url = "https://diab.iv.elga.gv.at/ValueSet/vs-allediagnosentest"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2024-12-30T18:23:44+01:00"

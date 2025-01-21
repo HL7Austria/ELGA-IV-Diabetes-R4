@@ -2,7 +2,7 @@ ValueSet: VsIvDiagnosekategorie
 Id: vs-iv-diagnosekategorie
 Title: "Vs IV Diagnosekategorie"
 Description: "Value-Set aller IV Diagnosekategorien"
-* ^url = "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-iv-diagnosekategorie"
+* ^url = "https://diab.iv.elga.gv.at/ValueSet/vs-iv-diagnosekategorie"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2024-12-30T18:23:44+01:00"

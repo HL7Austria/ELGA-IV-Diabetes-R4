@@ -2,7 +2,7 @@ ValueSet: VsDiagnoseDiabetes
 Id: vs-diagnose-diabetes
 Title: "VS Diagnose Diabetes"
 Description: "Value-Set Diabetesdiagnosen"
-* ^url = "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-diagnose-diabetes"
+* ^url = "https://diab.iv.elga.gv.at/ValueSet/vs-diagnose-diabetes"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2024-12-30T18:23:44+01:00"

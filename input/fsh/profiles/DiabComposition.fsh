@@ -147,11 +147,11 @@ Description: "Diabetes Composition."
 // * section[sectionPlanOfCare].entry ^slicing.discriminator[=].path = "resolve()"
 // * section[sectionPlanOfCare].entry ^slicing.rules = #open
 // * section[sectionPlanOfCare].entry only Reference(IvCarePlanSchulung or CarePlan or DocumentReference)
-// * section[sectionPlanOfCare].entry contains
-//     carePlan 0..*    
-//     schulungen 0..*
-// * section[sectionPlanOfCare].entry[carePlan] only Reference(CarePlan)
-// * section[sectionPlanOfCare].entry[schulungen] only Reference(IvCarePlanSchulung)
+* section[sectionPlanOfCare].entry contains
+    //carePlan 0..*    
+    schulungen 0..*
+//* section[sectionPlanOfCare].entry[carePlan] only Reference(CarePlan)
+* section[sectionPlanOfCare].entry[schulungen] only Reference(IvCarePlanSchulung)
 
 // * section[sectionSocialHistory].code = $loinc#29762-2
 // * section[sectionSocialHistory].entry ^slicing.discriminator[0].type = #profile
