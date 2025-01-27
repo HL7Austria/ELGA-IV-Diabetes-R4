@@ -32,7 +32,8 @@ publisher:
 #     version: 1.0.0
 dependencies:
   # hl7.fhir.uv.ips: current
-  hl7.fhir.uv.ips: 1.1.0
+  hl7.fhir.uv.ips: 2.0.0-ballot
+  hl7.at.fhir.core.r4: current
   hl7.at.fhir.elga.ips: current
 
 #
