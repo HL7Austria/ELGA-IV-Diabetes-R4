@@ -5,13 +5,14 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: elga.iv.diab
 canonical: https://diab.iv.elga.gv.at
-name: Integrierte Versorgung - Diabetes
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
-status: draft # draft | active | retired | unknown
-version: 0.1.0
+name: ELGA-Integrierte-Versorgung-Diabetes-R4
+title: "Integrierte Versorgung Diabetes (R4)"
+description: "Der FHIR Implementierungsleitfaden Integrierte Versorgung Diabetes (R4) ist abgeleitet von der Austrian Patient Summary (R4)." 
+status: draft # active | retired | unknown
+date: 2025-12-13
+version: 0.1.1
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
-copyrightYear: 2023+
+copyrightYear: 2025+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
@@ -60,11 +61,19 @@ dependencies:
 
 pages:
   index.md:
-    title: Implementation Guide for Diabetes
-  mappings.md:
-    title: Mapping from Diabetes to IPS
+    title: ELGA Implementierungsleitfaden IV Diabetes
+  anwendungsfaelle.md:
+    title: Anwendungsfälle
+  info.md:
+    title: Informationen über dieses Dokument
+  # profiles.md:
+  #  title: Profile
   terminologies.md:
-    title: Terminologies
+    title: Terminologien
+  # mappings.md:
+  #   title: Mappings
+  #  extensions.md:
+#    title: Extensions
 
 #
 #
@@ -91,19 +100,21 @@ pages:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Logical Model (Diabetes):
-    Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
-  Logical Model (IPS):
-    Subject (IPS): StructureDefinition-Subject-ips.html
-    Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
-    Allergies and Intolerances (IPS): StructureDefinition-AllergiesIntolerances-ips.html
-    Problem List (IPS): StructureDefinition-ProblemList-ips.html
-    Diagnostic Results (IPS): StructureDefinition-DiagnosticResults-ips.html
-    Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
-    Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
-  Mapping Diabetes to IPS: mappings.html
+  TOC: toc.html
+  Anwendungsfälle: anwendungsfaelle.html
   Terminologies: terminologies.html
   Artifacts: artifacts.html
+  # Logical Model (Diabetes):
+  #   Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
+  # Logical Model (IPS):
+  #   Subject (IPS): StructureDefinition-Subject-ips.html
+  #   Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
+  #   Allergies and Intolerances (IPS): StructureDefinition-AllergiesIntolerances-ips.html
+  #   Problem List (IPS): StructureDefinition-ProblemList-ips.html
+  #   Diagnostic Results (IPS): StructureDefinition-DiagnosticResults-ips.html
+  #   Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
+  #   Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
+  # Mapping Diabetes to IPS: mappings.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
