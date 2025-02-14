@@ -3,7 +3,7 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.at.elga.iv.diab
+id: hl7.at.fhir.elga.iv.diab
 canonical: https://fhir.hl7.at/elga-iv-diabetes-r4
 name: ELGA-Integrierte-Versorgung-Diabetes-R4
 title: "Integrierte Versorgung Diabetes (R4) ****** TEST VERSION ******"

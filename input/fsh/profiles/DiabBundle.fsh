@@ -1,5 +1,5 @@
 Profile: DiabBundle
-Parent: AtIpsBundle
+Parent: AtApsBundle
 Id: diab-bundle
 Title: "Diab Bundle"
 Description: "Diabetes Bundle, abgeleitet von der APS."
