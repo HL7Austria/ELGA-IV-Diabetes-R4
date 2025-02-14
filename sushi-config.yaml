@@ -3,10 +3,10 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: elga.iv.diab
-canonical: https://diab.iv.elga.gv.at
+id: hl7.fhir.at.elga.iv.diab
+canonical: https://fhir.hl7.at/elga-iv-diabetes-r4
 name: ELGA-Integrierte-Versorgung-Diabetes-R4
-title: "Integrierte Versorgung Diabetes (R4)"
+title: "Integrierte Versorgung Diabetes (R4) ****** TEST VERSION ******"
 description: "Der FHIR Implementierungsleitfaden Integrierte Versorgung Diabetes (R4) ist abgeleitet von der Austrian Patient Summary (R4)." 
 status: draft # active | retired | unknown
 date: 2025-12-13
@@ -35,7 +35,7 @@ dependencies:
   # hl7.fhir.uv.ips: current
   hl7.fhir.uv.ips: 2.0.0-ballot
   hl7.at.fhir.core.r4: current
-  hl7.at.fhir.elga.ips: current
+  # hl7.at.fhir.elga.ips: current
 
 #
 #
@@ -70,10 +70,10 @@ pages:
   #  title: Profile
   terminologies.md:
     title: Terminologien
-  # mappings.md:
-  #   title: Mappings
-  #  extensions.md:
-#    title: Extensions
+  mappings.md:
+    title: Mappings
+  #extensions.md:
+  #  title: Extensions
 
 #
 #
@@ -86,9 +86,12 @@ pages:
 # For parameters defined by the FHIR Tools IG see:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
-# parameters:
-#   excludettl: true
-#   validation: [allow-any-extensions, no-broken-links]
+parameters:
+  excludettl: true
+#  validation: [allow-any-extensions, no-broken-links]
+  allow-extensible-warnings: true
+  display-warnings: true
+
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
@@ -105,8 +108,8 @@ menu:
   Terminologies: terminologies.html
   Artifacts: artifacts.html
   ELGA IGs: info.html
-  # Logical Model (Diabetes):
-  #   Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
+  Logical Model (Diabetes):
+    Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
   # Logical Model (IPS):
   #   Subject (IPS): StructureDefinition-Subject-ips.html
   #   Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
@@ -197,23 +200,23 @@ menu:
 #     resources:
 #     - StructureDefinition/bark-control
 #     - StructureDefinition/bee-sting
-groups:
-  IPS:
-    name: IPS compliant Logical Model
-    description: IPS compliant logical model for Diabetes.
-    resources:
-      - StructureDefinition/Subject-ips
-      - StructureDefinition/MedicationSummary-ips
-      - StructureDefinition/AllergiesIntolerances-ips
-      - StructureDefinition/ProblemList-ips
-      - StructureDefinition/DiagnosticResults-ips
-      - StructureDefinition/VitalSigns-ips
-      - StructureDefinition/PlanOfCare-ips
-  Diabetes:
-    name:  Diabetes Datenmodell
-    description: Datenmodell basierend auf Rahmenkonzept.
-    resources:
-      - StructureDefinition/Datenarten-diab
+# groups:
+#   IPS:
+#     name: IPS compliant Logical Model
+#     description: IPS compliant logical model for Diabetes.
+#     resources:
+#       - StructureDefinition/Subject-ips
+#       - StructureDefinition/MedicationSummary-ips
+#       - StructureDefinition/AllergiesIntolerances-ips
+#       - StructureDefinition/ProblemList-ips
+#       - StructureDefinition/DiagnosticResults-ips
+#       - StructureDefinition/VitalSigns-ips
+#       - StructureDefinition/PlanOfCare-ips
+#   Diabetes:
+#     name:  Diabetes Datenmodell
+#     description: Datenmodell basierend auf Rahmenkonzept.
+#     resources:
+#       - StructureDefinition/Datenarten-diab
 
 #
 #
