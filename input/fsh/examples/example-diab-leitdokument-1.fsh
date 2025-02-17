@@ -18,9 +18,9 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
 * entry[=].resource = Gabriele-IV-Arzt
 // Organisation
-* entry[+].fullUrl = "urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6"
-* entry[=].resource = Muster-Organization
-
+// Diagnostic Results - Performer
+* entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
+* entry[=].resource = performer-Amadeus-Spital
 // Body ***********************************************************
 // Problem List
 * entry[+].fullUrl = "urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"
@@ -58,9 +58,6 @@ Usage: #example
 // // Diagnostic Results
 * entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
 * entry[=].resource = diagnosticResults-Labor-AB0-Blut
-// // Diagnostic Results - Performer
-* entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = performer-Amadeus-Spital
 // // Diagnostic Results - Specimen
 * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
 * entry[=].resource = diagnosticResult-Labor-Blut
@@ -97,7 +94,7 @@ Usage: #inline
 * attester.mode = #personal
 * attester.party = Reference(Gabriele-IV-Arzt) "Dr. IV-Ärztin"
 * attester.party.display = "Validiert von"
-* custodian = Reference(Muster-Organization)
+* custodian = Reference(performer-Amadeus-Spital)
 * extension[countryOfAffiliation].valueString = "AT"
 
 // Problem List
@@ -550,8 +547,3 @@ Usage: #inline
 * deviceName.name = "Insulinpumpe"
 * deviceName.type = #other
 * version.value = "Insulin pump"
-
-Instance: Muster-Organization
-InstanceOf: AtApsOrganization
-Usage: #inline
-* name = "Muster Organization"
