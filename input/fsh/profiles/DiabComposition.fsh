@@ -19,7 +19,7 @@ Description: "Diabetes Composition, abgeleitet vom der APS."
 // * section ^slicing.rules = #open
 // * section ^slicing.ordered = false
 
-// * section contains
+//* section contains
 //     sectionMedications 1..1 and
 //     sectionAllergies 1..1 and
 //     sectionProblems 1..1 and
@@ -150,9 +150,11 @@ Description: "Diabetes Composition, abgeleitet vom der APS."
 // * section[sectionPlanOfCare].entry ^slicing.discriminator[=].path = "resolve()"
 // * section[sectionPlanOfCare].entry ^slicing.rules = #open
 // * section[sectionPlanOfCare].entry only Reference(CarePlan or DocumentReference)
-// * section[sectionPlanOfCare].entry contains
-//     carePlan 0..*
-// * section[sectionPlanOfCare].entry[carePlan] only Reference(CarePlan)
+* section[sectionPlanOfCare].entry contains
+//    carePlan 0..*    
+    diabCareplanEducation 0..*
+//* section[sectionPlanOfCare].entry[carePlan] only Reference(CarePlan)
+* section[sectionPlanOfCare].entry[diabCareplanEducation] only Reference(DiabCareplanEducation)
 
 // * section[sectionSocialHistory].code = $loinc#29762-2
 // * section[sectionSocialHistory].entry ^slicing.discriminator[0].type = #profile

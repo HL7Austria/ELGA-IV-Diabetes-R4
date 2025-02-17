@@ -14,7 +14,7 @@ Description: "Diabetes Bundle, abgeleitet von der APS."
 // * entry ^slicing.rules = #open
 // * entry ^slicing.ordered = false
 
-// * entry contains
+* entry contains
 //     Composition 1..1 and
 //     Patient 1..1 and
 //     AllergyIntolerance 0..* and
@@ -43,6 +43,7 @@ Description: "Diabetes Bundle, abgeleitet von der APS."
 //     Flag 0..* and
 //     ClinicalImpression 0..* and
 //     CarePlan 0..* and
+DiabCareplanEducation 0..*
 //     Consent 0..* and
 //     DocumentReference 0..*
 
@@ -129,6 +130,9 @@ Description: "Diabetes Bundle, abgeleitet von der APS."
 
 // * entry[CarePlan].resource 1..
 // * entry[CarePlan].resource only CarePlan
+
+* entry[DiabCareplanEducation].resource 1..
+* entry[DiabCareplanEducation].resource only DiabCareplanEducation
 
 // * entry[Consent].resource 1..
 // * entry[Consent].resource only Consent

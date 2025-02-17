@@ -13,7 +13,7 @@ Usage: #example
 * entry[=].resource = example-diab-leitdokument-1-composition
 // Patient
 * entry[+].fullUrl = "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8" 
-* entry[=].resource = Susi-Testpatientin
+* entry[=].resource = Susanne-Testpatientin
 // Author
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
 * entry[=].resource = Gabriele-IV-Arzt
@@ -87,12 +87,12 @@ Usage: #inline
 // * language = #de-AT
 * status = #final
 * type = $loinc#9999-9 "Diabetes Leitdokument"  //TODO
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * date = "2025-02-08T14:01:30+00:00"
-* author = Reference(Gabriele-IV-Arzt) "Dr. IV-Ärztin"
+* author = Reference(Gabriele-IV-Arzt) "Dr. Gabriele IV-Ärztin"
 * title = "Diabetes Leitdokument"
 * attester.mode = #personal
-* attester.party = Reference(Gabriele-IV-Arzt) "Dr. IV-Ärztin"
+* attester.party = Reference(Gabriele-IV-Arzt) "Dr. Gabriele IV-Ärztin"
 * attester.party.display = "Validiert von"
 * custodian = Reference(performer-Amadeus-Spital)
 * extension[countryOfAffiliation].valueString = "AT"
@@ -197,7 +197,7 @@ Usage: #inline
 * section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan</p></div>"
 * section[sectionPlanOfCare].entry[0] = Reference(careplan-Diabetes-Schulung)
 
-Instance: Susi-Testpatientin
+Instance: Susanne-Testpatientin
 InstanceOf: AtApsPatient
 Usage: #inline
 * meta.profile = "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"
@@ -206,7 +206,7 @@ Usage: #inline
 * identifier.value = "0000121150"
 * identifier.assigner.display = "Dachverband der österreichischen Sozialversicherungsträger"
 * name.family = "Testpatientin"
-* name.given[0] = "Susi"
+* name.given[0] = "Susanne"
 * gender = #female
 * birthDate = "1951-11-12"
 //* maritalStatus = "married"  todo
@@ -238,7 +238,7 @@ Usage: #inline
 //* category[diabetes] = VsIvDiagnosekategorie#73211009 "Diabetes mellitus"
 * code = $sct#105401000119101 "Diabetes mellitus due to pancreatic injury (disorder)"
 * code.coding.display = "Diabetes mellitus aufgrund einer Verletzung der Bauchspeicheldrüse"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * recordedDate = "2024-02-08T14:01:30+00:00"
 
 // // Diabetes Nebendiagnosen
@@ -250,7 +250,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#280137006 "Diabetisches Fußsyndrom"
 * code.coding.display = "Diabetisches Fußsyndrom"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * recordedDate = "2021-02-08T14:01:30+00:00"
 
 Instance: problem-Chronische-Nierenerkrankung
@@ -261,7 +261,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#700379002 "Chronic kidney disease stage 3B"
 * code.coding.display = "Chronische Nierenerkrankung Stadium 3B"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 
 Instance: problem-Einnahme-Antikoagulantien
 InstanceOf: AtApsCondition
@@ -271,7 +271,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#711150003 "Long-term current use of anticoagulant"
 * code.coding.display = "Langfristige Einnahme von Antikoagulantien"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 
 Instance: problem-Bluthochdruck
 InstanceOf: AtApsCondition
@@ -281,7 +281,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#38341003 "Hypertensive disorder"
 * code.coding.display = "Bluthochdruck-Erkrankung"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 
 
 // Problem List - Family history
@@ -293,7 +293,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#160303001 "Family history of diabetes mellitus (situation)"
 * code.coding.display = "Diabetes mellitus in der Familie"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 
 Instance: problem-Dickdarmkrebs-Familie
 InstanceOf: AtApsCondition
@@ -303,7 +303,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#312824007 "Family history of cancer of colon"
 * code.coding.display = "Dickdarmkrebs in der Familie"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 
 // risk of periodontal disease
 Instance: problem-Parodontalerkrankung
@@ -314,7 +314,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#2556008 "Periodontal disease (disorder)"
 * code.coding.display = "Parodontalerkrankung"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * stage.assessment = Reference(condition-Parodontalerkrankung-Bewertung)
 
 Instance: condition-Parodontalerkrankung-Bewertung
@@ -323,7 +323,7 @@ Usage: #inline
 * status = #final
 * category = $observation-category#exam "Exam"
 * code = $sct#1237049003 "Evaluation of risk factors for periodontal disease"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * performer = Reference(performer-Amadeus-Spital)
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueCodeableConcept = $sct#723509005 "High risk"
@@ -331,37 +331,36 @@ Usage: #inline
 // Careplan Schulungen
 
 Instance: careplan-Diabetes-Schulung
-InstanceOf: CarePlan
+InstanceOf: DiabCareplanEducation
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Schulung zur Verbesserung der Mobilität </p>\n    </div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ernährungsschulung bei Diabetes mellitus Typ II</p>\n    </div>"
 * identifier.value = "12345"
-* instantiatesUri = "http://example.org/protocol-for-heart-association-event"
-* basedOn.display = "Schulungen für Diabetespatienten"
-* replaces.display = "Plan"
-* partOf.display = "Plan"
+* instantiatesUri = "https://www.sozialministerium.at/Themen/Gesundheit/Gesundheitssystem/Gesundheitssystem-und-Qualitaetssicherung/Schulungen/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
 * status = #active
 * intent = #plan
-* category.text = "Plan zur Patientenschulung"
-* title = "Spezialschulung für Diabetespatienten mit Retinophatie"
-* description = "Information über eine Veranstaltung des Diabetes"
-* subject = Reference(Susi-Testpatientin)
-* period.end = "2024-04-12"
-* created = "2024-03-29"
-* author = Reference(Gabriele-IV-Arzt) "Dr. IV-Ärztin"
+* category.coding.code = #428274007 
+* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
+* title = "Ernährungsschulung bei Diabetes mellitus Typ II"
+* description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin" 
+* period.start = "2025-03-01"
+* period.end = "2025-03-31"
+* created = "2025-02-17"
+* author = Reference(Gabriele-IV-Arzt) "Dr. Gabriele IV-Ärztin"
 * addresses = Reference(problem-Diabetes-Verletzung-Bauchspeicheldruese)
 * activity.outcomeCodeableConcept = $sct#408443003 "Bereitstellung von Patienteninformationen"
 // * activity.outcomeReference = Reference(Observation/example) "Patient ist über das Ereignis informiert" // ??
 * activity.detail.code.coding[0] = $sct#409063005 "Beratung"
 * activity.detail.code.coding[+] = $sct#1293061000168108 "Dient zur Förderung der Gesundheit"
 * activity.detail.status = #completed
-* activity.detail.statusReason.text = "Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit."
+* activity.detail.statusReason.text = "Der Hausarzt informierte die Patienten über die Schulung zur Ernährung."
 * activity.detail.doNotPerform = false
 * activity.detail.scheduledTiming.repeat.frequency = 1
 * activity.detail.scheduledTiming.repeat.period = 1
 * activity.detail.scheduledTiming.repeat.periodUnit = #d
-* activity.detail.location.display = "Informationsveranstaltung des Herzverbandes"
-* activity.detail.performer = Reference(Susi-Testpatientin)
+* activity.detail.location.display = "Informationsveranstaltung des Diabetesverbandes"
+* activity.detail.performer = Reference(Gabriele-IV-Arzt) "Dr. Gabriele IV-Ärztin"
 
 
 // Medication Summary
@@ -372,7 +371,7 @@ Usage: #inline
 * status = #active
 * medicationCodeableConcept = $asp#2443061 "EBETREXAT TBL 10MG"
 * medicationCodeableConcept.coding.display = "EBETREXAT TBL 10MG"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * effectivePeriod.start = "2024-02-08T10:31:58+02:00"
 // "S:0-0-0-2 / FR"
 * dosage.sequence = 1
@@ -393,9 +392,9 @@ Usage: #inline
 * clinicalStatus = $allergyintolerance-clinical#active "Active"
 * code = $sct#89055006 "Benzylpenicillin Natrium"
 * code.coding.display = "Benzylpenicillin Natrium"
-* patient = Reference(Susi-Testpatientin)
+* patient = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 //* text.div = "Das ist eine optionale Beschreibung der Allergie des Arztes." // ??
-* asserter = Reference(Gabriele-IV-Arzt) "Dr. IV-Ärztin"
+* asserter = Reference(Gabriele-IV-Arzt) "Dr. Gabriele IV-Ärztin"
 
 
 
@@ -407,7 +406,7 @@ Usage: #inline
 * status = #completed
 * code = $sct#770606008 "Total replacement of left hip joint"
 * code.coding.display = "Totalersatz des linken Hüftgelenks"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * performedDateTime = "2010"
 
 // Diagnostic Results
@@ -419,7 +418,7 @@ Usage: #inline
 * category = $observation-category#laboratory "Laboratory"
 * code = $loinc#882-1 "ABO and Rh group [Type] in Blood"
 * code.coding.display = "ABO- und Rh-Gruppe [Typ] im Blut"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * effectiveDateTime = "2024-02-08T07:34:06+01:00"
 * performer = Reference(performer-Amadeus-Spital)
 * valueCodeableConcept = $sct#278149003 "Blood group A Rh(D) positive (finding)"
@@ -451,7 +450,7 @@ Usage: #inline
 Instance: diagnosticResult-Labor-Blut
 InstanceOf: AtApsSpecimen
 Usage: #inline
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * status = $specimen-status#unavailable "Unavailable"
 * type = $sct#119297000 "Blood specimen"
 * type.coding.display = "Blut"
@@ -466,7 +465,7 @@ Usage: #inline
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#8302-2 "Körpergröße"
 * code.coding.display = "Körpergröße"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * performer = Reference(performer-Amadeus-Spital)
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueQuantity.value = 173
@@ -485,7 +484,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#161419000 "History of measles"
 * code.coding.display = "Zustand nach Masern"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 
 Instance: pastIllness-Windpocken
 InstanceOf: AtApsCondition
@@ -495,7 +494,7 @@ Usage: #inline
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
 * code = $sct#161423008 "History of chickenpox (situation)"
 * code.coding.display = "Zustand nach Windpocken"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 
 // Social History
 
@@ -504,7 +503,7 @@ InstanceOf: AtApsObservationTobaccoUse
 Usage: #inline
 * status = #final
 * code = $loinc#72166-2 "Tobacco smoking status"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * performer = Reference(performer-Amadeus-Spital)
 * effectiveDateTime = "2019-07-15"
 * valueCodeableConcept = $sct#8517006 "Ex-smoker"
@@ -516,7 +515,7 @@ Usage: #inline
 * status = #final
 * code = $sct#61686008 "Physical exercise"
 * code.coding.display = "Körperliche Bewegung"
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * performer = Reference(performer-Amadeus-Spital)
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueRatio.numerator.value = 2.5
@@ -533,7 +532,7 @@ Instance: deviceUse-Insulinpumpe  //todo
 InstanceOf: AtApsDeviceUseStatement
 Usage: #inline
 * status = #active
-* subject = Reference(Susi-Testpatientin)
+* subject = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * device = Reference(device-Insulinpumpe)
 * device.display = "Verwendetes Gerät: Insulinpumpe"
 * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
@@ -543,7 +542,7 @@ Instance: device-Insulinpumpe
 InstanceOf: AtApsDevice
 Usage: #inline
 * type = $sct#69805005 "Insulin pump"
-* patient = Reference(Susi-Testpatientin)
+* patient = Reference(Susanne-Testpatientin) "Susanne Testpatientin"
 * deviceName.name = "Insulinpumpe"
 * deviceName.type = #other
 * version.value = "Insulin pump"
