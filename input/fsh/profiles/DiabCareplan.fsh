@@ -1,10 +1,10 @@
-Profile: DiabCareplanEducation
-Id: diab-careplan-education
-Title: "Diabetes CarePlan Education"
-Parent: CarePlan  // AtIps nicht vorhanden? ?? CarePlanUvIps ??
-Description: "Dokumentation einer Diabetes-Schulung mit dem Behandlungsplan (Careplan)."
-* . ^short = "Diabetes Behandlungsplan Schulungen"
-* . ^definition = "Dokumentation einer Diabetes-Schulung mit dem Behandlungsplan (Careplan)."
+Profile: DiabCareplan
+Parent: CarePlan  // AtIps nicht vorhanden / CarePlanUvIps ??
+Id: diab-careplan
+Title: "Diabetes CarePlan"
+Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
+* . ^short = "Diabetes Behandlungsplan"
+* . ^definition = "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
 // Erweiterungen 
 //* ^extension[$imposeProfile].valueCanonical = Canonical(CarePlan) 
 * instantiatesUri 1..1 

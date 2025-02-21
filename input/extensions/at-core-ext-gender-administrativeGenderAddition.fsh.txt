@@ -2,7 +2,7 @@
 # Type:       FSH-File for an FHIR® Extension
 # About:      Extension for the administrative gender of a person (Patient, Practitioner, ...)
 #             to add the missing codes that are required in Austria.
-# Created by: HL7® Austria, TC FHIR® 
+# Created by: HL7 Austria, TC FHIR
 ##############################################################################*/
 
 Extension:    AdministrativeGenderAddition
