@@ -201,10 +201,14 @@ Instance: Susanne-Testpatientin
 InstanceOf: AtApsPatient
 Usage: #inline
 //* meta.profile = "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"
-* identifier.type = $v2-0203#SS "Social Security Number"
-* identifier.system = "urn:oid:1.2.40.0.10.1.4.3.1"
-* identifier.value = "0000121150"
-* identifier.assigner.display = "Dachverband der österreichischen Sozialversicherungsträger"
+* identifier[socialSecurityNumber].type = $v2-0203#SS "Social Security Number"
+* identifier[socialSecurityNumber].system = "urn:oid:1.2.40.0.10.1.4.3.1"
+* identifier[socialSecurityNumber].value = "0000121150"
+* identifier[socialSecurityNumber].assigner.display = "Dachverband der österreichischen Sozialversicherungsträger"
+* identifier[localPatientId].type = $v2-0203#PI "Patient internal identifier"
+* identifier[localPatientId].system = "urn:oid:1.2.3.4.5"
+* identifier[localPatientId].value = "0002"
+* identifier[localPatientId].assigner.display = "Ein GDA in Österreich"
 * name.family = "Testpatientin"
 * name.given[0] = "Susanne"
 * gender = #female
