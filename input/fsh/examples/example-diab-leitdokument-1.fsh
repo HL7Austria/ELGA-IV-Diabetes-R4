@@ -337,11 +337,11 @@ Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ernährungsschulung bei Diabetes mellitus Typ II</p>\n    </div>"
 * identifier.value = "12345"
-* instantiatesUri = "https://www.sozialministerium.at/Themen/Gesundheit/Gesundheitssystem/Gesundheitssystem-und-Qualitaetssicherung/Schulungen/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
+* instantiatesUri = "https://www.sozialministerium.at/2025/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
 * status = #active
 * intent = #plan
-* category.coding.code = #428274007 
-* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
+* category.coding.code = DiabCareplanEducationVS#428274007 
+//* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
 * title = "Ernährungsschulung bei Diabetes mellitus Typ II"
 * description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin" 
