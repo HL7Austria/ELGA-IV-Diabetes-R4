@@ -420,7 +420,8 @@ Instance: diagnosticResults-Labor-AB0-Blut
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
-* category = $observation-category#laboratory "Laboratory"
+* category[0] = $observation-category#laboratory "Laboratory"
+* category[+] = $elga-laborparameterergaenzung#300 "Hämatologie"
 * code = $loinc#882-1 "ABO and Rh group [Type] in Blood"
 * code.coding.display = "ABO- und Rh-Gruppe [Typ] im Blut"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
