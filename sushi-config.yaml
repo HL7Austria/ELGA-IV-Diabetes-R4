@@ -36,7 +36,7 @@ dependencies:
   #hl7.fhir.uv.ips: 2.0.0-ballot
   hl7.at.fhir.core.r4: 2.0.0
   hl7.at.fhir.elga.ips: current #dev
-  aps.terminology: dev
+  aps.terminology: 0.1.0
 
 #
 #

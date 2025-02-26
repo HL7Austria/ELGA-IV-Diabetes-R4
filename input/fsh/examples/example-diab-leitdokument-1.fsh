@@ -32,7 +32,7 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e"
 * entry[=].resource = problem-Diabetisches-Fusssyndrom
 * entry[+].fullUrl = "urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde"
-* entry[=].resource = problem-Bluthochdruck
+* entry[=].resource = problem-Bluthochdruck1
 // Problem List - Family history
 * entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99"
 * entry[=].resource = problem-Diabetes-Familie
@@ -277,7 +277,7 @@ Usage: #inline
 * code.coding.display = "Langfristige Einnahme von Antikoagulantien"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
-Instance: problem-Bluthochdruck
+Instance: problem-Bluthochdruck1
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
