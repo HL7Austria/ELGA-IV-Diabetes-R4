@@ -65,7 +65,7 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
 * entry[=].resource = vitalsign-Koerpergroesse
 // Past History of Illnes
-* entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4s"
+* entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
 * entry[=].resource = pastIllness-Masern
 * entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc9"
 * entry[=].resource = pastIllness-Windpocken
@@ -179,7 +179,7 @@ Usage: #inline
 * section[sectionPastIllnessHx].code = $loinc#11348-0 "History of Past illness Narrative"
 * section[sectionPastIllnessHx].text.status = #empty
 * section[sectionPastIllnessHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Vergangene Gesundheitsprobleme und Risiken / Diagnosen</p></div>"
-* section[sectionPastIllnessHx].entry[0] = Reference(urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4s) "Zustand nach Masern"
+* section[sectionPastIllnessHx].entry[0] = Reference(urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984) "Zustand nach Masern"
 * section[sectionPastIllnessHx].entry[0] = Reference(urn:uuid:82301518-66ca-4b4c-821d-087adf643cc9) "Zustand nach Windpocken"
 
 // Social History

@@ -321,7 +321,10 @@ Usage: #inline
 * valueQuantity.value = 90
 * valueQuantity.unit = "kg"
 * valueQuantity.system = "http://unitsofmeasure.org"
-* valueQuantity.code = #cm
+//* valueQuantity.code = #cm
+
+
+
 
 Instance: vitalsign-bodymassindex
 InstanceOf: AtApsObservationVitalSigns
@@ -336,10 +339,9 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueQuantity.value = 30.07
-// * valueQuantity.value = 30.07
-// * valueQuantity.unit = "kg"
-// * valueQuantity.system = "http://unitsofmeasure.org"
-// * valueQuantity.code = #cm
+* valueQuantity.unit = "kg/m2"
+* valueQuantity.system = "http://unitsofmeasure.org"
+//* valueQuantity.code = #cm
 * interpretation = $observation-interpretation#H "High"
 * interpretation.text = "High"
 
