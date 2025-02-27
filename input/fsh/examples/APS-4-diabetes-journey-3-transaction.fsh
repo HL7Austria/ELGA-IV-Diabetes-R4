@@ -108,7 +108,7 @@ Usage: #inline
 // * careTeam = Reference(CareTeam/example)
 // * goal = Reference(Goal/example)
 * addresses[0] = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c) "Diabetes Mellitus Typ 2"
-* addresses[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Adipositas"
+// * addresses[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Adipositas"
 * activity[0].outcomeCodeableConcept = $sct#698610002 "Aufklärung über das Selbstmanagement von Diabetes"
 * activity[0].detail.kind = #Task
 // * activity[0].outcomeReference = Reference(Observation/example) "Selfmanagement"
