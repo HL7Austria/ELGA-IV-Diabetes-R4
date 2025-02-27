@@ -1,5 +1,5 @@
 Instance: APS-4-diabetes-Journey-1
-InstanceOf: AtApsBundle
+InstanceOf: DiabBundle
 Description: "Diabetes Checklist / Leitdokument"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
@@ -72,7 +72,7 @@ Usage: #example
 
 
 Instance: example-diab-composition
-InstanceOf: AtApsComposition
+InstanceOf: DiabComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
@@ -321,10 +321,7 @@ Usage: #inline
 * valueQuantity.value = 90
 * valueQuantity.unit = "kg"
 * valueQuantity.system = "http://unitsofmeasure.org"
-//* valueQuantity.code = #cm
-
-
-
+* valueQuantity.code = #kg
 
 Instance: vitalsign-bodymassindex
 InstanceOf: AtApsObservationVitalSigns
@@ -341,7 +338,7 @@ Usage: #inline
 * valueQuantity.value = 30.07
 * valueQuantity.unit = "kg/m2"
 * valueQuantity.system = "http://unitsofmeasure.org"
-//* valueQuantity.code = #cm
+* valueQuantity.code = #kg/m2
 * interpretation = $observation-interpretation#H "High"
 * interpretation.text = "High"
 
@@ -391,7 +388,10 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueQuantity.comparator = #<
-* valueQuantity = 109 'cm' "cm"
+* valueQuantity.value = 109 
+* valueQuantity.unit = "cm"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #cm
 
 
 // Social History
@@ -403,22 +403,21 @@ Usage: #inline
 * code = $loinc#72166-2 "Tobacco smoking status"
 * code.coding.display = "Raucherstatus"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
+* performer = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * effectiveDateTime = "2019-07-15"
-* valueCodeableConcept = $loinc#LA18978-9 "Nichtraucher seit 5 Jahren (40 Pack Years)"
-* valueCodeableConcept.coding.display = "Nichtraucher seit 5 Jahren (40 Pack Years)"
+* valueCodeableConcept = $sct#8517006 "Ex-smoker"
+* valueCodeableConcept.coding.display = "Ehemalig rauchende Person"
 
 Instance: social-hist-alcohol
-InstanceOf: AtApsObservationTobaccoUse
+InstanceOf: AtApsObservationAlcoholUse
 Usage: #inline
 * status = #final
-* code = $loinc#11331-6 "Alkoholkonsum in der Vergangenheit"
-* code.coding.display = "Alkoholkonsum in der Vergangenheit"
+* code = $loinc#74013-4 "Alcoholic drinks per day"
+* code.coding.display = "Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
+* performer = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * effectiveDateTime = "2019-07-15"
-* valueCodeableConcept = $loinc#74013-4 "Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier"
-* valueCodeableConcept.coding.display = "Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier"
+* valueQuantity = 2 '/d' "wine glasses per day"
 
 
 Instance: social-hist-bewegung
