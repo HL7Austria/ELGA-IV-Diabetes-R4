@@ -1,6 +1,6 @@
 Instance: APS-4-diabetes-journey-1-transaction
 InstanceOf: DiabBundle
-Description: "Diabetes Checklist / Leitdokument"
+Description: "Ausgangszustand"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f20"
@@ -29,10 +29,6 @@ Usage: #example
 * entry[=].request.url = "Organization"
 
 // Problem List
-* entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-problem-diabetes-verdacht
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e"
 * entry[=].resource = APS-4-diabetes-journey-1-transaction-problem-bluthochdruck
 * entry[=].request.method = #POST
@@ -63,12 +59,6 @@ Usage: #example
 * entry[=].resource = APS-4-diabetes-journey-1-transaction-allgery-no-known
 * entry[=].request.method = #POST
 * entry[=].request.url = "AllergyIntolerance"
-
-// Results
-* entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-observtion-glucose-in-blut
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
 
 // Vital Signs
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
@@ -130,7 +120,6 @@ Usage: #inline
 * section[sectionProblems].code = $loinc#11450-4 "Problem list - Reported"
 * section[sectionProblems].text.status = #empty
 * section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list - Reported</p></div>"
-* section[sectionProblems].entry[0] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f) "Diabetesverdacht"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) "Arterielle Hypertonie"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Adipositas"
 // Problem List - Family history
@@ -163,7 +152,7 @@ Usage: #inline
 * section[sectionResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
 * section[sectionResults].text.status = #empty
 * section[sectionResults].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Relevant diagnostic tests/laboratory data Narrative</p></div>"
-* section[sectionResults].entry[0] = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c) "Glucose in Blut"
+
 // Vital Signs
 * section[sectionVitalSigns].title = "Vitalparameter" //"Vital Signs"
 * section[sectionVitalSigns].code = $loinc#8716-3 "Vital signs"
@@ -251,17 +240,6 @@ Usage: #inline
 // Problem List
 
 // Diagnosen
-Instance: APS-4-diabetes-journey-1-transaction-problem-diabetes-verdacht
-InstanceOf: AtApsCondition
-Usage: #inline
-* clinicalStatus = $condition-clinical#active "Active"
-* verificationStatus = $condition-ver-status#provisional "Provisional"
-* category = $condition-category#problem-list-item "Problem List Item"
-* code = $sct#44054006 "Diabetes Mellitus Typ 2"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* recordedDate = "2023-03-15T08:00:00+00:00"
-* asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
-
 Instance: APS-4-diabetes-journey-1-transaction-problem-bluthochdruck
 InstanceOf: AtApsCondition
 Usage: #inline
@@ -336,18 +314,6 @@ Usage: #inline
 * code = $sct#716186003 "No known allergy (situation)"
 * code.coding.display = "Keine bekannte Allergie"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-
-// Results
-
-Instance: APS-4-diabetes-journey-1-transaction-observtion-glucose-in-blut
-InstanceOf: AtApsObservationResultsLaboratoryPathology
-Usage: #inline
-* status = #final
-* code = $loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2023-03-15T08:30:00+01:00"
-* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
-* valueQuantity = 250 'mg/dL' "mg/dL"
 
 // Vital Signs
 
