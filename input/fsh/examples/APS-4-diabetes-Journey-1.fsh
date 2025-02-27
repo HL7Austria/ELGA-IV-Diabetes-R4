@@ -1,5 +1,5 @@
 Instance: APS-4-diabetes-Journey-1
-InstanceOf: DiabBundle
+InstanceOf: AtApsBundle
 Description: "Diabetes Checklist / Leitdokument"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
@@ -29,8 +29,15 @@ Usage: #example
 // Problem List - Family history
 * entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91"
 * entry[=].resource = problem-familie-diabetes
-* entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91"
+* entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99"
 * entry[=].resource = problem-familie-koronare
+
+* entry[+].fullUrl = "urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094"
+* entry[=].resource = APS-1-no-problems-procedure-1
+* entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05"
+* entry[=].resource = APS-1-no-problems-device-use-1
+* entry[+].fullUrl = "urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8"
+* entry[=].resource = APS-1-no-problems-device-1
 
 // Medication Summary
 * entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
@@ -65,7 +72,7 @@ Usage: #example
 
 
 Instance: example-diab-composition
-InstanceOf: DiabComposition
+InstanceOf: AtApsComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
@@ -88,7 +95,7 @@ Usage: #inline
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Adipositas"
 // Problem List - Family history
 * section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91) "Diabetes mellitus in der Familie"
-* section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91) "Koronare Herzerkrankung"
+* section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99) "Koronare Herzerkrankung"
 // Medication Summary
 * section[sectionMedications].title = "Medikatiosliste" // "Medication Summary"
 * section[sectionMedications].code = $loinc#10160-0 "History of Medication use Narrative"
@@ -102,15 +109,17 @@ Usage: #inline
 * section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergies and adverse reactions Document</p></div>"
 * section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Keine bekannte Allergie"
 // History of Procedures
-// * section[sectionProceduresHx].title = "Eingriffe und Therapien" // "History of Procedures"
-// * section[sectionProceduresHx].code = $loinc#47519-4 "History of Procedures Document"
-// * section[sectionProceduresHx].text.status = #empty
-// * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>History of Procedures Document</p></div>"
+* section[sectionProceduresHx].title = "Eingriffe und Therapien" // "History of Procedures"
+* section[sectionProceduresHx].code = $loinc#47519-4 "History of Procedures Document"
+* section[sectionProceduresHx].text.status = #empty
+* section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>History of Procedures Document</p></div>"
+* section[sectionProceduresHx].entry = Reference(urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094)
 // Medical Devices
-// * section[sectionMedicalDevices].title = "Implantate, medizinische Geräte, Heilbehelfe" // "Medical Devices"
-// * section[sectionMedicalDevices].code = $loinc#46264-8 "History of medical device use"
-// * section[sectionMedicalDevices].text.status = #empty
-// * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+* section[sectionMedicalDevices].title = "Implantate, medizinische Geräte, Heilbehelfe" // "Medical Devices"
+* section[sectionMedicalDevices].code = $loinc#46264-8 "History of medical device use"
+* section[sectionMedicalDevices].text.status = #empty
+* section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
+* section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
 // Diagnostic Results
 // * section[sectionResults].title = "Diagnostische Resultate" // "Diagnostic Results"
 // * section[sectionResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
@@ -429,3 +438,29 @@ Usage: #inline
 * valueRatio.denominator.system = "http://unitsofmeasure.org"
 * valueRatio.denominator.code = #wk
 
+Instance: APS-1-no-problems-procedure-1
+InstanceOf: AtApsProcedure
+Usage: #inline
+* status = #unknown
+* code = $sct#787480003 "No known procedures (situation)"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* performedDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+* performedDateTime.extension.valueCode = #unknown
+
+Instance: APS-1-no-problems-device-use-1
+InstanceOf: AtApsDeviceUseStatement
+Usage: #inline
+* status = #active
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* device = Reference(urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8)
+* timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+* timingDateTime.extension.valueCode = #unknown
+
+Instance: APS-1-no-problems-device-1
+InstanceOf: AtApsDevice
+Usage: #inline
+* type = $sct#787483001 "No known device use (situation)"
+* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* deviceName.name = "empty"
+* deviceName.type = #other
+* version.value = "empty"
