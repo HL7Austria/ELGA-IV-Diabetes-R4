@@ -7,6 +7,11 @@ Usage: #example
 * type = #transaction
 * timestamp = "2025-01-08T14:01:30+00:00"
 
+// Performer Laboratory
+* entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
+* entry[=].resource = APS-4-diabetes-journey-3-transaction-performer-laboratory
+* entry[=].request.method = #POST
+* entry[=].request.url = "Practitioner"
 // Problem List
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f"
 * entry[=].resource = APS-4-diabetes-journey-3-medication
@@ -31,6 +36,16 @@ Usage: #example
 * entry[=].resource = APS-4-diabetes-journey-3-careplan
 * entry[=].request.method = #POST
 * entry[=].request.url = "CarePlan"
+
+Instance: APS-4-diabetes-journey-3-transaction-performer-laboratory
+InstanceOf: AtApsPractitioner
+Usage: #inline
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.5"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
+* name.prefix[0] = "Dr."
+* name.family = "Labor"
+* name.given[0] = "Arzt"
 
 // Medikation
 Instance: APS-4-diabetes-journey-3-medication
