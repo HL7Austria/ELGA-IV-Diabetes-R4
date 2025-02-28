@@ -33,10 +33,10 @@ publisher:
 #     version: 1.0.0
 dependencies:
   # hl7.fhir.uv.ips: current
-  #hl7.fhir.uv.ips: 2.0.0-ballot
+  # hl7.fhir.uv.ips: 2.0.0-ballot
   hl7.at.fhir.core.r4: 2.0.0
   hl7.at.fhir.elga.ips: current #dev
-  aps.terminology: 0.1.0
+  # aps.terminology: 0.1.0
 
 #
 #
@@ -65,16 +65,14 @@ pages:
     title: ELGA Implementierungsleitfaden IV Diabetes
   anwendungsfaelle.md:
     title: Anwendungsfälle
-  info.md:
-    title: Informationen über dieses Dokument
-  # profiles.md:
-  #  title: Profile
   terminologies.md:
     title: Terminologien
-  #mappings.md:
-  #  title: Mappings
-  #extensions.md:
-  #  title: Extensions
+  mappings.md:
+    title: Mappings Diabetes zu IPS
+  info.md:
+    title: Informationen über dieses Dokument
+  # extensions.md:
+  #   title: Extensions
 
 #
 #
@@ -104,22 +102,22 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  TOC: toc.html
-  Anwendungsfälle: anwendungsfaelle.html
+  Inhalt: toc.html
+  Use Cases: anwendungsfaelle.html
   Terminologies: terminologies.html
   Artifacts: artifacts.html
-  ELGA IGs: info.html
-  #Logical Model (Diabetes):
-  #  Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
-  # Logical Model (IPS):
-  #   Subject (IPS): StructureDefinition-Subject-ips.html
-  #   Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
-  #   Allergies and Intolerances (IPS): StructureDefinition-AllergiesIntolerances-ips.html
-  #   Problem List (IPS): StructureDefinition-ProblemList-ips.html
-  #   Diagnostic Results (IPS): StructureDefinition-DiagnosticResults-ips.html
-  #   Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
-  #   Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
-  # Mapping Diabetes to IPS: mappings.html
+  ELGA IG: info.html
+  Logical Model (Diabetes):
+    Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
+  Logical Model (IPS):
+    Subject (IPS): StructureDefinition-Subject-ips.html
+    Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
+    Allergies and Intolerances (IPS): StructureDefinition-AllergiesIntolerances-ips.html
+    Problem List (IPS): StructureDefinition-ProblemList-ips.html
+    Diagnostic Results (IPS): StructureDefinition-DiagnosticResults-ips.html
+    Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
+    Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
+  Mapping Diabetes to IPS: mappings.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
@@ -201,23 +199,23 @@ menu:
 #     resources:
 #     - StructureDefinition/bark-control
 #     - StructureDefinition/bee-sting
-# groups:
-#   IPS:
-#     name: IPS compliant Logical Model
-#     description: IPS compliant logical model for Diabetes.
-#     resources:
-#       - StructureDefinition/Subject-ips
-#       - StructureDefinition/MedicationSummary-ips
-#       - StructureDefinition/AllergiesIntolerances-ips
-#       - StructureDefinition/ProblemList-ips
-#       - StructureDefinition/DiagnosticResults-ips
-#       - StructureDefinition/VitalSigns-ips
-#       - StructureDefinition/PlanOfCare-ips
-#   Diabetes:
-#     name:  Diabetes Datenmodell
-#     description: Datenmodell basierend auf Rahmenkonzept.
-#     resources:
-#       - StructureDefinition/Datenarten-diab
+groups:
+  IPS:
+    name: IPS compliant Logical Model
+    description: IPS compliant logical model for Diabetes.
+    resources:
+      - StructureDefinition/Subject-ips
+      - StructureDefinition/MedicationSummary-ips
+      - StructureDefinition/AllergiesIntolerances-ips
+      - StructureDefinition/ProblemList-ips
+      - StructureDefinition/DiagnosticResults-ips
+      - StructureDefinition/VitalSigns-ips
+      - StructureDefinition/PlanOfCare-ips
+  Diabetes:
+    name:  Diabetes Datenmodell
+    description: Datenmodell basierend auf Rahmenkonzept.
+    resources:
+      - StructureDefinition/Datenarten-diab
 
 #
 #

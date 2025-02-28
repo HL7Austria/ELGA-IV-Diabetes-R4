@@ -15,8 +15,8 @@ Description: "Diabetes Composition, abgeleitet vom der APS."
 // * section[sectionPlanOfCare].entry ^slicing.discriminator[=].path = "resolve()"
 // * section[sectionPlanOfCare].entry ^slicing.rules = #open
 //* section[sectionPlanOfCare].entry only Reference(CarePlan or DocumentReference )
-* section[sectionPlanOfCare].entry contains
+//* section[sectionPlanOfCare].entry contains
 //    carePlan 0..*    
-    diabCareplan 0..*
+//    diabCareplan 0..*
 //* section[sectionPlanOfCare].entry[carePlan] only Reference(CarePlan)
-* section[sectionPlanOfCare].entry[diabCareplan] only Reference(DiabCareplan)
+* section[sectionPlanOfCare].entry[carePlan] only Reference(DiabCareplan)

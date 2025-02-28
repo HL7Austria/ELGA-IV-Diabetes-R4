@@ -2,9 +2,11 @@ ValueSet: DiabCareplanEducationVS
 Id: diab-careplan-education-vs
 Title: "Diabetes Behandlungsplan Schulungen VS"
 Description: "Diabetes Behandlungsplan Schulungen VS"
-* ^url = "https://fhir.hl7.at/elga-iv-diabetes-r4/ValueSet/diab-careplan-education-vs"
-* ^version = "0.1.0"
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+//* ^url = "https://fhir.hl7.at/elga-iv-diabetes-r4/ValueSet/diab-careplan-education-vs"
+//* ^version = "0.1.0"
 * ^status = #draft
+* ^experimental = false
 * ^date = "2025-02-17T00:00:00+01:00"
 * ^publisher = "ELGA GmbH"
 * ^contact.name = "ELGA GmbH"

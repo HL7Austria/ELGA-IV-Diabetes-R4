@@ -1,16 +1,17 @@
 Profile: DiabCareplan
-Parent: CarePlan  // AtIps nicht vorhanden / CarePlanUvIps ??
+Parent: CarePlan  // AtIps nicht vorhanden / CarePlanUvIps ?
 Id: diab-careplan
 Title: "Diabetes CarePlan"
 Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
 * . ^short = "Diabetes Behandlungsplan"
-* . ^definition = "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
+* . ^definition = "Dokumentation eines Diabetes-Behandlungsplans (Careplan)."
+* ^extension[$imposeProfile].valueCanonical = Canonical(CarePlan)
 // Erweiterungen 
 //* ^extension[$imposeProfile].valueCanonical = Canonical(CarePlan) 
 * instantiatesUri 1..1 
 * instantiatesUri ^short = "Instanziiert externe Definition der Schulung"
 //* instantiatesUri = "https://www.sozialministerium.at/Themen/Gesundheit/Gesundheitssystem/Gesundheitssystem-und-Qualitaetssicherung/Qualitaetsstandards/Rahmenkonzept-Integrierte-Versorgung-Diabetes-mellitus-Typ-2.html" (exactly)
-* status from http://hl7.org/fhir/request-status
+* status from http://hl7.org/fhir/ValueSet/request-status 
 * status 1..1 
 * status ^short = "Status aus VS (Todo)	draft | active | on-hold | revoked | completed | entered-in-error | unknown"
 * intent from http://hl7.org/fhir/ValueSet/care-plan-intent 

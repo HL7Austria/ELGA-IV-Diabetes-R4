@@ -14,8 +14,8 @@ Description: "Diabetes Bundle, abgeleitet von der APS."
 * entry ^slicing.rules = #open
 * entry ^slicing.ordered = false
 
-* entry contains
-    DiabCareplan 0..*
+//* entry contains
+//    DiabCareplan 0..*
 
-* entry[DiabCareplan].resource 1..
-* entry[DiabCareplan].resource only DiabCareplan
+* entry[CarePlan].resource 1..
+* entry[CarePlan].resource only DiabCareplan

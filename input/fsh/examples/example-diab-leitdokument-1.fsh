@@ -41,7 +41,7 @@ Usage: #example
 // Problem List - periodontal disease risk
 * entry[+].fullUrl = "urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33"
 * entry[=].resource = problem-Parodontalerkrankung
-* entry[+].fullUrl = "urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"
+* entry[+].fullUrl = "urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"  
 * entry[=].resource = condition-Parodontalerkrankung-Bewertung
 // Schulungen
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
@@ -124,7 +124,7 @@ Usage: #inline
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) "Diabetes mellitus aufgrund einer Verletzung der Bauchspeicheldrüse"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Diabetisches Fußsyndrom"
 * section[sectionProblems].entry[0] = Reference(urn:uuid:72e85b9d-004d-4104-b166-86d129948bae) "Chronische Nierenerkrankung"
-* section[sectionProblems].entry[+] = Reference(problem-Einnahme-Antikoagulantien)
+* section[sectionProblems].entry[+] = Reference(urn:uuid:82fa32f6-39d6-4fc9-9624-90a48fd3d3a5)
 * section[sectionProblems].entry[+] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) "Arterielle Hypertonie"
 // Problem List - Family history
 * section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99) "Diabetes mellitus in der Familie"
@@ -319,7 +319,7 @@ Usage: #inline
 * code = $sct#2556008 "Periodontal disease (disorder)"
 * code.coding.display = "Parodontalerkrankung"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* stage.assessment = Reference(condition-Parodontalerkrankung-Bewertung) "Bewertung der Risikofaktoren für Parodontalerkrankungen"
+* stage.assessment = Reference(urn:uuid:f235c566-01aa-457d-ab49-9e422df69863) "Bewertung der Risikofaktoren für Parodontalerkrankungen"
 
 Instance: condition-Parodontalerkrankung-Bewertung
 InstanceOf: Observation
@@ -344,7 +344,7 @@ Usage: #inline
 * instantiatesUri = "https://www.sozialministerium.at/2025/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
 * status = #active
 * intent = #plan
-* category.coding.code = DiabCareplanEducationVS#428274007 
+* category.coding.code = $sct#428274007 
 //* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
 * title = "Ernährungsschulung bei Diabetes mellitus Typ II"
 * description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
@@ -539,7 +539,7 @@ InstanceOf: AtApsDeviceUseStatement
 Usage: #inline
 * status = #active
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* device = Reference(device-Insulinpumpe)
+* device = Reference(urn:uuid:a1a80313-a757-4062-b0d7-d04fd2a04602) "Insulinpumpe"
 * device.display = "Verwendetes Gerät: Insulinpumpe"
 * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 * timingDateTime.extension.valueCode = #unknown
