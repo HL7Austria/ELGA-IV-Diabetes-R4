@@ -3,6 +3,10 @@ Id:	nebendiagnose
 Title: "Nebendiagnose"
 Description: "Klassifikation der Herzinsuffizienz auf Basis der LVEF"
 
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^status = #draft
+* ^experimental = false
+
 // SNOMED CT hat als Abkürzung von HFmrEF nur HFmEF"
 
 * $sct#703272007 "HFrEF - heart failure with reduced ejection fraction"
