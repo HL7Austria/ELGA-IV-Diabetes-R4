@@ -74,21 +74,33 @@ Instance: APS-4-diabetes-journey-3-result-hba1c
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
+* category[0] = $elga-laborparameterergaenzung#05180 "Klinische Chemie"
+* category[+] = $observation-category#laboratory "Laboratory"
 * code = $loinc#"4548-4" "Hemoglobin A1c/Hemoglobin.total in Blood"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * effectiveDateTime = "2023-03-15T08:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6)
-* valueQuantity = 8.1 '%' "%"
+* valueQuantity.value = 8.1
+* valueQuantity.unit = "%"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #%
+
 
 Instance: APS-4-diabetes-journey-3-result-kreatinin
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
+* category[0] = $elga-laborparameterergaenzung#05180 "Klinische Chemie"
+* category[+] = $observation-category#laboratory "Laboratory"
 * code = $loinc#2160-0 "Kreatinin in Serum"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * effectiveDateTime = "2023-03-15T08:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6)
-* valueQuantity = 1.2 'mg/dL' "mg/dL"
+* valueQuantity.value = 1.2
+* valueQuantity.unit = "mg/dL"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mg/dL
+
 
 // Care Plan
 Instance: APS-4-diabetes-journey-3-careplan

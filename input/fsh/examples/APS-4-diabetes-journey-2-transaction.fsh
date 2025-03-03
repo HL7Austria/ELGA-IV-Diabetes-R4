@@ -35,9 +35,14 @@ Instance: APS-4-diabetes-journey-2-transaction-observtion-glucose-in-blut
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
+* category[0] = $elga-laborparameterergaenzung#05180 "Klinische Chemie"
+* category[+] = $observation-category#laboratory "Laboratory"
 * code = $loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * effectiveDateTime = "2023-03-15T08:30:00+01:00"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
-* valueQuantity = 250 'mg/dL' "mg/dL"
+* valueQuantity.value = 250 
+* valueQuantity.unit = "mg/dL"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mg/dL
 
