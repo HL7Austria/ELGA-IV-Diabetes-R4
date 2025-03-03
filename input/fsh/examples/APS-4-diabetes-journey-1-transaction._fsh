@@ -48,20 +48,20 @@ Usage: #example
 * entry[=].request.method = #POST
 * entry[=].request.url = "Condition"
 
-* entry[+].fullUrl = "urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-procedure-1
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+// * entry[+].fullUrl = "urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094"
+// * entry[=].resource = APS-4-diabetes-journey-1-transaction-procedure-1
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Condition"
 
-* entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-device-use-1
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+// * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05"
+// * entry[=].resource = APS-4-diabetes-journey-1-transaction-device-use-1
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Condition"
 
-* entry[+].fullUrl = "urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-device-1
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+// * entry[+].fullUrl = "urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8"
+// * entry[=].resource = APS-4-diabetes-journey-1-transaction-device-1
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Condition"
 
 // Medication Summary
 * entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
@@ -151,19 +151,23 @@ Usage: #inline
 * section[sectionAllergies].code = $loinc#48765-2 "Allergies and adverse reactions Document"
 * section[sectionAllergies].text.status = #empty
 * section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergies and adverse reactions Document</p></div>"
-* section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Keine bekannte Allergie"
+// * section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Keine bekannte Allergie"
+* section[sectionAllergies].emptyReason = $cs-list-empty-reason#nilknown
 // History of Procedures
 * section[sectionProceduresHx].title = "Eingriffe und Therapien" // "History of Procedures"
 * section[sectionProceduresHx].code = $loinc#47519-4 "History of Procedures Document"
 * section[sectionProceduresHx].text.status = #empty
 * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>History of Procedures Document</p></div>"
-* section[sectionProceduresHx].entry = Reference(urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094)
+// * section[sectionProceduresHx].entry = Reference(urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094)
+* section[sectionProceduresHx].emptyReason = $cs-list-empty-reason#nilknown
 // Medical Devices
 * section[sectionMedicalDevices].title = "Implantate, medizinische Geräte, Heilbehelfe" // "Medical Devices"
 * section[sectionMedicalDevices].code = $loinc#46264-8 "History of medical device use"
 * section[sectionMedicalDevices].text.status = #empty
 * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
-* section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
+// * section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
+* section[sectionMedicalDevices].emptyReason = $cs-list-empty-reason#nilknown
+
 // Diagnostic Results
 // * section[sectionResults].title = "Diagnostische Resultate" // "Diagnostic Results"
 // * section[sectionResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
@@ -433,7 +437,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueQuantity.comparator = #<
-* valueQuantity.value = 109 
+* valueQuantity.value = 109
 * valueQuantity.unit = "cm"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #cm
@@ -484,29 +488,29 @@ Usage: #inline
 * valueRatio.denominator.system = "http://unitsofmeasure.org"
 * valueRatio.denominator.code = #wk
 
-Instance: APS-4-diabetes-journey-1-transaction-procedure-1
-InstanceOf: AtApsProcedure
-Usage: #inline
-* status = #unknown
-* code = $sct#787480003 "No known procedures (situation)"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* performedDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* performedDateTime.extension.valueCode = #unknown
+// Instance: APS-4-diabetes-journey-1-transaction-procedure-1
+// InstanceOf: AtApsProcedure
+// Usage: #inline
+// * status = #unknown
+// * code = $sct#787480003 "No known procedures (situation)"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+// * performedDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+// * performedDateTime.extension.valueCode = #unknown
 
-Instance: APS-4-diabetes-journey-1-transaction-device-use-1
-InstanceOf: AtApsDeviceUseStatement
-Usage: #inline
-* status = #active
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* device = Reference(urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8)
-* timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* timingDateTime.extension.valueCode = #unknown
+// Instance: APS-4-diabetes-journey-1-transaction-device-use-1
+// InstanceOf: AtApsDeviceUseStatement
+// Usage: #inline
+// * status = #active
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+// * device = Reference(urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8)
+// * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+// * timingDateTime.extension.valueCode = #unknown
 
-Instance: APS-4-diabetes-journey-1-transaction-device-1
-InstanceOf: AtApsDevice
-Usage: #inline
-* type = $sct#787483001 "No known device use (situation)"
-* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* deviceName.name = "empty"
-* deviceName.type = #other
-* version.value = "empty"
+// Instance: APS-4-diabetes-journey-1-transaction-device-1
+// InstanceOf: AtApsDevice
+// Usage: #inline
+// * type = $sct#787483001 "No known device use (situation)"
+// * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+// * deviceName.name = "empty"
+// * deviceName.type = #other
+// * version.value = "empty"
