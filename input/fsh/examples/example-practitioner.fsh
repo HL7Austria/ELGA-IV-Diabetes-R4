@@ -1,4 +1,4 @@
-Instance: practitioner-iv-example
+Instance: example-practitioner
 InstanceOf: AtApsPractitioner
 Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"

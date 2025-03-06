@@ -1,0 +1,227 @@
+{
+        "fullUrl": "urn:uuid:1d4c1930-b6ef-4329-8e78-9075b078b7b8",
+        "resource": {
+          "resourceType": "CarePlan",
+          "id": "1d4c1930-b6ef-4329-8e78-9075b078b7b8",
+          "status": "active",
+          "intent": "order",
+          "category": [
+            {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "698360004",
+                  "display": "Diabetes self management plan"
+                }
+              ],
+              "text": "Diabetes self management plan"
+            }
+          ],
+          "subject": {
+            "reference": "urn:uuid:5bc4a149-efc9-4c4a-9cf3-0c16db57e343"
+          },
+          "context": {
+            "reference": "urn:uuid:6d38b406-76c1-4336-977f-9881697a9c91"
+          },
+          "period": {
+            "start": "1999-10-10T19:24:13+02:00"
+          },
+          "addresses": [
+            {
+              "reference": "urn:uuid:b0874f09-ae78-47fa-a9a8-7cbe8d46ea4e"
+            }
+          ],
+          "goal": [
+            {
+              "reference": "urn:uuid:3bf7d472-4cdf-4ee3-9e9a-e162398b2d70"
+            },
+            {
+              "reference": "urn:uuid:3973373d-f41b-4d06-8071-2621c49918c3"
+            },
+            {
+              "reference": "urn:uuid:84793384-28d8-4a7c-85e1-463b3802cc12"
+            },
+            {
+              "reference": "urn:uuid:38141c9f-d717-4c1c-a44d-b33bb9eead2a"
+            },
+            {
+              "reference": "urn:uuid:01b5b4a0-2577-47a0-9747-c0f774260ccd"
+            }
+          ],
+          "activity": [
+            {
+              "detail": {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "160670007",
+                      "display": "Diabetic diet"
+                    }
+                  ],
+                  "text": "Diabetic diet"
+                },
+                "status": "in-progress"
+              }
+            },
+            {
+              "detail": {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "229065009",
+                      "display": "Exercise therapy"
+                    }
+                  ],
+                  "text": "Exercise therapy"
+                },
+                "status": "in-progress"
+              }
+            }
+          ]
+        },
+        "request": {
+          "method": "POST",
+          "url": "CarePlan"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:cd3aa146-7325-47d5-83fe-2f2a76f087a1",
+        "resource": {
+          "resourceType": "Goal",
+          "id": "cd3aa146-7325-47d5-83fe-2f2a76f087a1",
+          "status": "in-progress",
+          "description": {
+            "text": "Maintain blood pressure below 140/90 mm[Hg]"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "Goal"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:9925b78c-5b49-4ee5-b416-9559f16adff7",
+        "resource": {
+          "resourceType": "Goal",
+          "id": "9925b78c-5b49-4ee5-b416-9559f16adff7",
+          "status": "in-progress",
+          "description": {
+            "text": "Reduce sodium intake to no more than 2,400 mg/day"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "Goal"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:7594e448-8af9-4ff2-a4b0-5cd4e64d832b",
+        "resource": {
+          "resourceType": "CarePlan",
+          "id": "7594e448-8af9-4ff2-a4b0-5cd4e64d832b",
+          "status": "active",
+          "intent": "order",
+          "category": [
+            {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "443402002",
+                  "display": "Lifestyle education regarding hypertension"
+                }
+              ],
+              "text": "Lifestyle education regarding hypertension"
+            }
+          ],
+          "subject": {
+            "reference": "urn:uuid:5bc4a149-efc9-4c4a-9cf3-0c16db57e343"
+          },
+          "context": {
+            "reference": "urn:uuid:6d38b406-76c1-4336-977f-9881697a9c91"
+          },
+          "period": {
+            "start": "1999-10-10T19:24:13+02:00"
+          },
+          "addresses": [
+            {
+              "reference": "urn:uuid:7fb5a70e-7a1d-4524-b17e-7d7e034b5b12"
+            }
+          ],
+          "goal": [
+            {
+              "reference": "urn:uuid:cd3aa146-7325-47d5-83fe-2f2a76f087a1"
+            },
+            {
+              "reference": "urn:uuid:9925b78c-5b49-4ee5-b416-9559f16adff7"
+            }
+          ],
+          "activity": [
+            {
+              "detail": {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "386463000",
+                      "display": "Prescribed activity/exercise education"
+                    }
+                  ],
+                  "text": "Prescribed activity/exercise education"
+                },
+                "status": "in-progress"
+              }
+            },
+            {
+              "detail": {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "413473000",
+                      "display": "Counseling about alcohol consumption"
+                    }
+                  ],
+                  "text": "Counseling about alcohol consumption"
+                },
+                "status": "in-progress"
+              }
+            },
+            {
+              "detail": {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "1151000175103",
+                      "display": "Dietary approaches to stop hypertension diet"
+                    }
+                  ],
+                  "text": "Dietary approaches to stop hypertension diet"
+                },
+                "status": "in-progress"
+              }
+            },
+            {
+              "detail": {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "225323000",
+                      "display": "Smoking cessation education"
+                    }
+                  ],
+                  "text": "Smoking cessation education"
+                },
+                "status": "in-progress"
+              }
+            }
+          ]
+        },
+        "request": {
+          "method": "POST",
+          "url": "CarePlan"
+        }
+      },

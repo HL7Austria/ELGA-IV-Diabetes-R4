@@ -1,4 +1,4 @@
-Instance: patient-iv-example
+Instance: example-patient
 InstanceOf: AtApsPatient
 Usage: #example
 * id = "001"

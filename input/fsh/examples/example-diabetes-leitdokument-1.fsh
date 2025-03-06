@@ -1,4 +1,4 @@
-Instance: example-diab-leitdokument-1
+Instance: example-diabetes-leitdokument-1
 InstanceOf: DiabBundle
 Description: "Diabetes Leitdokument 1.0"
 Usage: #example
