@@ -1,4 +1,4 @@
-Instance: APS-4-diabetes-journey-3-transaction
+Instance: ex-diab-journey-3-transaction
 InstanceOf: Bundle
 Description: "Befundbesprechung"
 Usage: #example
@@ -9,35 +9,35 @@ Usage: #example
 
 // Performer Laboratory
 * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = APS-4-diabetes-journey-3-transaction-performer-laboratory
+* entry[=].resource = ex-diab-journey-3-transaction-performer-laboratory
 * entry[=].request.method = #POST
 * entry[=].request.url = "Practitioner"
 // Problem List
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f"
-* entry[=].resource = APS-4-diabetes-journey-3-medication
+* entry[=].resource = ex-diab-journey-3-medication
 * entry[=].request.method = #POST
 * entry[=].request.url = "MedicationStatement"
 // Diagnosen
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c"
-* entry[=].resource = APS-4-diabetes-journey-3-transaction-problem-diabetes
+* entry[=].resource = ex-diab-journey-3-transaction-problem-diabetes
 * entry[=].request.method = #PUT
 * entry[=].request.url = "Condition"
 // Results
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89d"
-* entry[=].resource = APS-4-diabetes-journey-3-result-hba1c
+* entry[=].resource = ex-diab-journey-3-result-hba1c
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b894"
-* entry[=].resource = APS-4-diabetes-journey-3-result-kreatinin
+* entry[=].resource = ex-diab-journey-3-result-kreatinin
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
 // Care Plan
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b895"
-* entry[=].resource = APS-4-diabetes-journey-3-careplan
+* entry[=].resource = ex-diab-journey-3-careplan
 * entry[=].request.method = #POST
 * entry[=].request.url = "CarePlan"
 
-Instance: APS-4-diabetes-journey-3-transaction-performer-laboratory
+Instance: ex-diab-journey-3-transaction-performer-laboratory
 InstanceOf: AtApsPractitioner
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
@@ -48,7 +48,7 @@ Usage: #inline
 * name.given[0] = "Arzt"
 
 // Medikation
-Instance: APS-4-diabetes-journey-3-medication
+Instance: ex-diab-journey-3-medication
 InstanceOf: AtApsMedicationStatement
 Usage: #inline
 * status = #active
@@ -58,7 +58,7 @@ Usage: #inline
 * dosage.text = "S:1-0-1-0"
 
 // Diagnosen
-Instance: APS-4-diabetes-journey-3-transaction-problem-diabetes
+Instance: ex-diab-journey-3-transaction-problem-diabetes
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
@@ -70,7 +70,7 @@ Usage: #inline
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
 
 // Results
-Instance: APS-4-diabetes-journey-3-result-hba1c
+Instance: ex-diab-journey-3-result-hba1c
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
@@ -86,7 +86,7 @@ Usage: #inline
 * valueQuantity.code = #%
 
 
-Instance: APS-4-diabetes-journey-3-result-kreatinin
+Instance: ex-diab-journey-3-result-kreatinin
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
@@ -103,7 +103,7 @@ Usage: #inline
 
 
 // Care Plan
-Instance: APS-4-diabetes-journey-3-careplan
+Instance: ex-diab-journey-3-careplan
 InstanceOf: CarePlan
 Usage: #inline
 * text.status = #additional

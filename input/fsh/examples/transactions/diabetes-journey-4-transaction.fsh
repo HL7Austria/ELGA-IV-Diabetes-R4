@@ -1,6 +1,6 @@
-Instance: APS-4-diabetes-journey-2-transaction
+Instance: ex-diab-journey-4-transaction
 InstanceOf: Bundle
-Description: "Erstuntersuchung"
+Description: "Kontrolltermin"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f20"
@@ -9,29 +9,27 @@ Usage: #example
 
 // Problem List
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f"
-* entry[=].resource = APS-4-diabetes-journey-2-transaction-problem-diabetes-verdacht
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+* entry[=].resource = ex-diab-journey-4-medication
+* entry[=].request.method = #PUT 
+* entry[=].request.url = "MedicationStatement"
 // Results
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c"
-* entry[=].resource = APS-4-diabetes-journey-2-transaction-observtion-glucose-in-blut
+* entry[=].resource = ex-diab-journey-4-transaction-observtion-glucose-in-blut
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
 
-// Diagnosen
-Instance: APS-4-diabetes-journey-2-transaction-problem-diabetes-verdacht
-InstanceOf: AtApsCondition
+// Medikation
+Instance: ex-diab-journey-4-medication
+InstanceOf: AtApsMedicationStatement
 Usage: #inline
-* clinicalStatus = $condition-clinical#active "Active"
-* verificationStatus = $condition-ver-status#provisional "Provisional"
-* category = $condition-category#problem-list-item "Problem List Item"
-* code = $sct#44054006 "Diabetes Mellitus Typ 2"
+* status = #active
+* medicationCodeableConcept = $asp#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* recordedDate = "2023-03-15T08:00:00+00:00"
-* asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
+* effectivePeriod.start = "2023-03-17T08:01:30+01:00"
+* dosage.text = "S:1-1-1-1"
 
 // Results
-Instance: APS-4-diabetes-journey-2-transaction-observtion-glucose-in-blut
+Instance: ex-diab-journey-4-transaction-observtion-glucose-in-blut
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
@@ -41,7 +39,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * effectiveDateTime = "2023-03-15T08:30:00+01:00"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
-* valueQuantity.value = 250 
+* valueQuantity.value = 200
 * valueQuantity.unit = "mg/dL"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #mg/dL

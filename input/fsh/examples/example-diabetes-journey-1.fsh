@@ -1,121 +1,77 @@
-Instance: APS-4-diabetes-journey-1-transaction
+Instance: ex-diab-journey-1
 InstanceOf: DiabBundle
-Description: "Ausgangszustand"
+Description: "Diabetes Checklist / Leitdokument"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f20"
-* type = #transaction
+* type = #document
 * timestamp = "2025-01-08T14:01:30+00:00"
 
 // Composition
 * entry[0].fullUrl = "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-composition
-* entry[=].request.method = #POST
-* entry[=].request.url = "Composition"
+* entry[=].resource = example-diab-composition
 // Patient
 * entry[+].fullUrl = "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-patient
-* entry[=].request.method = #POST
-* entry[=].request.url = "Patient"
+* entry[=].resource = patient-example
 // Practitioner
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-practitioner
-* entry[=].request.method = #POST
-* entry[=].request.url = "Practitioner"
+* entry[=].resource = practitioner-example
 // Organisation
 * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-organization
-* entry[=].request.method = #POST
-* entry[=].request.url = "Organization"
+* entry[=].resource = organization-example
 
 // Problem List
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-problem-bluthochdruck
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+* entry[=].resource = problem-Bluthochdruck
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-problem-adipositas
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+* entry[=].resource = problem-adipositas
 
 // Problem List - Family history
 * entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-problem-familie-diabetes
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+* entry[=].resource = problem-familie-diabetes
 * entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-problem-familie-koronare
-* entry[=].request.method = #POST
-* entry[=].request.url = "Condition"
+* entry[=].resource = problem-familie-koronare
 
-// * entry[+].fullUrl = "urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094"
-// * entry[=].resource = APS-4-diabetes-journey-1-transaction-procedure-1
-// * entry[=].request.method = #POST
-// * entry[=].request.url = "Condition"
-
-// * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05"
-// * entry[=].resource = APS-4-diabetes-journey-1-transaction-device-use-1
-// * entry[=].request.method = #POST
-// * entry[=].request.url = "Condition"
-
-// * entry[+].fullUrl = "urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8"
-// * entry[=].resource = APS-4-diabetes-journey-1-transaction-device-1
-// * entry[=].request.method = #POST
-// * entry[=].request.url = "Condition"
+* entry[+].fullUrl = "urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094"
+* entry[=].resource = APS-1-no-problems-procedure-1
+* entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05"
+* entry[=].resource = APS-1-no-problems-device-use-1
+* entry[+].fullUrl = "urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8"
+* entry[=].resource = APS-1-no-problems-device-1
 
 // Medication Summary
 * entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-medication-ramipril
-* entry[=].request.method = #POST
-* entry[=].request.url = "MedicationStatement"
+* entry[=].resource = medication-ramipril
 
 // Allergies and Intolerances
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-allgery-no-known
-* entry[=].request.method = #POST
-* entry[=].request.url = "AllergyIntolerance"
+* entry[=].resource = allgery-no-known
 
 // Vital Signs
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-vitalsign-koerpergroesse
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = vitalsign-koerpergroesse
 * entry[+].fullUrl = "urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-vitalsign-gewicht
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = vitalsign-gewicht
 * entry[+].fullUrl = "urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-vitalsign-bodymassindex
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = vitalsign-bodymassindex
 * entry[+].fullUrl = "urn:uuid:8248cc70-65a2-4d37-ae14-a3ef2abf8f32"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-vitalsign-bloodpressure
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = vitalsign-bloodpressure
 * entry[+].fullUrl = "urn:uuid:4d3f7ac4-fd0a-49af-a56b-303a2dbe67d1"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-vitalsign-puls
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = vitalsign-puls
 * entry[+].fullUrl = "urn:uuid:be35e603-6b99-4bb5-ad70-8499f6b55df1"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-vitalsign-taillenumfang
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = vitalsign-taillenumfang
 
 // Social History
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-social-hist-smoking
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = social-hist-smoking
 * entry[+].fullUrl = "urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-social-hist-alcohol
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = social-hist-alcohol
 * entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
-* entry[=].resource = APS-4-diabetes-journey-1-transaction-social-hist-bewegung
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+* entry[=].resource = social-hist-bewegung
 
-Instance: APS-4-diabetes-journey-1-transaction-composition
+
+
+Instance: example-diab-composition
 InstanceOf: DiabComposition
 Usage: #inline
 // * language = #de-AT
@@ -128,14 +84,14 @@ Usage: #inline
 * attester.mode = #personal
 * attester.party = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * attester.party.display = "Validiert von"
-* custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital"
+* custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
 * extension[countryOfAffiliation].valueString = "AT"
 // Problem List
 * section[sectionProblems].title = "Gesundheitsprobleme und Risiken" //"Problem List"
 * section[sectionProblems].code = $loinc#11450-4 "Problem list - Reported"
 * section[sectionProblems].text.status = #empty
 * section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list - Reported</p></div>"
-* section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) "Arterielle Hypertonie"
+* section[sectionProblems].entry[0] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) "Arterielle Hypertonie"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Adipositas"
 // Problem List - Family history
 * section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91) "Diabetes mellitus in der Familie"
@@ -151,29 +107,24 @@ Usage: #inline
 * section[sectionAllergies].code = $loinc#48765-2 "Allergies and adverse reactions Document"
 * section[sectionAllergies].text.status = #empty
 * section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergies and adverse reactions Document</p></div>"
-// * section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Keine bekannte Allergie"
-* section[sectionAllergies].emptyReason = $cs-list-empty-reason#nilknown
+* section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Keine bekannte Allergie"
 // History of Procedures
 * section[sectionProceduresHx].title = "Eingriffe und Therapien" // "History of Procedures"
 * section[sectionProceduresHx].code = $loinc#47519-4 "History of Procedures Document"
 * section[sectionProceduresHx].text.status = #empty
 * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>History of Procedures Document</p></div>"
-// * section[sectionProceduresHx].entry = Reference(urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094)
-* section[sectionProceduresHx].emptyReason = $cs-list-empty-reason#nilknown
+* section[sectionProceduresHx].entry = Reference(urn:uuid:27ef5ea9-5c9f-418d-9830-648d15ee2094)
 // Medical Devices
 * section[sectionMedicalDevices].title = "Implantate, medizinische Geräte, Heilbehelfe" // "Medical Devices"
 * section[sectionMedicalDevices].code = $loinc#46264-8 "History of medical device use"
 * section[sectionMedicalDevices].text.status = #empty
 * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
-// * section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
-* section[sectionMedicalDevices].emptyReason = $cs-list-empty-reason#nilknown
-
+* section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
 // Diagnostic Results
 // * section[sectionResults].title = "Diagnostische Resultate" // "Diagnostic Results"
 // * section[sectionResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
 // * section[sectionResults].text.status = #empty
 // * section[sectionResults].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Relevant diagnostic tests/laboratory data Narrative</p></div>"
-
 // Vital Signs
 * section[sectionVitalSigns].title = "Vitalparameter" //"Vital Signs"
 * section[sectionVitalSigns].code = $loinc#8716-3 "Vital signs"
@@ -205,7 +156,7 @@ Usage: #inline
 // * section[sectionPlanOfCare].text.status = #empty
 // * section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Plan of care note</p></div>"
 
-Instance: APS-4-diabetes-journey-1-transaction-patient
+Instance: patient-example
 InstanceOf: AtApsPatient
 Usage: #inline
 * id = "001"
@@ -227,7 +178,7 @@ Usage: #inline
 * address.postalCode = "3100"
 * address.country = "AUT"
 
-Instance: APS-4-diabetes-journey-1-transaction-practitioner
+Instance: practitioner-example
 InstanceOf: AtApsPractitioner
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
@@ -238,7 +189,7 @@ Usage: #inline
 * name.given[0] = "Gabriele"
 
 // organization
-Instance: APS-4-diabetes-journey-1-transaction-organization
+Instance: organization-example
 InstanceOf: AtApsOrganization
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
@@ -261,7 +212,7 @@ Usage: #inline
 // Problem List
 
 // Diagnosen
-Instance: APS-4-diabetes-journey-1-transaction-problem-bluthochdruck
+Instance: problem-Bluthochdruck
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
@@ -272,7 +223,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * recordedDate = "2024-02-08T14:01:30+00:00"
 
-Instance: APS-4-diabetes-journey-1-transaction-problem-adipositas
+Instance: problem-adipositas
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
@@ -286,7 +237,7 @@ Usage: #inline
 
 // Problem List - Family history
 
-Instance: APS-4-diabetes-journey-1-transaction-problem-familie-diabetes
+Instance: problem-familie-diabetes
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
@@ -296,7 +247,7 @@ Usage: #inline
 * code.coding.display = "Diabetes mellitus in der Familie"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
-Instance: APS-4-diabetes-journey-1-transaction-problem-familie-koronare
+Instance: problem-familie-koronare
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
@@ -309,7 +260,7 @@ Usage: #inline
 
 // Medication Summary
 
-Instance: APS-4-diabetes-journey-1-transaction-medication-ramipril
+Instance: medication-ramipril
 InstanceOf: AtApsMedicationStatement
 Usage: #inline
 * status = #active
@@ -328,17 +279,17 @@ Usage: #inline
 * dosage.doseAndRate.doseQuantity.code = #15054000"
 
 
-Instance: APS-4-diabetes-journey-1-transaction-allgery-no-known
+Instance: allgery-no-known
 InstanceOf: AtApsAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $allergyintolerance-clinical#active "Active"
 * code = $sct#716186003 "No known allergy (situation)"
 * code.coding.display = "Keine bekannte Allergie"
-* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
 // Vital Signs
 
-Instance: APS-4-diabetes-journey-1-transaction-vitalsign-koerpergroesse
+Instance: vitalsign-koerpergroesse
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -355,7 +306,7 @@ Usage: #inline
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #cm
 
-Instance: APS-4-diabetes-journey-1-transaction-vitalsign-gewicht
+Instance: vitalsign-gewicht
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -372,7 +323,7 @@ Usage: #inline
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #kg
 
-Instance: APS-4-diabetes-journey-1-transaction-vitalsign-bodymassindex
+Instance: vitalsign-bodymassindex
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -392,7 +343,7 @@ Usage: #inline
 * interpretation.text = "High"
 
 
-Instance: APS-4-diabetes-journey-1-transaction-vitalsign-bloodpressure
+Instance: vitalsign-bloodpressure
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -409,7 +360,7 @@ Usage: #inline
 * component[+].code = $loinc#8462-4 "Diastolic blood pressure"
 * component[=].valueQuantity = 80 'mm[Hg]' "mm[Hg]"
 
-Instance: APS-4-diabetes-journey-1-transaction-vitalsign-puls
+Instance: vitalsign-puls
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -424,7 +375,7 @@ Usage: #inline
 * valueQuantity = 85 '/min' "/min"
 
 
-Instance: APS-4-diabetes-journey-1-transaction-vitalsign-taillenumfang
+Instance: vitalsign-taillenumfang
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -437,7 +388,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueQuantity.comparator = #<
-* valueQuantity.value = 109
+* valueQuantity.value = 109 
 * valueQuantity.unit = "cm"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #cm
@@ -445,7 +396,7 @@ Usage: #inline
 
 // Social History
 
-Instance: APS-4-diabetes-journey-1-transaction-social-hist-smoking
+Instance: social-hist-smoking
 InstanceOf: AtApsObservationTobaccoUse
 Usage: #inline
 * status = #final
@@ -457,7 +408,7 @@ Usage: #inline
 * valueCodeableConcept = $sct#8517006 "Ex-smoker"
 * valueCodeableConcept.coding.display = "Ehemalig rauchende Person"
 
-Instance: APS-4-diabetes-journey-1-transaction-social-hist-alcohol
+Instance: social-hist-alcohol
 InstanceOf: AtApsObservationAlcoholUse
 Usage: #inline
 * status = #final
@@ -469,7 +420,7 @@ Usage: #inline
 * valueQuantity = 2 '/d' "wine glasses per day"
 
 
-Instance: APS-4-diabetes-journey-1-transaction-social-hist-bewegung
+Instance: social-hist-bewegung
 InstanceOf: Observation
 Usage: #inline
 * status = #final
@@ -488,29 +439,29 @@ Usage: #inline
 * valueRatio.denominator.system = "http://unitsofmeasure.org"
 * valueRatio.denominator.code = #wk
 
-// Instance: APS-4-diabetes-journey-1-transaction-procedure-1
-// InstanceOf: AtApsProcedure
-// Usage: #inline
-// * status = #unknown
-// * code = $sct#787480003 "No known procedures (situation)"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-// * performedDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-// * performedDateTime.extension.valueCode = #unknown
+Instance: APS-1-no-problems-procedure-1
+InstanceOf: AtApsProcedure
+Usage: #inline
+* status = #unknown
+* code = $sct#787480003 "No known procedures (situation)"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+* performedDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+* performedDateTime.extension.valueCode = #unknown
 
-// Instance: APS-4-diabetes-journey-1-transaction-device-use-1
-// InstanceOf: AtApsDeviceUseStatement
-// Usage: #inline
-// * status = #active
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-// * device = Reference(urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8)
-// * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-// * timingDateTime.extension.valueCode = #unknown
+Instance: APS-1-no-problems-device-use-1
+InstanceOf: AtApsDeviceUseStatement
+Usage: #inline
+* status = #active
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+* device = Reference(urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8)
+* timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+* timingDateTime.extension.valueCode = #unknown
 
-// Instance: APS-4-diabetes-journey-1-transaction-device-1
-// InstanceOf: AtApsDevice
-// Usage: #inline
-// * type = $sct#787483001 "No known device use (situation)"
-// * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-// * deviceName.name = "empty"
-// * deviceName.type = #other
-// * version.value = "empty"
+Instance: APS-1-no-problems-device-1
+InstanceOf: AtApsDevice
+Usage: #inline
+* type = $sct#787483001 "No known device use (situation)"
+* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+* deviceName.name = "empty"
+* deviceName.type = #other
+* version.value = "empty"
