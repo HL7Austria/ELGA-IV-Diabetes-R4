@@ -1,87 +1,87 @@
-Instance: example-diabetes-leitdokument-1
+Instance: example-diabetes-leitdokument-1-opt
 InstanceOf: DiabBundle
 Description: "Diabetes Leitdokument 1.0"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
-* identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f1"
+* identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f4"
 * type = #document
 * timestamp = "2025-01-08T14:01:30+00:00"
 
 // Header *********************************************************
 // Composition
 * entry[0].fullUrl = "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"
-* entry[=].resource = example-diab-leitdokument-1-composition
+* entry[=].resource = example-diab-leitdokument-1-opt-composition
 // Patient
 * entry[+].fullUrl = "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8" 
-* entry[=].resource = Susanne-Testpatientin
+* entry[=].resource = Susanne-Testpatientin-opt
 // Author
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
-* entry[=].resource = Gabriele-IV-Arzt
+* entry[=].resource = Gabriele-IV-Arzt-opt
 // Organisation
 // Diagnostic Results - Performer
 * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = performer-Amadeus-Spital
+* entry[=].resource = performer-opt-Amadeus-Spital
 // Body ***********************************************************
 // Problem List
 * entry[+].fullUrl = "urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"
-* entry[=].resource = problem-Chronische-Nierenerkrankung
+* entry[=].resource = problem-opt-Chronische-Nierenerkrankung
 * entry[+].fullUrl = "urn:uuid:82fa32f6-39d6-4fc9-9624-90a48fd3d3a5"
-* entry[=].resource = problem-Einnahme-Antikoagulantien
+* entry[=].resource = problem-opt-Einnahme-Antikoagulantien
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e"
-* entry[=].resource = problem-Diabetes-Verletzung-Bauchspeicheldruese
+* entry[=].resource = problem-opt-Diabetes-Verletzung-Bauchspeicheldruese
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e"
-* entry[=].resource = problem-Diabetisches-Fusssyndrom
+* entry[=].resource = problem-opt-Diabetisches-Fusssyndrom
 * entry[+].fullUrl = "urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde"
-* entry[=].resource = problem-Bluthochdruck1
+* entry[=].resource = problem-opt-Bluthochdruck1
 // Problem List - Family history
 * entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99"
-* entry[=].resource = problem-Diabetes-Familie
+* entry[=].resource = problem-opt-Diabetes-Familie
 * entry[+].fullUrl = "urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91"
-* entry[=].resource = problem-Dickdarmkrebs-Familie
+* entry[=].resource = problem-opt-Dickdarmkrebs-Familie
 // Problem List - periodontal disease risk
-* entry[+].fullUrl = "urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33"
-* entry[=].resource = problem-Parodontalerkrankung
-* entry[+].fullUrl = "urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"  
-* entry[=].resource = condition-Parodontalerkrankung-Bewertung
+// * entry[+].fullUrl = "urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33"
+// * entry[=].resource = problem-opt-Parodontalerkrankung
+// * entry[+].fullUrl = "urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"  
+// * entry[=].resource = condition-opt-Parodontalerkrankung-Bewertung
 // Schulungen
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
-* entry[=].resource = careplan-diabetes
+* entry[=].resource = careplan-diabetes-opt
 // Medication Summary - Medikationsliste
 * entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
-* entry[=].resource = medicationStatement-Ebetrexat
+* entry[=].resource = medicationStatement-opt-Ebetrexat
 // Allergies and Intolerances
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
-* entry[=].resource = allgery-Benzylpenicillin-Natrium
+* entry[=].resource = allgery-opt-Benzylpenicillin-Natrium
 // History of Procedures
 * entry[+].fullUrl = "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"
-* entry[=].resource = procedureHistory-Ersatzhuefte
+* entry[=].resource = procedureHistory-opt-Ersatzhuefte
 // // Diagnostic Results
 * entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
-* entry[=].resource = diagnosticResults-Labor-AB0-Blut
+* entry[=].resource = diagnosticResults-opt-Labor-AB0-Blut
 // // Diagnostic Results - Specimen
 * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
-* entry[=].resource = diagnosticResult-Labor-Blut
+* entry[=].resource = diagnosticResult-opt-Labor-Blut
 // Vital Signs
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
-* entry[=].resource = vitalsign-Koerpergroesse
+* entry[=].resource = vitalsign-opt-Koerpergroesse
 // Past History of Illnes
 * entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
-* entry[=].resource = pastIllness-Masern
+* entry[=].resource = pastIllness-opt-Masern
 * entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc9"
-* entry[=].resource = pastIllness-Windpocken
+* entry[=].resource = pastIllness-opt-Windpocken
 // Social History
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
-* entry[=].resource = socialhistory-Rauchherstatus
+* entry[=].resource = socialhistory-opt-Rauchherstatus
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984119"
-* entry[=].resource = socialhistory-Koerperliche-Bewegung
+* entry[=].resource = socialhistory-opt-Koerperliche-Bewegung
 // Medical Devices
 * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05"
-* entry[=].resource = deviceUse-Insulinpumpe
+* entry[=].resource = deviceUse-opt-Insulinpumpe
 * entry[+].fullUrl = "urn:uuid:a1a80313-a757-4062-b0d7-d04fd2a04602"
-* entry[=].resource = device-Insulinpumpe
+* entry[=].resource = device-opt-Insulinpumpe
 
 
-Instance: example-diab-leitdokument-1-composition
+Instance: example-diab-leitdokument-1-opt-composition
 InstanceOf: DiabComposition
 Usage: #inline
 // * language = #de-AT
@@ -102,102 +102,84 @@ Usage: #inline
 * section[sectionProblems].code = $loinc#11450-4 "Problem list - Reported"
 * section[sectionProblems].text.status = #generated
 * section[sectionProblems].text.div = 
-"<div xmlns=\"http://www.w3.org/1999/xhtml\">
-<b>Diagnose</b>
-  <ul>
-    <li>Diabetes mellitus aufgrund einer Verletzung der Bauchspeicheldrüse</li>
-  </ul>
-  <b>Weitere Diagnosen/Sekundärdiagnosen</b>
-  <ul>
-    <li>Diabetisches Fußsyndrom</li>
-    <li>Chronische Nierenerkrankung Stadium 3B</li>
-    <li>Langfristige Einnahme von Antikoagulantien</li>
-    <li>Bluthochdruck-Erkrankung</li>
-  </ul>
-  <b>Risiken</b>
-    <ul>
-    <li>Diabetes mellitus in der Familiem</li>
-    <li>Dickdarmkrebs in der Familie</li>
-    <li>Parodontalerkrankung</li>
-  </ul>
-</div>"
+"<div xmlns=\"http://www.w3.org/1999/xhtml\">narrative needs to be generated</div>"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) "Diabetes mellitus aufgrund einer Verletzung der Bauchspeicheldrüse"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Diabetisches Fußsyndrom"
-* section[sectionProblems].entry[0] = Reference(urn:uuid:72e85b9d-004d-4104-b166-86d129948bae) "Chronische Nierenerkrankung"
+* section[sectionProblems].entry[+] = Reference(urn:uuid:72e85b9d-004d-4104-b166-86d129948bae) "Chronische Nierenerkrankung"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:82fa32f6-39d6-4fc9-9624-90a48fd3d3a5)
 * section[sectionProblems].entry[+] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) "Arterielle Hypertonie"
 // Problem List - Family history
 * section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99) "Diabetes mellitus in der Familie"
 * section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91) "Dickdarmkrebs in der Familie"
 // Problem List - periodontal disease risk
-* section[sectionProblems].entry[+] = Reference(urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33) "Parodontalerkrankung"
+//* section[sectionProblems].entry[+] = Reference(urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33) "Parodontalerkrankung"
 
 // Medication Summary
 * section[sectionMedications].title = "Medikationsliste"
 * section[sectionMedications].code = $loinc#10160-0 "History of Medication use Narrative"
-* section[sectionMedications].text.status = #empty
-* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medikationsliste</p></div>"
+* section[sectionMedications].text.status = #generated  
+* section[sectionMedications].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionMedications].entry[0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "EBETREXAT TBL 10MG"
 
 // Allergies and Intolerances
 * section[sectionAllergies].title = "Allergien und Intoleranzen"
 * section[sectionAllergies].code = $loinc#48765-2 "Allergies and adverse reactions Document"
-* section[sectionAllergies].text.status = #empty
-* section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergien und Intoleranzen</p></div>"
+* section[sectionAllergies].text.status = #generated
+* section[sectionAllergies].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Benzylpenicillin Natrium"
 
 // History of Procedures
 * section[sectionProceduresHx].title = "Eingriffe und Therapien"
 * section[sectionProceduresHx].code = $loinc#47519-4 "History of Procedures Document"
-* section[sectionProceduresHx].text.status = #empty
-* section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Eingriffe und Therapien</p></div>"
+* section[sectionProceduresHx].text.status = #generated
+* section[sectionProceduresHx].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionProceduresHx].entry[0] = Reference(urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a) "Totalersatz des linken Hüftgelenks"
 
 // Medical Devices
 * section[sectionMedicalDevices].title = "Medizinische Geräte und Implantate"
 * section[sectionMedicalDevices].code = $loinc#46264-8 "History of medical device use"
-* section[sectionMedicalDevices].text.status = #empty
-* section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medizinische Geräte und Implantate</p></div>"
+* section[sectionMedicalDevices].text.status = #generated
+* section[sectionMedicalDevices].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
 
 // Diagnostic Results
 * section[sectionResults].title = "Diagnostische Resultate"
 * section[sectionResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
-* section[sectionResults].text.status = #empty
-* section[sectionResults].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Diagnostische Resultate</p></div>"
+* section[sectionResults].text.status = #generated
+* section[sectionResults].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionResults].entry[0] = Reference(urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654) "ABO- und Rh-Gruppe [Typ] im Blut"
 
 // Vital Signs
 * section[sectionVitalSigns].title = "Vitalparameter"
 * section[sectionVitalSigns].code = $loinc#8716-3 "Vital signs"
-* section[sectionVitalSigns].text.status = #empty
-* section[sectionVitalSigns].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Vitalparameter</p></div>"
+* section[sectionVitalSigns].text.status = #generated
+* section[sectionVitalSigns].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionVitalSigns].entry[0] = Reference(urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142) "Körpergröße"
 
 // Past History of Illness
-* section[sectionPastIllnessHx].title = "Vergangene Gesundheitsprobleme und Risiken / Diagnosen"
+* section[sectionPastIllnessHx].title = "Vergangene Gesundheitsprobleme und Risiken/Diagnosen"
 * section[sectionPastIllnessHx].code = $loinc#11348-0 "History of Past illness Narrative"
-* section[sectionPastIllnessHx].text.status = #empty
-* section[sectionPastIllnessHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Vergangene Gesundheitsprobleme und Risiken / Diagnosen</p></div>"
+* section[sectionPastIllnessHx].text.status = #generated
+* section[sectionPastIllnessHx].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionPastIllnessHx].entry[0] = Reference(urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984) "Zustand nach Masern"
 * section[sectionPastIllnessHx].entry[0] = Reference(urn:uuid:82301518-66ca-4b4c-821d-087adf643cc9) "Zustand nach Windpocken"
 
 // Social History
 * section[sectionSocialHistory].title = "Lebensstil"
 * section[sectionSocialHistory].code = $loinc#29762-2 "Social history Narrative"
-* section[sectionSocialHistory].text.status = #empty
-* section[sectionSocialHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lebensstil</p></div>"
+* section[sectionSocialHistory].text.status = #generated
+* section[sectionSocialHistory].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionSocialHistory].entry[0] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e) "Ehemalig rauchende Person"
 * section[sectionSocialHistory].entry[+] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984119) "Körperliche Bewegung"
 
 // Care Plan
 * section[sectionPlanOfCare].title = "Behandlungsplan"
 * section[sectionPlanOfCare].code = $loinc#18776-5 "Plan of care note"
-* section[sectionPlanOfCare].text.status = #empty
-* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan</p></div>"
+* section[sectionPlanOfCare].text.status = #generated
+* section[sectionPlanOfCare].text.div = "<div>narrative needs to be generated</div>"
 * section[sectionPlanOfCare].entry[0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b)
 
-Instance: Susanne-Testpatientin
+Instance: Susanne-Testpatientin-opt
 InstanceOf: AtApsPatient
 Usage: #inline
 //* meta.profile = "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"
@@ -220,7 +202,7 @@ Usage: #inline
 * address.postalCode = "3100"
 * address.country = "AUT"
 
-Instance: Gabriele-IV-Arzt
+Instance: Gabriele-IV-Arzt-opt
 InstanceOf: AtApsPractitioner
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
@@ -233,12 +215,12 @@ Usage: #inline
 // Problem List
 
 // Diabetes Hauptdiagnose
-Instance: problem-Diabetes-Verletzung-Bauchspeicheldruese
+Instance: problem-opt-Diabetes-Verletzung-Bauchspeicheldruese
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 //* category[diabetes] = VsIvDiagnosekategorie#73211009 "Diabetes mellitus"
 * code = $sct#105401000119101 "Diabetes mellitus due to pancreatic injury (disorder)"
 * code.coding.display = "Diabetes mellitus aufgrund einer Verletzung der Bauchspeicheldrüse"
@@ -246,100 +228,100 @@ Usage: #inline
 * recordedDate = "2024-02-08T14:01:30+00:00"
 
 // // Diabetes Nebendiagnosen
-Instance: problem-Diabetisches-Fusssyndrom
+Instance: problem-opt-Diabetisches-Fusssyndrom
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#280137006 "Diabetisches Fußsyndrom"
 * code.coding.display = "Diabetisches Fußsyndrom"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * recordedDate = "2021-02-08T14:01:30+00:00"
 
-Instance: problem-Chronische-Nierenerkrankung
+Instance: problem-opt-Chronische-Nierenerkrankung
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#700379002 "Chronic kidney disease stage 3B"
 * code.coding.display = "Chronische Nierenerkrankung Stadium 3B"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
-Instance: problem-Einnahme-Antikoagulantien
+Instance: problem-opt-Einnahme-Antikoagulantien
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#711150003 "Long-term current use of anticoagulant"
 * code.coding.display = "Langfristige Einnahme von Antikoagulantien"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
-Instance: problem-Bluthochdruck1
+Instance: problem-opt-Bluthochdruck1
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#38341003 "Hypertensive disorder"
 * code.coding.display = "Arterielle Hypertonie"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
 
 // Problem List - Family history
-Instance: problem-Diabetes-Familie
+Instance: problem-opt-Diabetes-Familie
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#160303001 "Family history of diabetes mellitus (situation)"
 * code.coding.display = "Diabetes mellitus in der Familie"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
-Instance: problem-Dickdarmkrebs-Familie
+Instance: problem-opt-Dickdarmkrebs-Familie
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#312824007 "Family history of cancer of colon"
 * code.coding.display = "Dickdarmkrebs in der Familie"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
-// risk of periodontal disease
-Instance: problem-Parodontalerkrankung
-InstanceOf: AtApsCondition
-Usage: #inline
-* clinicalStatus = $condition-clinical#inactive "Inactive"
-* verificationStatus = $condition-ver-status#provisional "Provisional"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
-* code = $sct#2556008 "Periodontal disease (disorder)"
-* code.coding.display = "Parodontalerkrankung"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* stage.assessment = Reference(urn:uuid:f235c566-01aa-457d-ab49-9e422df69863) "Bewertung der Risikofaktoren für Parodontalerkrankungen"
+// // risk of periodontal disease
+// Instance: problem-opt-Parodontalerkrankung
+// InstanceOf: AtApsCondition
+// Usage: #inline
+// * clinicalStatus = $condition-clinical#inactive "Inactive"
+// * verificationStatus = $condition-ver-status#provisional "Provisional"
+// * category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
+// * code = $sct#2556008 "Periodontal disease (disorder)"
+// * code.coding.display = "Parodontalerkrankung"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+// * stage.assessment = Reference(urn:uuid:f235c566-01aa-457d-ab49-9e422df69863) "Bewertung der Risikofaktoren für Parodontalerkrankungen"
 
-Instance: condition-Parodontalerkrankung-Bewertung
-InstanceOf: Observation
-Usage: #inline
-* status = #final
-* category = $observation-category#exam "Exam"
-* code = $sct#1237049003 "Evaluation of risk factors for periodontal disease"
-* code.coding.display = "Bewertung der Risikofaktoren für Parodontalerkrankungen"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
-* effectiveDateTime = "2024-02-08T08:30:00+01:00"
-* valueCodeableConcept = $sct#723509005 "High risk"
+// Instance: condition-opt-Parodontalerkrankung-Bewertung
+// InstanceOf: Observation
+// Usage: #inline
+// * status = #final
+// * category = $observation-category#exam "Exam"
+// * code = $sct#1237049003 "Evaluation of risk factors for periodontal disease"
+// * code.coding.display = "Bewertung der Risikofaktoren für Parodontalerkrankungen"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+// * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
+// * effectiveDateTime = "2024-02-08T08:30:00+01:00"
+// * valueCodeableConcept = $sct#723509005 "High risk"
 
 // Careplan Schulungen
 
-Instance: careplan-diabetes
+Instance: careplan-diabetes-opt
 InstanceOf: DiabCareplan
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ernährungsschulung bei Diabetes mellitus Typ II</p>\n    </div>"
+* text.div = "<div>narrative needs to be generated</div>"
 * identifier.value = "12345"
 * instantiatesUri = "https://www.sozialministerium.at/2025/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
 * status = #active
@@ -370,7 +352,7 @@ Usage: #inline
 
 // Medication Summary
 
-Instance: medicationStatement-Ebetrexat
+Instance: medicationStatement-opt-Ebetrexat
 InstanceOf: AtApsMedicationStatement
 Usage: #inline
 * status = #active
@@ -391,7 +373,7 @@ Usage: #inline
 
 // Allergies and Intolerances
 
-Instance: allgery-Benzylpenicillin-Natrium
+Instance: allgery-opt-Benzylpenicillin-Natrium
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $allergyintolerance-clinical#active "Active"
@@ -405,7 +387,7 @@ Usage: #inline
 
 // History of Procedures
 
-Instance: procedureHistory-Ersatzhuefte
+Instance: procedureHistory-opt-Ersatzhuefte
 InstanceOf: AtApsProcedure
 Usage: #inline
 * status = #completed
@@ -416,7 +398,7 @@ Usage: #inline
 
 // Diagnostic Results
 
-Instance: diagnosticResults-Labor-AB0-Blut
+Instance: diagnosticResults-opt-Labor-AB0-Blut
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
@@ -431,7 +413,7 @@ Usage: #inline
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
 // Diagnostic Results - Performer
-Instance: performer-Amadeus-Spital
+Instance: performer-opt-Amadeus-Spital
 InstanceOf: AtApsOrganization
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
@@ -453,7 +435,7 @@ Usage: #inline
 
 // Diagnostic Results - Specimen
 
-Instance: diagnosticResult-Labor-Blut
+Instance: diagnosticResult-opt-Labor-Blut
 InstanceOf: AtApsSpecimen
 Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
@@ -463,7 +445,7 @@ Usage: #inline
 
 // Vital Signs
 
-Instance: vitalsign-Koerpergroesse
+Instance: vitalsign-opt-Koerpergroesse
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -482,29 +464,29 @@ Usage: #inline
 
 // Past History of Illness
 
-Instance: pastIllness-Masern
+Instance: pastIllness-opt-Masern
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#resolved "Resolved"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#161419000 "History of measles"
 * code.coding.display = "Zustand nach Masern"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
-Instance: pastIllness-Windpocken
+Instance: pastIllness-opt-Windpocken
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $condition-clinical#resolved "Resolved"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
-* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[0] = $condition-category#problem-opt-list-item "Problem List Item"
 * code = $sct#161423008 "History of chickenpox (situation)"
 * code.coding.display = "Zustand nach Windpocken"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 
 // Social History
 
-Instance: socialhistory-Rauchherstatus
+Instance: socialhistory-opt-Rauchherstatus
 InstanceOf: AtApsObservationTobaccoUse
 Usage: #inline
 * status = #final
@@ -515,7 +497,7 @@ Usage: #inline
 * valueCodeableConcept = $sct#8517006 "Ex-smoker"
 * valueCodeableConcept.coding.display = "Ehemalig rauchende Person"
 
-Instance: socialhistory-Koerperliche-Bewegung
+Instance: socialhistory-opt-Koerperliche-Bewegung
 InstanceOf: Observation
 Usage: #inline
 * status = #final
@@ -534,7 +516,7 @@ Usage: #inline
 * valueRatio.denominator.system = "http://unitsofmeasure.org"
 * valueRatio.denominator.code = #wk
 
-Instance: deviceUse-Insulinpumpe  //todo
+Instance: deviceUse-opt-Insulinpumpe  //todo
 InstanceOf: AtApsDeviceUseStatement
 Usage: #inline
 * status = #active
@@ -544,7 +526,7 @@ Usage: #inline
 * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 * timingDateTime.extension.valueCode = #unknown
 
-Instance: device-Insulinpumpe
+Instance: device-opt-Insulinpumpe
 InstanceOf: AtApsDevice
 Usage: #inline
 * type = $sct#69805005 "Insulin pump"

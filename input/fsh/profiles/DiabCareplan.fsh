@@ -5,9 +5,6 @@ Title: "Diabetes CarePlan"
 Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
 * . ^short = "Diabetes Behandlungsplan"
 * . ^definition = "Dokumentation eines Diabetes-Behandlungsplans (Careplan)."
-* ^extension[$imposeProfile].valueCanonical = Canonical(CarePlan)
-// Erweiterungen 
-//* ^extension[$imposeProfile].valueCanonical = Canonical(CarePlan) 
 * instantiatesUri 1..1 
 * instantiatesUri ^short = "Instanziiert externe Definition der Schulung"
 //* instantiatesUri = "https://www.sozialministerium.at/Themen/Gesundheit/Gesundheitssystem/Gesundheitssystem-und-Qualitaetssicherung/Qualitaetsstandards/Rahmenkonzept-Integrierte-Versorgung-Diabetes-mellitus-Typ-2.html" (exactly)
@@ -23,7 +20,6 @@ Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
 * category.coding.code from DiabCareplanEducationVS
 * title 1..1 MS
 * title ^short = "Bezeichnung der Schulung"
-* description 1..1 MS
 * description ^short = "Inhalte der Schulung"
 * subject only Reference(AtApsPatient)
 * subject ^short = "IV Patient, für den die Schulungen bestimmt sind"

@@ -4,9 +4,7 @@ Id: diab-bundle
 Title: "Diab Bundle"
 Description: "Diabetes Bundle, abgeleitet von der APS."
 * . ^short = "Diabetes Bundle"
-
- //* ^extension[$imposeProfile].valueCanonical = Canonical(AtApsBundle)
-
+// * ^extension[$imposeProfile].valueCanonical = Canonical(AtApsBundle)
 * entry ^slicing.discriminator[0].type = #profile
 * entry ^slicing.discriminator[=].path = "resource"
 * entry ^slicing.discriminator[+].type = #type

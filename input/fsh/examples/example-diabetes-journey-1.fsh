@@ -66,8 +66,8 @@ Usage: #example
 * entry[=].resource = social-hist-smoking
 * entry[+].fullUrl = "urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a"
 * entry[=].resource = social-hist-alcohol
-* entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
-* entry[=].resource = social-hist-bewegung
+// * entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
+//* entry[=].resource = social-hist-bewegung
 
 
 
@@ -148,7 +148,7 @@ Usage: #inline
 * section[sectionSocialHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Social history Narrative</p></div>"
 * section[sectionSocialHistory].entry[0] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e) "Raucherstatus"
 * section[sectionSocialHistory].entry[+] = Reference(urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a) "Nichtraucher seit 5 Jahren (40 Pack Years)"
-* section[sectionSocialHistory].entry[+] = Reference(urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984) "Körperliche Aktivität"
+// * section[sectionSocialHistory].entry[+] = Reference(urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984) "Körperliche Aktivität"
 
 // Care Plan
 // * section[sectionPlanOfCare].title = "Behandlungsplan" // "Plan of Care"
@@ -420,24 +420,24 @@ Usage: #inline
 * valueQuantity = 2 '/d' "wine glasses per day"
 
 
-Instance: social-hist-bewegung
-InstanceOf: Observation
-Usage: #inline
-* status = #final
-* code = $sct#61686008 "Physical exercise"
-* code.coding.display = "Körperliche Aktivität"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
-* effectiveDateTime = "2024-02-08T08:30:00+01:00"
-* valueRatio.numerator.value = 2.5
-* valueRatio.numerator.unit = "h"
-* valueRatio.numerator.system = "http://unitsofmeasure.org"
-* valueRatio.numerator.code = #h
-* valueRatio.numerator.comparator = #>
-* valueRatio.denominator.value = 1
-* valueRatio.denominator.unit = "wk"
-* valueRatio.denominator.system = "http://unitsofmeasure.org"
-* valueRatio.denominator.code = #wk
+// Instance: social-hist-bewegung
+// InstanceOf: Observation
+// Usage: #inline
+// * status = #final
+// * code = $sct#61686008 "Physical exercise"
+// * code.coding.display = "Körperliche Aktivität"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+// * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
+// * effectiveDateTime = "2024-02-08T08:30:00+01:00"
+// * valueRatio.numerator.value = 2.5
+// * valueRatio.numerator.unit = "h"
+// * valueRatio.numerator.system = "http://unitsofmeasure.org"
+// * valueRatio.numerator.code = #h
+// * valueRatio.numerator.comparator = #>
+// * valueRatio.denominator.value = 1
+// * valueRatio.denominator.unit = "wk"
+// * valueRatio.denominator.system = "http://unitsofmeasure.org"
+// * valueRatio.denominator.code = #wk
 
 Instance: APS-1-no-problems-procedure-1
 InstanceOf: AtApsProcedure
