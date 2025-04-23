@@ -37,7 +37,7 @@ dependencies:
   #aps.terminology: 0.1.0
   hl7.at.fhir.core.r4: 2.0.0
   # hl7.at.fhir.elga.ips: dev
-  hl7.at.fhir.elga.aps.r4: dev
+  hl7.at.fhir.elga.aps.r4: current
 
 
 #
