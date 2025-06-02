@@ -158,7 +158,7 @@ Usage: #inline
 * section[sectionMedicalDevices].code = $loinc#46264-8 "History of medical device use"
 * section[sectionMedicalDevices].text.status = #empty
 * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medizinische Geräte und Implantate</p></div>"
-* section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
+* section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05) "Insulinpumpe"
 
 // Diagnostic Results
 * section[sectionResults].title = "Diagnostische Resultate"
