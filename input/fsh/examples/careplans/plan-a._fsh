@@ -1,0 +1,69 @@
+Alias: $sct = http://snomed.info/sct
+Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
+Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
+
+Instance: Lipidmanagement-VU-LDL-C-senken
+InstanceOf: CarePlan
+Usage: #example
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de\" xml:lang=\"de\"> <p>Dieser CarePlan dient dazu den LDL-C Wert zu senken, welcher im Rahmen einer Vorsorgeuntersuchung erhöht war.</p> </div>"
+* contained = LDL-C-elevated
+* language = #de
+* identifier.value = "CarePlan-1-Patient-1"
+* identifier.assigner = Reference(Organization/ordination-frau-meyer) "Ordination Frau Meyer"
+* instantiatesCanonical = "PlanDefinition/lipid-management-guideline"
+* instantiatesUri = "https://www.lipid-liga.de/empfehlungen/"
+* partOf = Reference(CarePlan/Lipidmanagement) "Lipidmanagement CarePlan"
+* status = #draft
+* intent = #plan
+* category.text = "Allgemeiner Code für CarePlan"
+* category = $sct#734163000 "Care plan"
+* title = "Care Plan zur Senkung des LDL-C Spiegels"
+* description = "Maßnahmen zur Senkung des LDL-Cholserterin Spiegels im Blut durch medikamentöse Theraphie. Nach drei Monaten erfolgt eine Blutbild um zu sehen, ob die Thearpie anschlägt."
+* subject = Reference(Patient/Margarethe-Michaeler) "Margareth Michaeler"
+* encounter = Reference(Patient/Margarethe-Michaeler/Vorsorgeuntersuchung) "Järliche Vorsorgeuntersuchung"
+* period.start = "2025-05-13"
+* period.end = "2025-08-15"
+* created = "2025-05-12"
+* author = Reference(Practitioner/dr-meyer) "Dr. Meyer"
+* contributor = Reference(Practitioner/dr-meyer) "Dr. Meyer"
+* careTeam = Reference(CareTeam/dr-meyer) "Team der Ordination von Dr. Meyer"
+* addresses = Reference(LDL-C-elevated) "Hypercholesterinämie"
+* supportingInfo = Reference(FamilyMemberHistory/elevated-LDL-C) "Hypercholesterinämie in der Familie"
+* goal = Reference(Goal/lowering-LDL-C) "LDL-C Wert im Blut in Normalbereich bringen"
+* activity.outcomeCodeableConcept = $sct#166828006 "Serum cholesterol within reference range"
+* activity.outcomeCodeableConcept.text = "Senkung des Cholesterinlevels im Blut"
+* activity.outcomeReference = Reference(Procedure/measreuement-LDL) "Serum low density lipoprotein cholesterol measurement"
+* activity.detail.kind = #MedicationRequest
+* activity.detail.instantiatesCanonical = "PlanDefinition/Lipidmanagement-measurement"
+* activity.detail.instantiatesUri = "https://www.lipid-liga.de/empfehlungen/"
+* activity.detail.code = $sct#416608005 "Drug therapy"
+* activity.detail.reasonCode = $sct#166816003 "Serum lipids above reference range"
+* activity.detail.reasonReference = Reference(LDL-C-elevated) "LDL-C Wert im Blut ist zu hoch und führt zu Hypercholesterolemia"
+* activity.detail.goal = Reference(Goal/lowering-LDL-C) "LDL-C Wert im Blut in Normalbereich bringen"
+* activity.detail.status = #in-progress
+* activity.detail.statusReason.text = "Medikamete werden zurzeit eingenommen um LDL-C Wert zu senken."
+* activity.detail.doNotPerform = false
+* activity.detail.scheduledTiming.repeat.frequency = 1
+* activity.detail.scheduledTiming.repeat.period = 1
+* activity.detail.scheduledTiming.repeat.periodUnit = #wk
+* activity.detail.location = Reference(Location/Patient-zu-Hause) "Patienten zu Hause"
+* activity.detail.performer = Reference(Patient/Margarethe-Michaeler) "Margareth Michaeler"
+* activity.detail.productCodeableConcept.text = "Medikament um LDL-C Speigel zu senken (PCSK9 Hemmer)"
+* activity.detail.productCodeableConcept = $sct#770371005 "PCSK9 inhibitor-containing product"
+* activity.detail.dailyAmount.value = 1
+* activity.detail.dailyAmount.unit = "Injektion"
+* activity.detail.quantity.value = 12
+* activity.detail.quantity.unit = "Injektion"
+* activity.detail.description = "Vor der Injektion soll die Einstichstelle desinfiziert werden."
+* note.time = "2025-05-13"
+* note.text = "Dieser Care Plan stammt aus dem dHealth Service Lipidmanagement Projekt"
+
+Instance: LDL-C-elevated
+InstanceOf: Condition
+Usage: #inline
+* clinicalStatus = $condition-clinical#active
+* verificationStatus = $condition-ver-status#confirmed
+* code = $sct#13644009 "Hypercholesterolemia"
+* code.text = "Erhöhter Chlosterinwert im allegemeinen"
+* subject = Reference(Patient/Margarethe-Michaeler) "Margareth Michaeler"
