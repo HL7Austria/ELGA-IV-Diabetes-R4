@@ -18,10 +18,16 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
 * entry[=].resource = Gabriele-IV-Arzt
 // Organisation
-// Diagnostic Results - Performer
-* entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = performer-Amadeus-Spital
+
 // Body ***********************************************************
+// Medication Summary - Medikationsliste
+* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
+* entry[=].resource = medicationStatement-Ebetrexat
+
+// Allergies and Intolerances
+* entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
+* entry[=].resource = allgery-Benzylpenicillin-Natrium
+
 // Problem List
 * entry[+].fullUrl = "urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"
 * entry[=].resource = problem-Chronische-Nierenerkrankung
@@ -43,43 +49,46 @@ Usage: #example
 * entry[=].resource = problem-Parodontalerkrankung
 * entry[+].fullUrl = "urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"  
 * entry[=].resource = condition-Parodontalerkrankung-Bewertung
-// Schulungen
-* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
-* entry[=].resource = careplan-diabetes
-// Medication Summary - Medikationsliste
-* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
-* entry[=].resource = medicationStatement-Ebetrexat
-// Allergies and Intolerances
-* entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
-* entry[=].resource = allgery-Benzylpenicillin-Natrium
+
 // History of Procedures
 * entry[+].fullUrl = "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"
 * entry[=].resource = procedureHistory-Ersatzhuefte
-// // Diagnostic Results
-* entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
-* entry[=].resource = diagnosticResults-Labor-AB0-Blut
-// // Diagnostic Results - Specimen
-* entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
-* entry[=].resource = diagnosticResult-Labor-Blut
-// Vital Signs
-* entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
-* entry[=].resource = vitalsign-Koerpergroesse
-// Past History of Illnes
-* entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
-* entry[=].resource = pastIllness-Masern
-* entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc9"
-* entry[=].resource = pastIllness-Windpocken
-// Social History
-* entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
-* entry[=].resource = socialhistory-Rauchherstatus
-* entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984119"
-* entry[=].resource = socialhistory-Koerperliche-Bewegung
+
 // Medical Devices
 * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05"
 * entry[=].resource = deviceUse-Insulinpumpe
 * entry[+].fullUrl = "urn:uuid:a1a80313-a757-4062-b0d7-d04fd2a04602"
 * entry[=].resource = device-Insulinpumpe
 
+// Diagnostic Results
+* entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
+* entry[=].resource = diagnosticResults-Labor-AB0-Blut
+// Diagnostic Results - Performer
+* entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
+* entry[=].resource = performer-Amadeus-Spital
+// Diagnostic Results - Specimen
+* entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
+* entry[=].resource = diagnosticResult-Labor-Blut
+
+// Vital Signs
+* entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
+* entry[=].resource = vitalsign-Koerpergroesse
+
+// Past History of Illnes
+* entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
+* entry[=].resource = pastIllness-Masern
+* entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc9"
+* entry[=].resource = pastIllness-Windpocken
+
+// Careplan - Schulungen
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
+* entry[=].resource = careplan-diabetes
+
+// Social History
+* entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
+* entry[=].resource = socialhistory-Rauchherstatus
+* entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984119"
+* entry[=].resource = socialhistory-Koerperliche-Bewegung
 
 Instance: example-diab-leitdokument-1-composition
 InstanceOf: DiabComposition
@@ -96,6 +105,20 @@ Usage: #inline
 * attester.party.display = "Validiert von"
 * custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
 * extension[countryOfAffiliation].valueString = "AT"
+
+// Medication Summary
+* section[sectionMedications].title = "Medikationsliste"
+* section[sectionMedications].code = $loinc#10160-0 "History of Medication use Narrative"
+* section[sectionMedications].text.status = #empty
+* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medikationsliste</p></div>"
+* section[sectionMedications].entry[0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "EBETREXAT TBL 10MG"
+
+// Allergies and Intolerances
+* section[sectionAllergies].title = "Allergien und Intoleranzen"
+* section[sectionAllergies].code = $loinc#48765-2 "Allergies and adverse reactions Document"
+* section[sectionAllergies].text.status = #empty
+* section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergien und Intoleranzen</p></div>"
+* section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Benzylpenicillin Natrium"
 
 // Problem List
 * section[sectionProblems].title = "Diagnosen und Gesundheitsprobleme"
@@ -131,20 +154,6 @@ Usage: #inline
 * section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91) "Dickdarmkrebs in der Familie"
 // Problem List - periodontal disease risk
 * section[sectionProblems].entry[+] = Reference(urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33) "Parodontalerkrankung"
-
-// Medication Summary
-* section[sectionMedications].title = "Medikationsliste"
-* section[sectionMedications].code = $loinc#10160-0 "History of Medication use Narrative"
-* section[sectionMedications].text.status = #empty
-* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medikationsliste</p></div>"
-* section[sectionMedications].entry[0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "EBETREXAT TBL 10MG"
-
-// Allergies and Intolerances
-* section[sectionAllergies].title = "Allergien und Intoleranzen"
-* section[sectionAllergies].code = $loinc#48765-2 "Allergies and adverse reactions Document"
-* section[sectionAllergies].text.status = #empty
-* section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergien und Intoleranzen</p></div>"
-* section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Benzylpenicillin Natrium"
 
 // History of Procedures
 * section[sectionProceduresHx].title = "Eingriffe und Therapien"
@@ -182,6 +191,13 @@ Usage: #inline
 * section[sectionPastIllnessHx].entry[0] = Reference(urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984) "Zustand nach Masern"
 * section[sectionPastIllnessHx].entry[0] = Reference(urn:uuid:82301518-66ca-4b4c-821d-087adf643cc9) "Zustand nach Windpocken"
 
+// Care Plan
+* section[sectionPlanOfCare].title = "Behandlungsplan"
+* section[sectionPlanOfCare].code = $loinc#18776-5 "Plan of care note"
+* section[sectionPlanOfCare].text.status = #empty
+* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan</p></div>"
+* section[sectionPlanOfCare].entry[0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b)
+
 // Social History
 * section[sectionSocialHistory].title = "Lebensstil"
 * section[sectionSocialHistory].code = $loinc#29762-2 "Social history Narrative"
@@ -189,13 +205,6 @@ Usage: #inline
 * section[sectionSocialHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lebensstil</p></div>"
 * section[sectionSocialHistory].entry[0] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e) "Ehemalig rauchende Person"
 * section[sectionSocialHistory].entry[+] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984119) "Körperliche Bewegung"
-
-// Care Plan
-* section[sectionPlanOfCare].title = "Behandlungsplan"
-* section[sectionPlanOfCare].code = $loinc#18776-5 "Plan of care note"
-* section[sectionPlanOfCare].text.status = #empty
-* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan</p></div>"
-* section[sectionPlanOfCare].entry[0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b)
 
 Instance: Susanne-Testpatientin
 InstanceOf: AtApsPatient
@@ -322,7 +331,7 @@ Usage: #inline
 * stage.assessment = Reference(urn:uuid:f235c566-01aa-457d-ab49-9e422df69863) "Bewertung der Risikofaktoren für Parodontalerkrankungen"
 
 Instance: condition-Parodontalerkrankung-Bewertung
-InstanceOf: Observation
+InstanceOf: AtApsObservation
 Usage: #inline
 * status = #final
 * category = $observation-category#exam "Exam"
@@ -516,7 +525,7 @@ Usage: #inline
 * valueCodeableConcept.coding.display = "Ehemalig rauchende Person"
 
 Instance: socialhistory-Koerperliche-Bewegung
-InstanceOf: Observation
+InstanceOf: AtApsObservation
 Usage: #inline
 * status = #final
 * code = $sct#61686008 "Physical exercise"

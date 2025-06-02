@@ -7,6 +7,7 @@ Usage: #example
 * type = #document
 * timestamp = "2025-01-08T14:01:30+00:00"
 
+// Header *********************************************************
 // Composition
 * entry[0].fullUrl = "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"
 * entry[=].resource = example-diab-composition
@@ -19,6 +20,15 @@ Usage: #example
 // Organisation
 * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
 * entry[=].resource = organization-example
+
+// Body ***********************************************************
+// Medication Summary
+* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
+* entry[=].resource = medication-ramipril
+
+// Allergies and Intolerances
+* entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
+* entry[=].resource = allgery-no-known
 
 // Problem List
 * entry[+].fullUrl = "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e"
@@ -38,14 +48,6 @@ Usage: #example
 * entry[=].resource = APS-1-no-problems-device-use-1
 * entry[+].fullUrl = "urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8"
 * entry[=].resource = APS-1-no-problems-device-1
-
-// Medication Summary
-* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
-* entry[=].resource = medication-ramipril
-
-// Allergies and Intolerances
-* entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
-* entry[=].resource = allgery-no-known
 
 // Vital Signs
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
@@ -69,8 +71,6 @@ Usage: #example
 // * entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
 //* entry[=].resource = social-hist-bewegung
 
-
-
 Instance: example-diab-composition
 InstanceOf: DiabComposition
 Usage: #inline
@@ -86,16 +86,7 @@ Usage: #inline
 * attester.party.display = "Validiert von"
 * custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
 * extension[countryOfAffiliation].valueString = "AT"
-// Problem List
-* section[sectionProblems].title = "Gesundheitsprobleme und Risiken" //"Problem List"
-* section[sectionProblems].code = $loinc#11450-4 "Problem list - Reported"
-* section[sectionProblems].text.status = #empty
-* section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list - Reported</p></div>"
-* section[sectionProblems].entry[0] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) "Arterielle Hypertonie"
-* section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Adipositas"
-// Problem List - Family history
-* section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91) "Diabetes mellitus in der Familie"
-* section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99) "Koronare Herzerkrankung"
+
 // Medication Summary
 * section[sectionMedications].title = "Medikatiosliste" // "Medication Summary"
 * section[sectionMedications].code = $loinc#10160-0 "History of Medication use Narrative"
@@ -108,6 +99,17 @@ Usage: #inline
 * section[sectionAllergies].text.status = #empty
 * section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergies and adverse reactions Document</p></div>"
 * section[sectionAllergies].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Keine bekannte Allergie"
+// Problem List
+* section[sectionProblems].title = "Gesundheitsprobleme und Risiken" //"Problem List"
+* section[sectionProblems].code = $loinc#11450-4 "Problem list - Reported"
+* section[sectionProblems].text.status = #empty
+* section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list - Reported</p></div>"
+* section[sectionProblems].entry[0] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1e) "Arterielle Hypertonie"
+* section[sectionProblems].entry[+] = Reference(urn:uuid:61db6213-22ab-405a-825a-0ae6905fad2e) "Adipositas"
+// Problem List - Family history
+* section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd91) "Diabetes mellitus in der Familie"
+* section[sectionProblems].entry[+] = Reference(urn:uuid:caa77334-fbfc-4129-a101-1b01c595dd99) "Koronare Herzerkrankung"
+
 // History of Procedures
 * section[sectionProceduresHx].title = "Eingriffe und Therapien" // "History of Procedures"
 * section[sectionProceduresHx].code = $loinc#47519-4 "History of Procedures Document"
@@ -141,6 +143,12 @@ Usage: #inline
 // * section[sectionPastIllnessHx].code = $loinc#11348-0 "History of Past illness Narrative"
 // * section[sectionPastIllnessHx].text.status = #empty
 // * section[sectionPastIllnessHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>History of Past illness Narrative</p></div>"
+// Care Plan
+// * section[sectionPlanOfCare].title = "Behandlungsplan" // "Plan of Care"
+// * section[sectionPlanOfCare].code = $loinc#18776-5 "Plan of care note"
+// * section[sectionPlanOfCare].text.status = #empty
+// * section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Plan of care note</p></div>"
+
 // Social History
 * section[sectionSocialHistory].title = "Lebensstil" // "Social History"
 * section[sectionSocialHistory].code = $loinc#29762-2 "Social history Narrative"
@@ -150,11 +158,7 @@ Usage: #inline
 * section[sectionSocialHistory].entry[+] = Reference(urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a) "Nichtraucher seit 5 Jahren (40 Pack Years)"
 // * section[sectionSocialHistory].entry[+] = Reference(urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984) "Körperliche Aktivität"
 
-// Care Plan
-// * section[sectionPlanOfCare].title = "Behandlungsplan" // "Plan of Care"
-// * section[sectionPlanOfCare].code = $loinc#18776-5 "Plan of care note"
-// * section[sectionPlanOfCare].text.status = #empty
-// * section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Plan of care note</p></div>"
+
 
 Instance: patient-example
 InstanceOf: AtApsPatient
@@ -420,24 +424,24 @@ Usage: #inline
 * valueQuantity = 2 '/d' "wine glasses per day"
 
 
-// Instance: social-hist-bewegung
-// InstanceOf: Observation
-// Usage: #inline
-// * status = #final
-// * code = $sct#61686008 "Physical exercise"
-// * code.coding.display = "Körperliche Aktivität"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-// * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
-// * effectiveDateTime = "2024-02-08T08:30:00+01:00"
-// * valueRatio.numerator.value = 2.5
-// * valueRatio.numerator.unit = "h"
-// * valueRatio.numerator.system = "http://unitsofmeasure.org"
-// * valueRatio.numerator.code = #h
-// * valueRatio.numerator.comparator = #>
-// * valueRatio.denominator.value = 1
-// * valueRatio.denominator.unit = "wk"
-// * valueRatio.denominator.system = "http://unitsofmeasure.org"
-// * valueRatio.denominator.code = #wk
+Instance: social-hist-bewegung
+InstanceOf: AtApsObservation
+Usage: #inline
+* status = #final
+* code = $sct#61686008 "Physical exercise"
+* code.coding.display = "Körperliche Aktivität"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
+* effectiveDateTime = "2024-02-08T08:30:00+01:00"
+* valueRatio.numerator.value = 2.5
+* valueRatio.numerator.unit = "h"
+* valueRatio.numerator.system = "http://unitsofmeasure.org"
+* valueRatio.numerator.code = #h
+* valueRatio.numerator.comparator = #>
+* valueRatio.denominator.value = 1
+* valueRatio.denominator.unit = "wk"
+* valueRatio.denominator.system = "http://unitsofmeasure.org"
+* valueRatio.denominator.code = #wk
 
 Instance: APS-1-no-problems-procedure-1
 InstanceOf: AtApsProcedure

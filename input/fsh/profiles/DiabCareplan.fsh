@@ -1,5 +1,5 @@
 Profile: DiabCareplan
-Parent: CarePlan  // AtIps nicht vorhanden / CarePlanUvIps ?
+Parent: AtApsCarePlan  
 Id: diab-careplan
 Title: "Diabetes CarePlan"
 Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
