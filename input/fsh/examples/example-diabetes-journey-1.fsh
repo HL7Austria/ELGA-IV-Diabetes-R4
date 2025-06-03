@@ -49,6 +49,10 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8"
 * entry[=].resource = APS-1-no-problems-device-1
 
+// Impfungen (Immunization)
+* entry[+].fullUrl = "urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607"
+* entry[=].resource = AtApsExampleBundle-Journey-1-Immunization-1
+
 // Vital Signs
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
 * entry[=].resource = vitalsign-koerpergroesse
@@ -122,6 +126,14 @@ Usage: #inline
 * section[sectionMedicalDevices].text.status = #empty
 * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>narrative needs to be generated</p></div>"
 * section[sectionMedicalDevices].entry = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a05)
+
+// Impfungen (Immunization)
+* section[sectionImmunizations].title = "Impfungen"
+* section[sectionImmunizations].code = $loinc#11369-6 "Impfungen"
+* section[sectionImmunizations].text.status = #empty
+* section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+* section[sectionImmunizations].entry[immunization][+]  = Reference(urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607) "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+
 // Diagnostic Results
 // * section[sectionResults].title = "Diagnostische Resultate" // "Diagnostic Results"
 // * section[sectionResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
@@ -471,3 +483,21 @@ Usage: #inline
 * deviceName.name = "empty"
 * deviceName.type = #other
 * version.value = "empty"
+
+Instance: AtApsExampleBundle-Journey-1-Immunization-1
+InstanceOf: AtApsImmunization
+Usage: #inline
+* status = #completed
+* vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
+//* performer.actor = Reference(Patient/at-aps-example-practitioner-01) "Dr. Hanna Hausärztin"
+* vaccineCode = $eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
+* occurrenceDateTime = "2021-10-01"
+//* primarySource = true
+* route = $immunization-route#IM "Intramuskulär"
+//* protocolApplied[0].series = "Standardimpfserie"
+* protocolApplied[0].doseNumberPositiveInt = 1
+* protocolApplied[0].targetDisease[0] = $vs-eimpf-immunizationtarget#397430003 "Diphtheria"
+* protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#27836007 "Pertussis"
+* protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#398102009 "Poliomyelitis"
+* protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#76902006 "Tetanus"
