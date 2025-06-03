@@ -1,0 +1,15 @@
+{
+  "package-id" : "hl7.at.fhir.elga.aps.template",
+  "title" : "APS Template",
+  "introduction" : "APS Template",
+  "canonical" : "https://fhir.hl7.at/elga/aps/r4",
+  "list" : [
+    {
+      "version" : "current",
+      "desc" : "Continuous Integration Build (latest in version control)",
+      "path" : "https://fhir.hl7.at/elga/aps/r4",
+      "status" : "ci-build",
+      "current" : true
+    }
+  ]
+}
