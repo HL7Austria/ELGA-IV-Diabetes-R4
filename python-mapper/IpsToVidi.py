@@ -57,7 +57,7 @@ def groot(bundi, vidi):
             if isinstance(med, r4.MedicationStatement):
                 med_effper = med.effectivePeriod
                 if med_effper:
-                    if fhirpath.single((fhirpath_utils.bool_or(fhirpath_utils.bool_not([bool([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')])]), fhirpath_utils.compare([v5 for v4 in [med_effper] for v5 in fhirpath_utils.get(v4,'end')], '>=', [one_timestamp.date()])))):
+                    if fhirpath.single(fhirpath_utils.bool_or(fhirpath_utils.bool_not([bool([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')])]), fhirpath_utils.compare([v5 for v4 in [med_effper] for v5 in fhirpath_utils.get(v4,'end')], '>=', [one_timestamp.date()]))):
                         vcmd = malac_vidi.v_current_medication_dataType()
                         if vidi.v_current_medication_data is not None:
                             vcmd = vidi.v_current_medication_data
@@ -72,7 +72,7 @@ def groot(bundi, vidi):
             if isinstance(med, r4.MedicationStatement):
                 med_effper = med.effectivePeriod
                 if med_effper:
-                    if fhirpath.single((fhirpath_utils.bool_or(fhirpath_utils.bool_not([bool([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')])]), fhirpath_utils.compare([v5 for v4 in [med_effper] for v5 in fhirpath_utils.get(v4,'end')], '>=', [one_timestamp.date()])))):
+                    if fhirpath.single(fhirpath_utils.bool_or(fhirpath_utils.bool_not([bool([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')])]), fhirpath_utils.compare([v5 for v4 in [med_effper] for v5 in fhirpath_utils.get(v4,'end')], '>=', [one_timestamp.date()]))):
                         icmd = malac_vidi.i_current_medication_dataType()
                         if vidi.i_current_medication_data is not None:
                             icmd = vidi.i_current_medication_data
@@ -87,7 +87,7 @@ def groot(bundi, vidi):
             if isinstance(med, r4.MedicationStatement):
                 med_effper = med.effectivePeriod
                 if med_effper:
-                    if fhirpath.single((fhirpath_utils.compare([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')], '<', [one_timestamp.date()]))):
+                    if fhirpath.single(fhirpath_utils.compare([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')], '<', [one_timestamp.date()])):
                         vpmd = malac_vidi.v_past_medication_dataType()
                         if vidi.v_past_medication_data is not None:
                             vpmd = vidi.v_past_medication_data
@@ -102,7 +102,7 @@ def groot(bundi, vidi):
             if isinstance(med, r4.MedicationStatement):
                 med_effper = med.effectivePeriod
                 if med_effper:
-                    if fhirpath.single((fhirpath_utils.compare([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')], '<', [one_timestamp.date()]))):
+                    if fhirpath.single(fhirpath_utils.compare([v2 for v1 in [med_effper] for v2 in fhirpath_utils.get(v1,'end')], '<', [one_timestamp.date()])):
                         ipmd = malac_vidi.i_past_medication_dataType()
                         if vidi.i_past_medication_data is not None:
                             ipmd = vidi.i_past_medication_data
@@ -139,7 +139,7 @@ def groot(bundi, vidi):
         if condi:
             condi = unpack_container(condi)
             if isinstance(condi, r4.Condition):
-                if fhirpath.single((fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '==', ['active'])))):
+                if fhirpath.single(fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '==', ['active']))):
                     vcpd = malac_vidi.v_current_problems_dataType()
                     if vidi.v_current_problems_data is not None:
                         vcpd = vidi.v_current_problems_data
@@ -152,7 +152,7 @@ def groot(bundi, vidi):
         if condi:
             condi = unpack_container(condi)
             if isinstance(condi, r4.Condition):
-                if fhirpath.single((fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '==', ['active'])))):
+                if fhirpath.single(fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '==', ['active']))):
                     icpd = malac_vidi.i_current_problems_dataType()
                     if vidi.i_current_problems_data is not None:
                         icpd = vidi.i_current_problems_data
@@ -165,7 +165,7 @@ def groot(bundi, vidi):
         if condi:
             condi = unpack_container(condi)
             if isinstance(condi, r4.Condition):
-                if fhirpath.single((fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '!=', ['active'])))):
+                if fhirpath.single(fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '!=', ['active']))):
                     vppd = malac_vidi.v_past_problems_dataType()
                     if vidi.v_past_problems_data is not None:
                         vppd = vidi.v_past_problems_data
@@ -178,7 +178,7 @@ def groot(bundi, vidi):
         if condi:
             condi = unpack_container(condi)
             if isinstance(condi, r4.Condition):
-                if fhirpath.single((fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '!=', ['active'])))):
+                if fhirpath.single(fhirpath_utils.bool_and(fhirpath_utils.bool_and(fhirpath_utils.bool_not([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])]), fhirpath_utils.bool_not([v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])), fhirpath_utils.equals([v22 for v21 in [v20 for v19 in [v18 for v17 in [condi] for v18 in fhirpath_utils.get(v17,'clinicalStatus')] for v20 in fhirpath_utils.get(v19,'coding')] for v22 in fhirpath_utils.get(v21,'code')], '!=', ['active']))):
                     ippd = malac_vidi.i_past_problems_dataType()
                     if vidi.i_past_problems_data is not None:
                         ippd = vidi.i_past_problems_data
@@ -191,7 +191,7 @@ def groot(bundi, vidi):
         if condi:
             condi = unpack_container(condi)
             if isinstance(condi, r4.Condition):
-                if fhirpath.single((fhirpath_utils.bool_or([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])], [v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])]))):
+                if fhirpath.single(fhirpath_utils.bool_or([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])], [v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])):
                     vfpd = malac_vidi.v_family_problems_dataType()
                     if vidi.v_family_problems_data is not None:
                         vfpd = vidi.v_family_problems_data
@@ -204,7 +204,7 @@ def groot(bundi, vidi):
         if condi:
             condi = unpack_container(condi)
             if isinstance(condi, r4.Condition):
-                if fhirpath.single((fhirpath_utils.bool_or([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])], [v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])]))):
+                if fhirpath.single(fhirpath_utils.bool_or([v8 for v7 in [v6 for v5 in [v4 for v3 in [v2 for v1 in [condi] for v2 in fhirpath_utils.get(v1,'code')] for v4 in fhirpath_utils.get(v3,'coding')] for v6 in fhirpath_utils.get(v5,'display')] for v8 in fhirpath_utils.startswith(v7, ['FH:'])], [v16 for v15 in [v14 for v13 in [v12 for v11 in [v10 for v9 in [condi] for v10 in fhirpath_utils.get(v9,'code')] for v12 in fhirpath_utils.get(v11,'coding')] for v14 in fhirpath_utils.get(v13,'display')] for v16 in fhirpath_utils.startswith(v15, ['Family history'])])):
                     ifpd = malac_vidi.i_family_problems_dataType()
                     if vidi.i_family_problems_data is not None:
                         ifpd = vidi.i_family_problems_data
@@ -237,6 +237,18 @@ def groot(bundi, vidi):
                 data = malac_vidi.dataType16()
                 ipd.data.append(data)
                 i_procedures_data(proc, data)
+        immunization = entry.resource
+        if immunization:
+            immunization = unpack_container(immunization)
+            if isinstance(immunization, r4.Immunization):
+                iid = malac_vidi.i_immunizations_dataType()
+                if vidi.i_immunizations_data is not None:
+                    iid = vidi.i_immunizations_data
+                else:
+                    vidi.i_immunizations_data = iid
+                data = malac_vidi.dataType17()
+                iid.data.append(data)
+                i_immunizations_data(immunization, data)
 
 def medication_data(med, data):
     med_code = med.medicationCodeableConcept
@@ -325,6 +337,23 @@ def i_procedures_data(proc, data):
     proc_status = proc.status
     if proc_status:
         data.status = proc_status.value
+
+def i_immunizations_data(immunization, data):
+    immunization_occurrenceDateTime = immunization.occurrenceDateTime
+    if immunization_occurrenceDateTime:
+        data.zeitpunkt = fhirpath.single([v2 for v1 in fhirpath_utils.toString([dateutil.parser.parse(str(immunization_occurrenceDateTime.value))]) for v2 in fhirpath_utils.substring(v1,[0],[4])])
+    immunization_code = immunization.vaccineCode
+    if immunization_code:
+        for immunization_code_coding in immunization_code.coding or []:
+            immunization_code_coding_display = immunization_code_coding.display
+            if immunization_code_coding_display:
+                data.name = immunization_code_coding_display.value
+    for immunization_protocolApplied in immunization.protocolApplied or []:
+        for immunization_protocolApplied_targetDisease in immunization_protocolApplied.targetDisease or []:
+            for immunization_protocolApplied_targetDisease_coding in immunization_protocolApplied_targetDisease.coding or []:
+                immunization_protocolApplied_targetDisease_coding_display = immunization_protocolApplied_targetDisease_coding.display
+                if immunization_protocolApplied_targetDisease_coding_display:
+                    data.immunizationtarget = immunization_protocolApplied_targetDisease_coding_display.value
 
 # output
 # 1..1 result (boolean)
