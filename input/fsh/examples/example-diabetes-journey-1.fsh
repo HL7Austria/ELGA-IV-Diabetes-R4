@@ -84,7 +84,7 @@ Usage: #inline
 * attester.mode = #personal
 * attester.party = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * attester.party.display = "Validiert von"
-* custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
+* custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital"
 * extension[countryOfAffiliation].valueString = "AT"
 
 // Medication Summary
@@ -392,7 +392,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV-Ärztin"
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueQuantity.comparator = #<
-* valueQuantity.value = 109 
+* valueQuantity.value = 109
 * valueQuantity.unit = "cm"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #cm
@@ -449,8 +449,9 @@ Usage: #inline
 * status = #unknown
 * code = $sct#787480003 "No known procedures (situation)"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* performedDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* performedDateTime.extension.valueCode = #unknown
+// * performedDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+// * performedDateTime.extension.valueCode = #unknown
+* performedDateTime = "2020"
 
 Instance: APS-1-no-problems-device-use-1
 InstanceOf: AtApsDeviceUseStatement
@@ -458,8 +459,9 @@ Usage: #inline
 * status = #active
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * device = Reference(urn:uuid:9faadcc1-076d-4bb4-b818-96239e2b8bc8)
-* timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* timingDateTime.extension.valueCode = #unknown
+// * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+// * timingDateTime.extension.valueCode = #unknown
+* timingDateTime = "2020"
 
 Instance: APS-1-no-problems-device-1
 InstanceOf: AtApsDevice

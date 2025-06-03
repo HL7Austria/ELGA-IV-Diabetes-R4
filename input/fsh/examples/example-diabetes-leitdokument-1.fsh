@@ -12,7 +12,7 @@ Usage: #example
 * entry[0].fullUrl = "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"
 * entry[=].resource = example-diab-leitdokument-1-composition
 // Patient
-* entry[+].fullUrl = "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8" 
+* entry[+].fullUrl = "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"
 * entry[=].resource = Susanne-Testpatientin
 // Author
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
@@ -47,7 +47,7 @@ Usage: #example
 // Problem List - periodontal disease risk
 * entry[+].fullUrl = "urn:uuid:fa46fccb-5c24-4a40-a478-d6da4902ff33"
 * entry[=].resource = problem-Parodontalerkrankung
-* entry[+].fullUrl = "urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"  
+* entry[+].fullUrl = "urn:uuid:f235c566-01aa-457d-ab49-9e422df69863"
 * entry[=].resource = condition-Parodontalerkrankung-Bewertung
 
 // History of Procedures
@@ -103,7 +103,7 @@ Usage: #inline
 * attester.mode = #personal
 * attester.party = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
 * attester.party.display = "Validiert von"
-* custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
+* custodian = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital"
 * extension[countryOfAffiliation].valueString = "AT"
 
 // Medication Summary
@@ -124,7 +124,7 @@ Usage: #inline
 * section[sectionProblems].title = "Diagnosen und Gesundheitsprobleme"
 * section[sectionProblems].code = $loinc#11450-4 "Problem list - Reported"
 * section[sectionProblems].text.status = #generated
-* section[sectionProblems].text.div = 
+* section[sectionProblems].text.div =
 "<div xmlns=\"http://www.w3.org/1999/xhtml\">
 <b>Diagnose</b>
   <ul>
@@ -338,7 +338,7 @@ Usage: #inline
 * code = $sct#1237049003 "Evaluation of risk factors for periodontal disease"
 * code.coding.display = "Bewertung der Risikofaktoren für Parodontalerkrankungen"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
+* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital"
 * effectiveDateTime = "2024-02-08T08:30:00+01:00"
 * valueCodeableConcept = $sct#723509005 "High risk"
 
@@ -353,11 +353,11 @@ Usage: #inline
 * instantiatesUri = "https://www.sozialministerium.at/2025/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
 * status = #active
 * intent = #plan
-* category.coding.code = $sct#428274007 
+* category.coding.code = $sct#428274007
 //* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
 * title = "Ernährungsschulung bei Diabetes mellitus Typ II"
 * description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin" 
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * period.start = "2025-03-01"
 * period.end = "2025-03-31"
 * created = "2025-02-17"
@@ -435,7 +435,7 @@ Usage: #inline
 * code.coding.display = "ABO- und Rh-Gruppe [Typ] im Blut"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * effectiveDateTime = "2024-02-08T07:34:06+01:00"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital" 
+* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital"
 * valueCodeableConcept = $sct#278149003 "Blood group A Rh(D) positive (finding)"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
@@ -550,8 +550,9 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Susanne Testpatientin"
 * device = Reference(urn:uuid:a1a80313-a757-4062-b0d7-d04fd2a04602) "Insulinpumpe"
 * device.display = "Verwendetes Gerät: Insulinpumpe"
-* timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-* timingDateTime.extension.valueCode = #unknown
+// * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+// * timingDateTime.extension.valueCode = #unknown
+* timingDateTime = "2020"
 
 Instance: device-Insulinpumpe
 InstanceOf: AtApsDevice
