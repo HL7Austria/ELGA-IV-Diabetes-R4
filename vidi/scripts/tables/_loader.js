@@ -7,6 +7,7 @@ import {v_current_problems_config, i_current_problems_config, v_past_problems_co
     i_past_problems_config, v_family_problems_config, i_family_problems_config} from './problems_config.js';
 import {v_procedures_config, i_procedures_config} from './procedures_config.js';
 // immunizations missing
+import {i_immunizations_config} from './immunization_config.js';
 // medicaldevices missing
 import {v_results_config, i_results_config} from './results_config.js';
 import {v_vitalsigns_config, i_vitalsigns_config} from './vitalsigns_config.js';
@@ -35,6 +36,7 @@ export function loadFrom(data){
         v_current_problems_data, i_current_problems_data, v_past_problems_data, i_past_problems_data, v_family_problems_data, i_family_problems_data,
         v_procedures_data, i_procedures_data,
         // immunizations missing
+        i_immunizations_data,
         // medicaldevices missing
         v_results_data, i_results_data,
         v_vitalsigns_data, i_vitalsigns_data,
@@ -67,6 +69,7 @@ export function loadFrom(data){
     new Tabulator("#i_procedures", Object.assign({}, i_procedures_data, i_procedures_config));
 
     // immunizations missing
+    new Tabulator("#i_immunizations", Object.assign({}, i_immunizations_data, i_immunizations_config));
 
     // medicaldevices missing
 
