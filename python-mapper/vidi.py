@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Jun  3 10:05:23 2025 by generateDS.py version 2.43.3.
+# Generated Tue Jun  3 11:40:17 2025 by generateDS.py version 2.43.3.
 # Python 3.10.7 (tags/v3.10.7:6cc6b13, Sep  5 2022, 14:08:36) [MSC v.1933 64 bit (AMD64)]
 #
 # Command line options:
@@ -6726,7 +6726,7 @@ class dataType17(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
-    def __init__(self, zeitpunkt: 'string' = None, name: 'string' = 'Keine aktuelle Impfung bekannt', immunizationtarget: 'string' = None, gds_collector_=None, **kwargs_):
+    def __init__(self, zeitpunkt: 'string' = None, name: 'string' = 'Keine aktuelle Impfung bekannt', immunizationtarget: List_['immunizationtargetType'] = None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -6736,7 +6736,10 @@ class dataType17(GeneratedsSuper):
         self.zeitpunkt_nsprefix_ = None
         self.name = name
         self.name_nsprefix_ = None
-        self.immunizationtarget = immunizationtarget
+        if immunizationtarget is None:
+            self.immunizationtarget = []
+        else:
+            self.immunizationtarget = immunizationtarget
         self.immunizationtarget_nsprefix_ = None
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -6765,11 +6768,17 @@ class dataType17(GeneratedsSuper):
         return self.immunizationtarget
     def set_immunizationtarget(self, immunizationtarget):
         self.immunizationtarget = immunizationtarget
+    def add_immunizationtarget(self, value):
+        self.immunizationtarget.append(value)
+    def insert_immunizationtarget_at(self, index, value):
+        self.immunizationtarget.insert(index, value)
+    def replace_immunizationtarget_at(self, index, value):
+        self.immunizationtarget[index] = value
     def has__content(self):
         if (
             self.zeitpunkt is not None or
             self.name != "Keine aktuelle Impfung bekannt" or
-            self.immunizationtarget is not None
+            self.immunizationtarget
         ):
             return True
         else:
@@ -6816,10 +6825,9 @@ class dataType17(GeneratedsSuper):
             namespaceprefix_ = self.name_nsprefix_ + ':' if (UseCapturedNS_ and self.name_nsprefix_) else ''
             showIndent(outfile, level, pretty_print)
             outfile.write('<%sname>Keine aktuelle Impfung bekannt</%sname/>%s' % (namespaceprefix_,namespace_prefix, eol_))
-        if self.immunizationtarget is not None:
+        for immunizationtarget_ in self.immunizationtarget:
             namespaceprefix_ = self.immunizationtarget_nsprefix_ + ':' if (UseCapturedNS_ and self.immunizationtarget_nsprefix_) else ''
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%simmunizationtarget>%s</%simmunizationtarget>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.immunizationtarget), input_name='immunizationtarget')), namespaceprefix_ , eol_))
+            immunizationtarget_.export(outfile, level, namespaceprefix_, namespacedef_='', name_='immunizationtarget', pretty_print=pretty_print)
     def exportJson(self, parent_dict=None, key=None, is_list=False):
         json_dict = dict()
         self.exportJsonAttributes(json_dict)
@@ -6834,8 +6842,13 @@ class dataType17(GeneratedsSuper):
             json_dict['zeitpunkt'] = self.zeitpunkt
         if self.name is not None:
             json_dict['name'] = self.name
-        if self.immunizationtarget is not None:
-            json_dict['immunizationtarget'] = self.immunizationtarget
+        child_list = []
+        for child in self.immunizationtarget:
+            child_dict = child.exportJson(json_dict, 'immunizationtarget', True)
+            if child_dict:
+                child_list.append(child_dict)
+        if child_list:
+            json_dict['immunizationtarget'] = child_list
     def build(self, node, gds_collector_=None):
         self.gds_collector_ = gds_collector_
         if SaveElementTreeNode:
@@ -6865,12 +6878,120 @@ class dataType17(GeneratedsSuper):
             self.name = value_
             self.name_nsprefix_ = child_.prefix
         elif nodeName_ == 'immunizationtarget':
+            obj_ = immunizationtargetType.factory(parent_object_=self)
+            obj_.build(child_, gds_collector_=gds_collector_)
+            self.immunizationtarget.append(obj_)
+            obj_.original_tagname_ = 'immunizationtarget'
+# end class dataType17
+
+
+class immunizationtargetType(GeneratedsSuper):
+    __hash__ = GeneratedsSuper.__hash__
+    subclass = None
+    superclass = None
+    def __init__(self, immunizationtarget: 'string' = None, gds_collector_=None, **kwargs_):
+        self.gds_collector_ = gds_collector_
+        self.gds_elementtree_node_ = None
+        self.original_tagname_ = None
+        self.parent_object_ = kwargs_.get('parent_object_')
+        self.ns_prefix_ = None
+        self.immunizationtarget = immunizationtarget
+        self.immunizationtarget_nsprefix_ = None
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, immunizationtargetType)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if immunizationtargetType.subclass:
+            return immunizationtargetType.subclass(*args_, **kwargs_)
+        else:
+            return immunizationtargetType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_ns_prefix_(self):
+        return self.ns_prefix_
+    def set_ns_prefix_(self, ns_prefix):
+        self.ns_prefix_ = ns_prefix
+    def get_immunizationtarget(self):
+        return self.immunizationtarget
+    def set_immunizationtarget(self, immunizationtarget):
+        self.immunizationtarget = immunizationtarget
+    def has__content(self):
+        if (
+            self.immunizationtarget is not None
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='immunizationtargetType', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('immunizationtargetType')
+        if imported_ns_def_ is not None:
+            namespacedef_ = imported_ns_def_
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None and name_ == 'immunizationtargetType':
+            name_ = self.original_tagname_
+        if UseCapturedNS_ and self.ns_prefix_:
+            namespaceprefix_ = self.ns_prefix_ + ':'
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='immunizationtargetType')
+        if self.has__content():
+            outfile.write('>%s' % (eol_, ))
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='immunizationtargetType', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='immunizationtargetType'):
+        pass
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='immunizationtargetType', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.immunizationtarget is not None:
+            namespaceprefix_ = self.immunizationtarget_nsprefix_ + ':' if (UseCapturedNS_ and self.immunizationtarget_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%simmunizationtarget>%s</%simmunizationtarget>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.immunizationtarget), input_name='immunizationtarget')), namespaceprefix_ , eol_))
+    def exportJson(self, parent_dict=None, key=None, is_list=False):
+        json_dict = dict()
+        self.exportJsonAttributes(json_dict)
+        self.exportJsonChildren(json_dict)
+        return self.exportJsonResult(json_dict, parent_dict, key, is_list)
+    def exportJsonResult(self, json_dict, parent_dict, key, is_list, sub_defs=[], attr_defs=[]):
+        return json_dict
+    def exportJsonAttributes(self, json_dict):
+        pass
+    def exportJsonChildren(self, json_dict):
+        if self.immunizationtarget is not None:
+            json_dict['immunizationtarget'] = self.immunizationtarget
+    def build(self, node, gds_collector_=None):
+        self.gds_collector_ = gds_collector_
+        if SaveElementTreeNode:
+            self.gds_elementtree_node_ = node
+        if SaveNodeDict:
+            node_dict[node] = self
+        already_processed = set()
+        self.ns_prefix_ = node.prefix
+        self._buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self._buildChildren(child, node, nodeName_, gds_collector_=gds_collector_)
+        return self
+    def _buildAttributes(self, node, attrs, already_processed):
+        pass
+    def _buildChildren(self, child_, node, nodeName_, fromsubclass_=False, gds_collector_=None):
+        if nodeName_ == 'immunizationtarget':
             value_ = child_.text
             value_ = self.gds_parse_string(value_, node, 'immunizationtarget')
             value_ = self.gds_validate_string(value_, node, 'immunizationtarget')
             self.immunizationtarget = value_
             self.immunizationtarget_nsprefix_ = child_.prefix
-# end class dataType17
+# end class immunizationtargetType
 
 
 class v_results_dataType(GeneratedsSuper):
@@ -9169,6 +9290,7 @@ __all__ = [
     "i_results_dataType",
     "i_socialhistory_dataType",
     "i_vitalsigns_dataType",
+    "immunizationtargetType",
     "v_allergies_dataType",
     "v_current_medication_dataType",
     "v_current_problems_dataType",

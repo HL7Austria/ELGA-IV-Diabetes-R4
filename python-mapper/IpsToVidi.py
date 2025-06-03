@@ -353,7 +353,9 @@ def i_immunizations_data(immunization, data):
             for immunization_protocolApplied_targetDisease_coding in immunization_protocolApplied_targetDisease.coding or []:
                 immunization_protocolApplied_targetDisease_coding_display = immunization_protocolApplied_targetDisease_coding.display
                 if immunization_protocolApplied_targetDisease_coding_display:
-                    data.immunizationtarget = immunization_protocolApplied_targetDisease_coding_display.value
+                    data_immunizationtarget = malac_vidi.immunizationtargetType()
+                    data.immunizationtarget.append(data_immunizationtarget)
+                    data_immunizationtarget.immunizationtarget = immunization_protocolApplied_targetDisease_coding_display.value
 
 # output
 # 1..1 result (boolean)
