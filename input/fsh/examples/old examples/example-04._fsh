@@ -86,40 +86,41 @@ Usage: #inline
 * section[=].code = $loinc#11450-4 "Problem list - Reported"
 * section[=].text.status = #empty
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Arterielle Hypertonie</p><p>Adipositas</p><p>Diabettes Mellitus Typ 2</p></div>"
-* section[=].entry[0] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde)
-* section[=].entry[+] = Reference(urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5)
-* section[=].entry[+] = Reference(urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e)
-* section[=].entry[+] = Reference(urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd)
-* section[=].entry[+] = Reference(urn:uuid:32d90aaa-6577-4c5d-9771-d8f606ebf0b9)
-* section[=].entry[+] = Reference(urn:uuid:2040058f-9537-4b26-9367-5ca5ac0ddb58)
-* section[=].entry[+] = Reference(urn:uuid:7568C01B-D447-46FE-89BA-98AD6DAF73DF)
-* section[=].entry[+] = Reference(urn:uuid:57980776-136b-4611-9b27-83eae9c71a50)
-* section[=].entry[+] = Reference(urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a)
-* section[=].entry[+] = Reference(urn:uuid:ebfb60a8-a753-459d-a796-a191a4dbd91d)
-* section[=].entry[+] = Reference(urn:uuid:5ab717ff-c0a0-409e-83db-0fa6f8619f68)
-* section[=].entry[+] = Reference(urn:uuid:A3A9BE59-EC61-4CAB-92A9-9CBAB6AEC437)
+* section[=].entry[0] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) "Arterielle Hypertonie"  //ok
+* section[=].entry[+] = Reference(urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5) "Vorzeitige koronare Herzerkrankung" // todo
+* section[=].entry[+] = Reference(urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e) "careplan"  
+* section[=].entry[+] = Reference(urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd) "Adipositas"
+* section[=].entry[+] = Reference(urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a)  "Alkoholkonsum in der Vergangenheit"
+* section[=].entry[+] = Reference(urn:uuid:A3A9BE59-EC61-4CAB-92A9-9CBAB6AEC437) "Diabetes Mellitus Typ 2"
+
 * section[+].title = "Medication Summary"
 * section[=].code = $loinc#10160-0 "History of Medication use Narrative"
 * section[=].text.status = #empty
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 09.04.2023</p></div>"
-* section[=].entry[0] = Reference(urn:uuid:6d15d84f-2faf-4141-ac0c-fb9cf8496abe)
-* section[=].entry[+] = Reference(urn:uuid:ecf9728f-fa50-4b46-b8f7-7768174df72a)
-* section[=].entry[+] = Reference(urn:uuid:cf4b2e92-51e6-44de-9406-5406e66e9d45)
+* section[=].entry[0] = Reference(urn:uuid:6d15d84f-2faf-4141-ac0c-fb9cf8496abe) "RAMIPRIL"
+* section[=].entry[+] = Reference(urn:uuid:ecf9728f-fa50-4b46-b8f7-7768174df72a) "METFORMIN"
+
+
 * section[+].title = "Allergies and Intolerances"
 * section[=].code = $loinc#48765-2 "Allergies and adverse reactions Document"
 * section[=].text.status = #empty
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p></p></div>"
-* section[=].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b)
+* section[=].entry = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b)  "leer"
+
+
 * section[+].title = "History of Procedures"
 * section[=].code = $loinc#47519-4 "History of Procedures Document"
 * section[=].text.status = #empty
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p></p></div>"
 * section[=].entry = Reference(urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a)
+
 * section[+].title = "Medical Devices"
 * section[=].code = $loinc#46264-8 "History of medical device use"
 * section[=].text.status = #empty
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p></p></div>"
 * section[=].entry = Reference(urn:uuid:8103f99c-64f0-4dd5-b92e-5c9680c91e47)
+
+
 * section[+].title = "Diagnostic Results"
 * section[=].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
 * section[=].text.status = #empty
@@ -152,7 +153,7 @@ Usage: #inline
 * section[=].entry[0] = Reference(urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e)
 * section[=].entry[+] = Reference(urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a)
 * section[=].entry[+] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e)
-* section[=].entry[+] = Reference(urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5)
+* section[=].entry[+] = Reference(urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5) "Vorzeitige koronare Herzerkrankung"
 * section[=].entry[+] = Reference(urn:uuid:CBA1F802-851B-46FB-BE7D-781BE4198E15)
 * section[=].entry[+] = Reference(urn:uuid:0317A71F-6573-450F-BFA7-F2728EA7A8CC)
 * section[=].entry[+] = Reference(urn:uuid:feb8751e-3baa-4f49-8d9e-1cd32a6c6dac)

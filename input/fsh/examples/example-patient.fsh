@@ -19,4 +19,4 @@ Usage: #example
 * address.city = "Hainfeld"
 * address.postalCode = "3100"
 * address.country = "AUT"
-* generalPractitioner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
+//* generalPractitioner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
