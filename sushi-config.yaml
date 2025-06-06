@@ -6,7 +6,7 @@
 id: hl7.at.fhir.elga.iv.diab
 canonical: https://fhir.hl7.at/elga-iv-diabetes-r4
 name: ELGA-Integrierte-Versorgung-Diabetes-R4
-title: "Integrierte Versorgung Diabetes (R4) ****** TEST VERSION ******"
+title: "Integrierte Versorgung Diabetes (R4)"
 description: "Der FHIR Implementierungsleitfaden Integrierte Versorgung Diabetes (R4) ist abgeleitet von der Austrian Patient Summary (R4)." 
 status: draft # active | retired | unknown
 date: 2025-12-13
