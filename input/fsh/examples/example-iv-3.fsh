@@ -28,8 +28,8 @@ Usage: #example
 // Medication Summary
 * entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
 * entry[=].resource = example-iv-3-medication-summary-1
-// * entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011"
-// * entry[=].resource = example-iv-3-medication-summary-2
+* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011"
+* entry[=].resource = example-iv-3-medication-summary-2
 // Allergies and Intolerances
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
 * entry[=].resource = example-iv-3-allergy-1
@@ -137,9 +137,9 @@ Usage: #inline
 * section[sectionMedications].title = "Medikationsliste"  // Medikationsplan
 * section[sectionMedications].code = $cs-loinc#10160-0 "Medikationsanamnese"
 * section[sectionMedications].text.status = #empty
-* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p></div>" //<p>Metformin 500 mg 1-0-1-0, Start 09.04.2023</p></div>"
+* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 09.04.2023</p></div>"
 * section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL  5MG"
-// * section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL  500MG"
+* section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL  500MG"
 
 // Allergies and Intolerances
 * section[sectionAllergies].title = "Allergien und Intoleranzen"
@@ -189,7 +189,7 @@ Usage: #inline
 * section[sectionResults].title = "Diagnostische Resultate"
 * section[sectionResults].code = $cs-loinc#30954-2 "Relevante diagnostische Tests oder Labordaten"
 * section[sectionResults].text.status = #empty
-* section[sectionResults].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Glucose im kapillaren Blut 1h postprandial</p><p>Hemoglobin A1c/Hemoglobin.total in Blood: 8.1 %</p><p>Kreatinin in Serum: 1.2 mg/dL</p></div>"
+* section[sectionResults].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Glucose im kapillaren Blut 1h postprandial</p><p>Hemoglobin A1c/Hemoglobin im Blut: 8.1 %</p><p>Kreatinin in Serum: 1.2 mg/dL</p></div>"
 * section[sectionResults].entry[resultsObservationLaboratoryPathology][0] = Reference(urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654) "Glucose im kapillaren Blut 1h postprandial"
 * section[sectionResults].entry[resultsObservationLaboratoryPathology][+] = Reference(urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91) "Hemoglobin A1c/Hemoglobin.total in Blood"
 * section[sectionResults].entry[resultsObservationLaboratoryPathology][+] = Reference(urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a) "Kreatinin in Serum"
@@ -201,11 +201,11 @@ Usage: #inline
 * section[sectionVitalSigns].code = $cs-loinc#8716-3 "Vitalparameter"
 * section[sectionVitalSigns].text.status = #empty
 * section[sectionVitalSigns].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Körpergröße: 173 cm</p><p>Körpergewicht: 90 kg</p><p>BMI: 30.07 (high)</p><p>Blutdruck 180 / 80</p><p>Herzfrequenz 100</p></div>"
-* section[sectionVitalSigns].entry[vitalSign][0] = Reference(urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142) "Körpergröße (example-iv-3-vital-sign-1)"
-* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37) "Körpergewicht (example-iv-3-vital-sign-2)"
-* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8) "BMI (example-iv-3-vital-sign-3)"
-* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:8248cc70-65a2-4d37-ae14-a3ef2abf8f32) "Blutdruck (example-iv-3-vital-sign-4)"
-* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:4d3f7ac4-fd0a-49af-a56b-303a2dbe67d1) "Herzfrequenz (example-iv-3-vital-sign-5)"
+* section[sectionVitalSigns].entry[vitalSign][0] = Reference(urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142) "Körpergröße: 173 cm"
+* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37) "Körpergewicht: 90 kg"
+* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8) "BMI: 30.07 (high)"
+* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:8248cc70-65a2-4d37-ae14-a3ef2abf8f32) "Blutdruck 180 / 80"
+* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:4d3f7ac4-fd0a-49af-a56b-303a2dbe67d1) "Herzfrequenz 100"
 
 // Past History of Illness
 * section[sectionPastIllnessHx].title = "Vergangene Gesundheitsprobleme und Risiken"
@@ -389,19 +389,19 @@ Usage: #inline
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 
-// Instance: example-iv-3-medication-summary-2
-// InstanceOf: AtApsMedicationStatement
-// Usage: #inline
-// * status = #active
-// * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectivePeriod.start = "2023-03-17T08:01:30+01:00"
-// * dosage.text = "S:0-0-0-2 / FR"
-// * dosage.sequence = 1
-// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// * dosage.timing.repeat.dayOfWeek = #fri
-// * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
-// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+Instance: example-iv-3-medication-summary-2
+InstanceOf: AtApsMedicationStatement
+Usage: #inline
+* status = #active
+* medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* effectivePeriod.start = "2023-03-17T08:01:30+01:00"
+* dosage.text = "S:0-0-0-2 / FR"
+* dosage.sequence = 1
+* dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+* dosage.timing.repeat.dayOfWeek = #fri
+* dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
+* dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 
 // Allergies and Intolerances   // Todo in Journey ergänzen, falls ok
@@ -491,26 +491,26 @@ Usage: #inline
 
 // Diagnostic Results
 
-// // Diagnostic Results - Performer
-// Instance: example-iv-3-diagnostic-result-performer-1
-// InstanceOf: AtApsOrganization
-// Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.34.99.4613"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
-// * name = "Amadeus Spital - Labor"
-// * telecom[0].system = #phone
-// * telecom[=].value = "+43.1.3453446.0"
-// * telecom[+].system = #fax
-// * telecom[=].value = "+43.1.3453446.4674"
-// * telecom[+].system = #email
-// * telecom[=].value = "info@amadeusspital.at"
-// * telecom[+].system = #url
-// * telecom[=].value = "https://www.amadeusspital.at"
-// * address.line = "Währinger Gürtel 18-20"
-// * address.city = "Wien"
-// * address.postalCode = "1090"
-// * address.country = "AUT"
+// Diagnostic Results - Performer
+Instance: example-iv-3-diagnostic-result-performer-1
+InstanceOf: AtApsOrganization
+Usage: #inline
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.34.99.4613"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
+* name = "Amadeus Spital - Labor"
+* telecom[0].system = #phone
+* telecom[=].value = "+43.1.3453446.0"
+* telecom[+].system = #fax
+* telecom[=].value = "+43.1.3453446.4674"
+* telecom[+].system = #email
+* telecom[=].value = "info@amadeusspital.at"
+* telecom[+].system = #url
+* telecom[=].value = "https://www.amadeusspital.at"
+* address.line = "Währinger Gürtel 18-20"
+* address.city = "Wien"
+* address.postalCode = "1090"
+* address.country = "AUT"
 
 // Diagnostic Results - Specimen - Blut
 Instance: example-iv-3-diagnostic-specimen-1
