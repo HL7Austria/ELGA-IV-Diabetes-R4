@@ -5,9 +5,9 @@ name: PublishIG
 # Run on updates to the master
 on:
   push:
-    branches: [ main, add-vidi ]
+    branches: [ main, vidi-careplan ]
   pull_request:
-    branches: [ main, add-vidi ]
+    branches: [ main, vidi-careplan ]
 
 jobs:
   build:
