@@ -106,12 +106,12 @@ Usage: #example
 // Careplan Labor
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631"
 * entry[=].resource = example-iv-3-careplan-labor
-// // Careplan Schulungen
-// * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
-// * entry[=].resource = example-iv-3-careplan-diabetes-schulung
-// // Careplan Untersuchungen
-// * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae222"
-// * entry[=].resource = example-iv-3-careplan-diabetes-untersuchung
+// Careplan Schulungen
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
+* entry[=].resource = example-iv-3-careplan-diabetes-schulung
+// Careplan Untersuchungen
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae222"
+* entry[=].resource = example-iv-3-careplan-diabetes-untersuchung
 // Social History
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
 * entry[=].resource = example-iv-3-social-history-1
@@ -218,11 +218,11 @@ Usage: #inline
 * section[sectionPlanOfCare].title = "Behandlungsplan"
 * section[sectionPlanOfCare].code = $cs-loinc#18776-5 "Behandlungsplan - Notiz"
 * section[sectionPlanOfCare].text.status = #empty
-* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Labor abgeschlossen</p></div>"
+* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Angeforderte Laboruntersuchung: Status abgeschlossen</p><p>Empfohlene Ernährungsschulung bei Diabetes mellitus Typ II: Status offen</p><p>Zuweisung zu Augenuntersuchung: Status offen</p></div>"
 * section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631) "Careplan Untersuchung Labor"
 // TODO Diabetes DMP start, Koordnator usw. ***************
-// // * section[sectionPlanOfCare].entry[carePlan][+] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b) "Careplan Schulung"
-// // * section[sectionPlanOfCare].entry[carePlan][+] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae222) "Careplan Untersuchung Augen"
+* section[sectionPlanOfCare].entry[carePlan][+] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b) "Careplan Schulung"
+* section[sectionPlanOfCare].entry[carePlan][+] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae222) "Careplan Untersuchung Augen"
 
 
 // Social History
@@ -313,63 +313,63 @@ Usage: #inline
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 //* addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 
-// // Careplan ausstehende Schulung
+// Careplan ausstehende Schulung
 
-// Instance: example-iv-4-careplan-diabetes-schulung
-// InstanceOf: DiabCareplan
-// Usage: #inline
-// * text.status = #additional
-// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ernährungsschulung bei Diabetes mellitus Typ II</p>\n    </div>"
-// * identifier.value = "12345"
-// * instantiatesUri = "https://www.sozialministerium.at/2025/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
-// * status = #active
-// * intent = #plan
-// * category.coding[0] = $cs-sct#428274007 
-// //* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
-// * title = "Ernährungsschulung bei Diabetes mellitus Typ II"
-// * description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-// * period.start = "2025-07-01"
-// * period.end = "2025-07-31"
-// * created = "2025-06-03"
-// * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
-// * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
+Instance: example-iv-3-careplan-diabetes-schulung
+InstanceOf: DiabCareplan
+Usage: #inline
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ausstehende Ernährungsschulung bei Diabetes mellitus Typ II</p>\n    </div>"
+* identifier.value = "12345"
+* instantiatesUri = "https://www.sozialministerium.at/2025/Ernaehrungsschulung-bei-Diabetes-mellitus-Typ-II"
+* status = #active
+* intent = #plan
+* category.coding[0] = $cs-sct#428274007 
+* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
+* title = "Ausstehende Ernährungsschulung bei Diabetes mellitus Typ II"
+* description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* period.start = "2023-03-17"
+* period.end = "2023-04-17"
+* created = "2023-03-17"
+* author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 // * activity.outcomeCodeableConcept = $cs-sct#408443003 "Bereitstellung von Patienteninformationen"
-// // * activity.outcomeReference = Reference(Observation/example) "Patient ist über das Ereignis informiert" // ??
-// // * activity.detail.code.coding[0] = $cs-sct#409063005 "Beratung"
-// // * activity.detail.code.coding[+] = $cs-sct#1293061000168108 "Dient zur Förderung der Gesundheit"
-// // * activity.detail.status = #completed
-// // * activity.detail.statusReason.text = "Der Hausarzt informierte die Patienten über die Schulung zur Ernährung."
-// // * activity.detail.doNotPerform = false
-// // * activity.detail.scheduledTiming.repeat.frequency = 1
-// // * activity.detail.scheduledTiming.repeat.period = 1
-// // * activity.detail.scheduledTiming.repeat.periodUnit = #d
-// // * activity.detail.location.display = "Informationsveranstaltung des Diabetesverbandes"
-// // * activity.detail.performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
+// * activity.outcomeReference = Reference(Observation/example) "Patient ist über das Ereignis informiert" // ??
+// * activity.detail.code.coding[0] = $cs-sct#409063005 "Beratung"
+// * activity.detail.code.coding[+] = $cs-sct#1293061000168108 "Dient zur Förderung der Gesundheit"
+// * activity.detail.status = #completed
+// * activity.detail.statusReason.text = "Der Hausarzt informierte die Patienten über die Schulung zur Ernährung."
+// * activity.detail.doNotPerform = false
+// * activity.detail.scheduledTiming.repeat.frequency = 1
+// * activity.detail.scheduledTiming.repeat.period = 1
+// * activity.detail.scheduledTiming.repeat.periodUnit = #d
+// * activity.detail.location.display = "Informationsveranstaltung des Diabetesverbandes"
+// * activity.detail.performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
 
-// // Careplan ausstehende Untersuchung
+// Careplan ausstehende Untersuchung
 
-// Instance: example-iv-3-careplan-diabetes-untersuchung
-// InstanceOf: DiabCareplan
-// Usage: #inline
-// * text.status = #additional
-// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Untersuchung der diabetischen Netzhaut</p>\n    </div>"
-// // * identifier.value = "12345"
-// // * instantiatesUri = "" // Plandefinition Diabetes
-// * status = #active // $vs-request-status#active "active"
-// * intent = #plan
-// * category.coding[0] = $cs-sct#722161008 "Diabetic retinal eye exam"
-// //* category.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
-// * title = "Untersuchung der diabetischen Netzhaut"
-// * description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-// // * period.start = "2025-07-01"
-// // * period.end = "2025-07-31"
-// * created = "2025-06-03"
-// * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
-// * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-// // * activity.outcomeCodeableConcept = $cs-sct#408443003 "Bereitstellung von Patienteninformationen"
-// // * activity.outcomeReference = Reference(Observation/example) "Patient ist über das Ereignis informiert" // ??
+Instance: example-iv-3-careplan-diabetes-untersuchung
+InstanceOf: DiabCareplan
+Usage: #inline
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ausstehende Untersuchung der diabetischen Netzhaut</p>\n    </div>"
+* identifier.value = "12345"
+* instantiatesUri = "https://www.sozialministerium.at/2025/Behandlungsplan-bei-Diabetes-mellitus-Typ-II" // Plandefinition Diabetes
+* status = #active // $vs-request-status#active "active"
+* intent = #plan
+* category.coding[0] = $cs-sct#722161008 "Untersuchung der diabetischen Netzhaut" //"Diabetic retinal eye exam"
+* category.text = "Ausstehende Untersuchung der diabetischen Netzhaut"
+* title = "Augenuntersuchung"
+* description = "Entsprechend Behandlungsplan Diabetes empfohlene Untersuchung der diabetischen Netzhaut"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* period.start = "2023-03-17"
+* period.end = "2023-04-17"
+* created = "2023-03-17"
+* author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
+// * activity.outcomeCodeableConcept = $cs-sct#408443003 "Bereitstellung von Patienteninformationen"
+// * activity.outcomeReference = Reference(Observation/example) "Patient ist über das Ereignis informiert" // ??
 
 
 // Medication Summary
