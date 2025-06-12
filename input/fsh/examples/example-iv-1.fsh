@@ -239,6 +239,7 @@ Usage: #inline
 * category.coding[0] = $cs-condition-category#problem-list-item "Problem List Item"
 * code = $cs-sct#161419000 "Zustand nach Masern"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+//Datum , Asserter ergänzen
 
 
 Instance: example-iv-1-organization
