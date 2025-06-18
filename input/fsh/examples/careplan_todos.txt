@@ -1,0 +1,4 @@
+Umsetzung prüfen mit Resource https://build.fhir.org/requestorchestration.html
+Fallkoordinator festlegen
+Zielwerte festlegen
+Untersuchungsintervalle festlegen
