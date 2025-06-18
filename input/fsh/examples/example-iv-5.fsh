@@ -22,11 +22,11 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f474"
 * entry[=].resource = example-iv-5-author-device
 // // Practitioner IV Ärztin
-// * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
-// * entry[=].resource = example-iv-5-practitioner-iv
+* entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
+* entry[=].resource = example-iv-5-practitioner-iv
 // Practitioner Hausärztin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f473"
-* entry[=].resource = example-iv-5-practitioner-2
+* entry[=].resource = example-iv-5-practitioner-1
 // Careplan careteam
 * entry[+].fullUrl = "urn:uuid:75db30ee-5555-486c-929a-c5126837f473"
 * entry[=].resource = example-iv-5-careplan-diabetes-careteam
@@ -157,7 +157,7 @@ Usage: #inline
 * date = "2023-04-09T09:01:30+00:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
 * title = "Diabetes Leitdokument"
-* custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Muster-Organisation"
+* custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
 * extension[countryOfAffiliation].valueString = "AT"
 
 // Medication Summary
@@ -340,7 +340,7 @@ Usage: #inline
 * goal[0] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333) "Ziel Hba1c"
 * goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-*  [0].outcomeReference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae333) "Termin für Augenuntersuchung"
+* activity[0].outcomeReference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae333) "Termin für Augenuntersuchung"
 * activity[+].outcomeReference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b) "Termin für Ernährungsschulung"
 * activity[+].outcomeReference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631) "Angeforderte Laboruntersuchung"
 //* activity[+].outcomeReference = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333) "Zielwerte Hba1c"
@@ -412,7 +412,7 @@ Usage: #inline
 * created = "2023-03-17"
 * participant[0].actor = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * participant[=].status = #accepted 
-* participant[+].actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* participant[+].actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
 * participant[=].status = #accepted 
 
 
@@ -608,10 +608,10 @@ Usage: #inline
 * status = #active
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * device = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22) "Hüftprothese"
-* device.display = "Verwendetes Gerät: Hüftprothese"
+* device.display = "Implantat: Hüftprothese"
 // * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 // * timingDateTime.extension.valueCode = #unknown
-* timingPeriod.start = "2020"
+* timingPeriod.start = "2020-01-07"
 * bodySite = $cs-sct#362905007 "Gesamtes linkes Hüftgelenk"
 * bodySite.coding[0].display = "Gesamtes linkes Hüftgelenk"
 
@@ -907,7 +907,8 @@ Usage: #inline
 * category.coding[0] = $cs-condition-category#problem-list-item "Problem List Item"
 * code = $cs-sct#161419000 "Zustand nach Masern"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-
+* asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* recordedDate = "1960-01-01"
 
 // Social History
 
@@ -948,10 +949,13 @@ Usage: #inline
 Instance: example-iv-5-organization
 InstanceOf: AtApsOrganization
 Usage: #inline
-* name = "Muster-Organization"
+* name = "Zentrale Anwendung APS, BMSGPK"
+* address.city = "Wien"
+* address.postalCode = "1010"
+* address.line = "Stubenring 1"
 
 // Arzt
-Instance: example-iv-5-practitioner-2
+Instance: example-iv-5-practitioner-1
 InstanceOf: AtApsPractitioner
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
@@ -960,6 +964,9 @@ Usage: #inline
 * name.prefix[0] = "Dr."
 * name.family = "Hausärztin"
 * name.given[0] = "Hanna"
+* address.city = "Wien"
+* address.postalCode = "1200"
+* address.line = "Treustraße 38"
 
 // APS Generator
 Instance: example-iv-5-author-device
@@ -970,19 +977,22 @@ Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Dieses Gerät erzeugt ein APS FHIR-Dokument.</p></div>"
 * deviceName.name = "APS Generator"
-* deviceName.type = #user-friendly-name
+* deviceName.type = #APSDeviceType
 * version.value = "1.0"
 
 // Practitioner Arzt
-Instance: example-iv-5-practitioner-1
+Instance: example-iv-5-practitioner-iv
 InstanceOf: AtApsPractitioner
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
 * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
-* name.family = "IV-Ärztin"
-* name.given[0] = "Gabriele"
+* name.family = "IV Diätologin"
+* name.given[0] = "Melanie"
+* address.city = "Wien"
+* address.postalCode = "1020"
+* address.line = "Praterstern 5"
 
 // Patient
 
