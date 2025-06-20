@@ -905,7 +905,7 @@ Usage: #inline
 * clinicalStatus = $cs-condition-clinical#resolved "Resolved"
 * verificationStatus = $cs-condition-ver-status#confirmed "Confirmed"
 * category.coding[0] = $cs-condition-category#problem-list-item "Problem List Item"
-* code = $cs-sct#161419000 "Zustand nach Masern"
+* code = $cs-sct#14189004 "Masern"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 
 
