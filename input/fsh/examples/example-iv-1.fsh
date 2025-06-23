@@ -1,15 +1,15 @@
-Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
-Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
+// Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
+// Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
 
 
 
 Instance: example-iv-1
 InstanceOf: DiabBundle
 Title: "example-iv-1"
-Description: "Diabetes Leitdokument: Patient Journey 5 (17.03.2023)"
+Description: "Patient Summary: Patient Journey 1 (15.03.2023)"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
-* identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f13"
+* identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f20"
 * type = #document
 * timestamp = "2025-03-15T14:01:30+00:00"
 // Composition
