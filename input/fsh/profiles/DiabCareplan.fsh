@@ -39,7 +39,7 @@ Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
 //     * member 0..1 Reference(Practitioner or PractitionerRole or RelatedPerson or Organization) "Who is involved"
 //     * period 0..1 Period "Time period of participant"
 * addresses only Reference(AtApsCondition)	
-* addresses ^short = "Gesundheitsproblem, das dieser Behandlungsplan / die Schulung adressiert"
+* addresses ^short = "Gesundheitsproblem, das dieser Behandlungsplan adressiert"
 //* supportingInfo		0..*	Reference(Any)
 //* supportingInfo ^short = "Informationen zum CarePlan"
 // * goal only Reference(Goal) 
