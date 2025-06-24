@@ -79,7 +79,7 @@ jobs:
         mkdir input-cache
         mv publisher.jar ./input-cache/publisher.jar
         unset DISPLAY
-        java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
+        java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini -authorise-non-conformant-tx-servers
 
     - name: Transform Bundles
       run: python python-mapper/transform.py
