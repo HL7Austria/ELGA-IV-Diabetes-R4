@@ -2,24 +2,24 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Jun  3 11:40:17 2025 by generateDS.py version 2.43.3.
-# Python 3.10.7 (tags/v3.10.7:6cc6b13, Sep  5 2022, 14:08:36) [MSC v.1933 64 bit (AMD64)]
+# Generated Mon Jun 23 15:37:10 2025 by generateDS.py version 2.43.3.
+# Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]
 #
 # Command line options:
-#   ('-o', 'vidi.py')
+#   ('-o', '../malac-hd-4-vidi/malac/models/vidi/vidi.py')
 #   ('--no-questions', '')
 #   ('-f', '')
 #   ('--export', 'write json')
 #   ('--create-mandatory-children', '')
 #
 # Command line arguments:
-#   ../malac-hd/malac/models/vidi/schema/VIDi.xsd
+#   ../malac-hd-4-vidi/malac/models/vidi/schema/VIDi.xsd
 #
 # Command line:
-#   generateDS.py -o "vidi.py" --no-questions -f --export="write json" --create-mandatory-children ../malac-hd/malac/models/vidi/schema/VIDi.xsd
+#   generateDS.py -o "../malac-hd-4-vidi/malac/models/vidi/vidi.py" --no-questions -f --export="write json" --create-mandatory-children ../malac-hd-4-vidi/malac/models/vidi/schema/VIDi.xsd
 #
 # Current working directory (os.getcwd()):
-#   gl_cdehealth_generateds
+#   generateds
 #
 
 import sys
@@ -184,7 +184,7 @@ except ModulenotfoundExp_ as exp:
     except ModulenotfoundExp_ as exp:
         class GeneratedsSuperSuper(object):
             pass
-
+    
     class GeneratedsSuper(GeneratedsSuperSuper):
         __hash__ = object.__hash__
         tzoff_pattern = re_.compile(r'(\+|-)((0\d|1[0-3]):[0-5]\d|14:00)$')
@@ -270,7 +270,7 @@ except ModulenotfoundExp_ as exp:
             if value.endswith('.'):
                 value += '0'
             return value
-
+    
         def gds_parse_float(self, input_data, node=None, input_name=''):
             try:
                 fval_ = float(input_data)
@@ -702,8 +702,8 @@ except ModulenotfoundExp_ as exp:
                     self.gds_elementtree_node_.sourceline)
             else:
                 return ""
-
-
+    
+    
     def getSubclassFromModule_(module, class_):
         '''Get the subclass of a class from a specific module.'''
         name = class_.__name__ + 'Sub'
@@ -1021,7 +1021,7 @@ class vidi(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
-    def __init__(self, v_current_medication_data: 'v_current_medication_dataType' = None, i_current_medication_data: 'i_current_medication_dataType' = None, v_past_medication_data: 'v_past_medication_dataType' = None, i_past_medication_data: 'i_past_medication_dataType' = None, v_allergies_data: 'v_allergies_dataType' = None, i_allergies_data: 'i_allergies_dataType' = None, v_current_problems_data: 'v_current_problems_dataType' = None, i_current_problems_data: 'i_current_problems_dataType' = None, v_past_problems_data: 'v_past_problems_dataType' = None, i_past_problems_data: 'i_past_problems_dataType' = None, v_family_problems_data: 'v_family_problems_dataType' = None, i_family_problems_data: 'i_family_problems_dataType' = None, v_procedures_data: 'v_procedures_dataType' = None, i_procedures_data: 'i_procedures_dataType' = None, i_immunizations_data: 'i_immunizations_dataType' = None, v_results_data: 'v_results_dataType' = None, i_results_data: 'i_results_dataType' = None, v_vitalsigns_data: 'v_vitalsigns_dataType' = None, i_vitalsigns_data: 'i_vitalsigns_dataType' = None, v_socialhistory_data: 'v_socialhistory_dataType' = None, i_socialhistory_data: 'i_socialhistory_dataType' = None, gds_collector_=None, **kwargs_):
+    def __init__(self, v_current_medication_data: 'v_current_medication_dataType' = None, i_current_medication_data: 'i_current_medication_dataType' = None, v_past_medication_data: 'v_past_medication_dataType' = None, i_past_medication_data: 'i_past_medication_dataType' = None, v_allergies_data: 'v_allergies_dataType' = None, i_allergies_data: 'i_allergies_dataType' = None, v_current_problems_data: 'v_current_problems_dataType' = None, i_current_problems_data: 'i_current_problems_dataType' = None, v_past_problems_data: 'v_past_problems_dataType' = None, i_past_problems_data: 'i_past_problems_dataType' = None, v_family_problems_data: 'v_family_problems_dataType' = None, i_family_problems_data: 'i_family_problems_dataType' = None, v_procedures_data: 'v_procedures_dataType' = None, i_procedures_data: 'i_procedures_dataType' = None, i_immunizations_data: 'i_immunizations_dataType' = None, v_results_data: 'v_results_dataType' = None, i_results_data: 'i_results_dataType' = None, v_vitalsigns_data: 'v_vitalsigns_dataType' = None, i_vitalsigns_data: 'i_vitalsigns_dataType' = None, i_careplan_data: 'i_careplan_dataType' = None, v_socialhistory_data: 'v_socialhistory_dataType' = None, i_socialhistory_data: 'i_socialhistory_dataType' = None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -1122,6 +1122,11 @@ class vidi(GeneratedsSuper):
         else:
             self.i_vitalsigns_data = i_vitalsigns_data
         self.i_vitalsigns_data_nsprefix_ = None
+        if i_careplan_data is None:
+            self.i_careplan_data = globals()["i_careplan_dataType"]()
+        else:
+            self.i_careplan_data = i_careplan_data
+        self.i_careplan_data_nsprefix_ = None
         if v_socialhistory_data is None:
             self.v_socialhistory_data = globals()["v_socialhistory_dataType"]()
         else:
@@ -1223,6 +1228,10 @@ class vidi(GeneratedsSuper):
         return self.i_vitalsigns_data
     def set_i_vitalsigns_data(self, i_vitalsigns_data):
         self.i_vitalsigns_data = i_vitalsigns_data
+    def get_i_careplan_data(self):
+        return self.i_careplan_data
+    def set_i_careplan_data(self, i_careplan_data):
+        self.i_careplan_data = i_careplan_data
     def get_v_socialhistory_data(self):
         return self.v_socialhistory_data
     def set_v_socialhistory_data(self, v_socialhistory_data):
@@ -1252,6 +1261,7 @@ class vidi(GeneratedsSuper):
             self.i_results_data is not None or
             self.v_vitalsigns_data is not None or
             self.i_vitalsigns_data is not None or
+            self.i_careplan_data is not None or
             self.v_socialhistory_data is not None or
             self.i_socialhistory_data is not None
         ):
@@ -1345,6 +1355,9 @@ class vidi(GeneratedsSuper):
         if self.i_vitalsigns_data is not None:
             namespaceprefix_ = self.i_vitalsigns_data_nsprefix_ + ':' if (UseCapturedNS_ and self.i_vitalsigns_data_nsprefix_) else ''
             self.i_vitalsigns_data.export(outfile, level, namespaceprefix_, namespacedef_='', name_='i_vitalsigns_data', pretty_print=pretty_print)
+        if self.i_careplan_data is not None:
+            namespaceprefix_ = self.i_careplan_data_nsprefix_ + ':' if (UseCapturedNS_ and self.i_careplan_data_nsprefix_) else ''
+            self.i_careplan_data.export(outfile, level, namespaceprefix_, namespacedef_='', name_='i_careplan_data', pretty_print=pretty_print)
         if self.v_socialhistory_data is not None:
             namespaceprefix_ = self.v_socialhistory_data_nsprefix_ + ':' if (UseCapturedNS_ and self.v_socialhistory_data_nsprefix_) else ''
             self.v_socialhistory_data.export(outfile, level, namespaceprefix_, namespacedef_='', name_='v_socialhistory_data', pretty_print=pretty_print)
@@ -1437,6 +1450,10 @@ class vidi(GeneratedsSuper):
             child_dict = self.i_vitalsigns_data.exportJson(json_dict, 'i_vitalsigns_data', False)
             if child_dict:
                 json_dict['i_vitalsigns_data'] = child_dict
+        if self.i_careplan_data is not None:
+            child_dict = self.i_careplan_data.exportJson(json_dict, 'i_careplan_data', False)
+            if child_dict:
+                json_dict['i_careplan_data'] = child_dict
         if self.v_socialhistory_data is not None:
             child_dict = self.v_socialhistory_data.exportJson(json_dict, 'v_socialhistory_data', False)
             if child_dict:
@@ -1450,7 +1467,7 @@ class vidi(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -1556,6 +1573,11 @@ class vidi(GeneratedsSuper):
             obj_.build(child_, gds_collector_=gds_collector_)
             self.i_vitalsigns_data = obj_
             obj_.original_tagname_ = 'i_vitalsigns_data'
+        elif nodeName_ == 'i_careplan_data':
+            obj_ = i_careplan_dataType.factory(parent_object_=self)
+            obj_.build(child_, gds_collector_=gds_collector_)
+            self.i_careplan_data = obj_
+            obj_.original_tagname_ = 'i_careplan_data'
         elif nodeName_ == 'v_socialhistory_data':
             obj_ = v_socialhistory_dataType.factory(parent_object_=self)
             obj_.build(child_, gds_collector_=gds_collector_)
@@ -1688,7 +1710,7 @@ class v_current_medication_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -1819,7 +1841,7 @@ class dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -1960,7 +1982,7 @@ class i_current_medication_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -2156,7 +2178,7 @@ class dataType1(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -2331,7 +2353,7 @@ class v_past_medication_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -2462,7 +2484,7 @@ class dataType2(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -2607,7 +2629,7 @@ class i_past_medication_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -2803,7 +2825,7 @@ class dataType3(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -2978,7 +3000,7 @@ class v_allergies_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -3096,7 +3118,7 @@ class dataType4(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -3235,7 +3257,7 @@ class i_allergies_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -3431,7 +3453,7 @@ class dataType5(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -3606,7 +3628,7 @@ class v_current_problems_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -3750,7 +3772,7 @@ class dataType6(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -3877,7 +3899,7 @@ class erklaerungType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -4022,7 +4044,7 @@ class i_current_problems_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -4205,7 +4227,7 @@ class dataType7(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -4374,7 +4396,7 @@ class v_past_problems_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -4518,7 +4540,7 @@ class dataType8(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -4645,7 +4667,7 @@ class erklaerungType9(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -4790,7 +4812,7 @@ class i_past_problems_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -4973,7 +4995,7 @@ class dataType10(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -5142,7 +5164,7 @@ class v_family_problems_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -5286,7 +5308,7 @@ class dataType11(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -5413,7 +5435,7 @@ class erklaerungType12(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -5558,7 +5580,7 @@ class i_family_problems_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -5741,7 +5763,7 @@ class dataType13(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -5910,7 +5932,7 @@ class v_procedures_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -6067,7 +6089,7 @@ class dataType14(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -6200,7 +6222,7 @@ class erklaerungType15(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -6345,7 +6367,7 @@ class i_procedures_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -6528,7 +6550,7 @@ class dataType16(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -6697,7 +6719,7 @@ class i_immunizations_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -6854,7 +6876,7 @@ class dataType17(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -6974,7 +6996,7 @@ class immunizationtargetType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -7113,7 +7135,7 @@ class v_results_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -7257,7 +7279,7 @@ class dataType18(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -7408,7 +7430,7 @@ class i_results_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -7643,7 +7665,7 @@ class dataType19(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -7836,7 +7858,7 @@ class v_vitalsigns_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -7980,7 +8002,7 @@ class dataType20(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -8131,7 +8153,7 @@ class i_vitalsigns_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -8366,7 +8388,7 @@ class dataType21(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -8440,11 +8462,654 @@ class dataType21(GeneratedsSuper):
 # end class dataType21
 
 
+class i_careplan_dataType(GeneratedsSuper):
+    __hash__ = GeneratedsSuper.__hash__
+    subclass = None
+    superclass = None
+    def __init__(self, data: List_['dataType22'] = None, gds_collector_=None, **kwargs_):
+        self.gds_collector_ = gds_collector_
+        self.gds_elementtree_node_ = None
+        self.original_tagname_ = None
+        self.parent_object_ = kwargs_.get('parent_object_')
+        self.ns_prefix_ = None
+        if data is None:
+            self.data = []
+        else:
+            self.data = data
+        self.data_nsprefix_ = None
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, i_careplan_dataType)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if i_careplan_dataType.subclass:
+            return i_careplan_dataType.subclass(*args_, **kwargs_)
+        else:
+            return i_careplan_dataType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_ns_prefix_(self):
+        return self.ns_prefix_
+    def set_ns_prefix_(self, ns_prefix):
+        self.ns_prefix_ = ns_prefix
+    def get_data(self):
+        return self.data
+    def set_data(self, data):
+        self.data = data
+    def add_data(self, value):
+        self.data.append(value)
+    def insert_data_at(self, index, value):
+        self.data.insert(index, value)
+    def replace_data_at(self, index, value):
+        self.data[index] = value
+    def has__content(self):
+        if (
+            self.data
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='i_careplan_dataType', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('i_careplan_dataType')
+        if imported_ns_def_ is not None:
+            namespacedef_ = imported_ns_def_
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None and name_ == 'i_careplan_dataType':
+            name_ = self.original_tagname_
+        if UseCapturedNS_ and self.ns_prefix_:
+            namespaceprefix_ = self.ns_prefix_ + ':'
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='i_careplan_dataType')
+        if self.has__content():
+            outfile.write('>%s' % (eol_, ))
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='i_careplan_dataType', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='i_careplan_dataType'):
+        pass
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='i_careplan_dataType', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for data_ in self.data:
+            namespaceprefix_ = self.data_nsprefix_ + ':' if (UseCapturedNS_ and self.data_nsprefix_) else ''
+            data_.export(outfile, level, namespaceprefix_, namespacedef_='', name_='data', pretty_print=pretty_print)
+    def exportJson(self, parent_dict=None, key=None, is_list=False):
+        json_dict = dict()
+        self.exportJsonAttributes(json_dict)
+        self.exportJsonChildren(json_dict)
+        return self.exportJsonResult(json_dict, parent_dict, key, is_list)
+    def exportJsonResult(self, json_dict, parent_dict, key, is_list, sub_defs=[], attr_defs=[]):
+        return json_dict
+    def exportJsonAttributes(self, json_dict):
+        pass
+    def exportJsonChildren(self, json_dict):
+        child_list = []
+        for child in self.data:
+            child_dict = child.exportJson(json_dict, 'data', True)
+            if child_dict:
+                child_list.append(child_dict)
+        if child_list:
+            json_dict['data'] = child_list
+    def build(self, node, gds_collector_=None):
+        self.gds_collector_ = gds_collector_
+        if SaveElementTreeNode:
+            self.gds_elementtree_node_ = node
+        if SaveNodeDict:
+            node_dict[node] = self 
+        already_processed = set()
+        self.ns_prefix_ = node.prefix
+        self._buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self._buildChildren(child, node, nodeName_, gds_collector_=gds_collector_)
+        return self
+    def _buildAttributes(self, node, attrs, already_processed):
+        pass
+    def _buildChildren(self, child_, node, nodeName_, fromsubclass_=False, gds_collector_=None):
+        if nodeName_ == 'data':
+            obj_ = dataType22.factory(parent_object_=self)
+            obj_.build(child_, gds_collector_=gds_collector_)
+            self.data.append(obj_)
+            obj_.original_tagname_ = 'data'
+# end class i_careplan_dataType
+
+
+class dataType22(GeneratedsSuper):
+    __hash__ = GeneratedsSuper.__hash__
+    subclass = None
+    superclass = None
+    def __init__(self, status: 'string' = None, zweck: 'string' = None, abklaerung: 'string' = None, kategorie: 'string' = None, titel: 'string' = None, beschreibung: 'string' = None, erstellt_am: 'string' = None, verantwortlich: 'string' = None, ziel: List_['zielType'] = None, task_aktivitaet: List_['task_aktivitaetType'] = None, gds_collector_=None, **kwargs_):
+        self.gds_collector_ = gds_collector_
+        self.gds_elementtree_node_ = None
+        self.original_tagname_ = None
+        self.parent_object_ = kwargs_.get('parent_object_')
+        self.ns_prefix_ = None
+        self.status = status
+        self.status_nsprefix_ = None
+        self.zweck = zweck
+        self.zweck_nsprefix_ = None
+        self.abklaerung = abklaerung
+        self.abklaerung_nsprefix_ = None
+        self.kategorie = kategorie
+        self.kategorie_nsprefix_ = None
+        self.titel = titel
+        self.titel_nsprefix_ = None
+        self.beschreibung = beschreibung
+        self.beschreibung_nsprefix_ = None
+        self.erstellt_am = erstellt_am
+        self.erstellt_am_nsprefix_ = None
+        self.verantwortlich = verantwortlich
+        self.verantwortlich_nsprefix_ = None
+        if ziel is None:
+            self.ziel = []
+        else:
+            self.ziel = ziel
+        self.ziel_nsprefix_ = None
+        if task_aktivitaet is None:
+            self.task_aktivitaet = []
+        else:
+            self.task_aktivitaet = task_aktivitaet
+        self.task_aktivitaet_nsprefix_ = None
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, dataType22)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if dataType22.subclass:
+            return dataType22.subclass(*args_, **kwargs_)
+        else:
+            return dataType22(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_ns_prefix_(self):
+        return self.ns_prefix_
+    def set_ns_prefix_(self, ns_prefix):
+        self.ns_prefix_ = ns_prefix
+    def get_status(self):
+        return self.status
+    def set_status(self, status):
+        self.status = status
+    def get_zweck(self):
+        return self.zweck
+    def set_zweck(self, zweck):
+        self.zweck = zweck
+    def get_abklaerung(self):
+        return self.abklaerung
+    def set_abklaerung(self, abklaerung):
+        self.abklaerung = abklaerung
+    def get_kategorie(self):
+        return self.kategorie
+    def set_kategorie(self, kategorie):
+        self.kategorie = kategorie
+    def get_titel(self):
+        return self.titel
+    def set_titel(self, titel):
+        self.titel = titel
+    def get_beschreibung(self):
+        return self.beschreibung
+    def set_beschreibung(self, beschreibung):
+        self.beschreibung = beschreibung
+    def get_erstellt_am(self):
+        return self.erstellt_am
+    def set_erstellt_am(self, erstellt_am):
+        self.erstellt_am = erstellt_am
+    def get_verantwortlich(self):
+        return self.verantwortlich
+    def set_verantwortlich(self, verantwortlich):
+        self.verantwortlich = verantwortlich
+    def get_ziel(self):
+        return self.ziel
+    def set_ziel(self, ziel):
+        self.ziel = ziel
+    def add_ziel(self, value):
+        self.ziel.append(value)
+    def insert_ziel_at(self, index, value):
+        self.ziel.insert(index, value)
+    def replace_ziel_at(self, index, value):
+        self.ziel[index] = value
+    def get_task_aktivitaet(self):
+        return self.task_aktivitaet
+    def set_task_aktivitaet(self, task_aktivitaet):
+        self.task_aktivitaet = task_aktivitaet
+    def add_task_aktivitaet(self, value):
+        self.task_aktivitaet.append(value)
+    def insert_task_aktivitaet_at(self, index, value):
+        self.task_aktivitaet.insert(index, value)
+    def replace_task_aktivitaet_at(self, index, value):
+        self.task_aktivitaet[index] = value
+    def has__content(self):
+        if (
+            self.status is not None or
+            self.zweck is not None or
+            self.abklaerung is not None or
+            self.kategorie is not None or
+            self.titel is not None or
+            self.beschreibung is not None or
+            self.erstellt_am is not None or
+            self.verantwortlich is not None or
+            self.ziel or
+            self.task_aktivitaet
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType22', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType22')
+        if imported_ns_def_ is not None:
+            namespacedef_ = imported_ns_def_
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None and name_ == 'dataType22':
+            name_ = self.original_tagname_
+        if UseCapturedNS_ and self.ns_prefix_:
+            namespaceprefix_ = self.ns_prefix_ + ':'
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType22')
+        if self.has__content():
+            outfile.write('>%s' % (eol_, ))
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType22', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType22'):
+        pass
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType22', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.status is not None:
+            namespaceprefix_ = self.status_nsprefix_ + ':' if (UseCapturedNS_ and self.status_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sstatus>%s</%sstatus>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.status), input_name='status')), namespaceprefix_ , eol_))
+        if self.zweck is not None:
+            namespaceprefix_ = self.zweck_nsprefix_ + ':' if (UseCapturedNS_ and self.zweck_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%szweck>%s</%szweck>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.zweck), input_name='zweck')), namespaceprefix_ , eol_))
+        if self.abklaerung is not None:
+            namespaceprefix_ = self.abklaerung_nsprefix_ + ':' if (UseCapturedNS_ and self.abklaerung_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sabklaerung>%s</%sabklaerung>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.abklaerung), input_name='abklaerung')), namespaceprefix_ , eol_))
+        if self.kategorie is not None:
+            namespaceprefix_ = self.kategorie_nsprefix_ + ':' if (UseCapturedNS_ and self.kategorie_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%skategorie>%s</%skategorie>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.kategorie), input_name='kategorie')), namespaceprefix_ , eol_))
+        if self.titel is not None:
+            namespaceprefix_ = self.titel_nsprefix_ + ':' if (UseCapturedNS_ and self.titel_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%stitel>%s</%stitel>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.titel), input_name='titel')), namespaceprefix_ , eol_))
+        if self.beschreibung is not None:
+            namespaceprefix_ = self.beschreibung_nsprefix_ + ':' if (UseCapturedNS_ and self.beschreibung_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sbeschreibung>%s</%sbeschreibung>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.beschreibung), input_name='beschreibung')), namespaceprefix_ , eol_))
+        if self.erstellt_am is not None:
+            namespaceprefix_ = self.erstellt_am_nsprefix_ + ':' if (UseCapturedNS_ and self.erstellt_am_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%serstellt_am>%s</%serstellt_am>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.erstellt_am), input_name='erstellt_am')), namespaceprefix_ , eol_))
+        if self.verantwortlich is not None:
+            namespaceprefix_ = self.verantwortlich_nsprefix_ + ':' if (UseCapturedNS_ and self.verantwortlich_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sverantwortlich>%s</%sverantwortlich>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.verantwortlich), input_name='verantwortlich')), namespaceprefix_ , eol_))
+        for ziel_ in self.ziel:
+            namespaceprefix_ = self.ziel_nsprefix_ + ':' if (UseCapturedNS_ and self.ziel_nsprefix_) else ''
+            ziel_.export(outfile, level, namespaceprefix_, namespacedef_='', name_='ziel', pretty_print=pretty_print)
+        for task_aktivitaet_ in self.task_aktivitaet:
+            namespaceprefix_ = self.task_aktivitaet_nsprefix_ + ':' if (UseCapturedNS_ and self.task_aktivitaet_nsprefix_) else ''
+            task_aktivitaet_.export(outfile, level, namespaceprefix_, namespacedef_='', name_='task_aktivitaet', pretty_print=pretty_print)
+    def exportJson(self, parent_dict=None, key=None, is_list=False):
+        json_dict = dict()
+        self.exportJsonAttributes(json_dict)
+        self.exportJsonChildren(json_dict)
+        return self.exportJsonResult(json_dict, parent_dict, key, is_list)
+    def exportJsonResult(self, json_dict, parent_dict, key, is_list, sub_defs=[], attr_defs=[]):
+        return json_dict
+    def exportJsonAttributes(self, json_dict):
+        pass
+    def exportJsonChildren(self, json_dict):
+        if self.status is not None:
+            json_dict['status'] = self.status
+        if self.zweck is not None:
+            json_dict['zweck'] = self.zweck
+        if self.abklaerung is not None:
+            json_dict['abklaerung'] = self.abklaerung
+        if self.kategorie is not None:
+            json_dict['kategorie'] = self.kategorie
+        if self.titel is not None:
+            json_dict['titel'] = self.titel
+        if self.beschreibung is not None:
+            json_dict['beschreibung'] = self.beschreibung
+        if self.erstellt_am is not None:
+            json_dict['erstellt_am'] = self.erstellt_am
+        if self.verantwortlich is not None:
+            json_dict['verantwortlich'] = self.verantwortlich
+        child_list = []
+        for child in self.ziel:
+            child_dict = child.exportJson(json_dict, 'ziel', True)
+            if child_dict:
+                child_list.append(child_dict)
+        if child_list:
+            json_dict['ziel'] = child_list
+        child_list = []
+        for child in self.task_aktivitaet:
+            child_dict = child.exportJson(json_dict, 'task_aktivitaet', True)
+            if child_dict:
+                child_list.append(child_dict)
+        if child_list:
+            json_dict['task_aktivitaet'] = child_list
+    def build(self, node, gds_collector_=None):
+        self.gds_collector_ = gds_collector_
+        if SaveElementTreeNode:
+            self.gds_elementtree_node_ = node
+        if SaveNodeDict:
+            node_dict[node] = self 
+        already_processed = set()
+        self.ns_prefix_ = node.prefix
+        self._buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self._buildChildren(child, node, nodeName_, gds_collector_=gds_collector_)
+        return self
+    def _buildAttributes(self, node, attrs, already_processed):
+        pass
+    def _buildChildren(self, child_, node, nodeName_, fromsubclass_=False, gds_collector_=None):
+        if nodeName_ == 'status':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'status')
+            value_ = self.gds_validate_string(value_, node, 'status')
+            self.status = value_
+            self.status_nsprefix_ = child_.prefix
+        elif nodeName_ == 'zweck':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'zweck')
+            value_ = self.gds_validate_string(value_, node, 'zweck')
+            self.zweck = value_
+            self.zweck_nsprefix_ = child_.prefix
+        elif nodeName_ == 'abklaerung':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'abklaerung')
+            value_ = self.gds_validate_string(value_, node, 'abklaerung')
+            self.abklaerung = value_
+            self.abklaerung_nsprefix_ = child_.prefix
+        elif nodeName_ == 'kategorie':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'kategorie')
+            value_ = self.gds_validate_string(value_, node, 'kategorie')
+            self.kategorie = value_
+            self.kategorie_nsprefix_ = child_.prefix
+        elif nodeName_ == 'titel':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'titel')
+            value_ = self.gds_validate_string(value_, node, 'titel')
+            self.titel = value_
+            self.titel_nsprefix_ = child_.prefix
+        elif nodeName_ == 'beschreibung':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'beschreibung')
+            value_ = self.gds_validate_string(value_, node, 'beschreibung')
+            self.beschreibung = value_
+            self.beschreibung_nsprefix_ = child_.prefix
+        elif nodeName_ == 'erstellt_am':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'erstellt_am')
+            value_ = self.gds_validate_string(value_, node, 'erstellt_am')
+            self.erstellt_am = value_
+            self.erstellt_am_nsprefix_ = child_.prefix
+        elif nodeName_ == 'verantwortlich':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'verantwortlich')
+            value_ = self.gds_validate_string(value_, node, 'verantwortlich')
+            self.verantwortlich = value_
+            self.verantwortlich_nsprefix_ = child_.prefix
+        elif nodeName_ == 'ziel':
+            obj_ = zielType.factory(parent_object_=self)
+            obj_.build(child_, gds_collector_=gds_collector_)
+            self.ziel.append(obj_)
+            obj_.original_tagname_ = 'ziel'
+        elif nodeName_ == 'task_aktivitaet':
+            obj_ = task_aktivitaetType.factory(parent_object_=self)
+            obj_.build(child_, gds_collector_=gds_collector_)
+            self.task_aktivitaet.append(obj_)
+            obj_.original_tagname_ = 'task_aktivitaet'
+# end class dataType22
+
+
+class zielType(GeneratedsSuper):
+    __hash__ = GeneratedsSuper.__hash__
+    subclass = None
+    superclass = None
+    def __init__(self, ziel: 'string' = None, gds_collector_=None, **kwargs_):
+        self.gds_collector_ = gds_collector_
+        self.gds_elementtree_node_ = None
+        self.original_tagname_ = None
+        self.parent_object_ = kwargs_.get('parent_object_')
+        self.ns_prefix_ = None
+        self.ziel = ziel
+        self.ziel_nsprefix_ = None
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, zielType)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if zielType.subclass:
+            return zielType.subclass(*args_, **kwargs_)
+        else:
+            return zielType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_ns_prefix_(self):
+        return self.ns_prefix_
+    def set_ns_prefix_(self, ns_prefix):
+        self.ns_prefix_ = ns_prefix
+    def get_ziel(self):
+        return self.ziel
+    def set_ziel(self, ziel):
+        self.ziel = ziel
+    def has__content(self):
+        if (
+            self.ziel is not None
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='zielType', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('zielType')
+        if imported_ns_def_ is not None:
+            namespacedef_ = imported_ns_def_
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None and name_ == 'zielType':
+            name_ = self.original_tagname_
+        if UseCapturedNS_ and self.ns_prefix_:
+            namespaceprefix_ = self.ns_prefix_ + ':'
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='zielType')
+        if self.has__content():
+            outfile.write('>%s' % (eol_, ))
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='zielType', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='zielType'):
+        pass
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='zielType', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.ziel is not None:
+            namespaceprefix_ = self.ziel_nsprefix_ + ':' if (UseCapturedNS_ and self.ziel_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sziel>%s</%sziel>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.ziel), input_name='ziel')), namespaceprefix_ , eol_))
+    def exportJson(self, parent_dict=None, key=None, is_list=False):
+        json_dict = dict()
+        self.exportJsonAttributes(json_dict)
+        self.exportJsonChildren(json_dict)
+        return self.exportJsonResult(json_dict, parent_dict, key, is_list)
+    def exportJsonResult(self, json_dict, parent_dict, key, is_list, sub_defs=[], attr_defs=[]):
+        return json_dict
+    def exportJsonAttributes(self, json_dict):
+        pass
+    def exportJsonChildren(self, json_dict):
+        if self.ziel is not None:
+            json_dict['ziel'] = self.ziel
+    def build(self, node, gds_collector_=None):
+        self.gds_collector_ = gds_collector_
+        if SaveElementTreeNode:
+            self.gds_elementtree_node_ = node
+        if SaveNodeDict:
+            node_dict[node] = self 
+        already_processed = set()
+        self.ns_prefix_ = node.prefix
+        self._buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self._buildChildren(child, node, nodeName_, gds_collector_=gds_collector_)
+        return self
+    def _buildAttributes(self, node, attrs, already_processed):
+        pass
+    def _buildChildren(self, child_, node, nodeName_, fromsubclass_=False, gds_collector_=None):
+        if nodeName_ == 'ziel':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'ziel')
+            value_ = self.gds_validate_string(value_, node, 'ziel')
+            self.ziel = value_
+            self.ziel_nsprefix_ = child_.prefix
+# end class zielType
+
+
+class task_aktivitaetType(GeneratedsSuper):
+    __hash__ = GeneratedsSuper.__hash__
+    subclass = None
+    superclass = None
+    def __init__(self, task_aktivitaet: 'string' = None, gds_collector_=None, **kwargs_):
+        self.gds_collector_ = gds_collector_
+        self.gds_elementtree_node_ = None
+        self.original_tagname_ = None
+        self.parent_object_ = kwargs_.get('parent_object_')
+        self.ns_prefix_ = None
+        self.task_aktivitaet = task_aktivitaet
+        self.task_aktivitaet_nsprefix_ = None
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, task_aktivitaetType)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if task_aktivitaetType.subclass:
+            return task_aktivitaetType.subclass(*args_, **kwargs_)
+        else:
+            return task_aktivitaetType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_ns_prefix_(self):
+        return self.ns_prefix_
+    def set_ns_prefix_(self, ns_prefix):
+        self.ns_prefix_ = ns_prefix
+    def get_task_aktivitaet(self):
+        return self.task_aktivitaet
+    def set_task_aktivitaet(self, task_aktivitaet):
+        self.task_aktivitaet = task_aktivitaet
+    def has__content(self):
+        if (
+            self.task_aktivitaet is not None
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='task_aktivitaetType', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('task_aktivitaetType')
+        if imported_ns_def_ is not None:
+            namespacedef_ = imported_ns_def_
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None and name_ == 'task_aktivitaetType':
+            name_ = self.original_tagname_
+        if UseCapturedNS_ and self.ns_prefix_:
+            namespaceprefix_ = self.ns_prefix_ + ':'
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='task_aktivitaetType')
+        if self.has__content():
+            outfile.write('>%s' % (eol_, ))
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='task_aktivitaetType', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='task_aktivitaetType'):
+        pass
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='task_aktivitaetType', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.task_aktivitaet is not None:
+            namespaceprefix_ = self.task_aktivitaet_nsprefix_ + ':' if (UseCapturedNS_ and self.task_aktivitaet_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%stask_aktivitaet>%s</%stask_aktivitaet>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.task_aktivitaet), input_name='task_aktivitaet')), namespaceprefix_ , eol_))
+    def exportJson(self, parent_dict=None, key=None, is_list=False):
+        json_dict = dict()
+        self.exportJsonAttributes(json_dict)
+        self.exportJsonChildren(json_dict)
+        return self.exportJsonResult(json_dict, parent_dict, key, is_list)
+    def exportJsonResult(self, json_dict, parent_dict, key, is_list, sub_defs=[], attr_defs=[]):
+        return json_dict
+    def exportJsonAttributes(self, json_dict):
+        pass
+    def exportJsonChildren(self, json_dict):
+        if self.task_aktivitaet is not None:
+            json_dict['task_aktivitaet'] = self.task_aktivitaet
+    def build(self, node, gds_collector_=None):
+        self.gds_collector_ = gds_collector_
+        if SaveElementTreeNode:
+            self.gds_elementtree_node_ = node
+        if SaveNodeDict:
+            node_dict[node] = self 
+        already_processed = set()
+        self.ns_prefix_ = node.prefix
+        self._buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self._buildChildren(child, node, nodeName_, gds_collector_=gds_collector_)
+        return self
+    def _buildAttributes(self, node, attrs, already_processed):
+        pass
+    def _buildChildren(self, child_, node, nodeName_, fromsubclass_=False, gds_collector_=None):
+        if nodeName_ == 'task_aktivitaet':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'task_aktivitaet')
+            value_ = self.gds_validate_string(value_, node, 'task_aktivitaet')
+            self.task_aktivitaet = value_
+            self.task_aktivitaet_nsprefix_ = child_.prefix
+# end class task_aktivitaetType
+
+
 class v_socialhistory_dataType(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
-    def __init__(self, movableColumns: 'boolean' = False, data: List_['dataType22'] = None, gds_collector_=None, **kwargs_):
+    def __init__(self, movableColumns: 'boolean' = False, data: List_['dataType23'] = None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -8559,7 +9224,7 @@ class v_socialhistory_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -8577,14 +9242,14 @@ class v_socialhistory_dataType(GeneratedsSuper):
             self.movableColumns = ival_
             self.movableColumns_nsprefix_ = child_.prefix
         elif nodeName_ == 'data':
-            obj_ = dataType22.factory(parent_object_=self)
+            obj_ = dataType23.factory(parent_object_=self)
             obj_.build(child_, gds_collector_=gds_collector_)
             self.data.append(obj_)
             obj_.original_tagname_ = 'data'
 # end class v_socialhistory_dataType
 
 
-class dataType22(GeneratedsSuper):
+class dataType23(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
@@ -8599,13 +9264,13 @@ class dataType22(GeneratedsSuper):
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
-                CurrentSubclassModule_, dataType22)
+                CurrentSubclassModule_, dataType23)
             if subclass is not None:
                 return subclass(*args_, **kwargs_)
-        if dataType22.subclass:
-            return dataType22.subclass(*args_, **kwargs_)
+        if dataType23.subclass:
+            return dataType23.subclass(*args_, **kwargs_)
         else:
-            return dataType22(*args_, **kwargs_)
+            return dataType23(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_ns_prefix_(self):
         return self.ns_prefix_
@@ -8622,32 +9287,32 @@ class dataType22(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType22', pretty_print=True):
-        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType22')
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType23')
         if imported_ns_def_ is not None:
             namespacedef_ = imported_ns_def_
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.original_tagname_ is not None and name_ == 'dataType22':
+        if self.original_tagname_ is not None and name_ == 'dataType23':
             name_ = self.original_tagname_
         if UseCapturedNS_ and self.ns_prefix_:
             namespaceprefix_ = self.ns_prefix_ + ':'
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType22')
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType23')
         if self.has__content():
             outfile.write('>%s' % (eol_, ))
-            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType22', pretty_print=pretty_print)
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType23', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType22'):
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType23'):
         pass
-    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType22', fromsubclass_=False, pretty_print=True):
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8677,7 +9342,7 @@ class dataType22(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -8694,14 +9359,14 @@ class dataType22(GeneratedsSuper):
             value_ = self.gds_validate_string(value_, node, 'ereignis')
             self.ereignis = value_
             self.ereignis_nsprefix_ = child_.prefix
-# end class dataType22
+# end class dataType23
 
 
 class i_socialhistory_dataType(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
-    def __init__(self, movableColumns: 'boolean' = True, data: List_['dataType23'] = None, gds_collector_=None, **kwargs_):
+    def __init__(self, movableColumns: 'boolean' = True, data: List_['dataType24'] = None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -8816,7 +9481,7 @@ class i_socialhistory_dataType(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -8834,14 +9499,14 @@ class i_socialhistory_dataType(GeneratedsSuper):
             self.movableColumns = ival_
             self.movableColumns_nsprefix_ = child_.prefix
         elif nodeName_ == 'data':
-            obj_ = dataType23.factory(parent_object_=self)
+            obj_ = dataType24.factory(parent_object_=self)
             obj_.build(child_, gds_collector_=gds_collector_)
             self.data.append(obj_)
             obj_.original_tagname_ = 'data'
 # end class i_socialhistory_dataType
 
 
-class dataType23(GeneratedsSuper):
+class dataType24(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
@@ -8866,13 +9531,13 @@ class dataType23(GeneratedsSuper):
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
-                CurrentSubclassModule_, dataType23)
+                CurrentSubclassModule_, dataType24)
             if subclass is not None:
                 return subclass(*args_, **kwargs_)
-        if dataType23.subclass:
-            return dataType23.subclass(*args_, **kwargs_)
+        if dataType24.subclass:
+            return dataType24.subclass(*args_, **kwargs_)
         else:
-            return dataType23(*args_, **kwargs_)
+            return dataType24(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_ns_prefix_(self):
         return self.ns_prefix_
@@ -8914,32 +9579,32 @@ class dataType23(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', pretty_print=True):
-        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType23')
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType24', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType24')
         if imported_ns_def_ is not None:
             namespacedef_ = imported_ns_def_
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.original_tagname_ is not None and name_ == 'dataType23':
+        if self.original_tagname_ is not None and name_ == 'dataType24':
             name_ = self.original_tagname_
         if UseCapturedNS_ and self.ns_prefix_:
             namespaceprefix_ = self.ns_prefix_ + ':'
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType23')
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType24')
         if self.has__content():
             outfile.write('>%s' % (eol_, ))
-            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType23', pretty_print=pretty_print)
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType24', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType23'):
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType24'):
         pass
-    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', fromsubclass_=False, pretty_print=True):
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType24', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8999,7 +9664,7 @@ class dataType23(GeneratedsSuper):
         if SaveElementTreeNode:
             self.gds_elementtree_node_ = node
         if SaveNodeDict:
-            node_dict[node] = self
+            node_dict[node] = self 
         already_processed = set()
         self.ns_prefix_ = node.prefix
         self._buildAttributes(node, node.attrib, already_processed)
@@ -9046,7 +9711,7 @@ class dataType23(GeneratedsSuper):
             value_ = self.gds_validate_string(value_, node, 'codesystem_type')
             self.codesystem_type = value_
             self.codesystem_type_nsprefix_ = child_.prefix
-# end class dataType23
+# end class dataType24
 
 
 #
@@ -9269,6 +9934,7 @@ __all__ = [
     "dataType21",
     "dataType22",
     "dataType23",
+    "dataType24",
     "dataType3",
     "dataType4",
     "dataType5",
@@ -9280,6 +9946,7 @@ __all__ = [
     "erklaerungType15",
     "erklaerungType9",
     "i_allergies_dataType",
+    "i_careplan_dataType",
     "i_current_medication_dataType",
     "i_current_problems_dataType",
     "i_family_problems_dataType",
@@ -9291,6 +9958,7 @@ __all__ = [
     "i_socialhistory_dataType",
     "i_vitalsigns_dataType",
     "immunizationtargetType",
+    "task_aktivitaetType",
     "v_allergies_dataType",
     "v_current_medication_dataType",
     "v_current_problems_dataType",
@@ -9301,5 +9969,6 @@ __all__ = [
     "v_results_dataType",
     "v_socialhistory_dataType",
     "v_vitalsigns_dataType",
-    "vidi"
+    "vidi",
+    "zielType"
 ]

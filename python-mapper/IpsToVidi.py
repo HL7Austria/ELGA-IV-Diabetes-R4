@@ -249,6 +249,18 @@ def groot(bundi, vidi):
                 data = malac_vidi.dataType17()
                 iid.data.append(data)
                 i_immunizations_data(immunization, data)
+        careplan = entry.resource
+        if careplan:
+            careplan = unpack_container(careplan)
+            if isinstance(careplan, r4.CarePlan):
+                icd = malac_vidi.i_careplan_dataType()
+                if vidi.i_careplan_data is not None:
+                    icd = vidi.i_careplan_data
+                else:
+                    vidi.i_careplan_data = icd
+                data = malac_vidi.dataType22()
+                icd.data.append(data)
+                i_careplan_data(careplan, data)
 
 def medication_data(med, data):
     med_code = med.medicationCodeableConcept
@@ -356,6 +368,49 @@ def i_immunizations_data(immunization, data):
                     data_immunizationtarget = malac_vidi.immunizationtargetType()
                     data.immunizationtarget.append(data_immunizationtarget)
                     data_immunizationtarget.immunizationtarget = immunization_protocolApplied_targetDisease_coding_display.value
+
+def i_careplan_data(careplan, data):
+    cp_status = careplan.status
+    if cp_status:
+        data.status = cp_status.value
+    cp_intent = careplan.intent
+    if cp_intent:
+        data.zweck = cp_intent.value
+    for cp_cat in careplan.category or []:
+        cp_cat_text = cp_cat.text
+        if cp_cat_text:
+            data.kategorie = cp_cat_text.value
+    cp_title = careplan.title
+    if cp_title:
+        data.titel = cp_title.value
+    cp_desc = careplan.description
+    if cp_desc:
+        data.beschreibung = cp_desc.value
+    cp_created = careplan.created
+    if cp_created:
+        data.erstellt_am = fhirpath.single([v2 for v1 in fhirpath_utils.toString([dateutil.parser.parse(str(cp_created.value))]) for v2 in fhirpath_utils.substring(v1,[0],[23])])
+    cp_author = careplan.author
+    if cp_author:
+        cp_author_disp = cp_author.display
+        if cp_author_disp:
+            data.verantwortlich = cp_author_disp.value
+    for cp_addr in careplan.addresses or []:
+        cp_addr_disp = cp_addr.display
+        if cp_addr_disp:
+            data.abklaerung = cp_addr_disp.value
+    for cp_goal in careplan.goal or []:
+        cp_goal_disp = cp_goal.display
+        if cp_goal_disp:
+            data_ziel = malac_vidi.zielType()
+            data.ziel.append(data_ziel)
+            data_ziel.ziel = cp_goal_disp.value
+    for cp_act in careplan.activity or []:
+        for cp_act_outref in cp_act.outcomeReference or []:
+            cp_act_outref_disp = cp_act_outref.display
+            if cp_act_outref_disp:
+                data_task_aktivitaet = malac_vidi.task_aktivitaetType()
+                data.task_aktivitaet.append(data_task_aktivitaet)
+                data_task_aktivitaet.task_aktivitaet = cp_act_outref_disp.value
 
 # output
 # 1..1 result (boolean)
