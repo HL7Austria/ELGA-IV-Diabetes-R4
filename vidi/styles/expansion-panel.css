@@ -173,3 +173,11 @@
 .expansion-panel-gemessene-werte {
     background-color: var(--color-expansion-panel-gemessene-werte);
 }
+
+.expansion-panel-impfungen {
+    background-color: var(--color-expansion-panel-impfungen);
+}
+
+.expansion-panel-behandlungsplan {
+    background-color: var(--color-expansion-panel-behandlungsplan);
+}

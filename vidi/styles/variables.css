@@ -16,8 +16,9 @@
     --color-button-primary: var(--color-h1);
     --color-expansion-panel-stammdaten: #2697b9b7;
     --color-expansion-panel-allergien: #2699b9d7;
-    --color-expansion-panel-aktuelle-medikamente: #539ecc;
-    --color-expansion-panel-vergangene-medikamente:  #4b93c0b6;
+    --color-expansion-panel-impfungen:#2c94a7d7;
+    --color-expansion-panel-aktuelle-medikamente: #2370afd7;
+    --color-expansion-panel-vergangene-medikamente:  #2370afad;
     --color-expansion-panel-aktuelle-diagnose:#54a831;
     --color-expansion-panel-vergangene-diagnosen: #57973bbd;
     --color-expansion-panel-familienanamnese:  #7b973bd0;
@@ -25,6 +26,7 @@
     --color-expansion-panel-lebensstil: hsl(9, 97%, 45%, 0.726);
     --color-expansion-panel-durchgeführte-tests: hsl(0, 97%, 45%, 0.582);
     --color-expansion-panel-gemessene-werte:hsl(335, 97%, 45%, 0.58);
+    --color-expansion-panel-behandlungsplan:hsla(335, 81%, 36%, 0.63);
 
     /* FONT */
     --font-size-h1: 1rem;

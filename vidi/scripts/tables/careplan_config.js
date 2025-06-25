@@ -9,6 +9,20 @@ export const i_careplan_config = {
     cssClass: "wrap-text",
   },
   responsiveLayoutCollapseStartOpen: false,
+    langs:{
+    "lang-en":{ //German default
+        "columns":{
+            "title":"Title", 
+            "erstellt_am": "Creationdate", 
+            "abklaerung": "Clarification", 
+            "task_aktivitaet": "Task/Aktivity", 
+            "status": "Status", 
+            "ziel": "Goal", 
+            "verantwortlich": "Responsible Person", 
+
+        },
+    },
+},
   columns: [
     {
       title: "",
@@ -35,30 +49,6 @@ export const i_careplan_config = {
       responsive: 0,
     },
     {
-      title: "Status",
-      field: "status",
-      responsive: 0,
-      width: 150,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Zweck",
-      field: "zweck",
-      responsive: 0,
-      width: 220,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Kategorie",
-      field: "kategorie",
-      responsive: 0,
-      width: 220,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
       title: "Titel",
       field: "titel",
       responsive: 0,
@@ -67,42 +57,53 @@ export const i_careplan_config = {
       cssClass: "wrap-text",
     },
     {
-      title: "Beschreibung",
-      field: "beschreibung",
-      responsive: 0,
-      width: 220,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
       title: "Erstellt",
       field: "erstellt_am",
-      responsive: 0,
-      width: 220,
+      responsive: 1,
+      width: 150,
       minWidth: 150,
       cssClass: "wrap-text",
       formatter: function (cell) {
         const row_data = cell.getRow().getData();
         const erstellt = row_data?.erstellt_am;
         const date = new Date(erstellt);
-        const formatted = date.toLocaleString('de-AT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) + ' Uhr';
+        const formatted = date.toLocaleString('de-AT', { day: '2-digit', month: '2-digit', year: 'numeric' }) ;
 
         return formatted;
       },
     },
     {
-      title: "Verantwortlich",
-      field: "verantwortlich",
-      responsive: 0,
-      width: 220,
+      title: "Abklärung",
+      field: "abklaerung",
+      responsive: 2,
+      width: 150,
       minWidth: 150,
       cssClass: "wrap-text",
     },
     {
-      title: "Abklärung",
-      field: "abklaerung",
-      responsive: 0,
-      width: 220,
+      title: "Task/Aktivität",
+      field: "task_aktivitaet",
+      responsive: 3,
+      width: 250,
+      minWidth: 150,
+      cssClass: "wrap-text",
+      formatter: function (cell) {
+        const row_data = cell.getRow().getData();
+        const task_aktivitaet = row_data?.task_aktivitaet;
+
+        let tasks = "";
+        task_aktivitaet.forEach(function (item, index){
+          tasks += item.task_aktivitaet + "<br/>";
+        });
+
+        return tasks;
+      },
+    },
+    {
+      title: "Status",
+      field: "status",
+      responsive: 4,
+      width: 150,
       minWidth: 150,
       cssClass: "wrap-text",
     },
@@ -126,28 +127,17 @@ export const i_careplan_config = {
       },
     },
     {
-      title: "Task/Aktivität",
-      field: "task_aktivitaet",
-      responsive: 0,
-      width: 220,
+      title: "Verantwortlich",
+      field: "verantwortlich",
+      responsive: 5,
+      width: 150,
       minWidth: 150,
       cssClass: "wrap-text",
-      formatter: function (cell) {
-        const row_data = cell.getRow().getData();
-        const task_aktivitaet = row_data?.task_aktivitaet;
-
-        let tasks = "";
-        task_aktivitaet.forEach(function (item, index){
-          tasks += item.task_aktivitaet + "<br/>";
-        });
-
-        return tasks;
-      },
     },
   ],
 };
 
-export const v_results_config = {
+export const v_careplan_config = {
   layout: "fitDataStretch",
   responsiveLayout: "collapse",
   rowHeader: {
@@ -158,53 +148,25 @@ export const v_results_config = {
     cssClass: "wrap-text",
   },
   responsiveLayoutCollapseStartOpen: false,
+  langs:{
+  "lang-en":{ //German default
+    "columns":{
+        "title":"Title", 
+        "erstellt_am": "Creationdate", 
+        "abklaerung": "Clarification", 
+        "task_aktivitaet": "Task/Aktivity", 
+        "status": "Status", 
+        "ziel": "Goal", 
+        "verantwortlich": "Responsible Person", 
+
+    },
+  },
+},
   columns: [
-    {
-      title: "Status",
-      field: "status",
-      responsive: 0,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "zweck",
-      field: "zweck",
-      responsive: 0,
-      width: 500,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Kategorie",
-      field: "kategorie",
-      responsive: 1,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
     {
       title: "Titel",
       field: "titel",
-      responsive: 1,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Beschreibung",
-      field: "beschreibung",
-      responsive: 1,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Erstellt",
-      field: "erstellt_am",
-      responsive: 1,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Verantwortlich",
-      field: "verantwortlich",
-      responsive: 1,
+      responsive: 0,
       minWidth: 150,
       cssClass: "wrap-text",
     },
@@ -218,16 +180,40 @@ export const v_results_config = {
     {
       title: "Ziel",
       field: "ziel",
-      responsive: 1,
+      responsive: 2,
+      width: 220,
       minWidth: 150,
       cssClass: "wrap-text",
-    },
+      formatter: function (cell) {
+        const row_data = cell.getRow().getData();
+        const ziel = row_data?.ziel;
+
+        let ziele = "";
+        ziel.forEach(function (item, index){
+          ziele += item.ziel + "<br/>";
+        });
+
+        return ziele;
+      },
+    },  
     {
       title: "Task/Aktivität",
       field: "task_aktivitaet",
-      responsive: 1,
+      responsive: 3,
+      width: 250,
       minWidth: 150,
       cssClass: "wrap-text",
+      formatter: function (cell) {
+        const row_data = cell.getRow().getData();
+        const task_aktivitaet = row_data?.task_aktivitaet;
+
+        let tasks = "";
+        task_aktivitaet.forEach(function (item, index){
+          tasks += item.task_aktivitaet + "<br/>";
+        });
+
+        return tasks;
+      },
     },
   ],
 };

@@ -9,6 +9,15 @@ export const i_immunizations_config = {
     cssClass: "wrap-text",
   },
   responsiveLayoutCollapseStartOpen: false,
+    langs:{
+    "lang-en":{ //German default
+        "columns":{
+            "zeitpunkt":"Date", 
+            "name": "Immunization", 
+            "immunizationtarget": "Immunization Target"
+        },
+    },
+},
   columns: [
     {
       title: "",
@@ -46,14 +55,14 @@ export const i_immunizations_config = {
       title: "Impfung",
       field: "name",
       responsive: 0,
-      width: 220,
+      width: 400,
       minWidth: 150,
       cssClass: "wrap-text",
     },
     {
       title: "Impfziel",
       field: "immunizationtarget",
-      responsive: 0,
+      responsive: 2,
       width: 220,
       minWidth: 150,
       cssClass: "wrap-text",
@@ -72,7 +81,7 @@ export const i_immunizations_config = {
   ],
 };
 
-export const v_results_config = {
+export const v_immunizations_config = {
   layout: "fitDataStretch",
   responsiveLayout: "collapse",
   rowHeader: {
@@ -82,28 +91,70 @@ export const v_results_config = {
     headerSort: false,
     cssClass: "wrap-text",
   },
-  responsiveLayoutCollapseStartOpen: false,
+    responsiveLayoutCollapseStartOpen: false, 
+    langs:{
+      "lang-en":{ //German default
+          "columns":{
+              "zeitpunkt":"Date", 
+              "erklärung": "Explanation"
+          },
+      },
+  },
   columns: [
     {
       title: "Zeitpunkt",
       field: "zeitpunkt",
-      responsive: 2,
-      minWidth: 150,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Gemessener <br>Wert",
-      field: "gemessenerWert",
-      responsive: 0,
-      width: 500,
-      cssClass: "wrap-text",
-    },
-    {
-      title: "Ergebnis",
-      field: "ergebnis",
       responsive: 1,
+      width: 150,
+      minWidth: 100,
+      cssClass: "wrap-text",
+    },
+        {
+      title: "Impfung",
+      field: "name",
+      responsive: 0,
+      width: 105,
       minWidth: 150,
       cssClass: "wrap-text",
     },
+    {
+      title: "Impfziel",
+      field: "immunizationtarget",
+      responsive: 2,
+      width: 200,
+      minWidth: 150,
+      cssClass: "wrap-text",
+      formatter: function (cell) {
+        const row_data = cell.getRow().getData();
+        const immunizationtarget = row_data?.immunizationtarget;
+
+        let target = "";
+        immunizationtarget.forEach(function (item, index){
+          target += item.immunizationtarget + "<br/>";
+        });
+
+        return target;
+      },
+    },
+    {
+        title: "Erklärung:",
+        field: "erklärung",
+        responsive: 3,
+        width: 220,
+        minWidth: 150,
+        formatter: function (cell) {
+            const explanations = cell?.getValue();
+            const tags = [];
+
+            if (explanations && explanations.length) {
+                explanations.forEach(explanation => tags.push(`<a href="${explanation['url']}" target="_blank" class="a-explanation">${explanation['label']}</a>`));
+            }
+
+            return tags.length ? tags.join('') : '';
+        },
+        responsive: 1,
+          minWidth: 300,
+          cssClass: "wrap-text",
+      },
   ],
 };
