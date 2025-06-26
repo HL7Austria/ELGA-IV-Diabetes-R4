@@ -27,9 +27,14 @@
     <script src="scripts/expansion-panel.js" defer></script>
     <script src="scripts/view.js" defer></script>
     <script type="module" src="scripts/tables/_loader.js" defer></script>
-    <script type="module" src="scripts/language.js"></script>
+    <!-- <script type="module" src="scripts/language.js"></script> -->
     <script src="scripts/zoom.js" defer></script>
     <script src="scripts/print.js" defer></script>
+    <script type="module" defer>
+        import { loadFrom } from './scripts/tables/_loader.js';
+        import example from './scripts/tables/_ips_as_vidi_example.json' with {type: 'json'};
+        loadFrom(example);
+    </script>
 </head>
 <body>
     <div class="container-zoom">

@@ -20,63 +20,79 @@ import {v_socialhistory_config, i_socialhistory_config} from './socialhistory_co
 
 
 // This is the one and only file the into vidi schema transformed data comes from
+// xxxx
+// import example from './_ips_as_vidi_example.json' with {type: 'json'};
+// loadFrom(example)
 
-import data from './_ips_as_vidi.json' with {type: 'json'};
-// now the data is beeing splitted into its components, even empty tables have data with at least one line with emtpy values
-const {
-    v_current_medication_data, i_current_medication_data, v_past_medication_data, i_past_medication_data,
-    v_allergies_data, i_allergies_data,
-    v_current_problems_data, i_current_problems_data, v_past_problems_data, i_past_problems_data, v_family_problems_data, i_family_problems_data,
-    v_procedures_data, i_procedures_data,
-    // immunizations missing
-    v_immunizations_data,
-    i_immunizations_data,
-    // medicaldevices missing
-    v_results_data, i_results_data,
-    v_vitalsigns_data, i_vitalsigns_data,
-    // functionalstatus missing
-    // planofcare missing
-    i_careplan_data,
-    v_careplan_data,
-    v_socialhistory_data, i_socialhistory_data,
-    // pregnancy missing
-    // advanceddirectives missing
-} = data
+export function loadFrom(data){
+    try {
+        data = JSON.parse(data)
+    }catch (e) {
+        console.log('Example loaded.');
+    }
+    // now the data is beeing splitted into its components, even empty tables have data with at least one line with emtpy values
+    const {
+        v_current_medication_data, i_current_medication_data, v_past_medication_data, i_past_medication_data,
+        v_allergies_data, i_allergies_data,
+        v_current_problems_data, i_current_problems_data, v_past_problems_data, i_past_problems_data, v_family_problems_data, i_family_problems_data,
+        v_procedures_data, i_procedures_data,
+        // immunizations missing
+        v_immunizations_data,
+        i_immunizations_data,
+        // medicaldevices missing
+        v_results_data, i_results_data,
+        v_vitalsigns_data, i_vitalsigns_data,
+        // functionalstatus missing
+        // planofcare missing
+        i_careplan_data,
+        v_careplan_data,
+        v_socialhistory_data, i_socialhistory_data,
+        // pregnancy missing
+        // advanceddirectives missing
+    } = data
 
 
-// At least the constructor for all the vidi sections are beeing called
+    // At least the constructor for all the vidi sections are beeing called
 
-const tabulatorInstances = [
-    new Tabulator("#v_current_medication", Object.assign({}, v_current_medication_data, v_current_medication_config)),
-    new Tabulator("#i_current_medication", Object.assign({}, i_current_medication_data, i_current_medication_config)),
-    new Tabulator("#v_past_medication", Object.assign({}, v_past_medication_data, v_past_medication_config)),
-    new Tabulator("#i_past_medication", Object.assign({}, i_past_medication_data, i_past_medication_config)),
-    new Tabulator("#v_allergies", Object.assign({}, v_allergies_data, v_allergies_config)),
-    new Tabulator("#i_allergies", Object.assign({}, i_allergies_data, i_allergies_config)),
-    new Tabulator("#v_current_problems", Object.assign({}, v_current_problems_data, v_current_problems_config)),
-    new Tabulator("#i_current_problems", Object.assign({}, i_current_problems_data, i_current_problems_config)),
-    new Tabulator("#v_past_problems", Object.assign({}, v_past_problems_data, v_past_problems_config)),
-    new Tabulator("#i_past_problems", Object.assign({}, i_past_problems_data, i_past_problems_config)),
-    new Tabulator("#v_family_problems", Object.assign({}, v_family_problems_data, v_family_problems_config)),
-    new Tabulator("#i_family_problems", Object.assign({}, i_family_problems_data, i_family_problems_config)),
-    new Tabulator("#v_procedures", Object.assign({}, v_procedures_data, v_procedures_config)),
-    new Tabulator("#i_procedures", Object.assign({}, i_procedures_data, i_procedures_config)),
+    new Tabulator("#v_current_medication", Object.assign({}, v_current_medication_data, v_current_medication_config));
+    new Tabulator("#i_current_medication", Object.assign({}, i_current_medication_data, i_current_medication_config));
+    new Tabulator("#v_past_medication", Object.assign({}, v_past_medication_data, v_past_medication_config));
+    new Tabulator("#i_past_medication", Object.assign({}, i_past_medication_data, i_past_medication_config));
+
+    new Tabulator("#v_allergies", Object.assign({}, v_allergies_data, v_allergies_config));
+    new Tabulator("#i_allergies", Object.assign({}, i_allergies_data, i_allergies_config));
+
+    new Tabulator("#v_current_problems", Object.assign({}, v_current_problems_data, v_current_problems_config));
+    new Tabulator("#i_current_problems", Object.assign({}, i_current_problems_data, i_current_problems_config));
+    new Tabulator("#v_past_problems", Object.assign({}, v_past_problems_data, v_past_problems_config));
+    new Tabulator("#i_past_problems", Object.assign({}, i_past_problems_data, i_past_problems_config));
+    new Tabulator("#v_family_problems", Object.assign({}, v_family_problems_data, v_family_problems_config));
+    new Tabulator("#i_family_problems", Object.assign({}, i_family_problems_data, i_family_problems_config));
+
+    new Tabulator("#v_procedures", Object.assign({}, v_procedures_data, v_procedures_config));
+    new Tabulator("#i_procedures", Object.assign({}, i_procedures_data, i_procedures_config));
+
     // immunizations missing
     new Tabulator("#v_immunizations", Object.assign({}, v_immunizations_data, v_immunizations_config)),
     new Tabulator("#i_immunizations", Object.assign({}, i_immunizations_data, i_immunizations_config)),
     // medicaldevices missing
-    new Tabulator("#v_results", Object.assign({}, v_results_data, v_results_config)),
-    new Tabulator("#i_results", Object.assign({}, i_results_data, i_results_config)),
-    new Tabulator("#v_vitalsigns", Object.assign({}, v_vitalsigns_data, v_vitalsigns_config)),
-    new Tabulator("#i_vitalsigns", Object.assign({}, i_vitalsigns_data, i_vitalsigns_config)),
+
+    new Tabulator("#v_results", Object.assign({}, v_results_data, v_results_config));
+    new Tabulator("#i_results", Object.assign({}, i_results_data, i_results_config));
+
+    new Tabulator("#v_vitalsigns", Object.assign({}, v_vitalsigns_data, v_vitalsigns_config));
+    new Tabulator("#i_vitalsigns", Object.assign({}, i_vitalsigns_data, i_vitalsigns_config));
+
     // functionalstatus missing
+
     // planofcare missing
     new Tabulator("#i_careplan", Object.assign({}, i_careplan_data, i_careplan_config)),
     new Tabulator("#v_careplan", Object.assign({}, v_careplan_data, v_careplan_config)),
-    new Tabulator("#v_socialhistory", Object.assign({}, v_socialhistory_data, v_socialhistory_config)),
-    new Tabulator("#i_socialhistory", Object.assign({}, i_socialhistory_data, i_socialhistory_config))
-    // pregnancy missing
-    // advanceddirectives missing
-];
+    new Tabulator("#v_socialhistory", Object.assign({}, v_socialhistory_data, v_socialhistory_config));
+    new Tabulator("#i_socialhistory", Object.assign({}, i_socialhistory_data, i_socialhistory_config));
 
-export { tabulatorInstances };
+    // pregnancy missing
+
+    // advanceddirectives missing
+
+}
