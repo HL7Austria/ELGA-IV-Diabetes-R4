@@ -1,5 +1,4 @@
-// Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
-// Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
+
 
 
 
@@ -65,7 +64,7 @@ Usage: #example
 * entry[=].resource = example-iv-2-diagnostic-result-1 // Blutzuckerwert 
 // Diagnostic Results - Specimen
 * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
-* entry[=].resource = example-iv-2-diagnostic-specimen-1
+* entry[=].resource = example-iv-2-diagnostic-specimen-1 //Blutprobe
 
 // Vitalparameter (Vital Signs)
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
@@ -83,9 +82,12 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4"  
 * entry[=].resource = example-iv-2-illness-history-1  // Masernerkrankung in der Kindheit
 
-// Careplan Labor
-* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631"
-* entry[=].resource = example-iv-2-careplan-labor
+// Careplan Vorsorge
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639"
+* entry[=].resource = example-iv-2-careplan-vorsorge  
+// Task Laboruntersuchung
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
+* entry[=].resource = example-iv-2-task-labor  // abgeschlossene Laboruntersuchung
 
 // Social History
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
@@ -100,7 +102,7 @@ InstanceOf: DiabComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
-* type = $cs-loinc#60591-5 "Patient summary"  
+* type = $cs-loinc#60591-5 "Patient Summary"  
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * date = "2023-04-09T09:01:30+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
@@ -127,7 +129,7 @@ Usage: #inline
 * section[sectionProblems].code = $cs-loinc#11450-4 "Problemliste"
 * section[sectionProblems].text.status = #empty
 * section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Arterielle Hypertonie</p><p>Adipositas</p><p>Familienanamnese: Vorzeitige koronare Herzerkrankung, Diabetes mellitus</p></div>"
-* section[sectionProblems].entry[problem][+] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) "Arterielle Hypertonie"
+* section[sectionProblems].entry[problem][0] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) "Arterielle Hypertonie"
 * section[sectionProblems].entry[problem][+] = Reference(urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd) "Adipositas"
 // Problems - Family history
 * section[sectionProblems].entry[problem][+] = Reference(urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5) "Familienanamnese: Vorzeitige koronare Herzerkrankung"
@@ -156,7 +158,7 @@ Usage: #inline
 * section[sectionImmunizations].code = $cs-loinc#11369-6 "Impfungen"
 * section[sectionImmunizations].text.status = #empty
 * section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Impfung gegen Diphtherie-Pertussis-Poliomyelitis-Tetanus</p></div>"
-* section[sectionImmunizations].entry[immunization][+]  = Reference(urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607) "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+* section[sectionImmunizations].entry[immunization][0]  = Reference(urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607) "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
 
 // Diagnostische Resultate (Results)
 * section[sectionResults].title = "Diagnostische Resultate"
@@ -188,8 +190,8 @@ Usage: #inline
 * section[sectionPlanOfCare].title = "Behandlungsplan"
 * section[sectionPlanOfCare].code = $cs-loinc#18776-5 "Behandlungsplan - Notiz"
 * section[sectionPlanOfCare].text.status = #empty
-* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Labor angeordnet</p></div>"
-* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631) "Careplan Untersuchung Labor"
+* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan Vorsorge: Laboruntersuchung</p></div>"
+* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Behandlungsplan Vorsorge"
 
 
 // Lebensstil (Social History)
@@ -255,22 +257,59 @@ Usage: #inline
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 
 
-// Careplan ausstehende Laboruntersuchung
-Instance: example-iv-2-careplan-labor
+// // Careplan ausstehende Laboruntersuchung
+// Instance: example-iv-2-careplan-labor
+// InstanceOf: DiabCareplan
+// Usage: #inline
+// * text.status = #additional
+// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ausstehende Laboruntersuchung</p>\n    </div>"
+// * status = #active
+// * intent = #order  
+// * category.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
+// * category.text = "Überweisung Labor"
+// * title = "Laboruntersuchung"
+// * description = "Abklärung mögl. Diabetes II"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * created = "2023-03-15T08:00:00+01:00"
+// * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+// * activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Aufgabe Laboruntersuchung"
+
+// Careplan Vorsorgeuntersuchung 
+
+Instance: example-iv-2-careplan-vorsorge
 InstanceOf: DiabCareplan
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ausstehende Laboruntersuchung</p>\n    </div>"
 * status = #active
-* intent = #order  // #plan?
-* category.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
-* category.text = "Überweisung Labor (HbA1c und Harn)"
-* title = "Labor angefordert"
-* description = "Ausstehende Laboruntersuchung zur Abklärung mögl. Diabetes II"
+* intent = #order  
+* category.coding[0] = $cs-sct#169443000 "Vorsorgeuntersuchungsprogramm"
+* category.text = "Vorsorge"
+* title = "Vorsorgeuntersuchungsprogramm"
+* description = "Abklärung mögl. Diabetes II"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * created = "2023-03-15T08:00:00+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Aufgabe Laboruntersuchung"
 
+// Careplan Task offene Laboruntersuchung
+Instance: example-iv-2-task-labor
+InstanceOf: Task
+Usage: #inline
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
+* status = #requested
+* intent = #order
+* priority = #urgent 
+* code.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
+* code.text = "Abklärung Diabetes"
+* description = "Abklärung mögl. Diabetes II"
+* authoredOn = 2025-03-15T08:00:00+01:00
+* for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performerType = $cs-sct#61246008 "Laboratory medicine specialist" 
+* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
+// * focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
 
 
 // Medication Summary
