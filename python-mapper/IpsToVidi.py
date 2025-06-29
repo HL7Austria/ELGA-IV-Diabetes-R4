@@ -257,6 +257,11 @@ def medication_data(med, data):
             med_code_coding_display = med_code_coding.display
             if med_code_coding_display:
                 data.name = med_code_coding_display.value
+    med_ref = med.medicationReference
+    if med_ref:
+        med_ref_display = med_ref.display
+        if med_ref_display:
+            data.name = med_ref_display.value
     for med_dose in med.dosage or []:
         med_dose_text = med_dose.text
         if med_dose_text:
@@ -289,6 +294,7 @@ def problems_data(condi, data):
             condi_code_coding_display = condi_code_coding.display
             if condi_code_coding_display:
                 data.diagnose = condi_code_coding_display.value
+                data.allergien = condi_code_coding_display.value
 
 def i_problems_data(condi, data):
     problems_data(condi, data)
