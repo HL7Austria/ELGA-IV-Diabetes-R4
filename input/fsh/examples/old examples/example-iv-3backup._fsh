@@ -117,7 +117,7 @@ Usage: #example
 
 // Careplan Labor
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639"
-* entry[=].resource = example-iv-3-careplan-vorsorge-labor  // abgeschlossene Laboruntersuchung
+* entry[=].resource = example-iv-3-careplan-default-labor  // abgeschlossene Laboruntersuchung
 
 
 // // Careplan Diabetes - Zusammenfassung 
@@ -325,7 +325,7 @@ Usage: #inline
 
 
 // Careplan abgeschlossene Laboruntersuchung
-Instance: example-iv-3-careplan-vorsorge-labor
+Instance: example-iv-3-careplan-default-labor
 InstanceOf: DiabCareplan
 Usage: #inline
 * text.status = #additional

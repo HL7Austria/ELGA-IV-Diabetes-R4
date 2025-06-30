@@ -1,7 +1,3 @@
-
-
-
-
 Instance: example-iv-2
 InstanceOf: DiabBundle
 Title: "example-iv-2"
@@ -82,12 +78,12 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4"  
 * entry[=].resource = example-iv-2-illness-history-1  // Masernerkrankung in der Kindheit
 
-// Careplan Vorsorge
+// Careplan Default
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639"
-* entry[=].resource = example-iv-2-careplan-vorsorge  
+* entry[=].resource = example-iv-2-careplan-default  
 // Task Laboruntersuchung
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
-* entry[=].resource = example-iv-2-task-labor  // abgeschlossene Laboruntersuchung
+* entry[=].resource = example-iv-2-task-labor  // offene Laboruntersuchung
 
 // Social History
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
@@ -106,7 +102,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * date = "2023-04-09T09:01:30+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
-* title = "Diabetes Leitdokument"
+* title = "Patient Summary" 
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
 * extension[countryOfAffiliation].valueString = "AT"
 
@@ -190,8 +186,8 @@ Usage: #inline
 * section[sectionPlanOfCare].title = "Behandlungsplan"
 * section[sectionPlanOfCare].code = $cs-loinc#18776-5 "Behandlungsplan - Notiz"
 * section[sectionPlanOfCare].text.status = #empty
-* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan Vorsorge: Laboruntersuchung</p></div>"
-* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Behandlungsplan Vorsorge"
+* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allgemeiner Behandlungsplan: Laboruntersuchung</p></div>"
+* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Allgemeiner Behandlungsplan"
 
 
 // Lebensstil (Social History)
@@ -230,8 +226,6 @@ Usage: #inline
 * recordedDate = "2016-11-01T08:30:00+01:00"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 
-
-
 // Problems - Family history
 
 Instance: example-iv-2-problem-4
@@ -256,58 +250,43 @@ Usage: #inline
 * recordedDate = "2022-02-08T08:30:00+01:00"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 
+// Careplan Default 
 
-// // Careplan ausstehende Laboruntersuchung
-// Instance: example-iv-2-careplan-labor
-// InstanceOf: DiabCareplan
-// Usage: #inline
-// * text.status = #additional
-// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ausstehende Laboruntersuchung</p>\n    </div>"
-// * status = #active
-// * intent = #order  
-// * category.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
-// * category.text = "Überweisung Labor"
-// * title = "Laboruntersuchung"
-// * description = "Abklärung mögl. Diabetes II"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-// * created = "2023-03-15T08:00:00+01:00"
-// * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// * activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Aufgabe Laboruntersuchung"
-
-// Careplan Vorsorgeuntersuchung 
-
-Instance: example-iv-2-careplan-vorsorge
+Instance: example-iv-2-careplan-default
 InstanceOf: DiabCareplan
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Ausstehende Laboruntersuchung</p>\n    </div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Allgemeiner Behandlungsplan</p>\n    </div>"
+* identifier.value = "2235"
+* instantiatesUri = "https://www.sozialministerium.at/2025/Standard-Behandlungsplan"
 * status = #active
 * intent = #order  
-* category.coding[0] = $cs-sct#169443000 "Vorsorgeuntersuchungsprogramm"
-* category.text = "Vorsorge"
-* title = "Vorsorgeuntersuchungsprogramm"
-* description = "Abklärung mögl. Diabetes II"
+* category.coding[0] = $cs-sct#169443000 "Prävention" //"Präventivmaßnahme" 
+* category.text = "Prävention"
+* title = "Allgemeiner Behandlungsplan"
+//* description = "Allgemeiner Behandlungsplan"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * created = "2023-03-15T08:00:00+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Aufgabe Laboruntersuchung"
+* activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Task Laboruntersuchung"
+* activity[0].reference.display = "Task Laboruntersuchung"
 
 // Careplan Task offene Laboruntersuchung
 Instance: example-iv-2-task-labor
 InstanceOf: Task
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Laboruntersuchung</p>\n    </div>"
 * status = #requested
 * intent = #order
 * priority = #urgent 
-* code.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
-* code.text = "Abklärung Diabetes"
+* code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
+* code.text = "Laboruntersuchung"
 * description = "Abklärung mögl. Diabetes II"
 * authoredOn = 2025-03-15T08:00:00+01:00
 * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* performerType = $cs-sct#61246008 "Laboratory medicine specialist" 
+* performerType = $cs-sct#61246008 "Laborfacharzt"  
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
 // * focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
 
