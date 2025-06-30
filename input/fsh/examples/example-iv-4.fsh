@@ -1,5 +1,6 @@
-// Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
-// Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
+Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
+Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
+Alias: $goal-category = http://terminology.hl7.org/CodeSystem/goal-category
 
 
 
@@ -118,9 +119,7 @@ Usage: #example
 // Careplan Default  -> Vorhandener Task scheint nun im Careplan Diabetes auf
 // * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639"
 // * entry[=].resource = example-iv-4-careplan-default  
-// Task Laboruntersuchung
-* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
-* entry[=].resource = example-iv-4-careplan-task-labor-1  // abgeschlossene Laboruntersuchung
+
 
 // Careplan Diabetes  
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae333"
@@ -137,7 +136,9 @@ Usage: #example
 // Careplan Diabetes - Schulung - Termin -> mit Task ersetzt
 // * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
 // * entry[=].resource = example-iv-4-careplan-appointment-nutrition-training
-
+// Task Laboruntersuchung // vom Default Careplan
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
+* entry[=].resource = example-iv-4-careplan-task-labor-1  // abgeschlossene Laboruntersuchung
 // Careplan Diabetes - Anforderung neue Laboruntersuchung 
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699"
 * entry[=].resource = example-iv-4-careplan-task-labor-2
@@ -146,12 +147,13 @@ Usage: #example
 //* entry[=].resource = example-iv-4-careplan-servicerequest-labor
 
 // // Careplan Zielwerte Goals
-// * entry[+].fullUrl = "urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333"
-// * entry[=].resource = example-iv-4-careplan-diabetes-hba1c-monitoring-target
-// * entry[+].fullUrl = "urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333"
-// * entry[=].resource = example-iv-4-careplan-diabetes-exercise
-// //* entry[+].fullUrl = "urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae333"
-// // * entry[=].resource = example-iv-4-careplan-diabetes-hba1c-monitoring
+* entry[+].fullUrl = "urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae777"
+* entry[=].resource = example-iv-4-careplan-diabetes-hba1c-zielwert
+* entry[+].fullUrl = "urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333"
+* entry[=].resource = example-iv-4-careplan-diabetes-exercise
+// Careplan outcome 
+// //* entry[+].fullUrl = "urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae555"
+// // * entry[=].resource = example-iv-4-careplan-diabetes-hba1c-outcome
 
 // Social History
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
@@ -358,8 +360,8 @@ Usage: #inline
 * created = "2025-03-17T08:00:00+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * careTeam = Reference(urn:uuid:75db30ee-5555-486c-929a-c5126837f473) "Careteam von Dr. IV Ärztin"
-// * goal[0] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333) "Ziel Hba1c"
-// * goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
+* goal[0] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae777) "Ziel Hba1c"
+* goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 * activity[0].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111) "Task Augenuntersuchung"
 //* activity[0].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae333) "Termin für Augenuntersuchung"  // Alt: Appointment
@@ -368,7 +370,7 @@ Usage: #inline
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699) "Angeforderte Laboruntersuchung"  // neue Laboruntersuchung
 //* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631) "Angeforderte Laboruntersuchung"  // Alt: ServiceRequest
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Abgeschlossene Laboruntersuchung"  // vom Standard Behanldungsplan
-//* activity[+].outcomeReference = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333) "Zielwerte Hba1c"
+//* activity[+].outcomeReference = Reference(urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae555) "Zielwerte Hba1c"
 
 // Careplan careteam
 Instance: example-iv-4-careplan-diabetes-careteam
@@ -491,7 +493,7 @@ InstanceOf: Task
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Laboruntersuchung</p>\n    </div>"
-* status = #requested
+* status = #completed
 * intent = #order
 * priority = #urgent
 * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
@@ -513,7 +515,7 @@ InstanceOf: Task
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
-* status = #completed
+* status = #requested
 * intent = #order
 * priority = #routine 
 * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
@@ -548,40 +550,43 @@ Usage: #inline
 
 
 // Diabetes Careplan Zielwerte HbA1c 
-Instance: example-iv-4-careplan-diabetes-hba1c-monitoring-target
+Instance: example-iv-4-careplan-diabetes-hba1c-zielwert
 InstanceOf: Goal
 Usage: #inline
+* lifecycleStatus = #proposed 
 * achievementStatus = $goal-achievement#in-progress "In Progress"
 * achievementStatus.text = "In Progress"
-* lifecycleStatus = #active
-* priority = $goal-priority#high-priority "High Priority"
-* priority.text = "hoch"
+* category.coding[0] = $goal-category#dietary "Diät"
+* priority = $goal-priority#high-priority "hoch"
+//* priority.text = "hoch"
 * description.text = "Hämoglobin A1c stabilisieren"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * startDate = "2025-03-17"
 * target.measure = $cs-loinc#4548-4 "Hämoglobin A1c total im Blut"
 * target.measure.text = "Hämoglobin A1c total im Blut"
 * target.detailQuantity.comparator = #<
-* target.detailQuantity = 7 http://unitsofmeasure.org/#% "%"
+* target.detailQuantity = 6.0 '%' "%"
 * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-* note.text = "Überwachen Sie regelmäßig den A1C-Wert, um das Gesamtziel von 6,0 zu erreichen."
+* note.text = "Überwachen Sie regelmäßig den HbA1c-Wert, um das Gesamtziel von 6,0 zu erreichen."
 
 // Diabetes Careplan Ziel Bewegung 
 Instance: example-iv-4-careplan-diabetes-exercise
 InstanceOf: Goal
 Usage: #inline
+* lifecycleStatus = #proposed 
 * achievementStatus = $goal-achievement#in-progress "In Progress"
 * achievementStatus.text = "In Progress"
-* lifecycleStatus = #active
+* category.coding[0] = $goal-category#behavioral "Verhalten"
+* priority = $goal-priority#high-priority "hoch"
+//* priority.text = "hoch"
 * description.text = "Mindestens 30 Minuten pro Tag Sport treiben"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* startDate = "2017-12-07"
-* target.measure = $cs-sct#226029000 "Exercises"
+* startDate = "2025-03-17"
+* target.measure = $cs-sct#226029000 "Bewegung"
 * target.measure.text = "Bewegung"
 * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-
 
 
 // Instance: cc-goal-mae-bp-systolic
