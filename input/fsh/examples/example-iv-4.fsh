@@ -416,12 +416,13 @@ Usage: #inline
 // * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = "2025-03-17T08:00:00+01:00"
-//* lastModified = 2025-03-16T08:30:00+01:00
-* for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * lastModified = 2025-03-16T08:30:00+01:00
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#422234006 "Ophthalmologe" 
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
 // Diabetes Appointment for eye exam -> mit Task ersetzt
 // Instance: example-iv-4-careplan-appointment-eye-exam
@@ -457,11 +458,12 @@ Usage: #inline
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = "2025-03-17T08:00:00+01:00"
 //* lastModified = 2025-03-16T08:30:00+01:00
-* for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
 
 // Diabetes Appointment for Nutrition Training  -> mit Task ersetzt
@@ -503,11 +505,12 @@ Usage: #inline
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = 2025-03-15T08:00:00+01:00
 * lastModified = 2025-03-16T08:30:00+01:00
-* for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
 //* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
 // Diabetes Careplan angeforderte Laboruntersuchung
 Instance: example-iv-4-careplan-task-labor-2
@@ -525,11 +528,13 @@ Usage: #inline
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = 2025-03-17T08:00:00+01:00
 //* lastModified = 2025-03-18T08:30:00+01:00
-* for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
 //* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
+* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
 // Diabetes Careplan angeforderte Laboruntersuchung -> mit Task ersetzt
 // Instance: example-iv-4-careplan-servicerequest-labor
@@ -673,7 +678,7 @@ Usage: #inline
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
-// Allergies and Intolerances   // Todo in Journey ergänzen, falls ok
+// Allergies and Intolerances   
 
 Instance: example-iv-4-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance

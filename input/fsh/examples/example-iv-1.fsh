@@ -225,7 +225,7 @@ Usage: #inline
 
 
 
-// Allergies and Intolerances   // Todo in Journey ergänzen, falls ok
+// Allergies and Intolerances   
 
 Instance: example-iv-1-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance

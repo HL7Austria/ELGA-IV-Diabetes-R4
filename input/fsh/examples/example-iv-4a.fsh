@@ -378,11 +378,12 @@ Usage: #inline
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = 2025-03-15T08:00:00+01:00
 * lastModified = 2025-03-16T08:30:00+01:00
-* for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
-* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
+// * focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
 // Careplan Diabetes ***************************************
 Instance: example-iv-4a-careplan-diabetes-1
@@ -640,7 +641,7 @@ Usage: #inline
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
-// Allergies and Intolerances   // Todo in Journey ergänzen, falls ok
+// Allergies and Intolerances   
 
 Instance: example-iv-4a-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
