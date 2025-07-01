@@ -624,7 +624,7 @@ Usage: #inline
 * dosage.text = "S: 0-0-0-2 / FR"
 * dosage.sequence = 1
 * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 Instance: example-iv-4a-medication-summary-2
@@ -634,10 +634,10 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2023-03-17T08:00:00+01:00"
-* dosage.text = "S:0-0-0-2 / FR"
+* dosage.text = "S:0-0-0-1"
 * dosage.sequence = 1
 * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 

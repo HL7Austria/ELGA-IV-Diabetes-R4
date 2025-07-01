@@ -180,7 +180,7 @@ Usage: #inline
 * section[sectionMedications].title = "Medikationsliste"  // Medikationsplan
 * section[sectionMedications].code = $cs-loinc#10160-0 "Medikationsanamnese"
 * section[sectionMedications].text.status = #empty
-* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 09.04.2025</p></div>"
+* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-0-0, Start 09.04.2025</p></div>"
 * section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL  5MG"
 * section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL  500MG"
 
@@ -464,7 +464,10 @@ Usage: #inline
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-
+//* input[0].type =   TODO Goal
+//* input[0].value =   TODO Gol
+//* output[0].type =  TODO Dokument oder Valueset
+//* output[0].value =  TODO Dokument oder Valueset
 
 // Diabetes Appointment for Nutrition Training  -> mit Task ersetzt
 // Instance: example-iv-4-careplan-appointment-nutrition-training
@@ -562,6 +565,7 @@ Usage: #inline
 // * achievementStatus = $goal-achievement#in-progress "In Progress"  //todo unklar
 // * achievementStatus.text = "In Progress" //todo unklar
 * category.coding[0] = $goal-category#dietary "Diät"
+* category.coding[+] = $goal-category#behavioral "Verhalten"
 * priority = $goal-priority#high-priority "hoch"
 //* priority.text = "hoch"
 * description.text = "Hämoglobin A1c stabilisieren"
@@ -593,60 +597,7 @@ Usage: #inline
 * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 
-
-// Instance: cc-goal-mae-bp-systolic
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * priority = $goal-priority#medium-priority "Medium Priority"
-// * priority.text = "medium"
-// * description.text = "Systolic blood pressure"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2017-06-30"
-// * target.measure = $cs-loinc#8480-6 "Systolic blood pressure"
-// * target.measure.text = "Systolic blood pressure"
-// * target.detailQuantity.comparator = #<
-// * target.detailQuantity = 140 'mm[Hg]' "mmHg"
-// * expressedBy = Reference(Practitioner/cc-prac-carlson-john) "Dr. John Carlson, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd) "Chronic kidney disease"
-
-// Instance: cc-goal-mae-bp-diastolic
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * description.text = "Diastolic blood pressure"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2019-01-12"
-// * target.measure = $cs-loinc#8462-4 "Diastolic blood pressure"
-// * target.measure.text = "Diastolic blood pressure"
-// * target.detailQuantity.comparator = #<
-// * target.detailQuantity = 80 'mm[Hg]' "mmHg"
-// * expressedBy = Reference(Practitioner/cc-prac-carlson-john) "Dr. John Carlson, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd) "Chronic kidney disease"
-
-// Instance: cc-goal-mae-lab-phos
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * priority = $goal-priority#high-priority "High Priority"
-// * priority.text = "high"
-// * description.text = "Phosphorus in blood"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2018-02-20"
-// * target.measure = $cs-loinc#2777-1 "Phosphate [Mass/volume] in Serum or Plasma"
-// * target.measure.text = "Serum phosphorus"
-// * target.detailRange.low = 2.5 'mg/dL' "mg/dL"
-// * target.detailRange.high = 4.5 'mg/dL' "mg/dL"
-// * expressedBy = Reference(Practitioner/cc-prac-jones-vince) "Dr. Vince Jones, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd)
-// * note[0].text = "Normal working kidneys can remove extra phosphorus in your blood. When you have chronic kidney disease (CKD), your kidneys cannot remove phosphorus very well. High phosphorus levels can cause damage to your body. Extra phosphorus causes body changes that pull calcium out of your bones, making them weak. High phosphorus and calcium levels also lead to dangerous calcium deposits in blood vessels, lungs, eyes, and heart. Phosphorus and calcium control are very important for your overall health."
-// * note[+].text = "Source https://www.kidney.org/atoz/content/phosphorus"
+// **********************************************************
 
 
 // Medication Summary
@@ -661,7 +612,7 @@ Usage: #inline
 * dosage.text = "S: 0-0-0-2 / FR"
 * dosage.sequence = 1
 * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 Instance: example-iv-4-medication-summary-2
@@ -671,10 +622,10 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2025-03-17T08:00:00+01:00"
-* dosage.text = "S:0-0-0-2 / FR"
+* dosage.text = "S:0-0-0-1"
 * dosage.sequence = 1
 * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
@@ -821,7 +772,6 @@ Usage: #inline
 Instance: example-iv-4-diagnostic-result-3
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
-* id = "example-iv-4-diagnostic-result-2"
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#2160-0 "Kreatinin in Serum"

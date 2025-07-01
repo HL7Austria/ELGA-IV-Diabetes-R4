@@ -341,7 +341,7 @@ Usage: #inline
 * dosage.text = "S: 0-0-0-2 / FR"
 * dosage.sequence = 1
 * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
@@ -469,7 +469,6 @@ Usage: #inline
 Instance: example-iv-3-diagnostic-result-3
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
-* id = "example-iv-3-diagnostic-result-2"
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#2160-0 "Kreatinin in Serum"

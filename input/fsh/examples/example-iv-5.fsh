@@ -77,6 +77,10 @@ Usage: #example
 * entry[=].resource = example-iv-5-diagnostic-result-2 // HbA1c Wert
 * entry[+].fullUrl = "urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"
 * entry[=].resource = example-iv-5-diagnostic-result-3 // Kreatininwert
+* entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f92"
+* entry[=].resource = example-iv-5-diagnostic-result-4 // HbA1c Kontrolle
+* entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd655"
+* entry[=].resource = example-iv-5-diagnostic-result-5 // Blutzuckerwert Kontrolle
 
 // // Urindiagnostik
 // * entry[+].fullUrl = "urn:uuid:4fe4b16a-14cb-4fd6-9da6-02c4b3797fdc"
@@ -457,7 +461,7 @@ Usage: #inline
 // * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = "2025-03-17T08:00:00+01:00"
-// * lastModified = 2025-03-16T08:30:00+01:00
+// * lastModified = "2025-03-16T08:30:00+01:00"
 // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
@@ -489,7 +493,7 @@ Usage: #inline
 // * participant[=].status = #accepted 
 
 
-// Diabetes Careplan angeforderte Laboruntersuchung
+// Diabetes Careplan abgeschlossene Laboruntersuchung
 Instance: example-iv-5-careplan-task-labor-1
 InstanceOf: Task
 Usage: #inline
@@ -512,22 +516,22 @@ Usage: #inline
 //* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
-// Diabetes Careplan angeforderte Laboruntersuchung
+// Diabetes Careplan neue angeforderte Laboruntersuchung
 Instance: example-iv-5-careplan-task-labor-2
 InstanceOf: Task
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
-* status = #requested
+* status = #completed
 * intent = #order
 * priority = #routine 
 * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
 * code.text = "Laboruntersuchung"
 * description = "Kontrolle HbA1c"
-// * executionPeriod.start = 2025-03-16T08:00:00+01:00 // Datum der Auftragserteilung
-// * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
-* authoredOn = 2025-03-17T08:00:00+01:00
-// lastModified = 2025-03-18T08:30:00+01:00
+* executionPeriod.start = "2025-04-04T08:00:00+01:00" // Datum der Auftragserteilung
+* executionPeriod.end = "2025-04-05T08:00:00+01:00" // Datum der Erledigung
+* authoredOn = "2025-03-17T08:00:00+01:00"
+* lastModified = "2025-04-09T08:30:00+01:00"
 // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
@@ -535,6 +539,8 @@ Usage: #inline
 //* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* restriction.period.start = "2025-04-01T08:00:00+01:00" // Wann soll der Task erledigt werden
+* restriction.period.end = "2025-04-07T08:00:00+01:00"
 
 // Diabetes Careplan angeforderte Laboruntersuchung -> mit Task ersetzt
 // Instance: example-iv-5-careplan-servicerequest-labor
@@ -594,60 +600,6 @@ Usage: #inline
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 
 
-// Instance: cc-goal-mae-bp-systolic
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * priority = $goal-priority#medium-priority "Medium Priority"
-// * priority.text = "medium"
-// * description.text = "Systolic blood pressure"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2017-06-30"
-// * target.measure = $cs-loinc#8480-6 "Systolic blood pressure"
-// * target.measure.text = "Systolic blood pressure"
-// * target.detailQuantity.comparator = #<
-// * target.detailQuantity = 140 'mm[Hg]' "mmHg"
-// * expressedBy = Reference(Practitioner/cc-prac-carlson-john) "Dr. John Carlson, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd) "Chronic kidney disease"
-
-// Instance: cc-goal-mae-bp-diastolic
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * description.text = "Diastolic blood pressure"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2019-01-12"
-// * target.measure = $cs-loinc#8462-4 "Diastolic blood pressure"
-// * target.measure.text = "Diastolic blood pressure"
-// * target.detailQuantity.comparator = #<
-// * target.detailQuantity = 80 'mm[Hg]' "mmHg"
-// * expressedBy = Reference(Practitioner/cc-prac-carlson-john) "Dr. John Carlson, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd) "Chronic kidney disease"
-
-// Instance: cc-goal-mae-lab-phos
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * priority = $goal-priority#high-priority "High Priority"
-// * priority.text = "high"
-// * description.text = "Phosphorus in blood"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2018-02-20"
-// * target.measure = $cs-loinc#2777-1 "Phosphate [Mass/volume] in Serum or Plasma"
-// * target.measure.text = "Serum phosphorus"
-// * target.detailRange.low = 2.5 'mg/dL' "mg/dL"
-// * target.detailRange.high = 4.5 'mg/dL' "mg/dL"
-// * expressedBy = Reference(Practitioner/cc-prac-jones-vince) "Dr. Vince Jones, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd)
-// * note[0].text = "Normal working kidneys can remove extra phosphorus in your blood. When you have chronic kidney disease (CKD), your kidneys cannot remove phosphorus very well. High phosphorus levels can cause damage to your body. Extra phosphorus causes body changes that pull calcium out of your bones, making them weak. High phosphorus and calcium levels also lead to dangerous calcium deposits in blood vessels, lungs, eyes, and heart. Phosphorus and calcium control are very important for your overall health."
-// * note[+].text = "Source https://www.kidney.org/atoz/content/phosphorus"
-
 
 // Medication Summary
 
@@ -661,7 +613,7 @@ Usage: #inline
 * dosage.text = "S: 0-0-0-2 / FR"
 * dosage.sequence = 1
 * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 Instance: example-iv-5-medication-summary-2
@@ -671,10 +623,10 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2025-03-17T08:00:00+01:00"
-* dosage.text = "S:0-0-0-2 / FR"
-* dosage.sequence = 1
+* dosage.text = "S:1-0-0-1"
+* dosage.sequence = 2
 * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+//// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
@@ -821,7 +773,6 @@ Usage: #inline
 Instance: example-iv-5-diagnostic-result-3
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
-* id = "example-iv-5-diagnostic-result-2"
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#2160-0 "Kreatinin in Serum"
@@ -829,6 +780,30 @@ Usage: #inline
 * effectiveDateTime = "2025-03-16T09:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 * valueQuantity = 1.2 'mg/dL' "mg/dL"
+* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+
+Instance: example-iv-5-diagnostic-result-4
+InstanceOf: AtApsObservationResultsLaboratoryPathology
+Usage: #inline
+* status = #final
+* category = $cs-observation-category#laboratory "Laboratory"
+* code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* effectiveDateTime = "2025-04-05T08:00:00+01:00"
+* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+* valueQuantity = 7.1 '%' "%"
+* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+
+Instance: example-iv-5-diagnostic-result-5
+InstanceOf: AtApsObservationResultsLaboratoryPathology
+Usage: #inline
+* status = #final
+* category = $cs-observation-category#laboratory "Laboratory"
+* code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* effectiveDateTime = "2025-04-05T08:00:00+01:00"
+* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* valueQuantity = 200 'mg/dL' "mg/dL"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
 

@@ -275,7 +275,7 @@ Usage: #inline
 // "S:0-0-0-2 / FR"
 * dosage.sequence = 1
 * dosage.timing.repeat.when = $event-timing#NIGHT "Night"
-* dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $sct#26643006 "Oral use"
 * dosage.doseAndRate.doseQuantity.value = 2
 * dosage.doseAndRate.doseQuantity.unit = "Tablet"
