@@ -559,8 +559,8 @@ Instance: example-iv-4-careplan-diabetes-hba1c-zielwert
 InstanceOf: Goal
 Usage: #inline
 * lifecycleStatus = #proposed 
-* achievementStatus = $goal-achievement#in-progress "In Progress"
-* achievementStatus.text = "In Progress"
+// * achievementStatus = $goal-achievement#in-progress "In Progress"  //todo unklar
+// * achievementStatus.text = "In Progress" //todo unklar
 * category.coding[0] = $goal-category#dietary "Diät"
 * priority = $goal-priority#high-priority "hoch"
 //* priority.text = "hoch"
@@ -580,8 +580,8 @@ Instance: example-iv-4-careplan-diabetes-exercise
 InstanceOf: Goal
 Usage: #inline
 * lifecycleStatus = #proposed 
-* achievementStatus = $goal-achievement#in-progress "In Progress"
-* achievementStatus.text = "In Progress"
+// * achievementStatus = $goal-achievement#in-progress "In Progress"
+// * achievementStatus.text = "In Progress"
 * category.coding[0] = $goal-category#behavioral "Verhalten"
 * priority = $goal-priority#high-priority "hoch"
 //* priority.text = "hoch"

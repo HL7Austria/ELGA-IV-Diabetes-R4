@@ -439,8 +439,8 @@ Usage: #inline
 Instance: example-iv-5o-careplan-diabetes-hba1c-monitoring-target
 InstanceOf: Goal
 Usage: #inline
-* achievementStatus = $goal-achievement#in-progress "In Progress"
-* achievementStatus.text = "In Progress"
+// * achievementStatus = $goal-achievement#in-progress "In Progress"
+// * achievementStatus.text = "In Progress"
 * lifecycleStatus = #active
 * priority = $goal-priority#high-priority "High Priority"
 * priority.text = "hoch"
@@ -459,8 +459,8 @@ Usage: #inline
 Instance: example-iv-5o-careplan-diabetes-exercise
 InstanceOf: Goal
 Usage: #inline
-* achievementStatus = $goal-achievement#in-progress "In Progress"
-* achievementStatus.text = "In Progress"
+//* achievementStatus = $goal-achievement#in-progress "In Progress"
+//* achievementStatus.text = "In Progress"
 * lifecycleStatus = #active
 * description.text = "Mindestens 30 Minuten pro Tag Sport treiben"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
