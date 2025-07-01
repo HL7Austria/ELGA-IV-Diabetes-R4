@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Mon Jun 23 15:37:10 2025 by generateDS.py version 2.43.3.
+# Generated Tue Jul  1 11:34:43 2025 by generateDS.py version 2.43.3.
 # Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]
 #
 # Command line options:
@@ -1021,7 +1021,7 @@ class vidi(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
-    def __init__(self, v_current_medication_data: 'v_current_medication_dataType' = None, i_current_medication_data: 'i_current_medication_dataType' = None, v_past_medication_data: 'v_past_medication_dataType' = None, i_past_medication_data: 'i_past_medication_dataType' = None, v_allergies_data: 'v_allergies_dataType' = None, i_allergies_data: 'i_allergies_dataType' = None, v_current_problems_data: 'v_current_problems_dataType' = None, i_current_problems_data: 'i_current_problems_dataType' = None, v_past_problems_data: 'v_past_problems_dataType' = None, i_past_problems_data: 'i_past_problems_dataType' = None, v_family_problems_data: 'v_family_problems_dataType' = None, i_family_problems_data: 'i_family_problems_dataType' = None, v_procedures_data: 'v_procedures_dataType' = None, i_procedures_data: 'i_procedures_dataType' = None, i_immunizations_data: 'i_immunizations_dataType' = None, v_results_data: 'v_results_dataType' = None, i_results_data: 'i_results_dataType' = None, v_vitalsigns_data: 'v_vitalsigns_dataType' = None, i_vitalsigns_data: 'i_vitalsigns_dataType' = None, i_careplan_data: 'i_careplan_dataType' = None, v_socialhistory_data: 'v_socialhistory_dataType' = None, i_socialhistory_data: 'i_socialhistory_dataType' = None, gds_collector_=None, **kwargs_):
+    def __init__(self, v_current_medication_data: 'v_current_medication_dataType' = None, i_current_medication_data: 'i_current_medication_dataType' = None, v_past_medication_data: 'v_past_medication_dataType' = None, i_past_medication_data: 'i_past_medication_dataType' = None, v_allergies_data: 'v_allergies_dataType' = None, i_allergies_data: 'i_allergies_dataType' = None, v_current_problems_data: 'v_current_problems_dataType' = None, i_current_problems_data: 'i_current_problems_dataType' = None, v_past_problems_data: 'v_past_problems_dataType' = None, i_past_problems_data: 'i_past_problems_dataType' = None, v_family_problems_data: 'v_family_problems_dataType' = None, i_family_problems_data: 'i_family_problems_dataType' = None, v_procedures_data: 'v_procedures_dataType' = None, i_procedures_data: 'i_procedures_dataType' = None, i_immunizations_data: 'i_immunizations_dataType' = None, v_results_data: 'v_results_dataType' = None, i_results_data: 'i_results_dataType' = None, v_vitalsigns_data: 'v_vitalsigns_dataType' = None, i_vitalsigns_data: 'i_vitalsigns_dataType' = None, i_careplan_data: 'i_careplan_dataType' = None, i_tasks_data: 'i_tasks_dataType' = None, v_socialhistory_data: 'v_socialhistory_dataType' = None, i_socialhistory_data: 'i_socialhistory_dataType' = None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -1127,6 +1127,11 @@ class vidi(GeneratedsSuper):
         else:
             self.i_careplan_data = i_careplan_data
         self.i_careplan_data_nsprefix_ = None
+        if i_tasks_data is None:
+            self.i_tasks_data = globals()["i_tasks_dataType"]()
+        else:
+            self.i_tasks_data = i_tasks_data
+        self.i_tasks_data_nsprefix_ = None
         if v_socialhistory_data is None:
             self.v_socialhistory_data = globals()["v_socialhistory_dataType"]()
         else:
@@ -1232,6 +1237,10 @@ class vidi(GeneratedsSuper):
         return self.i_careplan_data
     def set_i_careplan_data(self, i_careplan_data):
         self.i_careplan_data = i_careplan_data
+    def get_i_tasks_data(self):
+        return self.i_tasks_data
+    def set_i_tasks_data(self, i_tasks_data):
+        self.i_tasks_data = i_tasks_data
     def get_v_socialhistory_data(self):
         return self.v_socialhistory_data
     def set_v_socialhistory_data(self, v_socialhistory_data):
@@ -1262,6 +1271,7 @@ class vidi(GeneratedsSuper):
             self.v_vitalsigns_data is not None or
             self.i_vitalsigns_data is not None or
             self.i_careplan_data is not None or
+            self.i_tasks_data is not None or
             self.v_socialhistory_data is not None or
             self.i_socialhistory_data is not None
         ):
@@ -1358,6 +1368,9 @@ class vidi(GeneratedsSuper):
         if self.i_careplan_data is not None:
             namespaceprefix_ = self.i_careplan_data_nsprefix_ + ':' if (UseCapturedNS_ and self.i_careplan_data_nsprefix_) else ''
             self.i_careplan_data.export(outfile, level, namespaceprefix_, namespacedef_='', name_='i_careplan_data', pretty_print=pretty_print)
+        if self.i_tasks_data is not None:
+            namespaceprefix_ = self.i_tasks_data_nsprefix_ + ':' if (UseCapturedNS_ and self.i_tasks_data_nsprefix_) else ''
+            self.i_tasks_data.export(outfile, level, namespaceprefix_, namespacedef_='', name_='i_tasks_data', pretty_print=pretty_print)
         if self.v_socialhistory_data is not None:
             namespaceprefix_ = self.v_socialhistory_data_nsprefix_ + ':' if (UseCapturedNS_ and self.v_socialhistory_data_nsprefix_) else ''
             self.v_socialhistory_data.export(outfile, level, namespaceprefix_, namespacedef_='', name_='v_socialhistory_data', pretty_print=pretty_print)
@@ -1454,6 +1467,10 @@ class vidi(GeneratedsSuper):
             child_dict = self.i_careplan_data.exportJson(json_dict, 'i_careplan_data', False)
             if child_dict:
                 json_dict['i_careplan_data'] = child_dict
+        if self.i_tasks_data is not None:
+            child_dict = self.i_tasks_data.exportJson(json_dict, 'i_tasks_data', False)
+            if child_dict:
+                json_dict['i_tasks_data'] = child_dict
         if self.v_socialhistory_data is not None:
             child_dict = self.v_socialhistory_data.exportJson(json_dict, 'v_socialhistory_data', False)
             if child_dict:
@@ -1578,6 +1595,11 @@ class vidi(GeneratedsSuper):
             obj_.build(child_, gds_collector_=gds_collector_)
             self.i_careplan_data = obj_
             obj_.original_tagname_ = 'i_careplan_data'
+        elif nodeName_ == 'i_tasks_data':
+            obj_ = i_tasks_dataType.factory(parent_object_=self)
+            obj_.build(child_, gds_collector_=gds_collector_)
+            self.i_tasks_data = obj_
+            obj_.original_tagname_ = 'i_tasks_data'
         elif nodeName_ == 'v_socialhistory_data':
             obj_ = v_socialhistory_dataType.factory(parent_object_=self)
             obj_.build(child_, gds_collector_=gds_collector_)
@@ -9105,11 +9127,450 @@ class task_aktivitaetType(GeneratedsSuper):
 # end class task_aktivitaetType
 
 
+class i_tasks_dataType(GeneratedsSuper):
+    __hash__ = GeneratedsSuper.__hash__
+    subclass = None
+    superclass = None
+    def __init__(self, data: List_['dataType23'] = None, gds_collector_=None, **kwargs_):
+        self.gds_collector_ = gds_collector_
+        self.gds_elementtree_node_ = None
+        self.original_tagname_ = None
+        self.parent_object_ = kwargs_.get('parent_object_')
+        self.ns_prefix_ = None
+        if data is None:
+            self.data = []
+        else:
+            self.data = data
+        self.data_nsprefix_ = None
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, i_tasks_dataType)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if i_tasks_dataType.subclass:
+            return i_tasks_dataType.subclass(*args_, **kwargs_)
+        else:
+            return i_tasks_dataType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_ns_prefix_(self):
+        return self.ns_prefix_
+    def set_ns_prefix_(self, ns_prefix):
+        self.ns_prefix_ = ns_prefix
+    def get_data(self):
+        return self.data
+    def set_data(self, data):
+        self.data = data
+    def add_data(self, value):
+        self.data.append(value)
+    def insert_data_at(self, index, value):
+        self.data.insert(index, value)
+    def replace_data_at(self, index, value):
+        self.data[index] = value
+    def has__content(self):
+        if (
+            self.data
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='i_tasks_dataType', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('i_tasks_dataType')
+        if imported_ns_def_ is not None:
+            namespacedef_ = imported_ns_def_
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None and name_ == 'i_tasks_dataType':
+            name_ = self.original_tagname_
+        if UseCapturedNS_ and self.ns_prefix_:
+            namespaceprefix_ = self.ns_prefix_ + ':'
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='i_tasks_dataType')
+        if self.has__content():
+            outfile.write('>%s' % (eol_, ))
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='i_tasks_dataType', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='i_tasks_dataType'):
+        pass
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='i_tasks_dataType', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for data_ in self.data:
+            namespaceprefix_ = self.data_nsprefix_ + ':' if (UseCapturedNS_ and self.data_nsprefix_) else ''
+            data_.export(outfile, level, namespaceprefix_, namespacedef_='', name_='data', pretty_print=pretty_print)
+    def exportJson(self, parent_dict=None, key=None, is_list=False):
+        json_dict = dict()
+        self.exportJsonAttributes(json_dict)
+        self.exportJsonChildren(json_dict)
+        return self.exportJsonResult(json_dict, parent_dict, key, is_list)
+    def exportJsonResult(self, json_dict, parent_dict, key, is_list, sub_defs=[], attr_defs=[]):
+        return json_dict
+    def exportJsonAttributes(self, json_dict):
+        pass
+    def exportJsonChildren(self, json_dict):
+        child_list = []
+        for child in self.data:
+            child_dict = child.exportJson(json_dict, 'data', True)
+            if child_dict:
+                child_list.append(child_dict)
+        if child_list:
+            json_dict['data'] = child_list
+    def build(self, node, gds_collector_=None):
+        self.gds_collector_ = gds_collector_
+        if SaveElementTreeNode:
+            self.gds_elementtree_node_ = node
+        if SaveNodeDict:
+            node_dict[node] = self 
+        already_processed = set()
+        self.ns_prefix_ = node.prefix
+        self._buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self._buildChildren(child, node, nodeName_, gds_collector_=gds_collector_)
+        return self
+    def _buildAttributes(self, node, attrs, already_processed):
+        pass
+    def _buildChildren(self, child_, node, nodeName_, fromsubclass_=False, gds_collector_=None):
+        if nodeName_ == 'data':
+            obj_ = dataType23.factory(parent_object_=self)
+            obj_.build(child_, gds_collector_=gds_collector_)
+            self.data.append(obj_)
+            obj_.original_tagname_ = 'data'
+# end class i_tasks_dataType
+
+
+class dataType23(GeneratedsSuper):
+    __hash__ = GeneratedsSuper.__hash__
+    subclass = None
+    superclass = None
+    def __init__(self, id: 'string' = None, status: 'string' = None, intent: 'string' = None, priority: 'string' = None, beschreibung: 'string' = None, code: 'string' = None, focus: 'string' = None, authoredOn: 'string' = None, lastModified: 'string' = None, requester: 'string' = None, performerType: 'string' = None, owner: 'string' = None, gds_collector_=None, **kwargs_):
+        self.gds_collector_ = gds_collector_
+        self.gds_elementtree_node_ = None
+        self.original_tagname_ = None
+        self.parent_object_ = kwargs_.get('parent_object_')
+        self.ns_prefix_ = None
+        self.id = id
+        self.id_nsprefix_ = None
+        self.status = status
+        self.status_nsprefix_ = None
+        self.intent = intent
+        self.intent_nsprefix_ = None
+        self.priority = priority
+        self.priority_nsprefix_ = None
+        self.beschreibung = beschreibung
+        self.beschreibung_nsprefix_ = None
+        self.code = code
+        self.code_nsprefix_ = None
+        self.focus = focus
+        self.focus_nsprefix_ = None
+        self.authoredOn = authoredOn
+        self.authoredOn_nsprefix_ = None
+        self.lastModified = lastModified
+        self.lastModified_nsprefix_ = None
+        self.requester = requester
+        self.requester_nsprefix_ = None
+        self.performerType = performerType
+        self.performerType_nsprefix_ = None
+        self.owner = owner
+        self.owner_nsprefix_ = None
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, dataType23)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if dataType23.subclass:
+            return dataType23.subclass(*args_, **kwargs_)
+        else:
+            return dataType23(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_ns_prefix_(self):
+        return self.ns_prefix_
+    def set_ns_prefix_(self, ns_prefix):
+        self.ns_prefix_ = ns_prefix
+    def get_id(self):
+        return self.id
+    def set_id(self, id):
+        self.id = id
+    def get_status(self):
+        return self.status
+    def set_status(self, status):
+        self.status = status
+    def get_intent(self):
+        return self.intent
+    def set_intent(self, intent):
+        self.intent = intent
+    def get_priority(self):
+        return self.priority
+    def set_priority(self, priority):
+        self.priority = priority
+    def get_beschreibung(self):
+        return self.beschreibung
+    def set_beschreibung(self, beschreibung):
+        self.beschreibung = beschreibung
+    def get_code(self):
+        return self.code
+    def set_code(self, code):
+        self.code = code
+    def get_focus(self):
+        return self.focus
+    def set_focus(self, focus):
+        self.focus = focus
+    def get_authoredOn(self):
+        return self.authoredOn
+    def set_authoredOn(self, authoredOn):
+        self.authoredOn = authoredOn
+    def get_lastModified(self):
+        return self.lastModified
+    def set_lastModified(self, lastModified):
+        self.lastModified = lastModified
+    def get_requester(self):
+        return self.requester
+    def set_requester(self, requester):
+        self.requester = requester
+    def get_performerType(self):
+        return self.performerType
+    def set_performerType(self, performerType):
+        self.performerType = performerType
+    def get_owner(self):
+        return self.owner
+    def set_owner(self, owner):
+        self.owner = owner
+    def has__content(self):
+        if (
+            self.id is not None or
+            self.status is not None or
+            self.intent is not None or
+            self.priority is not None or
+            self.beschreibung is not None or
+            self.code is not None or
+            self.focus is not None or
+            self.authoredOn is not None or
+            self.lastModified is not None or
+            self.requester is not None or
+            self.performerType is not None or
+            self.owner is not None
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType23')
+        if imported_ns_def_ is not None:
+            namespacedef_ = imported_ns_def_
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None and name_ == 'dataType23':
+            name_ = self.original_tagname_
+        if UseCapturedNS_ and self.ns_prefix_:
+            namespaceprefix_ = self.ns_prefix_ + ':'
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType23')
+        if self.has__content():
+            outfile.write('>%s' % (eol_, ))
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType23', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType23'):
+        pass
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.id is not None:
+            namespaceprefix_ = self.id_nsprefix_ + ':' if (UseCapturedNS_ and self.id_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sid>%s</%sid>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.id), input_name='id')), namespaceprefix_ , eol_))
+        if self.status is not None:
+            namespaceprefix_ = self.status_nsprefix_ + ':' if (UseCapturedNS_ and self.status_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sstatus>%s</%sstatus>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.status), input_name='status')), namespaceprefix_ , eol_))
+        if self.intent is not None:
+            namespaceprefix_ = self.intent_nsprefix_ + ':' if (UseCapturedNS_ and self.intent_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sintent>%s</%sintent>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.intent), input_name='intent')), namespaceprefix_ , eol_))
+        if self.priority is not None:
+            namespaceprefix_ = self.priority_nsprefix_ + ':' if (UseCapturedNS_ and self.priority_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%spriority>%s</%spriority>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.priority), input_name='priority')), namespaceprefix_ , eol_))
+        if self.beschreibung is not None:
+            namespaceprefix_ = self.beschreibung_nsprefix_ + ':' if (UseCapturedNS_ and self.beschreibung_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sbeschreibung>%s</%sbeschreibung>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.beschreibung), input_name='beschreibung')), namespaceprefix_ , eol_))
+        if self.code is not None:
+            namespaceprefix_ = self.code_nsprefix_ + ':' if (UseCapturedNS_ and self.code_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%scode>%s</%scode>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.code), input_name='code')), namespaceprefix_ , eol_))
+        if self.focus is not None:
+            namespaceprefix_ = self.focus_nsprefix_ + ':' if (UseCapturedNS_ and self.focus_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sfocus>%s</%sfocus>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.focus), input_name='focus')), namespaceprefix_ , eol_))
+        if self.authoredOn is not None:
+            namespaceprefix_ = self.authoredOn_nsprefix_ + ':' if (UseCapturedNS_ and self.authoredOn_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sauthoredOn>%s</%sauthoredOn>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.authoredOn), input_name='authoredOn')), namespaceprefix_ , eol_))
+        if self.lastModified is not None:
+            namespaceprefix_ = self.lastModified_nsprefix_ + ':' if (UseCapturedNS_ and self.lastModified_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%slastModified>%s</%slastModified>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.lastModified), input_name='lastModified')), namespaceprefix_ , eol_))
+        if self.requester is not None:
+            namespaceprefix_ = self.requester_nsprefix_ + ':' if (UseCapturedNS_ and self.requester_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%srequester>%s</%srequester>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.requester), input_name='requester')), namespaceprefix_ , eol_))
+        if self.performerType is not None:
+            namespaceprefix_ = self.performerType_nsprefix_ + ':' if (UseCapturedNS_ and self.performerType_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sperformerType>%s</%sperformerType>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.performerType), input_name='performerType')), namespaceprefix_ , eol_))
+        if self.owner is not None:
+            namespaceprefix_ = self.owner_nsprefix_ + ':' if (UseCapturedNS_ and self.owner_nsprefix_) else ''
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sowner>%s</%sowner>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.owner), input_name='owner')), namespaceprefix_ , eol_))
+    def exportJson(self, parent_dict=None, key=None, is_list=False):
+        json_dict = dict()
+        self.exportJsonAttributes(json_dict)
+        self.exportJsonChildren(json_dict)
+        return self.exportJsonResult(json_dict, parent_dict, key, is_list)
+    def exportJsonResult(self, json_dict, parent_dict, key, is_list, sub_defs=[], attr_defs=[]):
+        return json_dict
+    def exportJsonAttributes(self, json_dict):
+        pass
+    def exportJsonChildren(self, json_dict):
+        if self.id is not None:
+            json_dict['id'] = self.id
+        if self.status is not None:
+            json_dict['status'] = self.status
+        if self.intent is not None:
+            json_dict['intent'] = self.intent
+        if self.priority is not None:
+            json_dict['priority'] = self.priority
+        if self.beschreibung is not None:
+            json_dict['beschreibung'] = self.beschreibung
+        if self.code is not None:
+            json_dict['code'] = self.code
+        if self.focus is not None:
+            json_dict['focus'] = self.focus
+        if self.authoredOn is not None:
+            json_dict['authoredOn'] = self.authoredOn
+        if self.lastModified is not None:
+            json_dict['lastModified'] = self.lastModified
+        if self.requester is not None:
+            json_dict['requester'] = self.requester
+        if self.performerType is not None:
+            json_dict['performerType'] = self.performerType
+        if self.owner is not None:
+            json_dict['owner'] = self.owner
+    def build(self, node, gds_collector_=None):
+        self.gds_collector_ = gds_collector_
+        if SaveElementTreeNode:
+            self.gds_elementtree_node_ = node
+        if SaveNodeDict:
+            node_dict[node] = self 
+        already_processed = set()
+        self.ns_prefix_ = node.prefix
+        self._buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self._buildChildren(child, node, nodeName_, gds_collector_=gds_collector_)
+        return self
+    def _buildAttributes(self, node, attrs, already_processed):
+        pass
+    def _buildChildren(self, child_, node, nodeName_, fromsubclass_=False, gds_collector_=None):
+        if nodeName_ == 'id':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'id')
+            value_ = self.gds_validate_string(value_, node, 'id')
+            self.id = value_
+            self.id_nsprefix_ = child_.prefix
+        elif nodeName_ == 'status':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'status')
+            value_ = self.gds_validate_string(value_, node, 'status')
+            self.status = value_
+            self.status_nsprefix_ = child_.prefix
+        elif nodeName_ == 'intent':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'intent')
+            value_ = self.gds_validate_string(value_, node, 'intent')
+            self.intent = value_
+            self.intent_nsprefix_ = child_.prefix
+        elif nodeName_ == 'priority':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'priority')
+            value_ = self.gds_validate_string(value_, node, 'priority')
+            self.priority = value_
+            self.priority_nsprefix_ = child_.prefix
+        elif nodeName_ == 'beschreibung':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'beschreibung')
+            value_ = self.gds_validate_string(value_, node, 'beschreibung')
+            self.beschreibung = value_
+            self.beschreibung_nsprefix_ = child_.prefix
+        elif nodeName_ == 'code':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'code')
+            value_ = self.gds_validate_string(value_, node, 'code')
+            self.code = value_
+            self.code_nsprefix_ = child_.prefix
+        elif nodeName_ == 'focus':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'focus')
+            value_ = self.gds_validate_string(value_, node, 'focus')
+            self.focus = value_
+            self.focus_nsprefix_ = child_.prefix
+        elif nodeName_ == 'authoredOn':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'authoredOn')
+            value_ = self.gds_validate_string(value_, node, 'authoredOn')
+            self.authoredOn = value_
+            self.authoredOn_nsprefix_ = child_.prefix
+        elif nodeName_ == 'lastModified':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'lastModified')
+            value_ = self.gds_validate_string(value_, node, 'lastModified')
+            self.lastModified = value_
+            self.lastModified_nsprefix_ = child_.prefix
+        elif nodeName_ == 'requester':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'requester')
+            value_ = self.gds_validate_string(value_, node, 'requester')
+            self.requester = value_
+            self.requester_nsprefix_ = child_.prefix
+        elif nodeName_ == 'performerType':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'performerType')
+            value_ = self.gds_validate_string(value_, node, 'performerType')
+            self.performerType = value_
+            self.performerType_nsprefix_ = child_.prefix
+        elif nodeName_ == 'owner':
+            value_ = child_.text
+            value_ = self.gds_parse_string(value_, node, 'owner')
+            value_ = self.gds_validate_string(value_, node, 'owner')
+            self.owner = value_
+            self.owner_nsprefix_ = child_.prefix
+# end class dataType23
+
+
 class v_socialhistory_dataType(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
-    def __init__(self, movableColumns: 'boolean' = False, data: List_['dataType23'] = None, gds_collector_=None, **kwargs_):
+    def __init__(self, movableColumns: 'boolean' = False, data: List_['dataType24'] = None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -9242,14 +9703,14 @@ class v_socialhistory_dataType(GeneratedsSuper):
             self.movableColumns = ival_
             self.movableColumns_nsprefix_ = child_.prefix
         elif nodeName_ == 'data':
-            obj_ = dataType23.factory(parent_object_=self)
+            obj_ = dataType24.factory(parent_object_=self)
             obj_.build(child_, gds_collector_=gds_collector_)
             self.data.append(obj_)
             obj_.original_tagname_ = 'data'
 # end class v_socialhistory_dataType
 
 
-class dataType23(GeneratedsSuper):
+class dataType24(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
@@ -9264,13 +9725,13 @@ class dataType23(GeneratedsSuper):
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
-                CurrentSubclassModule_, dataType23)
+                CurrentSubclassModule_, dataType24)
             if subclass is not None:
                 return subclass(*args_, **kwargs_)
-        if dataType23.subclass:
-            return dataType23.subclass(*args_, **kwargs_)
+        if dataType24.subclass:
+            return dataType24.subclass(*args_, **kwargs_)
         else:
-            return dataType23(*args_, **kwargs_)
+            return dataType24(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_ns_prefix_(self):
         return self.ns_prefix_
@@ -9287,32 +9748,32 @@ class dataType23(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', pretty_print=True):
-        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType23')
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType24', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType24')
         if imported_ns_def_ is not None:
             namespacedef_ = imported_ns_def_
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.original_tagname_ is not None and name_ == 'dataType23':
+        if self.original_tagname_ is not None and name_ == 'dataType24':
             name_ = self.original_tagname_
         if UseCapturedNS_ and self.ns_prefix_:
             namespaceprefix_ = self.ns_prefix_ + ':'
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType23')
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType24')
         if self.has__content():
             outfile.write('>%s' % (eol_, ))
-            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType23', pretty_print=pretty_print)
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType24', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType23'):
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType24'):
         pass
-    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType23', fromsubclass_=False, pretty_print=True):
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType24', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9359,14 +9820,14 @@ class dataType23(GeneratedsSuper):
             value_ = self.gds_validate_string(value_, node, 'ereignis')
             self.ereignis = value_
             self.ereignis_nsprefix_ = child_.prefix
-# end class dataType23
+# end class dataType24
 
 
 class i_socialhistory_dataType(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
-    def __init__(self, movableColumns: 'boolean' = True, data: List_['dataType24'] = None, gds_collector_=None, **kwargs_):
+    def __init__(self, movableColumns: 'boolean' = True, data: List_['dataType25'] = None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -9499,14 +9960,14 @@ class i_socialhistory_dataType(GeneratedsSuper):
             self.movableColumns = ival_
             self.movableColumns_nsprefix_ = child_.prefix
         elif nodeName_ == 'data':
-            obj_ = dataType24.factory(parent_object_=self)
+            obj_ = dataType25.factory(parent_object_=self)
             obj_.build(child_, gds_collector_=gds_collector_)
             self.data.append(obj_)
             obj_.original_tagname_ = 'data'
 # end class i_socialhistory_dataType
 
 
-class dataType24(GeneratedsSuper):
+class dataType25(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = None
@@ -9531,13 +9992,13 @@ class dataType24(GeneratedsSuper):
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
-                CurrentSubclassModule_, dataType24)
+                CurrentSubclassModule_, dataType25)
             if subclass is not None:
                 return subclass(*args_, **kwargs_)
-        if dataType24.subclass:
-            return dataType24.subclass(*args_, **kwargs_)
+        if dataType25.subclass:
+            return dataType25.subclass(*args_, **kwargs_)
         else:
-            return dataType24(*args_, **kwargs_)
+            return dataType25(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_ns_prefix_(self):
         return self.ns_prefix_
@@ -9579,32 +10040,32 @@ class dataType24(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType24', pretty_print=True):
-        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType24')
+    def export(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType25', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('dataType25')
         if imported_ns_def_ is not None:
             namespacedef_ = imported_ns_def_
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.original_tagname_ is not None and name_ == 'dataType24':
+        if self.original_tagname_ is not None and name_ == 'dataType25':
             name_ = self.original_tagname_
         if UseCapturedNS_ and self.ns_prefix_:
             namespaceprefix_ = self.ns_prefix_ + ':'
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespaceprefix_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType24')
+        self._exportAttributes(outfile, level, already_processed, namespaceprefix_, name_='dataType25')
         if self.has__content():
             outfile.write('>%s' % (eol_, ))
-            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType24', pretty_print=pretty_print)
+            self._exportChildren(outfile, level + 1, namespaceprefix_, namespacedef_, name_='dataType25', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespaceprefix_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType24'):
+    def _exportAttributes(self, outfile, level, already_processed, namespaceprefix_='', name_='dataType25'):
         pass
-    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType24', fromsubclass_=False, pretty_print=True):
+    def _exportChildren(self, outfile, level, namespaceprefix_='', namespacedef_=' xmlns:None="urn:hl7-at:vidi" ', name_='dataType25', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9711,7 +10172,7 @@ class dataType24(GeneratedsSuper):
             value_ = self.gds_validate_string(value_, node, 'codesystem_type')
             self.codesystem_type = value_
             self.codesystem_type_nsprefix_ = child_.prefix
-# end class dataType24
+# end class dataType25
 
 
 #
@@ -9935,6 +10396,7 @@ __all__ = [
     "dataType22",
     "dataType23",
     "dataType24",
+    "dataType25",
     "dataType3",
     "dataType4",
     "dataType5",
@@ -9956,6 +10418,7 @@ __all__ = [
     "i_procedures_dataType",
     "i_results_dataType",
     "i_socialhistory_dataType",
+    "i_tasks_dataType",
     "i_vitalsigns_dataType",
     "immunizationtargetType",
     "task_aktivitaetType",

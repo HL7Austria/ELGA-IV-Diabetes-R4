@@ -1,9 +1,15 @@
 
+import sys
 import argparse
 import time
+import uuid
+import builtins
+import re
+import io
 import json
 from datetime import datetime
 import dateutil.parser
+from html import escape as html_escape
 import r4
 import vidi as malac_vidi
 import utils
@@ -261,6 +267,18 @@ def groot(bundi, vidi):
                 data = malac_vidi.dataType22()
                 icd.data.append(data)
                 i_careplan_data(careplan, data)
+        task = entry.resource
+        if task:
+            task = unpack_container(task)
+            if isinstance(task, r4.Task):
+                itd = malac_vidi.i_tasks_dataType()
+                if vidi.i_tasks_data is not None:
+                    itd = vidi.i_tasks_data
+                else:
+                    vidi.i_tasks_data = itd
+                data = malac_vidi.dataType23()
+                itd.data.append(data)
+                i_tasks_data(task, data)
 
 def medication_data(med, data):
     med_code = med.medicationCodeableConcept
@@ -269,6 +287,11 @@ def medication_data(med, data):
             med_code_coding_display = med_code_coding.display
             if med_code_coding_display:
                 data.name = med_code_coding_display.value
+    med_ref = med.medicationReference
+    if med_ref:
+        med_ref_display = med_ref.display
+        if med_ref_display:
+            data.name = med_ref_display.value
     for med_dose in med.dosage or []:
         med_dose_text = med_dose.text
         if med_dose_text:
@@ -301,6 +324,7 @@ def problems_data(condi, data):
             condi_code_coding_display = condi_code_coding.display
             if condi_code_coding_display:
                 data.diagnose = condi_code_coding_display.value
+                data.allergies = condi_code_coding_display
 
 def i_problems_data(condi, data):
     problems_data(condi, data)
@@ -412,6 +436,55 @@ def i_careplan_data(careplan, data):
                 data.task_aktivitaet.append(data_task_aktivitaet)
                 data_task_aktivitaet.task_aktivitaet = cp_act_outref_disp.value
 
+def i_tasks_data(task, data):
+    task_id = task.id
+    if task_id:
+        data.id = task_id.value
+    task_status = task.status
+    if task_status:
+        data.status = task_status.value
+    task_intent = task.intent
+    if task_intent:
+        data.intent = task_intent.value
+    task_priority = task.priority
+    if task_priority:
+        data.priority = task_priority.value
+    task_desc = task.description
+    if task_desc:
+        data.beschreibung = task_desc.value
+    task_code = task.code
+    if task_code:
+        for task_coding in task_code.coding or []:
+            task_code_disp = task_coding.display
+            if task_code_disp:
+                data.code = task_code_disp.value
+    task_focus = task.focus
+    if task_focus:
+        task_focus_disp = task_focus.display
+        if task_focus_disp:
+            data.focus = task_focus_disp.value
+    task_authored = task.authoredOn
+    if task_authored:
+        data.authoredOn = fhirpath.single([v2 for v1 in fhirpath_utils.toString([dateutil.parser.parse(str(task_authored.value))]) for v2 in fhirpath_utils.substring(v1,[0],[23])])
+    task_modified = task.lastModified
+    if task_modified:
+        data.lastModified = fhirpath.single([v2 for v1 in fhirpath_utils.toString([dateutil.parser.parse(str(task_modified.value))]) for v2 in fhirpath_utils.substring(v1,[0],[23])])
+    task_requester = task.requester
+    if task_requester:
+        task_req_disp = task_requester.display
+        if task_req_disp:
+            data.requester = task_req_disp.value
+    for task_perfType in task.performerType or []:
+        for task_perf_coding in task_perfType.coding or []:
+            task_perf_disp = task_perf_coding.display
+            if task_perf_disp:
+                data.performerType = task_perf_disp.value
+    task_owner = task.owner
+    if task_owner:
+        task_owner_disp = task_owner.display
+        if task_owner_disp:
+            data.owner = task_owner_disp.value
+
 # output
 # 1..1 result (boolean)
 # 0..1 message with error details for human (string)
@@ -421,16 +494,16 @@ def i_careplan_data(careplan, data):
 #       0..1 system
 #       0..1 version
 #       0..1 code
-#       0..1 display
+#       0..1 display 
 #       0..1 userSelected will always be false, because this is a translation
 #   0..1 source (conceptMap url)
 # TODO implement reverse
 def translate(url=None, conceptMapVersion=None, code=None, system=None, version=None, source=None, coding=None, codeableConcept=None, target=None, targetsystem=None, reverse=None, silent=False)              -> dict [bool, str, list[dict[str, dict[str, str, str, str, bool], str]]]:
     start = time.time()
-
+    
     # start validation and recall of translate in simple from
     if codeableConcept:
-        if isinstance(codeableConcept, str):
+        if isinstance(codeableConcept, str): 
             codeableConcept = r4.parseString(codeableConcept, silent)
         elif isinstance(coding, r4.CodeableConcept):
             pass
@@ -439,30 +512,30 @@ def translate(url=None, conceptMapVersion=None, code=None, system=None, version=
         # the first fit will be returned, else the last unfitted value will be returned
         # TODO check translate params
         for one_coding in codeableConcept.get_coding:
-            if (ret := translate(url=url, source=source, coding=one_coding,
-                                 target=target, targetsystem=targetsystem,
+            if (ret := translate(url=url, source=source, coding=one_coding, 
+                                 target=target, targetsystem=targetsystem, 
                                  reverse=reverse, silent=True))[0]:
                 return ret
         else: return ret
     elif coding:
-        if isinstance(coding, str):
+        if isinstance(coding, str): 
             coding = r4.parseString(coding, silent)
         elif isinstance(coding, r4.Coding):
             pass
         else:
             raise BaseException("The coding parameter has to be a string or a Coding Object (called method as library)!")
         # TODO check translate params
-        return translate(url=url,  source=source, coding=one_coding,
-                         target=target, targetsystem=targetsystem,
+        return translate(url=url,  source=source, coding=one_coding, 
+                         target=target, targetsystem=targetsystem, 
                          reverse=reverse, silent=True)
     elif code:
-        if not isinstance(code,str):
+        if not isinstance(code,str): 
             raise BaseException("The code parameter has to be a string!")
     elif target:
-        if not isinstance(code,str):
+        if not isinstance(code,str): 
             raise BaseException("The target parameter has to be a string!")
     elif targetsystem:
-        if not isinstance(code,str):
+        if not isinstance(code,str): 
             raise BaseException("The targetsystem parameter has to be a string!")
     else:
         raise BaseException("At least codeableConcept, coding, code, target or targetSystem has to be given!")
@@ -488,8 +561,8 @@ def translate(url=None, conceptMapVersion=None, code=None, system=None, version=
                                                     if code_lvl == "|" or code_lvl == "~" or code_lvl == "#":
                                                         unmapped += conceptMap_as_7dimension_dict[url_lvl][source_lvl][target_lvl][system_lvl][targetsystem_lvl][code_lvl]
                                                     if code_lvl == "%" or not code or code_lvl == code:
-                                                        match += conceptMap_as_7dimension_dict[url_lvl][source_lvl][target_lvl][system_lvl][targetsystem_lvl][code_lvl]
-
+                                                        match += conceptMap_as_7dimension_dict[url_lvl][source_lvl][target_lvl][system_lvl][targetsystem_lvl][code_lvl]                
+                                                    
     if not match:
         for one_unmapped in unmapped:
             tmp_system = ""
@@ -503,12 +576,12 @@ def translate(url=None, conceptMapVersion=None, code=None, system=None, version=
                 tmp_code = one_unmapped["concept"]["code"][1:] + code
             # replace all "~" values with fixed code (provided from https://hl7.org/fhir/R4B/conceptmap-definitions.html#ConceptMap.group.unmapped.mode)
             elif one_unmapped["concept"]["code"].startswith("~"):
-                if tmp := one_unmapped["concept"]["system"]: tmp_system = tmp
+                if tmp := one_unmapped["concept"]["system"]: tmp_system = tmp 
                 tmp_code = one_unmapped["concept"]["code"][1:]
                 tmp_display = one_unmapped["concept"]["display"]
             elif one_unmapped["concept"]["code"].startswith("#"):
                 # TODO detect recursion like conceptMapA -> conceptMapB -> ConceptMapA -> ...
-                return translate(one_unmapped["concept"]["code"][1:], None, code, system, version, source,
+                return translate(one_unmapped["concept"]["code"][1:], None, code, system, version, source, 
                                  coding, codeableConcept, target, targetsystem, reverse, silent)
             # prepare the match.concept results
             concept = {}
@@ -521,8 +594,8 @@ def translate(url=None, conceptMapVersion=None, code=None, system=None, version=
             if concept == {}:
                 # TODO do a warning, that it seems like the conceptmap is broken, because there is a empty group
                 continue
-
-            match.append({"relationship": one_unmapped["relationship"],
+            
+            match.append({"relationship": one_unmapped["relationship"], 
                           "concept": concept,
                           "source": one_unmapped["source"]})
 
@@ -531,7 +604,7 @@ def translate(url=None, conceptMapVersion=None, code=None, system=None, version=
     message = ""
     for one_match in match:
         if one_match["relationship"] not in ['not-related-to']:
-            result = True
+            result = True 
             # for printing only, if no url was initially given use the conceptmap
             if not url:
                 url = one_match["source"]
@@ -843,10 +916,10 @@ def translate_single(url, code, out_type):
     elif len(matches) == 0:
         matches = translate_unmapped(url=url, code=code)
     if out_type == "Coding":
-        return malac_vidi.Coding(system=(malac_vidi.uri(value=matches[0]['system']) if "system" in matches[0] else None),
-                              version=(malac_vidi.string(value=matches[0]['version']) if "version" in matches[0] else None),
-                              code=(malac_vidi.string(value=matches[0]['code']) if "code" in matches[0] else None),
-                              display=(malac_vidi.string(value=matches[0]['display']) if "display" in  matches[0] else None),
+        return malac_vidi.Coding(system=(malac_vidi.uri(value=matches[0]['system']) if "system" in matches[0] else None), 
+                              version=(malac_vidi.string(value=matches[0]['version']) if "version" in matches[0] else None), 
+                              code=(malac_vidi.string(value=matches[0]['code']) if "code" in matches[0] else None), 
+                              display=(malac_vidi.string(value=matches[0]['display']) if "display" in  matches[0] else None), 
                               userSelected=(malac_vidi.string(value=matches[0]['userSelected']) if "userSelected" in matches[0] else None))
     else:
         return matches[0][out_type]
@@ -854,10 +927,10 @@ def translate_single(url, code, out_type):
 def translate_multi(url, code):
     trans_out = translate(url=url, code=code, silent=True)
     matches = [match['concept'] for match in trans_out['match'] if match['relationship']=='equivalent' or match['relationship']=='equal']
-    return malac_vidi.CodeableConcept(coding=[malac_vidi.Coding(system=(malac_vidi.uri(value=matches[0]['system']) if "system" in matches[0] else None),
-                                                          version=(malac_vidi.string(value=matches[0]['version']) if "version" in matches[0] else None),
-                                                          code=(malac_vidi.string(value=matches[0]['code']) if "code" in matches[0] else None),
-                                                          display=(malac_vidi.string(value=matches[0]['display']) if "display" in  matches[0] else None),
+    return malac_vidi.CodeableConcept(coding=[malac_vidi.Coding(system=(malac_vidi.uri(value=matches[0]['system']) if "system" in matches[0] else None), 
+                                                          version=(malac_vidi.string(value=matches[0]['version']) if "version" in matches[0] else None), 
+                                                          code=(malac_vidi.string(value=matches[0]['code']) if "code" in matches[0] else None), 
+                                                          display=(malac_vidi.string(value=matches[0]['display']) if "display" in  matches[0] else None), 
                                                           userSelected=(malac_vidi.string(value=matches[0]['userSelected']) if "userSelected" in matches[0] else None)
                                                           ) for match in matches])
 
