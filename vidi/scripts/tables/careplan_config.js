@@ -81,25 +81,6 @@ export const i_careplan_config = {
       cssClass: "wrap-text",
     },
     {
-      title: "Task/Aktivität",
-      field: "task_aktivitaet",
-      responsive: 3,
-      width: 250,
-      minWidth: 150,
-      cssClass: "wrap-text",
-      formatter: function (cell) {
-        const row_data = cell.getRow().getData();
-        const task_aktivitaet = row_data?.task_aktivitaet;
-
-        let tasks = "";
-        task_aktivitaet.forEach(function (item, index){
-          tasks += item.task_aktivitaet + "<br/>";
-        });
-
-        return tasks;
-      },
-    },
-    {
       title: "Status",
       field: "status",
       responsive: 4,
@@ -194,25 +175,6 @@ export const v_careplan_config = {
         });
 
         return ziele;
-      },
-    },  
-    {
-      title: "Task/Aktivität",
-      field: "task_aktivitaet",
-      responsive: 3,
-      width: 250,
-      minWidth: 150,
-      cssClass: "wrap-text",
-      formatter: function (cell) {
-        const row_data = cell.getRow().getData();
-        const task_aktivitaet = row_data?.task_aktivitaet;
-
-        let tasks = "";
-        task_aktivitaet.forEach(function (item, index){
-          tasks += item.task_aktivitaet + "<br/>";
-        });
-
-        return tasks;
       },
     },
   ],
