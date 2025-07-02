@@ -6,7 +6,7 @@
 Instance: example-iv-1
 InstanceOf: DiabBundle
 Title: "example-iv-1"
-Description: "Patient Summary: Patient Journey 1 (15.03.2023)"
+Description: "Patient Summary: Patient Journey 1 (15.03.2025)"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f20"
@@ -216,11 +216,11 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-* dosage.text = "S: 0-0-0-2 / FR"
+* dosage.text = "S:0-0-1-0"
 * dosage.sequence = 1
-* dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 // * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
+* dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 
@@ -231,6 +231,7 @@ Instance: example-iv-1-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $cs-allergyintolerance-clinical#active "Active"
+* criticality = #high
 * code = $cs-sct#89055006 "Benzylpenicillin-Natrium"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 //* text.div = "Das ist eine optionale Beschreibung der Allergie des Arztes." // ??
@@ -277,14 +278,14 @@ InstanceOf: AtApsImmunization
 Usage: #inline
 * status = #completed
 * vaccineCode.coding[0] = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
-* vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+// * vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer.actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * vaccineCode = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
 * occurrenceDateTime = "2025-01-08T14:31:30+00:00"
 //* primarySource = true
 * route = $vs-eimpf-medikationartanwendung#IM "Intramuskulär"
-//* protocolApplied[0].series = "Standardimpfserie"
+* protocolApplied[0].series = "Standardimpfserie"
 * protocolApplied[0].doseNumberPositiveInt = 1
 * protocolApplied[0].targetDisease[0] = $vs-eimpf-immunizationtarget#397430003 "Diphtheria"
 * protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#27836007 "Pertussis"

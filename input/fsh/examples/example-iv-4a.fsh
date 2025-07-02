@@ -8,7 +8,7 @@ Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
 Instance: example-iv-4a
 InstanceOf: DiabBundle
 Title: "example-iv-4a"
-Description: "Patient Summary: Patient Journey 4 (17.03.2023)"
+Description: "Patient Summary: Patient Journey 4a (17.03.2023)"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f13"
@@ -451,7 +451,7 @@ Usage: #inline
 * appointmentType = #CHECKUP //http://terminology.hl7.org/ValueSet/v2-0276
 //* reasonCode = #161445009 "H/O: diabetes mellitus" // http://hl7.org/fhir/ValueSet/encounter-reason
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-* description = "Entsprechend Behandlungsplan Diabetes empfohlene Untersuchung der diabetischen Netzhaut"
+// * description = "Screening auf diabetische Retinopathie"
 * created = "2023-03-17T08:00:00+01:00"
 * participant.actor = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * participant.status = #accepted 
@@ -621,11 +621,11 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-* dosage.text = "S: 0-0-0-2 / FR"
+* dosage.text = "S:0-0-1-0"
 * dosage.sequence = 1
-* dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 // * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
+* dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 Instance: example-iv-4a-medication-summary-2
 InstanceOf: AtApsMedicationStatement
@@ -634,11 +634,11 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2023-03-17T08:00:00+01:00"
-* dosage.text = "S:0-0-0-1"
+* dosage.text = "S:0-0-1-0"
 * dosage.sequence = 1
-* dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 // * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
+* dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 // Allergies and Intolerances   
@@ -647,6 +647,7 @@ Instance: example-iv-4a-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $cs-allergyintolerance-clinical#active "Active"
+* criticality = #high
 * code = $cs-sct#89055006 "Benzylpenicillin-Natrium"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
@@ -710,14 +711,14 @@ InstanceOf: AtApsImmunization
 Usage: #inline
 * status = #completed
 * vaccineCode.coding[0] = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
-* vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+// * vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer.actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * vaccineCode = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
-* occurrenceDateTime = "2025-01-08T14:31:30+01:00"
+* occurrenceDateTime = "2025-01-08T14:31:30+00:00"
 //* primarySource = true
 * route = $vs-eimpf-medikationartanwendung#IM "Intramuskulär"
-//* protocolApplied[0].series = "Standardimpfserie"
+* protocolApplied[0].series = "Standardimpfserie"
 * protocolApplied[0].doseNumberPositiveInt = 1
 * protocolApplied[0].targetDisease[0] = $vs-eimpf-immunizationtarget#397430003 "Diphtheria"
 * protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#27836007 "Pertussis"
@@ -811,7 +812,7 @@ Usage: #inline
 // * category = $cs-observation-category#laboratory "Laboratory"
 // * code = $cs-elga-laborparameterergaenzung#1400 "Urindiagnostik"
 // * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectiveDateTime = "2024-02-08T07:56:06+01:00"
+// * effectiveDateTime = "2025-02-08T07:56:06+01:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * hasMember[0] = Reference(urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb) "Leukocytes in Urine"
 // * hasMember[+] = Reference(urn:uuid:8c11ad58-94ec-469c-ba4d-bfba9063067d) "Protein in Urine"

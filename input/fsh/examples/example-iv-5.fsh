@@ -7,7 +7,7 @@ Alias: $goal-category = http://terminology.hl7.org/CodeSystem/goal-category
 Instance: example-iv-5
 InstanceOf: DiabBundle
 Title: "example-iv-5"
-Description: "Patient Summary: Patient Journey 4 (17.03.2025)"
+Description: "Patient Summary: Patient Journey 5 (09.06.2025)"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f13"
@@ -22,12 +22,15 @@ Usage: #example
 // Author Device APS Generator
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f474"
 * entry[=].resource = example-iv-5-author-device  // APS Generator
-// Practitioner IV Ärztin
+// Practitioner IV Diätologin
 // * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
-// * entry[=].resource = example-iv-5-practitioner-iv // IV Ärztin
+// * entry[=].resource = example-iv-4-practitioner-iv // IV Diätologin
 // Practitioner Hausärztin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f473"
 * entry[=].resource = example-iv-5-practitioner-1  // Dr. Hanna Hausärztin
+// Medizinische Fallkoordination
+* entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f477"
+* entry[=].resource = example-iv-5-careteam-fallkoordination  // DGKP Roman Nutrix
 //Careplan careteam
 * entry[+].fullUrl = "urn:uuid:75db30ee-5555-486c-929a-c5126837f473"
 * entry[=].resource = example-iv-5-careplan-diabetes-careteam
@@ -131,24 +134,15 @@ Usage: #example
 // Careplan Diabetes - Augenuntersuchung - Task
 * entry[+].fullUrl = "urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111"
 * entry[=].resource = example-iv-5-careplan-task-eye-exam
-// Careplan Diabetes - Augenuntersuchung - Termin -> mit Task ersetzt
-// * entry[+].fullUrl = "urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae333"
-// * entry[=].resource = example-iv-5-careplan-appointment-eye-exam
 // Careplan Diabetes - Schulung - Task 
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c"
 * entry[=].resource = example-iv-5-careplan-task-nutrition-training
-// Careplan Diabetes - Schulung - Termin -> mit Task ersetzt
-// * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
-// * entry[=].resource = example-iv-5-careplan-appointment-nutrition-training
 // Task Laboruntersuchung // vom Default Careplan
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
 * entry[=].resource = example-iv-5-careplan-task-labor-1  // abgeschlossene Laboruntersuchung
 // Careplan Diabetes - Anforderung neue Laboruntersuchung 
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699"
 * entry[=].resource = example-iv-5-careplan-task-labor-2
-// Careplan Diabetes - Anforderung neue Laboruntersuchung  -> mit Task ersetzt
-//* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631"
-//* entry[=].resource = example-iv-5-careplan-servicerequest-labor
 
 // // Careplan Zielwerte Goals
 * entry[+].fullUrl = "urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae777"
@@ -382,15 +376,15 @@ InstanceOf: CareTeam
 Usage: #inline
 * name = "Careteam von Dr. IV Ärztin"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* participant[0].role = $cs-sct#133932002 "Fallführende Ärztin"
+* participant[0].role = $cs-sct#133932002 "Medizinische Fallführung"
 * participant[=].role.text = "Fallführende Ärztin"
 * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// * participant[+].role = $cs-sct#224535009 "Registered nurse"
-// * participant[=].role.text = "Registered Nurse"
-// * participant[=].member = Reference(Practitioner/cc-prac-smith-julie)
-* participant[+].role = $cs-sct#62247001 "Family medicine specialist"
-* participant[=].role.text = "Hausärztin"
-* participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* participant[+].role = $cs-sct#133932002 "Medizinische Fallkoordination"
+* participant[=].role.text = "Medizinische Fallkoordination"
+* participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f477) "DGKP Roman Nutrix"
+// * participant[+].role = $cs-sct#62247001 "Family medicine specialist"
+// * participant[=].role.text = "Hausärztin"
+// * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 // * participant[+].role = $cs-sct#11911009 "Nephrologist"
 // * participant[=].role.text = "Nephrologist"
 // * participant[=].member = Reference(Practitioner/cc-prac-jones-vince)
@@ -403,6 +397,9 @@ Usage: #inline
 // * participant[+].role = $cs-sct#159011008 "Retail pharmacist"
 // * participant[=].role.text = "Community Pharmacist"
 // * participant[=].member = Reference(Practitioner/cc-prac-walkowski-ellen)
+// * participant[+].role = $cs-sct#224535009 "Registered nurse"
+// * participant[=].role.text = "Registered Nurse"
+// * participant[=].member = Reference(Practitioner/cc-prac-smith-julie)
 
 // **********************************************************
 // Careplan Task Augenutersuchung
@@ -415,8 +412,8 @@ Usage: #inline
 * intent = #plan 
 * priority = #routine 
 * code.coding[0] = $cs-sct#722161008 "Untersuchung der diabetischen Netzhaut"   // Task Type
-* code.coding[0].display = "Untersuchung der diabetischen Netzhaut"
-* description = "Entsprechend Behandlungsplan Diabetes empfohlene Untersuchung der diabetischen Netzhaut"
+* code.coding[0].display = "Screening auf diabetische Retinopathie"
+// * description = "Screening auf diabetische Retinopathie"
 // * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = "2025-03-17T08:00:00+01:00"
@@ -428,23 +425,6 @@ Usage: #inline
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
-// Diabetes Appointment for eye exam -> mit Task ersetzt
-// Instance: example-iv-5-careplan-appointment-eye-exam
-// InstanceOf: Appointment
-// Usage: #inline
-// * status = #proposed
-// * serviceCategory = #27 "Überweisung zum Facharzt"
-// * serviceType = #318 "Diabetes" // http://hl7.org/fhir/ValueSet/service-type 
-// * specialty = #394594003 "Ophthalmology"  // http://hl7.org/fhir/ValueSet/c80-practice-codes Fachrichtung
-// * appointmentType = #CHECKUP //http://terminology.hl7.org/ValueSet/v2-0276
-// //* reasonCode = #161445009 "H/O: diabetes mellitus" // http://hl7.org/fhir/ValueSet/encounter-reason
-// * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-// * description = "Entsprechend Behandlungsplan Diabetes empfohlene Untersuchung der diabetischen Netzhaut"
-// * created = "2025-03-17T08:00:00+01:00"
-// * participant.actor = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * participant.status = #accepted 
-// * requestedPeriod.start = "2025-03-17"
-// * requestedPeriod.end = "2025-04-17"
 
 // Careplan Task Nutrition Training
 Instance: example-iv-5-careplan-task-nutrition-training
@@ -452,7 +432,7 @@ InstanceOf: Task
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Ernährungsschulung bei Diabetes mellitus Typ II</p>\n    </div>"
-* status = #requested
+* status = #completed
 * intent = #plan 
 * priority = #routine 
 * code.coding[0] = $cs-sct#428274007 "Ernährungsschulung bei Diabetes mellitus Typ II"   // Task Type
@@ -461,36 +441,18 @@ Usage: #inline
 // * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
 // * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = "2025-03-17T08:00:00+01:00"
-// * lastModified = "2025-03-16T08:30:00+01:00"
+* lastModified = "2025-04-02T08:30:00+01:00"
 // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* performerType = $cs-sct#61246008 "Laborfacharzt" 
-* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
+* performerType = $cs-sct#768827000 "Nutritionist" 
+* performerType.text = "Dr. IV Diätologin"
+* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-
-
-// Diabetes Appointment for Nutrition Training  -> mit Task ersetzt
-// Instance: example-iv-5-careplan-appointment-nutrition-training
-// InstanceOf: Appointment
-// Usage: #inline
-// * status = #booked
-// // * serviceCategory = #13 "Education & Learning"
-// * serviceCategory.coding[0] = $cs-sct#428274007 "Ernährungsschulung bei Diabetes mellitus Typ II"
-// * serviceCategory.text = "Ernährungsschulung bei Diabetes mellitus Typ II"
-// * serviceType = #488 "Diabetes Schulung" // http://hl7.org/fhir/ValueSet/service-type 
-// //* specialty = #408475000 "Diabetic medicine"  // http://hl7.org/fhir/ValueSet/c80-practice-codes Fachrichtung
-// * appointmentType = #ROUTINE //http://terminology.hl7.org/ValueSet/v2-0276
-// //* reasonCode = #161445009 "H/O: diabetes mellitus" // http://hl7.org/fhir/ValueSet/encounter-reason
-// * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-// * description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
-// * start = "2025-03-20T08:00:00+00:00"
-// * end = "2025-03-20T10:00:00+00:00"
-// * created = "2025-03-17T08:00:00+01:00"
-// * participant[0].actor = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * participant[=].status = #accepted 
-// * participant[+].actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
-// * participant[=].status = #accepted 
+//* input[0].type =   TODO Goal
+//* input[0].value =   TODO Gol
+//* output[0].type =  TODO Dokument oder Valueset
+//* output[0].value =  TODO Dokument oder Valueset
 
 
 // Diabetes Careplan abgeschlossene Laboruntersuchung
@@ -528,10 +490,10 @@ Usage: #inline
 * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
 * code.text = "Laboruntersuchung"
 * description = "Kontrolle HbA1c"
-* executionPeriod.start = "2025-04-04T08:00:00+01:00" // Datum der Auftragserteilung
-* executionPeriod.end = "2025-04-05T08:00:00+01:00" // Datum der Erledigung
+//* executionPeriod.start = "2025-06-03T08:00:00+01:00" // Datum der Auftragserteilung
+//* executionPeriod.end = "2025-06-04T08:00:00+01:00" // Datum der Erledigung
 * authoredOn = "2025-03-17T08:00:00+01:00"
-* lastModified = "2025-04-09T08:30:00+01:00"
+* lastModified = "2025-06-04T08:00:00+01:00"
 // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
@@ -541,23 +503,6 @@ Usage: #inline
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * restriction.period.start = "2025-04-01T08:00:00+01:00" // Wann soll der Task erledigt werden
 * restriction.period.end = "2025-04-07T08:00:00+01:00"
-
-// Diabetes Careplan angeforderte Laboruntersuchung -> mit Task ersetzt
-// Instance: example-iv-5-careplan-servicerequest-labor
-// InstanceOf: ServiceRequest
-// Usage: #inline
-// * text.status = #additional
-// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Angeforderte Laboruntersuchung</p>\n    </div>"
-// * status = #active
-// * intent = #order  
-// * category.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
-// * priority = #urgent
-// * code.coding = $cs-loinc#4548-4 
-// * code.text = "HbA1c"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-// * authoredOn = "2025-03-17T08:00:00+01:00"
-// * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
 
 
 // Diabetes Careplan Zielwerte HbA1c 
@@ -598,9 +543,7 @@ Usage: #inline
 * target.measure.text = "Bewegung"
 * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes Mellitus Typ 2"
-
-
-
+// **********************************************************
 // Medication Summary
 
 Instance: example-iv-5-medication-summary-1
@@ -610,11 +553,11 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-* dosage.text = "S: 0-0-0-2 / FR"
+* dosage.text = "S:0-0-1-0"
 * dosage.sequence = 1
-* dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 // * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
+* dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 Instance: example-iv-5-medication-summary-2
 InstanceOf: AtApsMedicationStatement
@@ -623,11 +566,11 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2025-03-17T08:00:00+01:00"
-* dosage.text = "S:1-0-0-1"
+* dosage.text = "S:1-0-1-0"
 * dosage.sequence = 2
-* dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-//// * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
+// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// * dosage.timing.repeat.dayOfWeek = #fri
+* dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 // Allergies and Intolerances   
@@ -636,6 +579,7 @@ Instance: example-iv-5-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $cs-allergyintolerance-clinical#active "Active"
+* criticality = #high
 * code = $cs-sct#89055006 "Benzylpenicillin-Natrium"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
@@ -699,14 +643,14 @@ InstanceOf: AtApsImmunization
 Usage: #inline
 * status = #completed
 * vaccineCode.coding[0] = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
-* vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+// * vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer.actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * vaccineCode = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
-* occurrenceDateTime = "2025-01-08T14:31:30+01:00"
+* occurrenceDateTime = "2025-01-08T14:31:30+00:00"
 //* primarySource = true
 * route = $vs-eimpf-medikationartanwendung#IM "Intramuskulär"
-//* protocolApplied[0].series = "Standardimpfserie"
+* protocolApplied[0].series = "Standardimpfserie"
 * protocolApplied[0].doseNumberPositiveInt = 1
 * protocolApplied[0].targetDisease[0] = $vs-eimpf-immunizationtarget#397430003 "Diphtheria"
 * protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#27836007 "Pertussis"
@@ -789,7 +733,7 @@ Usage: #inline
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2025-04-05T08:00:00+01:00"
+* effectiveDateTime = "2025-06-04T08:00:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 * valueQuantity = 7.1 '%' "%"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
@@ -823,7 +767,7 @@ Usage: #inline
 // * category = $cs-observation-category#laboratory "Laboratory"
 // * code = $cs-elga-laborparameterergaenzung#1400 "Urindiagnostik"
 // * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectiveDateTime = "2024-02-08T07:56:06+01:00"
+// * effectiveDateTime = "2025-02-08T07:56:06+01:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * hasMember[0] = Reference(urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb) "Leukocytes in Urine"
 // * hasMember[+] = Reference(urn:uuid:8c11ad58-94ec-469c-ba4d-bfba9063067d) "Protein in Urine"
@@ -1042,6 +986,20 @@ Usage: #inline
 * address.city = "Wien"
 * address.postalCode = "1200"
 * address.line = "Treustraße 38"
+
+// DGKP
+Instance: example-iv-5-careteam-fallkoordination
+InstanceOf: AtApsPractitioner
+Usage: #inline
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
+* name.prefix[0] = "DGKP"
+* name.family = "Nutrix"
+* name.given[0] = "Roman"
+* address.city = "Wien"
+* address.postalCode = "1010"
+* address.line = "Karlsplatz 1"
 
 // APS Generator
 Instance: example-iv-5-author-device

@@ -1,7 +1,7 @@
 Instance: example-iv-2
 InstanceOf: DiabBundle
 Title: "example-iv-2"
-Description: "Patient Summary: Patient Journey 2 (15.03.2023)"
+Description: "Patient Summary: Patient Journey 2 (15.03.2025)"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f11"
@@ -100,7 +100,7 @@ Usage: #inline
 * status = #final
 * type = $cs-loinc#60591-5 "Patient Summary"  
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* date = "2023-04-09T09:01:30+01:00"
+* date = "2025-06-09T09:01:30+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
 * title = "Patient Summary" 
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
@@ -266,7 +266,7 @@ Usage: #inline
 * title = "Allgemeiner Behandlungsplan"
 //* description = "Allgemeiner Behandlungsplan"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-* created = "2023-03-15T08:00:00+01:00"
+* created = "2025-03-15T08:00:00+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Task Laboruntersuchung"
 * activity[0].reference.display = "Task Laboruntersuchung"
@@ -301,11 +301,11 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-* dosage.text = "S: 0-0-0-2 / FR"
+* dosage.text = "S:0-0-1-0"
 * dosage.sequence = 1
-* dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 // * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Oraler Verabreichungsweg"
+* dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 
@@ -316,6 +316,7 @@ Instance: example-iv-2-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $cs-allergyintolerance-clinical#active "Active"
+* criticality = #high
 * code = $cs-sct#89055006 "Benzylpenicillin-Natrium"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
@@ -361,14 +362,14 @@ InstanceOf: AtApsImmunization
 Usage: #inline
 * status = #completed
 * vaccineCode.coding[0] = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
-* vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+// * vaccineCode.text = "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer.actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * vaccineCode = $vs-eimpf-impfstoffe#2457324 "BOOSTRIX POLIO FSPR 0,5ML"
-* occurrenceDateTime = "2025-01-08T14:31:30+01:00"
+* occurrenceDateTime = "2025-01-08T14:31:30+00:00"
 //* primarySource = true
 * route = $vs-eimpf-medikationartanwendung#IM "Intramuskulär"
-//* protocolApplied[0].series = "Standardimpfserie"
+* protocolApplied[0].series = "Standardimpfserie"
 * protocolApplied[0].doseNumberPositiveInt = 1
 * protocolApplied[0].targetDisease[0] = $vs-eimpf-immunizationtarget#397430003 "Diphtheria"
 * protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#27836007 "Pertussis"
@@ -392,10 +393,10 @@ Usage: #inline
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2023-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-15T08:00:00+01:00"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * valueQuantity = 250 'mg/dL' "mg/dL"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "example-iv-2-diagnostic-specimen-1"
+* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
 // Vitalparameter (Vital Signs)
 
