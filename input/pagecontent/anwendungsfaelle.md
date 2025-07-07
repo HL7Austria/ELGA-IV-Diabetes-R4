@@ -34,7 +34,7 @@ Kurz vor dem Kontrolltermin bei der Hausärztin prüft Herr Nutrix den aktuellen
 
 - **Fortlaufende Betreuung**: Anton wird weiterhin engmaschig von seiner Hausärztin betreut (mindestens alle 3 Monate) und er nimmt regelmäßig an Schulungen und Beratungen teil.
 
-<!-- <pre class="mermaid">
+<pre class="mermaid">
 ---
 config:
   look: handDrawn
@@ -64,43 +64,44 @@ style bb3 fill:#FFE0B2
 style C fill:#BBDEFB,stroke-width:4px
 style c1 fill:#FFE0B2
 style D fill:#BBDEFB,stroke-width:4px
+</pre> 
+
+
+<!-- <pre class="mermaid">
+   gantt
+  title Patient Journey – Anton Testpatient (Diabetes Typ 2)
+  dateFormat  YYYY-MM-DD
+  section März 2025
+  Erstkontakt mit Hausärztin             :done, a1, 2025-03-14, 1d
+  Blutzuckermessung + körperliche Untersuchung :done, a2, 2025-03-14, 1d
+  Laborzuweisung (HbA1c, Harn)           :done, a3, 2025-03-14, 1d
+  Laboruntersuchung                      :done, a4, after a3, 3d
+
+  section März 2025 – Folgeuntersuchung
+  Arztbesuch – Diagnose Diabetes Typ 2   :done, a5, 2025-03-22, 1d
+  Start integrierte Versorgung           :done, a6, 2025-03-22, 1d
+  Erstellen Behandlungsplan              :done, a7, 2025-03-22, 1d
+  Medikation Metformin                   :done, a8, 2025-03-22, 1d
+  Zuweisung Labor in 3 Monaten (Ziel HbA1c 6%) :done, a9, 2025-03-22, 1d
+  Zuweisung Augenarzt, Schulung, Ernährung :done, a10, 2025-03-22, 1d
+
+  section März – Juni 2025
+  Medikamenteneinnahme (Metformin 1x täglich) :active, b1, 2025-03-23, 2025-07-15
+  Bewegung (Spaziergänge)               :active, b2, 2025-03-23, 2025-07-15
+  Terminvereinbarung Augenarzt          :done, b3, 2025-04-01, 1d
+  Kontakt mit Fallkoordination (Schulung) :done, b4, 2025-04-10, 1d
+  Teilnahme an Patientenschulung & Ernährung :done, b5, 2025-04-15, 2d
+  Labor vergessen                       :crit, b6, 2025-06-15, 10d
+  Erinnerung durch Fallkoordination     :done, b7, 2025-07-10, 1d
+  Nachgeholte Laboruntersuchung         :done, b8, 2025-07-11, 1d
+
+  section Juli 2025
+  Kontrolltermin bei Hausärztin         :done, c1, 2025-07-15, 1d
+  Laborergebnisse und Medikation prüfen :done, c2, 2025-07-15, 1d
+  Anpassung Metformin (2x täglich)      :done, c3, 2025-07-15, 1d
+  Statusaktualisierung im Behandlungsplan :done, c4, 2025-07-15, 1d
+
+  section Weiterer Verlauf
+  Vierteljährliche Kontrolltermine      :active, d1, 2025-10-15, 2025-06-01
+  Regelmäßige Schulung/Beratung         :active, d2, 2025-07-15, 2025-06-01
 </pre> -->
-
-<pre class="mermaid">
-gantt
-    title Patient Journey – Anton Testpatient (Diabetes Typ 2)
-    dateFormat  YYYY-MM-DD
-    section März 2025
-    Erstkontakt mit Hausärztin             :done, a1, 2025-03-14, 1d
-    Blutzuckermessung + körperliche Untersuchung :done, a2, 2025-03-14, 1d
-    Laborzuweisung (HbA1c, Harn)           :done, a3, 2025-03-14, 1d
-    Laboruntersuchung                      :done, a4, after a3, 3d
-
-    section März 2025 – Folgeuntersuchung
-    Arztbesuch – Diagnose Diabetes Typ 2   :done, a5, 2025-03-22, 1d
-    Start integrierte Versorgung           :done, a6, 2025-03-22, 1d
-    Erstellen Behandlungsplan              :done, a7, 2025-03-22, 1d
-    Medikation Metformin                   :done, a8, 2025-03-22, 1d
-    Zuweisung Labor in 3 Monaten (Ziel HbA1c 6%) :done, a9, 2025-03-22, 1d
-    Zuweisung Augenarzt, Schulung, Ernährung :done, a10, 2025-03-22, 1d
-
-    section März – Juni 2025
-    Medikamenteneinnahme (Metformin 1x täglich) :active, b1, 2025-03-23, 2025-07-15
-    Bewegung (Spaziergänge)               :active, b2, 2025-03-23, 2025-07-15
-    Terminvereinbarung Augenarzt          :done, b3, 2025-04-01, 1d
-    Kontakt mit Fallkoordination (Schulung) :done, b4, 2025-04-10, 1d
-    Teilnahme an Patientenschulung & Ernährung :done, b5, 2025-04-15, 2d
-    Labor vergessen                       :crit, b6, 2025-06-15, 10d
-    Erinnerung durch Fallkoordination     :done, b7, 2025-07-10, 1d
-    Nachgeholte Laboruntersuchung         :done, b8, 2025-07-11, 1d
-
-    section Juli 2025
-    Kontrolltermin bei Hausärztin         :done, c1, 2025-07-15, 1d
-    Laborergebnisse und Medikation prüfen :done, c2, 2025-07-15, 1d
-    Anpassung Metformin (2x täglich)      :done, c3, 2025-07-15, 1d
-    Statusaktualisierung im Behandlungsplan :done, c4, 2025-07-15, 1d
-
-    section Weiterer Verlauf
-    Vierteljährliche Kontrolltermine      :active, d1, 2025-10-15, 2025-06-01
-    Regelmäßige Schulung/Beratung         :active, d2, 2025-07-15, 2025-06-01
-    </pre>
