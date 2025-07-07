@@ -85,13 +85,13 @@ Usage: #inline
 * section[0].title = "Problem List"
 * section[=].code = $loinc#11450-4 "Problem list - Reported"
 * section[=].text.status = #empty
-* section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Arterielle Hypertonie</p><p>Adipositas</p><p>Diabettes Mellitus Typ 2</p></div>"
+* section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Arterielle Hypertonie</p><p>Adipositas</p><p>Diabettes mellitus Typ 2</p></div>"
 * section[=].entry[0] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) "Arterielle Hypertonie"  //ok
 * section[=].entry[+] = Reference(urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5) "Vorzeitige koronare Herzerkrankung" // todo
 * section[=].entry[+] = Reference(urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e) "careplan"  
 * section[=].entry[+] = Reference(urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd) "Adipositas"
 * section[=].entry[+] = Reference(urn:uuid:b7b2a10d-7295-4fd1-ad21-81bca78dc45a)  "Alkoholkonsum in der Vergangenheit"
-* section[=].entry[+] = Reference(urn:uuid:A3A9BE59-EC61-4CAB-92A9-9CBAB6AEC437) "Diabetes Mellitus Typ 2"
+* section[=].entry[+] = Reference(urn:uuid:A3A9BE59-EC61-4CAB-92A9-9CBAB6AEC437) "Diabetes mellitus Typ 2"
 
 * section[+].title = "Medication Summary"
 * section[=].code = $loinc#10160-0 "History of Medication use Narrative"
@@ -219,7 +219,7 @@ Usage: #inline
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
 * category = $condition-category#problem-list-item "Problem List Item"
-* code = $sct#44054006 "Diabetes Mellitus Typ 2"
+* code = $sct#44054006 "Diabetes mellitus Typ 2"
 * subject = Reference(urn:uuid:185A4ECA-B5F0-4E05-9020-54AE412A091F)
 * recordedDate = "2023-03-15T08:00:00+00:00"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
@@ -375,7 +375,7 @@ Usage: #inline
 * contained.subject.display = "Anton Test"
 * identifier.value = "12345"
 * instantiatesUri = "http://example.org/protocol-for-obesity"
-* basedOn.display = "Management des Diabetes Mellitus Typ 2"
+* basedOn.display = "Management des Diabetes mellitus Typ 2"
 * replaces.display = "Plan"
 * partOf.display = "Plan"
 * status = #active
@@ -412,7 +412,7 @@ Usage: #inline
 * contained.id = "p1"
 * contained.clinicalStatus = $condition-clinical#active
 * contained.verificationStatus = $condition-ver-status#confirmed
-* contained.code.text = "Diabetes Mellitus Typ 2"
+* contained.code.text = "Diabetes mellitus Typ 2"
 * contained.subject.reference = "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"
 * contained.subject.display = "Anton Test"
 * identifier.value = "12345"
@@ -461,7 +461,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472)
 * effectiveDateTime = "2023-01-01T14:00:00+00:00"
-* valueCodeableConcept = $sct#160303001 "Diabtes Mellitus Typ 2"
+* valueCodeableConcept = $sct#160303001 "Diabtes mellitus Typ 2"
 
 Instance: Inline-Instance-for-example-04-6
 InstanceOf: Observation

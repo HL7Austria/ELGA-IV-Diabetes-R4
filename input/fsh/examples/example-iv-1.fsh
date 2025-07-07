@@ -11,7 +11,7 @@ Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f20"
 * type = #document
-* timestamp = "2025-03-15T14:01:30+01:00"
+* timestamp = "2025-03-14T14:01:30+01:00"
 // Composition
 * entry[0].fullUrl = "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"
 * entry[=].resource = example-iv-1-composition 
@@ -58,7 +58,13 @@ Usage: #example
 // Impfungen (Immunization)
 * entry[+].fullUrl = "urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607"
 * entry[=].resource = example-iv-1-Immunization-1  // Diphtherie-Pertussis-Poliomyelitis-Tetanus
-
+// Vitalparameter (Vital Signs)
+* entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
+* entry[=].resource = example-iv-1-vital-sign-1
+* entry[+].fullUrl = "urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37"
+* entry[=].resource = example-iv-1-vital-sign-2
+* entry[+].fullUrl = "urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8"
+* entry[=].resource = example-iv-1-vital-sign-3
 // Past History of Illness
 * entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4"  
 * entry[=].resource = example-iv-1-illness-history-1  // Masernerkrankung in der Kindheit
@@ -78,7 +84,7 @@ Usage: #inline
 * status = #final
 * type = $cs-loinc#60591-5 "Patient summary"  
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* date = "2025-03-15T14:01:30+01:00"
+* date = "2025-03-14T14:01:30+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
 * title = "Diabetes Leitdokument"
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
@@ -135,7 +141,14 @@ Usage: #inline
 * section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Impfung gegen Diphtherie-Pertussis-Poliomyelitis-Tetanus</p></div>"
 * section[sectionImmunizations].entry[immunization][0]  = Reference(urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607) "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
 
-
+// Vitalparameter (Vital Signs)
+* section[sectionVitalSigns].title = "Vitalparameter"
+* section[sectionVitalSigns].code = $cs-loinc#8716-3 "Vitalparameter"
+* section[sectionVitalSigns].text.status = #empty
+* section[sectionVitalSigns].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Körpergröße: 173 cm</p><p>Körpergewicht: 90 kg</p><p>BMI: 30.07 (high)</p></div>"
+* section[sectionVitalSigns].entry[vitalSign][0] = Reference(urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142) "Körpergröße: 173 cm"
+* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37) "Körpergewicht: 90 kg"
+* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8) "BMI: 30.07"
 
 // Past History of Illness
 * section[sectionPastIllnessHx].title = "Vergangene Gesundheitsprobleme und Risiken"
@@ -292,7 +305,41 @@ Usage: #inline
 * protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#398102009 "Poliomyelitis"
 * protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#76902006 "Tetanus"
 
+// Vitalparameter (Vital Signs)
 
+Instance: example-iv-1-vital-sign-1
+InstanceOf: AtApsObservationVitalSigns
+Usage: #inline
+* status = #final
+* category[VSCat] = $cs-observation-category#vital-signs "Vital Signs"
+* code = $cs-loinc#8302-2 "Körpergröße"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* effectiveDateTime = "2020-02-15T08:00:00+01:00"
+* valueQuantity = 173 'cm' "cm"
+
+Instance: example-iv-1-vital-sign-2
+InstanceOf: AtApsObservationVitalSigns
+Usage: #inline
+* status = #final
+* category[VSCat] = $cs-observation-category#vital-signs "Vital Signs"
+* code = $cs-loinc#29463-7 "Körpergewicht"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* effectiveDateTime = "2020-02-15T08:00:00+01:00"
+* valueQuantity = 90 'kg' "kg"
+
+Instance: example-iv-1-vital-sign-3
+InstanceOf: AtApsObservationVitalSigns
+Usage: #inline
+* status = #final
+* category[VSCat] = $cs-observation-category#vital-signs "Vital Signs"
+* code = $cs-loinc#39156-5 "Body Mass Index (BMI) [Verhältnis]"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* effectiveDateTime = "2020-02-15T08:00:00+01:00"
+* valueQuantity = 30.07 'kg/m2' "kg/m2"
+// * interpretation = $cs-v3-ObservationInterpretation#H "High"
 
 // Past History of Illness
 

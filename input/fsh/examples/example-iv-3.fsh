@@ -10,7 +10,7 @@ Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f13"
 * type = #document
-* timestamp = "2025-03-17T11:01:30+01:00"
+* timestamp = "2025-03-22T11:01:30+01:00"
 // Composition
 * entry[0].fullUrl = "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"
 * entry[=].resource = example-iv-3-composition 
@@ -130,7 +130,7 @@ Usage: #inline
 * status = #final
 * type = $cs-loinc#60591-5 "Patient Summary" 
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* date = "2025-03-17T11:01:30+01:00"
+* date = "2025-03-22T11:01:30+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
 * title = "Patient Summary" 
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
@@ -203,7 +203,7 @@ Usage: #inline
 * section[sectionVitalSigns].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Körpergröße: 173 cm</p><p>Körpergewicht: 90 kg</p><p>BMI: 30.07 (high)</p><p>Blutdruck 180 / 80</p><p>Herzfrequenz 100</p></div>"
 * section[sectionVitalSigns].entry[vitalSign][0] = Reference(urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142) "Körpergröße: 173 cm"
 * section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37) "Körpergewicht: 90 kg"
-* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8) "BMI: 30.07 (high)"
+* section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8) "BMI: 30.07"
 * section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:8248cc70-65a2-4d37-ae14-a3ef2abf8f32) "Blutdruck 180 / 80"
 * section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:4d3f7ac4-fd0a-49af-a56b-303a2dbe67d1) "Herzfrequenz 100"
 
@@ -291,8 +291,8 @@ InstanceOf: DiabCareplan
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Allgemeiner Behandlungsplan</p>\n    </div>"
-* identifier.value = "2235"
-* instantiatesUri = "https://www.sozialministerium.at/2025/Standard-Behandlungsplan"
+// * identifier.value = "2235"
+// * instantiatesUri = "https://www.sozialministerium.at/2025/Standard-Behandlungsplan"
 * status = #active
 * intent = #order  
 * category.coding[0] = $cs-sct#169443000 "Prävention" //"Präventivmaßnahme" 
@@ -300,7 +300,7 @@ Usage: #inline
 * title = "Allgemeiner Behandlungsplan"
 //* description = "Allgemeiner Behandlungsplan"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-* created = "2025-03-15T08:00:00+01:00"
+* created = "2025-03-14T08:00:00+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Task Laboruntersuchung"
 * activity[0].reference.display = "Task Laboruntersuchung"
@@ -316,11 +316,11 @@ Usage: #inline
 * priority = #urgent
 * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
 * code.text = "Laboruntersuchung"
-* description = "Abklärung mögl. Diabetes II"
-// * executionPeriod.start = 2025-03-16T08:00:00+01:00 // Datum der Auftragserteilung
-// * executionPeriod.end = 2025-03-16T08:30:00+01:00 // Datum der Erledigung
-* authoredOn = 2025-03-15T08:00:00+01:00
-* lastModified = 2025-03-16T08:30:00+01:00
+//* description = "Abklärung mögl. Diabetes II"
+// * executionPeriod.start = 2025-03-17T08:00:00+01:00 // Datum der Auftragserteilung
+// * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
+* authoredOn = 2025-03-14T08:00:00+01:00
+* lastModified = 2025-03-17T08:30:00+01:00
 // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
@@ -450,7 +450,7 @@ Usage: #inline
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2025-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * valueQuantity = 250 'mg/dL' "mg/dL"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
@@ -462,7 +462,7 @@ Usage: #inline
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2025-03-16T09:30:00+01:00"
+* effectiveDateTime = "2025-03-17T09:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 * valueQuantity = 8.1 '%' "%"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
@@ -474,7 +474,7 @@ Usage: #inline
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#2160-0 "Kreatinin in Serum"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2025-03-16T09:30:00+01:00"
+* effectiveDateTime = "2025-03-17T09:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 * valueQuantity = 1.2 'mg/dL' "mg/dL"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
@@ -614,7 +614,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * effectiveDateTime = "2023-03-15T08:00:00+01:00"
 * valueQuantity = 30.07 'kg/m2' "kg/m2"
-* interpretation = $cs-v3-ObservationInterpretation#H "High"
+// * interpretation = $cs-v3-ObservationInterpretation#H "High"
 
 Instance: example-iv-3-vital-sign-4
 InstanceOf: AtApsObservationVitalSigns
@@ -624,7 +624,7 @@ Usage: #inline
 * code = $cs-loinc#85354-9 "Blood pressure panel with all children optional"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* effectiveDateTime = "2023-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * component[0].code = $cs-loinc#8480-6 "Systolischer Blutdruck"
 * component[=].valueQuantity = 180 'mm[Hg]' "mm[Hg]"
 * component[+].code = $cs-loinc#8462-4 "Diastolischer Blutdruck"
@@ -638,7 +638,7 @@ Usage: #inline
 * code = $cs-loinc#8867-4 "Herzfrequenz"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* effectiveDateTime = "2023-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * valueQuantity = 100 '/min' "/min"
 
 // Past History of Illness
