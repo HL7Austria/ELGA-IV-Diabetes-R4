@@ -178,9 +178,9 @@ Usage: #inline
 * section[sectionMedications].title = "Medikationsliste"  // Medikationsplan
 * section[sectionMedications].code = $cs-loinc#10160-0 "Medikationsanamnese"
 * section[sectionMedications].text.status = #empty
-* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 09.04.2025</p></div>"
-* section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL  5MG"
-* section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL  500MG"
+* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 22.03.2025</p></div>"
+* section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL 5MG"
+* section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL 500MG"
 
 // Allergien und Intoleranzen (Allergies and Intolerances)
 * section[sectionAllergies].title = "Allergien und Intoleranzen"
@@ -407,7 +407,7 @@ Instance: example-iv-5-careplan-task-eye-exam
 InstanceOf: Task
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II</p>\n    </div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene augenärztliche Kontrolle auf diabetische Retinopathie</p>\n    </div>"
 * status = #requested
 * intent = #plan 
 * priority = #routine 
@@ -431,7 +431,7 @@ Instance: example-iv-5-careplan-task-nutrition-training
 InstanceOf: Task
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II</p>\n    </div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II</p>\n    </div>"
 * status = #completed
 * intent = #plan 
 * priority = #routine 
@@ -491,9 +491,9 @@ Usage: #inline
 * code.text = "Laboruntersuchung"
 //* description = "Kontrolle HbA1c"
 //* executionPeriod.start = "2025-06-03T08:00:00+01:00" // Datum der Auftragserteilung
-//* executionPeriod.end = "2025-06-04T08:00:00+01:00" // Datum der Erledigung
+//* executionPeriod.end = "2025-07-10T08:00:00+01:00" // Datum der Erledigung
 * authoredOn = "2025-03-22T08:00:00+01:00"
-* lastModified = "2025-06-04T08:00:00+01:00"
+* lastModified = "2025-07-15T08:00:00+01:00"
 // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
@@ -501,8 +501,8 @@ Usage: #inline
 //* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-* restriction.period.start = "2025-04-01T08:00:00+01:00" // Wann soll der Task erledigt werden
-* restriction.period.end = "2025-04-07T08:00:00+01:00"
+//* restriction.period.start = "2025-04-01T08:00:00+01:00" // Wann soll der Task erledigt werden
+//* restriction.period.end = "2025-04-07T08:00:00+01:00"
 
 
 // Diabetes Careplan Zielwerte HbA1c 
@@ -553,19 +553,20 @@ Usage: #inline
 * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-* dosage.text = "S:0-0-1-0"
-* dosage.sequence = 1
+* dosage.text = "S:1-0-1-0"
+* dosage.sequence = 2
 // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 // * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+
 Instance: example-iv-5-medication-summary-2
 InstanceOf: AtApsMedicationStatement
 Usage: #inline
 * status = #active
 * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectivePeriod.start = "2025-03-22T08:00:00+01:00"
+* effectivePeriod.start = "2025-07-15T08:00:00+01:00"
 * dosage.text = "S:1-0-1-0"
 * dosage.sequence = 2
 // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
@@ -733,7 +734,7 @@ Usage: #inline
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2025-06-04T08:00:00+01:00"
+* effectiveDateTime = "2025-07-10T08:00:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 * valueQuantity = 7.1 '%' "%"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
