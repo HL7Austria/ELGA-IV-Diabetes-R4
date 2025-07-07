@@ -15,6 +15,7 @@ import {v_vitalsigns_config, i_vitalsigns_config} from './vitalsigns_config.js';
 // planofcare missing
 import {v_careplan_config, i_careplan_config} from './careplan_config.js';
 import {v_tasks_config, i_tasks_config} from './tasks_config.js';
+import {v_goals_config, i_goals_config} from './goals_config.js';
 import {v_socialhistory_config, i_socialhistory_config} from './socialhistory_config.js';
 // pregnancy missing
 // advanceddirectives missing
@@ -49,6 +50,8 @@ export function loadFrom(data){
         v_careplan_data,
         i_tasks_data,
         v_tasks_data,
+        i_goals_data,
+        v_goals_data,
         v_socialhistory_data, i_socialhistory_data,
         // pregnancy missing
         // advanceddirectives missing
@@ -93,6 +96,8 @@ export function loadFrom(data){
     new Tabulator("#v_careplan", Object.assign({}, v_careplan_data, v_careplan_config)),
     new Tabulator("#i_tasks", Object.assign({}, i_tasks_data, i_tasks_config)),
     new Tabulator("#v_tasks", Object.assign({}, v_tasks_data, v_tasks_config)),
+    new Tabulator("#i_goals", Object.assign({}, i_goals_data, i_goals_config)),
+    new Tabulator("#v_goals", Object.assign({}, v_goals_data, v_goals_config)),
     new Tabulator("#v_socialhistory", Object.assign({}, v_socialhistory_data, v_socialhistory_config));
     new Tabulator("#i_socialhistory", Object.assign({}, i_socialhistory_data, i_socialhistory_config));
 

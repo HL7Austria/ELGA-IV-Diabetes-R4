@@ -279,6 +279,18 @@ def groot(bundi, vidi):
                 data = malac_vidi.dataType23()
                 itd.data.append(data)
                 i_tasks_data(task, data)
+        goal = entry.resource
+        if goal:
+            goal = unpack_container(goal)
+            if isinstance(goal, r4.Goal):
+                igd = malac_vidi.i_goals_dataType()
+                if vidi.i_goals_data is not None:
+                    igd = vidi.i_goals_data
+                else:
+                    vidi.i_goals_data = igd
+                data = malac_vidi.dataType24()
+                igd.data.append(data)
+                i_goals_data(goal, data)
 
 def medication_data(med, data):
     med_code = med.medicationCodeableConcept
@@ -484,6 +496,77 @@ def i_tasks_data(task, data):
         task_owner_disp = task_owner.display
         if task_owner_disp:
             data.owner = task_owner_disp.value
+
+def i_goals_data(goal, data):
+    goal_id = goal.id
+    if goal_id:
+        data.id = goal_id.value
+    goal_status = goal.lifecycleStatus
+    if goal_status:
+        data.lifecycleStatus = goal_status.value
+    for goal_cat in goal.category or []:
+        for cat_coding in goal_cat.coding or []:
+            cat_disp = cat_coding.display
+            if cat_disp:
+                data.category.append(cat_disp.value)
+    goal_priority = goal.priority
+    if goal_priority:
+        for prio_coding in goal_priority.coding or []:
+            prio_disp = prio_coding.display
+            if prio_disp:
+                data.priority = prio_disp.value
+    goal_desc = goal.description
+    if goal_desc:
+        goal_desc_txt = goal_desc.text
+        if goal_desc_txt:
+            data.description = goal_desc_txt.value
+    goal_subject = goal.subject
+    if goal_subject:
+        subj_disp = goal_subject.display
+        if subj_disp:
+            data.subject = subj_disp.value
+    goal_start = goal.startDate
+    if goal_start:
+        data.startDate = fhirpath.single(fhirpath_utils.toString([goal_start]))
+    for goal_target in goal.target or []:
+        target_measure = goal_target.measure
+        if target_measure:
+            for tm_coding in target_measure.coding or []:
+                tm_disp = tm_coding.display
+                if tm_disp:
+                    data_target = malac_vidi.targetType()
+                    data.target.append(data_target)
+                    data_target.measure = tm_disp.value
+    dq = goal_target.detailQuantity
+    if dq:
+        dq_value = dq.value
+        if dq_value:
+            data_target.detail_value = fhirpath.single(fhirpath_utils.toString([dq_value]))
+        dq_comp = dq.comparator
+        if dq_comp:
+            data_target.detail_comparator = dq_comp.value
+        dq_unit = dq.unit
+        if dq_unit:
+            data_target.detail_unit = dq_unit.value
+        dq_system = dq.system
+        if dq_system:
+            data_target.detail_system = dq_system.value
+        dq_code = dq.code
+        if dq_code:
+            data_target.detail_code = dq_code.value
+    expr_by = goal.expressedBy
+    if expr_by:
+        expr_disp = expr_by.display
+        if expr_disp:
+            data.expressedBy = expr_disp.value
+    for addr in goal.addresses or []:
+        addr_disp = addr.display
+        if addr_disp:
+            data.addresses.append(addr_disp.value)
+    for note in goal.note or []:
+        note_text = note.text
+        if note_text:
+            data.note.append(note_text.value)
 
 # output
 # 1..1 result (boolean)
