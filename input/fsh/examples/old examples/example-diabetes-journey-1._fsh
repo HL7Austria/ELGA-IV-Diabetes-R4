@@ -185,9 +185,9 @@ Usage: #inline
 Instance: practitioner-example
 InstanceOf: AtApsPractitioner
 Usage: #inline
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-* identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * identifier.system = "urn:ietf:rfc:3986"
+// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
 * name.family = "IV-Ärztin"
 * name.given[0] = "Gabriele"
@@ -196,9 +196,9 @@ Usage: #inline
 Instance: organization-example
 InstanceOf: AtApsOrganization
 Usage: #inline
-* identifier.system = "urn:ietf:rfc:3986"
+// * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name = "Amadeus Spital - Labor"
 * telecom[0].system = #phone
 * telecom[=].value = "+43.1.3453446.0"

@@ -181,9 +181,9 @@ Instance: example-04-author
 InstanceOf: Practitioner
 Usage: #inline
 * meta.profile = "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-practitioner"
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-* identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * identifier.system = "urn:ietf:rfc:3986"
+// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.family = "Hausarzt"
 * name.given = "Hannes"
 * name.prefix = "Dr"

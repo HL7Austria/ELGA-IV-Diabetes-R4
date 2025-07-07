@@ -335,7 +335,7 @@ Usage: #inline
 * clinicalStatus = $cs-condition-clinical#active "Active"
 * verificationStatus = $cs-condition-ver-status#confirmed "Confirmed"
 * category.coding[0] = $cs-condition-category#problem-list-item "Problem List Item"
-* code = $cs-sct#160303001 "Familienanamnese: Diabetes mellitus in der Familienanamnese"
+* code = $cs-sct#160303001 "Familienanamnese: Diabetes mellitus in der Familie"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * recordedDate = "2022-02-08T08:30:00+01:00"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
@@ -528,7 +528,7 @@ Usage: #inline
 * target.detailQuantity = 6.0 '%' "%"
 * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-* note.text = "Überwachen Sie regelmäßig den HbA1c-Wert, um das Gesamtziel von 6,0 zu erreichen."
+//* note.text = "Überwachen Sie regelmäßig den HbA1c-Wert, um das Gesamtziel von 6,0 zu erreichen."
 
 // Diabetes Careplan Ziel Bewegung 
 Instance: example-iv-4-careplan-diabetes-exercise
@@ -671,9 +671,9 @@ Usage: #inline
 Instance: example-iv-4-diagnostic-result-performer-1
 InstanceOf: AtApsOrganization
 Usage: #inline
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:oid:1.2.40.0.34.99.4613"
-* identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * identifier.system = "urn:ietf:rfc:3986"
+// * identifier.value = "urn:oid:1.2.40.0.34.99.4613"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name = "Amadeus Spital - Labor"
 * telecom[0].system = #phone
 * telecom[=].value = "+43.1.3453446.0"
@@ -961,9 +961,9 @@ Usage: #inline
 Instance: example-iv-4-practitioner-1
 InstanceOf: AtApsPractitioner
 Usage: #inline
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-* identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * identifier.system = "urn:ietf:rfc:3986"
+// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
 * name.family = "Hausärztin"
 * name.given[0] = "Hanna"
@@ -975,9 +975,9 @@ Usage: #inline
 Instance: example-iv-4-careteam-fallkoordination
 InstanceOf: AtApsPractitioner
 Usage: #inline
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-* identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * identifier.system = "urn:ietf:rfc:3986"
+// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "DGKP"
 * name.family = "Nutrix"
 * name.given[0] = "Roman"
@@ -1001,9 +1001,9 @@ Usage: #inline
 Instance: example-iv-4-practitioner-iv
 InstanceOf: AtApsPractitioner
 Usage: #inline
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-* identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * identifier.system = "urn:ietf:rfc:3986"
+// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
 * name.family = "IV Diätologin"
 * name.given[0] = "Melanie"
@@ -1019,7 +1019,7 @@ Usage: #inline
 * id = "001"
 * identifier[socialSecurityNumber].type = $cs-v2-0203#SS "Social Security number"
 * identifier[socialSecurityNumber].system = "urn:oid:1.2.40.0.10.1.4.3.1"
-* identifier[socialSecurityNumber].value = "0000121153"
+* identifier[socialSecurityNumber].value = "1234121153"
 * identifier[socialSecurityNumber].assigner.display = "Dachverband der österreichischen Sozialversicherungsträger"
 * identifier[localPatientId].type = $cs-v2-0203#PI "Patient internal identifier"
 * identifier[localPatientId].system = "urn:oid:1.2.3.4.5"
