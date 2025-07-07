@@ -49,9 +49,9 @@ B -.-> b1("**Diagnose Diabetes mellitus <br/>Typ 2** wird bestätigt.<br/>**Ther
 b1 -.-> bb1("**Medikation**: <br/>Metformin 500mg")
 b1 -.-> bb2("**Schulung**: <br/>Ernährungsschulung")
 b1 -.-> bb3("**Überweisung**: <br/>Augenärzt:in")
-B ==> C("**17.05.2023**<br/>**Nachkontrolle bei <br/>Hausärztin**: Weiterhin erhöhte Blutzuckerwerte (200 mg/dl).")
+B ==> C("**17.05.2023**<br/>**Nachkontrolle bei <br/>Hausärztin**: Weiterhin erhöhte<br/>Blutzuckerwerte (200 mg/dl).")
 C -.-> c1("**Medikationsanpassung**")
-C ==> D("**Fortlaufende Therapie**: <br/>Engmaschige Kontrollen bei <br/>Hausärztin. Patient nimmt <br/>regelmäßig an Schulungen und Beratungen teil.")
+C ==> D("**Fortlaufende Therapie**: <br/>Engmaschige Kontrollen bei <br/>Hausärztin. Patient nimmt <br/>regelmäßig an Schulungen und<br/> Beratungen teil.")
 
 style A fill:#BBDEFB,stroke-width:4px
 style a1 fill:#FFE0B2
