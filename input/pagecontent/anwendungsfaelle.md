@@ -34,7 +34,7 @@ Kurz vor dem Kontrolltermin bei der Hausärztin prüft Herr Nutrix den aktuellen
 
 - **Fortlaufende Betreuung**: Anton wird weiterhin engmaschig von seiner Hausärztin betreut (mindestens alle 3 Monate) und er nimmt regelmäßig an Schulungen und Beratungen teil.
 
-<pre class="mermaid">
+<!-- <pre class="mermaid">
 ---
 config:
   look: handDrawn
@@ -64,10 +64,10 @@ style bb3 fill:#FFE0B2
 style C fill:#BBDEFB,stroke-width:4px
 style c1 fill:#FFE0B2
 style D fill:#BBDEFB,stroke-width:4px
-</pre> 
+</pre>  -->
 
 
-<!-- <pre class="mermaid">
+<pre class="mermaid">
    gantt
   title Patient Journey – Anton Testpatient (Diabetes Typ 2)
   dateFormat  YYYY-MM-DD
@@ -102,6 +102,6 @@ style D fill:#BBDEFB,stroke-width:4px
   Statusaktualisierung im Behandlungsplan :done, c4, 2025-07-15, 1d
 
   section Weiterer Verlauf
-  Vierteljährliche Kontrolltermine      :active, d1, 2025-10-15, 2025-06-01
-  Regelmäßige Schulung/Beratung         :active, d2, 2025-07-15, 2025-06-01
-</pre> -->
+  Vierteljährliche Kontrolltermine      :active, d1, 2025-10-15, 2025-12-31
+  Regelmäßige Schulung/Beratung         :active, d2, 2025-07-15, 2025-12-31
+</pre>

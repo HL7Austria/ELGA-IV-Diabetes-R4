@@ -18,8 +18,13 @@ releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | re
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: ELGA GmbH
-  url: https://www.elga.gv.at/
-  # email: test@example.org
+  url: https://elga.gv.at
+contact:
+  - name: ELGA GmbH
+    telecom:
+      - system: url
+        value: https://elga.gv.at
+        use: work
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
@@ -103,22 +108,22 @@ parameters:
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  Home: index.html
+  Start: index.html
   Inhalt: toc.html
-  Use Cases: anwendungsfaelle.html
-  Terminologies: terminologies.html
-  Artifacts: artifacts.html
+  Anwendungsfälle: anwendungsfaelle.html
+  # Terminologies: terminologies.html
+  Artefakte: artifacts.html
   ELGA IG: info.html
-  Logical Model (Diabetes):
-    Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
-  Logical Model (IPS):
-    Subject (IPS): StructureDefinition-Subject-ips.html
-    Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
-    Allergies and Intolerances (IPS): StructureDefinition-AllergiesIntolerances-ips.html
-    Problem List (IPS): StructureDefinition-ProblemList-ips.html
-    Diagnostic Results (IPS): StructureDefinition-DiagnosticResults-ips.html
-    Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
-    Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
+  #Logical Model (Diabetes):
+  #  Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
+  #Logical Model (IPS):
+  #  Subject (IPS): StructureDefinition-Subject-ips.html
+  #  Medication Summary (IPS): StructureDefinition-MedicationSummary-ips.html
+  #  Allergies and Intolerances (IPS): StructureDefinition-AllergiesIntolerances-ips.html
+  #  Problem List (IPS): StructureDefinition-ProblemList-ips.html
+  #  Diagnostic Results (IPS): StructureDefinition-DiagnosticResults-ips.html
+  #  Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
+  #  Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
   Mapping Diabetes to IPS: mappings.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
@@ -201,23 +206,25 @@ menu:
 #     resources:
 #     - StructureDefinition/bark-control
 #     - StructureDefinition/bee-sting
-groups:
-  IPS:
-    name: IPS compliant Logical Model
-    description: IPS compliant logical model for Diabetes.
-    resources:
-      - StructureDefinition/Subject-ips
-      - StructureDefinition/MedicationSummary-ips
-      - StructureDefinition/AllergiesIntolerances-ips
-      - StructureDefinition/ProblemList-ips
-      - StructureDefinition/DiagnosticResults-ips
-      - StructureDefinition/VitalSigns-ips
-      - StructureDefinition/PlanOfCare-ips
-  Diabetes:
-    name:  Diabetes Datenmodell
-    description: Datenmodell basierend auf Rahmenkonzept.
-    resources:
-      - StructureDefinition/Datenarten-diab
+
+
+#groups:
+#  IPS:
+#    name: IPS compliant Logical Model
+#    description: IPS compliant logical model for Diabetes.
+#    resources:
+#      - StructureDefinition/Subject-ips
+#      - StructureDefinition/MedicationSummary-ips
+#      - StructureDefinition/AllergiesIntolerances-ips
+#      - StructureDefinition/ProblemList-ips
+#      - StructureDefinition/DiagnosticResults-ips
+#      - StructureDefinition/VitalSigns-ips
+#      - StructureDefinition/PlanOfCare-ips
+#  Diabetes:
+#    name:  Diabetes Datenmodell
+#    description: Datenmodell basierend auf Rahmenkonzept.
+#    resources:
+#      - StructureDefinition/Datenarten-diab
 
 #
 #

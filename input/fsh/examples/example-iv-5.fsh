@@ -337,9 +337,6 @@ Usage: #inline
 
 
 
-
-
-
 // Careplan Diabetes ***************************************
 Instance: example-iv-5-careplan-diabetes-1
 InstanceOf: DiabCareplan
@@ -362,11 +359,11 @@ Usage: #inline
 * goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 * activity[0].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111) "Task Augenuntersuchung"
-//* activity[0].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae333) "Termin für Augenuntersuchung"  // Alt: Appointment
+* activity[0].reference.display = "Task Augenuntersuchung"
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c) "Task Patientenschulung und Ernährungsberatung"
-//* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b) "Termin für Patientenschulung und Ernährungsberatung"  // Alt: Appointment
+* activity[+].reference.display = "Task Patientenschulung und Ernährungsberatung"
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699) "Angeforderte Laboruntersuchung"  // neue Laboruntersuchung
-//* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631) "Angeforderte Laboruntersuchung"  // Alt: ServiceRequest
+* activity[+].reference.display = "Angeforderte Laboruntersuchung"
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Abgeschlossene Laboruntersuchung"  // vom Standard Behanldungsplan
 //* activity[+].outcomeReference = Reference(urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae555) "Zielwerte Hba1c"
 
@@ -702,6 +699,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * valueQuantity = 250 'mg/dL' "mg/dL"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+* specimen.display = "Blutprobe" 
 
 Instance: example-iv-5-diagnostic-result-2
 InstanceOf: AtApsObservationResultsLaboratoryPathology

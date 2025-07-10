@@ -881,8 +881,10 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * component[0].code = $cs-loinc#8480-6 "Systolischer Blutdruck"
+* component[=].code.text = "Systolischer Blutdruck"
 * component[=].valueQuantity = 180 'mm[Hg]' "mm[Hg]"
 * component[+].code = $cs-loinc#8462-4 "Diastolischer Blutdruck"
+* component[=].code.text = "Diastolischer Blutdruck"
 * component[=].valueQuantity = 80 'mm[Hg]' "mm[Hg]"
 
 Instance: example-iv-4-vital-sign-5
