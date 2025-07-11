@@ -4,7 +4,7 @@
 Logical: DatenartenDiab
 Id: Datenarten-diab
 Title: "Datenarten für das versorgungsstufenübergreifende elektronische Leitdokument"
-Description: """Datenarten für das Versorgungsstufenübergreifende elektronische Leitdokument basierend auf dem Rahmenkonzept Integrierte Versorgung Diabetes Mellitus Typ 2.
+Description: """Datenarten für das Versorgungsstufenübergreifende elektronische Leitdokument basierend auf dem Rahmenkonzept Integrierte Versorgung Diabetes mellitus Typ 2.
 
 Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](mappings.html#patient)** in order to get an idea how the IPS can be used in this context."""
 

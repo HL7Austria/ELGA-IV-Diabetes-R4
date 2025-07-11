@@ -21,7 +21,7 @@ Description: "Diabetes Behandlungsplan Schulungen VS"
 
 * SNOMED_CT_INT#428274007 "Dietary education for type II diabetes mellitus (procedure)"
 * SNOMED_CT_INT#428274007 ^designation.language = #de-AT
-* SNOMED_CT_INT#428274007 ^designation.value = "Ernährungsschulung bei Diabetes mellitus Typ II"	// TODO Übersetzung		
+* SNOMED_CT_INT#428274007 ^designation.value = "Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II"	// TODO Übersetzung		
 
 // TODO Codes für abgestimmte Schulungen:
 // Schulung ohne Insulin, inkl. Schulung zu Akutsituationen (Hypo/Hyperglykämie)

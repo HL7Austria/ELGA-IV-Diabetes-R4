@@ -4,5 +4,10 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-# Logical Models of diabetes do not follow this constraint for better readability
-Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken'
+# A lot of German display names can't be found. For now, this is not a problem.
+NO_VALID_DISPLAY_FOUND_LANG_NONE
+NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR
+Display_Name_for__should_be_one_of__instead_of
+
+# Errors related to terminologies which cannot be resolved because termgit.elga.gv.at cannot yet provide packages or be used as proper tx
+%https://termgit.elga.gv.at/%
