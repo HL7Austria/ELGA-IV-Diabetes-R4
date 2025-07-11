@@ -68,40 +68,38 @@ style D fill:#BBDEFB,stroke-width:4px
 
 
 <pre class="mermaid">
-   gantt
+gantt
   title Patient Journey – Anton Testpatient (Diabetes Typ 2)
   dateFormat  YYYY-MM-DD
-  section März 2025
-  Erstkontakt mit Hausärztin             :done, a1, 2025-03-14, 1d
+  section März 2025 - Erstbesuch
+  Erstkontakt mit Hausärztin             :milestone, a1, 2025-03-14, 1d
   Blutzuckermessung + körperliche Untersuchung :done, a2, 2025-03-14, 1d
-  Laborzuweisung (HbA1c, Harn)           :done, a3, 2025-03-14, 1d
-  Laboruntersuchung                      :done, a4, after a3, 3d
+  Laborzuweisung (HbA1c, Harn)           :active, a3, 2025-03-14, 2025-03-17
+  Laboruntersuchung                      :active, a4, after a3, 2d
 
   section März 2025 – Folgeuntersuchung
-  Arztbesuch – Diagnose Diabetes Typ 2   :done, a5, 2025-03-22, 1d
-  Start integrierte Versorgung           :done, a6, 2025-03-22, 1d
-  Erstellen Behandlungsplan              :done, a7, 2025-03-22, 1d
-  Medikation Metformin                   :done, a8, 2025-03-22, 1d
-  Zuweisung Labor in 3 Monaten (Ziel HbA1c 6%) :done, a9, 2025-03-22, 1d
-  Zuweisung Augenarzt, Schulung, Ernährung :done, a10, 2025-03-22, 1d
+  Arztbesuch – Diagnose Diabetes Typ 2, Start Integrierte Versorgung   :milestone, a5, 2025-03-22, 1d
+  Erstellen Behandlungsplan                                      :done, a7, 2025-03-22, 1d
+  Medikamenteneinnahme (Metformin 1x täglich)               :active, b1, 2025-03-22, 2025-07-15
+  Zuweisung Labor in 3 Monaten (Ziel HbA1c 6%)          :active, a9, 2025-03-22, 2025-06-22
+  Zuweisung Augenarzt                                   :active, a10, 2025-03-22, 1d
+  Zuweisung Patientenschulung und Ernährungsberatung     :active, a10, 2025-03-22, 2025-04-02
 
-  section März – Juni 2025
-  Medikamenteneinnahme (Metformin 1x täglich) :active, b1, 2025-03-23, 2025-07-15
-  Bewegung (Spaziergänge)               :active, b2, 2025-03-23, 2025-07-15
+  section April 2025
+  Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II                    : milestone, 2025-04-02
+  Anpassung Lebensstil (Spaziergänge, Ernährung)               :active, b2, 2025-04-02, 2025-07-15
   Terminvereinbarung Augenarzt          :done, b3, 2025-04-01, 1d
-  Kontakt mit Fallkoordination (Schulung) :done, b4, 2025-04-10, 1d
-  Teilnahme an Patientenschulung & Ernährung :done, b5, 2025-04-15, 2d
-  Labor vergessen                       :crit, b6, 2025-06-15, 10d
-  Erinnerung durch Fallkoordination     :done, b7, 2025-07-10, 1d
+  Labor vergessen                       :crit, b6, 2025-06-22, 2025-07-07
+  Erinnerung Labor durch Fallkoordination     :milestone, b7, 2025-07-07, 1d
   Nachgeholte Laboruntersuchung         :done, b8, 2025-07-11, 1d
 
   section Juli 2025
-  Kontrolltermin bei Hausärztin         :done, c1, 2025-07-15, 1d
+  Kontrolltermin bei Hausärztin         :milestone, c1, 2025-07-15, 1d
   Laborergebnisse und Medikation prüfen :done, c2, 2025-07-15, 1d
-  Anpassung Metformin (2x täglich)      :done, c3, 2025-07-15, 1d
-  Statusaktualisierung im Behandlungsplan :done, c4, 2025-07-15, 1d
+  Zielwerte prüfen, Behandlungsplan aktualisieren          :done, a7, 2025-07-15, 1d
+  Anpassung Metformin (2x täglich)      :active, c3, 2025-07-15, 2025-12-31
+  Anpassung Lebensstil (Spaziergänge, Ernährung)          :active, c4, 2025-07-15, 2025-12-31
 
   section Weiterer Verlauf
-  Vierteljährliche Kontrolltermine      :active, d1, 2025-10-15, 2025-12-31
-  Regelmäßige Schulung/Beratung         :active, d2, 2025-07-15, 2025-12-31
+  Regelmäßige Kontrolltermine und Schulungen         :active, d2, 2025-07-15, 2025-12-31
 </pre>
