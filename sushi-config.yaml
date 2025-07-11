@@ -76,10 +76,16 @@ pages:
     title: Terminologien
   mappings.md:
     title: Mappings Diabetes zu IPS
-  info.md:
-    title: Informationen über dieses Dokument
+  #info.md:
+  #  title: Informationen über dieses Dokument
   # extensions.md:
   #   title: Extensions
+  info.md:
+    title: Informationen über dieses Dokument
+  contributors.md:
+    title: Autoren und Mitwirkende
+  framework.md:
+    title: Technische Rahmenbedingungen
 
 #
 #
@@ -113,7 +119,7 @@ menu:
   Anwendungsfälle: anwendungsfaelle.html
   # Terminologies: terminologies.html
   Artefakte: artifacts.html
-  ELGA IG: info.html
+  # ELGA IG: info.html
   #Logical Model (Diabetes):
   #  Datenarten (Diabetes): StructureDefinition-Datenarten-diab.html
   #Logical Model (IPS):
@@ -125,6 +131,10 @@ menu:
   #  Vital Signs (IPS): StructureDefinition-VitalSigns-ips.html
   #  Plan of Care (IPS): StructureDefinition-PlanOfCare-ips.html
   Mapping Diabetes to IPS: mappings.html
+  Weitere Infos:
+    Informationen über dieses Dokument: info.html
+    Autoren und Mitwirkende: contributors.html
+    Technische Rahmenbedingungen: framework.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
