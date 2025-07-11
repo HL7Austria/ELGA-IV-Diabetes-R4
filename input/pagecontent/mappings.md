@@ -28,7 +28,7 @@ Die folende Tabelle zeigt das Mapping des Datenmodells basierend auf dem "Rahmen
 | | Herz: Bypass/Dilatation | | | | | | Problem / Condition.code |
 | | Apoplexie | | | | | | Problem / Condition.code |
 | | Amputation | | | | | | Problem / Condition.code |
-| Allergien & (med.) Unverträglichkeiten /Nebenwirkungen | Textfeld | | | | | ELGA sieht dies in Form eines Registers vor; Ärztinnen und Ärzte sollte auch die Möglichkeit haben, dies in Textform dokumentieren zu können strukturierte Erfassung von Nebenwirkungen und Unverträglichkeiten würde die Möglichkeit schaffen, diese strukutiert zu bearbeiten, weiterzuleiten | Allergies and Intolerances / AllergyIntolerance.code |
+| Allergien & (med.) Unverträglichkeiten /Nebenwirkungen | Textfeld | | | | | ELGA sieht dies in Form eines Registers vor; Ärztinnen und Ärzte sollten auch die Möglichkeit haben, dies in Textform dokumentieren zu können strukturierte Erfassung von Nebenwirkungen und Unverträglichkeiten würde die Möglichkeit schaffen, diese strukutiert zu bearbeiten, weiterzuleiten | Allergies and Intolerances / AllergyIntolerance.code |
 | Therapie Aktiv | Teilnahme seit : | | | | | | Plan of Care / Careplan.category.coding und .created |
 | Therapie | Lebensstilmodifikationen | | | | | je nach Mindestfrequenz soll der Check auch dokumentiert werden | Plan of Care / Careplan.goal |
 | | Medikamentöse Therapie (Übernahme E-Medikation) inkl. Prüfung im Hinblick auf Polypharmazie, inkl. Insulintherapie | | | | | | MedicationStatement.medicationCodeableConcept oder MedicationRequest.medicationCodeableConcept	 |
@@ -70,7 +70,7 @@ Die folende Tabelle zeigt das Mapping des Datenmodells basierend auf dem "Rahmen
 | Assessement von | Heilbehelfe und (technische)Hilfsmitteln | | 1 x jährlich | | X | je nach Mindestfrequenz soll der Check auch dokumentiert werden | Medical Devices / DeviceUseStatement.device und Plan of Care / Careplan.activity |
 | | Versorgungs-/Pflegebedarf | | 1 x jährlich | | | | Functional Status / Condition.code und Plan of Care / Careplan.activity |
 | | Rehabedarf (ambulant und/oder stationär) | | 1 x jährlich | | | | Functional Status / Condition.code und Plan of Care / Careplan.activity |
-| Schulungen | Schulung ohne Insulin, inkl. Schulung zu Akutsituationen (Hypo/Hyperglykämie) | | Initial & regelmäßig /bei Bedarf, Differenzierung Einzel-/Gruppenschulung? | ausgestellt am xx.xx.20xx | X | Frequenzen werden erst ausverhandelt werden müssen | Plan of Care / Careplan.activity |
+| Schulungen | Schulung ohne Insulin, inkl. Schulung zu Akutsituationen (Hypo/Hyperglykämie) | | Initial & regelmäßig /bei Bedarf, Differenzierung Einzel-/Gruppenschulung? | ausgestellt am xx.xx.20xx | X | Frequenzen offen | Plan of Care / Careplan.activity |
 | | Schulung mit Insulin, inkl. Schulung zu Akutsituationen (Hypo/Hyperglykämie) | | Initial & regelmäßig /bei Bedarf | | | | Plan of Care / Careplan.activity |
 | | Schulung technischer Hilfsmittel und Telemedizin Schulung (Nutzung von App etc.) | | Initial & regelmäßig /bei Bedarf | | | | Plan of Care / Careplan.activity |
 | | Blutdruckschulungen | | bei Bedarf | | | | Plan of Care / Careplan.activity |
