@@ -24,7 +24,7 @@ Usage: #example
 * entry[=].resource = example-iv-5-author-device  // APS Generator
 // Practitioner IV Diätologin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
-* entry[=].resource = example-iv-4-practitioner-iv // IV Diätologin
+* entry[=].resource = example-iv-5-practitioner-iv // IV Diätologin
 // Practitioner Hausärztin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f473"
 * entry[=].resource = example-iv-5-practitioner-1  // Dr. Hanna Hausärztin
@@ -542,6 +542,7 @@ Usage: #inline
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 // **********************************************************
 // Medication Summary
+// TODO Change Ressource Type to AtApsMedicationRequest
 
 Instance: example-iv-5-medication-summary-1
 InstanceOf: AtApsMedicationStatement
@@ -570,6 +571,8 @@ Usage: #inline
 // * dosage.timing.repeat.dayOfWeek = #fri
 * dosage.route = $cs-sct#26643006 "Orale Einnahme"
 * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+
+
 
 // Allergies and Intolerances   
 
