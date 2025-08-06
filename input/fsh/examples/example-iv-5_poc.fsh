@@ -1,11 +1,5 @@
-Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
-Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
-Alias: $goal-category = http://terminology.hl7.org/CodeSystem/goal-category
-
-
-
 Instance: example-iv-5-poc
-InstanceOf: DiabBundle
+InstanceOf: AtApsBundle
 Title: "example-iv-5-poc"
 Description: "Patient Summary: Patient Journey 5 (09.06.2025)"
 Usage: #example
@@ -28,7 +22,7 @@ Usage: #example
 // Practitioner Hausärztin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f473"
 * entry[=].resource = example-iv-5-poc-practitioner-1  // Dr. Hanna Hausärztin
-// Fallkoordination 
+// Fallkoordination
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f477"
 * entry[=].resource = example-iv-5-poc-careteam-fallkoordination  // DGKP Roman Nutrix
 //Careplan careteam
@@ -167,7 +161,7 @@ Usage: #example
 * entry[=].resource = example-iv-5-poc-social-history-3  // Körperliche Aktivität 2,5h/Wo
 
 Instance: example-iv-5-poc-composition
-InstanceOf: DiabComposition
+InstanceOf: AtApsComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
@@ -346,7 +340,7 @@ Usage: #inline
 
 // Careplan Diabetes ***************************************
 Instance: example-iv-5-poc-careplan-diabetes-1
-InstanceOf: DiabCareplan
+InstanceOf: AtApsCarePlan
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Behandlungsplan Diabetes</p>\n  </div>"
@@ -383,8 +377,8 @@ Usage: #inline
 * participant[0].role = $cs-sct#133932002 "Medizinische Fallführung"
 * participant[=].role.text = "Medizinische Fallführung"
 * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* participant[+].role = $cs-sct#133932002 "Fallkoordination "
-* participant[=].role.text = "Fallkoordination "
+* participant[+].role = $cs-sct#133932002 "Fallkoordination"
+* participant[=].role.text = "Fallkoordination"
 * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f477) "DGKP Roman Nutrix"
 // * participant[+].role = $cs-sct#62247001 "Family medicine specialist"
 // * participant[=].role.text = "Hausärztin"
@@ -516,7 +510,8 @@ Usage: #inline
 * lifecycleStatus = #proposed 
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-* category.coding[0] = $goal-category#dietary "Diät"
+* category.coding[0] = $goal-category#dietary "Dietary"
+* category.text = "Diät"
 * priority = $goal-priority#high-priority "hoch"
 //* priority.text = "hoch"
 * description.text = "Hämoglobin A1c stabilisieren"
@@ -537,9 +532,10 @@ Usage: #inline
 * lifecycleStatus = #proposed 
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-* category.coding[0] = $goal-category#behavioral "Verhalten"
-* priority = $goal-priority#high-priority "hoch"
-//* priority.text = "hoch"
+* category.coding[0] = $goal-category#behavioral "Behavioral"
+* category.text = "Verhalten"
+* priority = $goal-priority#high-priority "high-priority"
+* priority.text = "hoch"
 * description.text = "Mindestens 30 Minuten pro Tag Sport treiben"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * startDate = "2025-03-22"

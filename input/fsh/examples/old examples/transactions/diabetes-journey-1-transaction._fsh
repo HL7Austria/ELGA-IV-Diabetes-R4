@@ -1,5 +1,5 @@
 Instance: ex-diab-journey-1-transaction
-InstanceOf: DiabBundle
+InstanceOf: AtApsBundle
 Description: "Ausgangszustand"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
@@ -116,7 +116,7 @@ Usage: #example
 * entry[=].request.url = "Observation"
 
 Instance: ex-diab-journey-1-transaction-composition
-InstanceOf: DiabComposition
+InstanceOf: AtApsComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final

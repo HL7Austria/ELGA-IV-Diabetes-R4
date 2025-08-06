@@ -1,4 +1,4 @@
-Profile: DiabCareplan
+Profile: AtApsCarePlan
 Parent: AtApsCarePlan  
 Id: diab-careplan
 Title: "Diabetes CarePlan"
@@ -17,7 +17,7 @@ Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
 // * category 0..1
 // * category ^short = "Kategorie des Schulung"
 // * category only CodeableConcept
-// * category.coding.code from DiabCareplanEducationVS
+// * category.coding.code from AtApsCarePlanEducationVS
 * title 1..1 MS
 * title ^short = "Bezeichnung des Behandlungsplans / der Schulung"
 * description ^short = "Inhalte des Behandlungsplans / der Schulung"

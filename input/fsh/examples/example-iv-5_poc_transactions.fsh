@@ -1,159 +1,261 @@
-// This Bundle uses Careplans with different Resource Types
-
-Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
-Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
-
-
-
-Instance: example-iv-4a
-InstanceOf: DiabBundle
-Title: "example-iv-4a"
-Description: "Patient Summary: Patient Journey 4a (17.03.2023)"
+Instance: example-iv-5-poc-transcation
+InstanceOf: AtApsBundle
+Title: "example-iv-5-poc-transcation"
+Description: "Patient Summary: Patient Journey 5 (09.06.2025)"
 Usage: #example
 * identifier.system = "http://system-to-be-defined.com"
 * identifier.value = "63fef90a-be11-4ddf-aece-d77da15c4f13"
-* type = #document
+* type = #transaction
 * timestamp = "2025-03-22T11:01:30+01:00"
+
 // Composition
 * entry[0].fullUrl = "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7b"
-* entry[=].resource = example-iv-4a-composition 
+* entry[=].resource = example-iv-5-poc-transcation-composition 
+* entry[=].request.method = #POST
+* entry[=].request.url = "Composition"
+
 // Patient
 * entry[+].fullUrl = "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"
-* entry[=].resource = example-iv-4a-patient  // Anton Testpatient
+* entry[=].resource = example-iv-5-poc-transcation-patient  // Anton Testpatient
+* entry[=].request.method = #POST
+* entry[=].request.url = "Patient"
+
 // Author Device APS Generator
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f474"
-* entry[=].resource = example-iv-4a-author-device  // APS Generator
-// Practitioner IV Ärztin
+* entry[=].resource = example-iv-5-poc-transcation-author-device  // APS Generator
+* entry[=].request.method = #POST
+* entry[=].request.url = "Device"
+
+// Practitioner IV Diätologin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f472"
-* entry[=].resource = example-iv-4a-practitioner-iv // IV Ärztin
+* entry[=].resource = example-iv-5-poc-transcation-practitioner-iv // IV Diätologin
+* entry[=].request.method = #POST
+* entry[=].request.url = "Practitioner"
+
 // Practitioner Hausärztin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f473"
-* entry[=].resource = example-iv-4a-practitioner-1  // Dr. Hanna Hausärztin
+* entry[=].resource = example-iv-5-poc-transcation-practitioner-1  // Dr. Hanna Hausärztin
+* entry[=].request.method = #POST
+* entry[=].request.url = "Practitioner"
+
+// Fallkoordination
+* entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f477"
+* entry[=].resource = example-iv-5-poc-transcation-careteam-fallkoordination // DGKP Roman Nutrix
+* entry[=].request.method = #POST
+* entry[=].request.url = "Practitioner"
+
 //Careplan careteam
-// * entry[+].fullUrl = "urn:uuid:75db30ee-5555-486c-929a-c5126837f473"
-// * entry[=].resource = example-iv-4a-careplan-diabetes-careteam
+* entry[+].fullUrl = "urn:uuid:75db30ee-5555-486c-929a-c5126837f473"
+* entry[=].resource = example-iv-5-poc-transcation-careplan-diabetes-careteam
+* entry[=].request.method = #POST
+* entry[=].request.url = "CareTeam"
+
 // Organisation
 * entry[+].fullUrl = "urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6"
-* entry[=].resource = example-iv-4a-organization  // Zentrale Anwendung APS
+* entry[=].resource = example-iv-5-poc-transcation-organization  // Zentrale Anwendung APS
 
 // Medication Summary
-* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076"
-* entry[=].resource = example-iv-4a-medication-summary-1   // RAMIPRIL 1A TBL  5MG
-* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011"
-* entry[=].resource = example-iv-4a-medication-summary-2
+* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5088"
+* entry[=].resource = example-iv-5-poc-transcation-medicationplan-1   // RAMIPRIL 1A TBL  5MG
+* entry[=].request.method = #POST
+* entry[=].request.url = "MedicationRequest"
+
+* entry[+].fullUrl = "urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5099"
+* entry[=].resource = example-iv-5-poc-transcation-medicationplan-2  // METFORMIN HEX FTBL  500MG
+* entry[=].request.method = #POST
+* entry[=].request.url = "MedicationRequest"
+
 // Allergies and Intolerances
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
-* entry[=].resource = example-iv-4a-allergy-1 // Benzylpenicillin-Natrium
+* entry[=].resource = example-iv-5-poc-transcation-allergy-1 // Benzylpenicillin-Natrium
+* entry[=].request.method = #POST
+* entry[=].request.url = "AllergyIntolerance"
 
 // Problem List
 * entry[+].fullUrl = "urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde"
-* entry[=].resource = example-iv-4a-problem-1 // Arterielle Hypertonie
+* entry[=].resource = example-iv-5-poc-transcation-problem-1 // Arterielle Hypertonie
+* entry[=].request.method = #POST
+* entry[=].request.url = "Condition"
+
 * entry[+].fullUrl = "urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd"
-* entry[=].resource = example-iv-4a-problem-2  // Adipositas
+* entry[=].resource = example-iv-5-poc-transcation-problem-2  // Adipositas
+* entry[=].request.method = #POST
+* entry[=].request.url = "Condition"
+
 * entry[+].fullUrl = "urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437"
-* entry[=].resource = example-iv-4a-problem-3  // Diabetes Diagnose
+* entry[=].resource = example-iv-5-poc-transcation-problem-3  // Diabetes Diagnose
+* entry[=].request.method = #POST
+* entry[=].request.url = "Condition"
+
 // Problem List - Family history
 * entry[+].fullUrl = "urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce5"
-* entry[=].resource = example-iv-4a-problem-4 // Familienanamnese: Vorzeitige koronare Herzerkrankung
+* entry[=].resource = example-iv-5-poc-transcation-problem-4 // Familienanamnese: Vorzeitige koronare Herzerkrankung
+* entry[=].request.method = #POST
+* entry[=].request.url = "Condition"
+
 * entry[+].fullUrl = "urn:uuid:e66d8ac1-a124-4e94-be22-969c9b117ce6"
-* entry[=].resource = example-iv-4a-problem-5  // Familienanamnese: Diabetes mellitus in der Familien
+* entry[=].resource = example-iv-5-poc-transcation-problem-5  // Familienanamnese: Diabetes mellitus in der Familien
+* entry[=].request.method = #POST
+* entry[=].request.url = "Condition"
+
 
 // History of Procedures Hüftersatz
 * entry[+].fullUrl = "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"
-* entry[=].resource = example-iv-4a-procedure-history-1  // Totalersatz des linken Hüftgelenks
+* entry[=].resource = example-iv-5-poc-transcation-procedure-history-1  // Totalersatz des linken Hüftgelenks
+* entry[=].request.method = #POST
+* entry[=].request.url = "Procedure"
+
 // Medical Devices Hüftimplantat
 * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a11"
-* entry[=].resource = example-iv-4a-medical-deviceUse-Hueftprothese
+* entry[=].resource = example-iv-5-poc-transcation-medical-deviceUse-Hueftprothese
+* entry[=].request.method = #POST
+* entry[=].request.url = "DeviceUseStatement"
+
 * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22"
-* entry[=].resource = example-iv-4a-medical-device-Hueftprothese
+* entry[=].resource = example-iv-5-poc-transcation-medical-device-Hueftprothese
+* entry[=].request.method = #POST
+* entry[=].request.url = "Device"
 
 // Impfungen (Immunization)
 * entry[+].fullUrl = "urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607"
-* entry[=].resource = example-iv-4a-Immunization-1  // Diphtherie-Pertussis-Poliomyelitis-Tetanus
+* entry[=].resource = example-iv-5-poc-transcation-Immunization-1  // Diphtherie-Pertussis-Poliomyelitis-Tetanus
+* entry[=].request.method = #POST
+* entry[=].request.url = "Immunization"
 
 // Diagnostic Results
 * entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
-* entry[=].resource = example-iv-4a-diagnostic-result-1 // Blutzuckerwert 
-* entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"
-* entry[=].resource = example-iv-4a-diagnostic-result-2 // HbA1c Wert
-* entry[+].fullUrl = "urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"
-* entry[=].resource = example-iv-4a-diagnostic-result-3 // Kreatininwert
+* entry[=].resource = example-iv-5-poc-transcation-diagnostic-result-1 // Blutzuckerwert 
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
 
-// // Urindiagnostik
-// * entry[+].fullUrl = "urn:uuid:4fe4b16a-14cb-4fd6-9da6-02c4b3797fdc"
-// * entry[=].resource = example-iv-4a-diagnostic-result-8
-// * entry[+].fullUrl = "urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb"
-// * entry[=].resource = example-iv-4a-diagnostic-result-9
-// * entry[+].fullUrl = "urn:uuid:8c11ad58-94ec-469c-ba4d-bfba9063067d"
-// * entry[=].resource = example-iv-4a-diagnostic-result-10
-// * entry[+].fullUrl = "urn:uuid:8c7f9e94-b834-474e-818c-bbd6c3ce3e17"
-// * entry[=].resource = example-iv-4a-diagnostic-result-11
-// * entry[+].fullUrl = "urn:uuid:e6e05f94-92be-4ae3-bf49-b0b7d4a62b35"
-// * entry[=].resource = example-iv-4a-diagnostic-result-12
-// * entry[+].fullUrl = "urn:uuid:33e09da2-5f43-4046-b2eb-cf190031826b"
-// * entry[=].resource = example-iv-4a-diagnostic-result-13
-// * entry[+].fullUrl = "urn:uuid:b675680e-9469-41b1-adc1-093904e3a1d2"
-// * entry[=].resource = example-iv-4a-diagnostic-result-14
+* entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"
+* entry[=].resource = example-iv-5-poc-transcation-diagnostic-result-2 // HbA1c Wert
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
+* entry[+].fullUrl = "urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"
+* entry[=].resource = example-iv-5-poc-transcation-diagnostic-result-3 // Kreatininwert
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
+* entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f92"
+* entry[=].resource = example-iv-5-poc-transcation-diagnostic-result-4 // HbA1c Kontrolle
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
+* entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd655"
+* entry[=].resource = example-iv-5-poc-transcation-diagnostic-result-5 // Blutzuckerwert Kontrolle
+* entry[=].request.method = #POST
+* entry[=].request.url = "Immunization"
+
 // Diagnostic Results - Performer
 * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = example-iv-4a-diagnostic-result-performer-1
+* entry[=].resource = example-iv-5-poc-transcation-diagnostic-result-performer-1
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
+
 // Diagnostic Results - Specimen
 * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
-* entry[=].resource = example-iv-4a-diagnostic-specimen-1  //Blutprobe
+* entry[=].resource = example-iv-5-poc-transcation-diagnostic-specimen-1  //Blutprobe
+* entry[=].request.method = #POST
+* entry[=].request.url = "Specimen"
 
 // Vitalparameter (Vital Signs)
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
-* entry[=].resource = example-iv-4a-vital-sign-1
+* entry[=].resource = example-iv-5-poc-transcation-vital-sign-1
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
 * entry[+].fullUrl = "urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37"
-* entry[=].resource = example-iv-4a-vital-sign-2
+* entry[=].resource = example-iv-5-poc-transcation-vital-sign-2
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
 * entry[+].fullUrl = "urn:uuid:daf9c15d-14d4-429c-b658-6842fdff67d8"
-* entry[=].resource = example-iv-4a-vital-sign-3
+* entry[=].resource = example-iv-5-poc-transcation-vital-sign-3
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
 * entry[+].fullUrl = "urn:uuid:8248cc70-65a2-4d37-ae14-a3ef2abf8f32"
-* entry[=].resource = example-iv-4a-vital-sign-4
+* entry[=].resource = example-iv-5-poc-transcation-vital-sign-4
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
 * entry[+].fullUrl = "urn:uuid:4d3f7ac4-fd0a-49af-a56b-303a2dbe67d1"
-* entry[=].resource = example-iv-4a-vital-sign-5
+* entry[=].resource = example-iv-5-poc-transcation-vital-sign-5
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
 
 // Past History of Illness
 * entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4"  
-* entry[=].resource = example-iv-4a-illness-history-1  // Masernerkrankung in der Kindheit
-
-// Careplan Default
-* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639"
-* entry[=].resource = example-iv-4a-careplan-default  
-// Task Laboruntersuchung
-* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
-* entry[=].resource = example-iv-4a-task-labor  // abgeschlossene Laboruntersuchung
+* entry[=].resource = example-iv-5-poc-transcation-illness-history-1  // Masernerkrankung in der Kindheit
+* entry[=].request.method = #POST
+* entry[=].request.url = "Condition"
+ 
 
 // Careplan Diabetes  
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae333"
-* entry[=].resource = example-iv-4a-careplan-diabetes-1
-// Careplan Diabetes - Augenuntersuchung - Termin
-* entry[+].fullUrl = "urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae333"
-* entry[=].resource = example-iv-4a-careplan-diabetes-eye-exam
-// Careplan Diabetes - Schulung - Termin 
-* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b"
-* entry[=].resource = example-iv-4a-careplan-diabetes-nutrition-training
+* entry[=].resource = example-iv-5-poc-transcation-careplan-diabetes-1
+* entry[=].request.method = #POST
+* entry[=].request.url = "Careplan"
+
+// Careplan Diabetes - Augenuntersuchung - Task
+* entry[+].fullUrl = "urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111"
+* entry[=].resource = example-iv-5-poc-transcation-careplan-task-eye-exam
+* entry[=].request.method = #POST
+* entry[=].request.url = "Task"
+
+// Careplan Diabetes - Schulung - Task 
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c"
+* entry[=].resource = example-iv-5-poc-transcation-careplan-task-nutrition-training
+* entry[=].request.method = #POST
+* entry[=].request.url = "Task"
+
+// Task Laboruntersuchung // vom Default Careplan
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
+* entry[=].resource = example-iv-5-poc-transcation-careplan-task-labor-1  // abgeschlossene Laboruntersuchung
+* entry[=].request.method = #POST
+* entry[=].request.url = "Task"
+
 // Careplan Diabetes - Anforderung neue Laboruntersuchung 
-* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631"
-* entry[=].resource = example-iv-4a-careplan-diabetes-labor
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699"
+* entry[=].resource = example-iv-5-poc-transcation-careplan-task-labor-2
+* entry[=].request.method = #POST
+* entry[=].request.url = "Task"
+
 // // Careplan Zielwerte Goals
-// * entry[+].fullUrl = "urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333"
-// * entry[=].resource = example-iv-4a-careplan-diabetes-hba1c-monitoring-target
-// * entry[+].fullUrl = "urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333"
-// * entry[=].resource = example-iv-4a-careplan-diabetes-exercise
-// //* entry[+].fullUrl = "urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae333"
-// // * entry[=].resource = example-iv-4a-careplan-diabetes-hba1c-monitoring
+* entry[+].fullUrl = "urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae777"
+* entry[=].resource = example-iv-5-poc-transcation-careplan-diabetes-hba1c-zielwert
+* entry[=].request.method = #POST
+* entry[=].request.url = "Goal"
+
+* entry[+].fullUrl = "urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333"
+* entry[=].resource = example-iv-5-poc-transcation-careplan-diabetes-exercise
+* entry[=].request.method = #POST
+* entry[=].request.url = "Goal"
+
+// Careplan outcome 
+// //* entry[+].fullUrl = "urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae555"
+// // * entry[=].resource = example-iv-5-poc-transcation-careplan-diabetes-hba1c-outcome
 
 // Social History
 * entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e"
-* entry[=].resource = example-iv-4a-social-history-1  // Ehemaliger Raucher
-* entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984112"
-* entry[=].resource = example-iv-4a-social-history-2   // Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier
-* entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
-* entry[=].resource = example-iv-4a-social-history-3  // Körperliche Aktivität 2,5h/Wo
+* entry[=].resource = example-iv-5-poc-transcation-social-history-1  // Ehemaliger Raucher
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
 
-Instance: example-iv-4a-composition
-InstanceOf: DiabComposition
+* entry[+].fullUrl = "urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984112"
+* entry[=].resource = example-iv-5-poc-transcation-social-history-2   // Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
+* entry[+].fullUrl = "urn:uuid:9add5c32-1ded-43d6-b163-c3fe13f94984"
+* entry[=].resource = example-iv-5-poc-transcation-social-history-3  // Körperliche Aktivität 2,5h/Wo
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
+
+Instance: example-iv-5-poc-transcation-composition
+InstanceOf: AtApsComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
@@ -169,9 +271,11 @@ Usage: #inline
 * section[sectionMedications].title = "Medikationsliste"  // Medikationsplan
 * section[sectionMedications].code = $cs-loinc#10160-0 "Medikationsanamnese"
 * section[sectionMedications].text.status = #empty
-* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 09.04.2023</p></div>"
-* section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL  5MG"
-* section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL  500MG"
+* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 22.03.2025</p></div>"
+// * section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL 5MG"
+// * section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL 500MG"
+* section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5088) "RAMIPRIL 1A TBL 5MG"
+* section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5099) "METFORMIN HEX FTBL 500MG"
 
 // Allergien und Intoleranzen (Allergies and Intolerances)
 * section[sectionAllergies].title = "Allergien und Intoleranzen"
@@ -250,9 +354,9 @@ Usage: #inline
 * section[sectionPlanOfCare].title = "Behandlungsplan"
 * section[sectionPlanOfCare].code = $cs-loinc#18776-5 "Behandlungsplan - Notiz"
 * section[sectionPlanOfCare].text.status = #empty
-* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan Vorsorge: Laboruntersuchung</p><p>Behandlungsplan Diabetes: Patientenschulung und Ernährungsberatung, Augenuntersuchung</p></div>"
-* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Behandlungsplan Vorsorge"
-* section[sectionPlanOfCare].entry[carePlan][+] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae333) "Behandlungsplan Diabetes"
+* section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan Diabetes: Patientenschulung und Ernährungsberatung, Augenuntersuchung, Laboruntersuchung, Zielvereinbarungen</p></div>"
+//* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Behandlungsplan Vorsorge" // nur 1 Behandlungsplan
+* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae333) "Behandlungsplan Diabetes"
 
 
 // Lebensstil (Social History)
@@ -268,7 +372,7 @@ Usage: #inline
 //**********************************************************************************/
 // Problems
 
-Instance: example-iv-4a-problem-1
+Instance: example-iv-5-poc-transcation-problem-1
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $cs-condition-clinical#active "Active"
@@ -280,7 +384,7 @@ Usage: #inline
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 
 
-Instance: example-iv-4a-problem-2
+Instance: example-iv-5-poc-transcation-problem-2
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $cs-condition-clinical#active "Active"
@@ -291,7 +395,7 @@ Usage: #inline
 * recordedDate = "2016-11-01T08:30:00+01:00"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 
-Instance: example-iv-4a-problem-3
+Instance: example-iv-5-poc-transcation-problem-3
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $cs-condition-clinical#active "Active"
@@ -299,12 +403,12 @@ Usage: #inline
 * category.coding[0] = $cs-condition-category#problem-list-item "Problem List Item"
 * code = $cs-sct#44054006 "Diabetes mellitus Typ 2"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* recordedDate = "2023-03-17T08:00:00+01:00"
+* recordedDate = "2025-03-22T08:00:00+01:00"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 
 // Problems - Family history
 
-Instance: example-iv-4a-problem-4
+Instance: example-iv-5-poc-transcation-problem-4
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $cs-condition-clinical#active "Active"
@@ -315,7 +419,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 
-Instance: example-iv-4a-problem-5
+Instance: example-iv-5-poc-transcation-problem-5
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $cs-condition-clinical#active "Active"
@@ -328,52 +432,133 @@ Usage: #inline
 
 
 
-// // Careplan abgeschlossene Laboruntersuchung
-// Instance: example-iv-4a-careplan-labor
-// InstanceOf: DiabCareplan
-// Usage: #inline
-// * text.status = #additional
-// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
-// * status = #completed
-// * intent = #order  
-// * category.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
-// * category.text = "Überweisung Labor"
-// * title = "Laboruntersuchung"
-// * description = "Abklärung mögl. Diabetes II"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-// * created = "2023-03-15T08:00:00+01:00"
-// * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-
-
-// Careplan Default ***********************************
-Instance: example-iv-4a-careplan-default
-InstanceOf: DiabCareplan
+// Careplan Diabetes ***************************************
+Instance: example-iv-5-poc-transcation-careplan-diabetes-1
+InstanceOf: AtApsCarePlan
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
-* status = #completed
-* intent = #order  
-* category.coding[0] = $cs-sct#169443000 "Vorsorgeuntersuchungsprogramm"
-* category.text = "Vorsorge"
-* title = "Vorsorgeuntersuchungsprogramm"
-* description = "Abklärung mögl. Diabetes II"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Behandlungsplan Diabetes</p>\n  </div>"
+// * identifier.value = "12345"
+// * instantiatesUri = "https://www.sozialministerium.at/2025/Behandlungsplan-bei-Diabetes-mellitus-Typ-II"
+* status = #active
+* intent = #plan
+* category.coding[0] = $cs-loinc#18776-5 "Behandlungsplan Diabetes" //Plan of care note
+* category.text = "Behandlungsplan Diabetes"  // evtl. Anzeige prüfen
+* title = "Behandlungsplan Diabetes"
+* description = "Dokumentiert ausstehende Untersuchungen, Schulungen, klinische Ziele für die laufende Betreuung des Patienten."
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-* created = "2023-03-15T08:00:00+01:00"
+* created = "2025-03-22T08:00:00+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Aufgabe Laboruntersuchung"
+* careTeam = Reference(urn:uuid:75db30ee-5555-486c-929a-c5126837f473) "Careteam von Dr. IV Ärztin"
+* goal[0] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae777) "Ziel Hba1c"
+* goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
+* addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+* activity[0].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111) "Task Augenuntersuchung"
+* activity[0].reference.display = "Task Augenuntersuchung"
+* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c) "Task Patientenschulung und Ernährungsberatung"
+* activity[+].reference.display = "Task Patientenschulung und Ernährungsberatung"
+* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699) "Angeforderte Laboruntersuchung"  // neue Laboruntersuchung
+* activity[+].reference.display = "Angeforderte Laboruntersuchung"
+* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Abgeschlossene Laboruntersuchung"  // vom Standard Behanldungsplan
+//* activity[+].outcomeReference = Reference(urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae555) "Zielwerte Hba1c"
 
-// Careplan Task abgeschlossene Laboruntersuchung
-Instance: example-iv-4a-task-labor
+// Careplan careteam
+Instance: example-iv-5-poc-transcation-careplan-diabetes-careteam
+InstanceOf: CareTeam
+Usage: #inline
+* name = "Careteam von Dr. IV Ärztin"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* participant[0].role = $cs-sct#133932002 "Medizinische Fallführung"
+* participant[=].role.text = "Medizinische Fallführung"
+* participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* participant[+].role = $cs-sct#133932002 "Fallkoordination"
+* participant[=].role.text = "Fallkoordination"
+* participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f477) "DGKP Roman Nutrix"
+// * participant[+].role = $cs-sct#62247001 "Family medicine specialist"
+// * participant[=].role.text = "Hausärztin"
+// * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+// * participant[+].role = $cs-sct#11911009 "Nephrologist"
+// * participant[=].role.text = "Nephrologist"
+// * participant[=].member = Reference(Practitioner/cc-prac-jones-vince)
+// * participant[+].role = $cs-sct#159033005 "Dietician"
+// * participant[=].role.text = "Dietician"
+// * participant[=].member = Reference(Practitioner/cc-prac-gonzalez-maria)
+// * participant[+].role = $cs-sct#106328005 "Social worker"
+// * participant[=].role.text = "Renal Social Worker"
+// * participant[=].member = Reference(Practitioner/cc-prac-johnson-sam)
+// * participant[+].role = $cs-sct#159011008 "Retail pharmacist"
+// * participant[=].role.text = "Community Pharmacist"
+// * participant[=].member = Reference(Practitioner/cc-prac-walkowski-ellen)
+// * participant[+].role = $cs-sct#224535009 "Registered nurse"
+// * participant[=].role.text = "Registered Nurse"
+// * participant[=].member = Reference(Practitioner/cc-prac-smith-julie)
+
+// **********************************************************
+// Careplan Task Augenutersuchung
+Instance: example-iv-5-poc-transcation-careplan-task-eye-exam
 InstanceOf: Task
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene augenärztliche Kontrolle auf diabetische Retinopathie</p>\n    </div>"
+* status = #requested
+* intent = #plan 
+* priority = #routine 
+* code.coding[0] = $cs-sct#722161008 "Untersuchung der diabetischen Netzhaut"   // Task Type
+* code.coding[0].display = "Augenärztliche Kontrolle auf diabetische Retinopathie"
+//* description = "Augenärztliche Kontrolle auf diabetische Retinopathie"
+// * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
+// * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
+* authoredOn = "2025-03-22T08:00:00+01:00"
+// * lastModified = 2025-03-17T08:30:00+01:00
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performerType = $cs-sct#422234006 "Ophthalmologe" 
+* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  
+* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+
+
+// Careplan Task Nutrition Training
+Instance: example-iv-5-poc-transcation-careplan-task-nutrition-training
+InstanceOf: Task
+Usage: #inline
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II</p>\n    </div>"
+* status = #completed
+* intent = #plan 
+* priority = #routine 
+* code.coding[0] = $cs-sct#428274007 "Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II"   // Task Type
+* code.coding[0].display = "Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II"
+//* description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
+// * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
+// * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
+* authoredOn = "2025-03-22T08:00:00+01:00"
+* lastModified = "2025-04-02T08:30:00+01:00"
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performerType = $cs-sct#768827000 "Nutritionist" 
+* performerType.text = "Dr. IV Diätologin"
+* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
+* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+//* input[0].type =   TODO Goal
+//* input[0].value =   TODO Gol
+//* output[0].type =  TODO Dokument oder Valueset
+//* output[0].value =  TODO Dokument oder Valueset
+
+
+// Diabetes Careplan abgeschlossene Laboruntersuchung
+Instance: example-iv-5-poc-transcation-careplan-task-labor-1
+InstanceOf: Task
+Usage: #inline
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Laboruntersuchung</p>\n    </div>"
 * status = #completed
 * intent = #order
 * priority = #urgent
 * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
 * code.text = "Laboruntersuchung"
-* description = "Abklärung mögl. Diabetes II"
+//* description = "Abklärung mögl. Diabetes II"
 // * executionPeriod.start = 2025-03-17T08:00:00+01:00 // Datum der Auftragserteilung
 // * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = 2025-03-14T08:00:00+01:00
@@ -382,268 +567,142 @@ Usage: #inline
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * performerType = $cs-sct#61246008 "Laborfacharzt" 
 * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
-// * focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
+//* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
 * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
-// Careplan Diabetes ***************************************
-Instance: example-iv-4a-careplan-diabetes-1
-InstanceOf: DiabCareplan
+// Diabetes Careplan neue angeforderte Laboruntersuchung
+Instance: example-iv-5-poc-transcation-careplan-task-labor-2
+InstanceOf: Task
 Usage: #inline
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Behandlungsplan Diabetes</p>\n    </div>"
-// * identifier.value = "12345"
-// * instantiatesUri = "https://www.sozialministerium.at/2025/Behandlungsplan-bei-Diabetes-mellitus-Typ-II"
-* status = #active
-* intent = #plan
-* category.coding[0] = $cs-loinc#18776-5 "Behandlungsplan" //Plan of care note
-* category.text = "Behandlungsplan Diabetes"
-* title = "Behandlungsplan Diabetes"
-* description = "Dokumentiert ausstehende Untersuchungen, Schulungen, klinische Ziele für die laufende Betreuung des Patienten."
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-* created = "2023-03-17T08:00:00+01:00"
-* author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// * careTeam = Reference(urn:uuid:75db30ee-5555-486c-929a-c5126837f473) "Careteam von Dr. IV Ärztin"
-// * goal[0] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333) "Ziel Hba1c"
-// * goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
-* addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-* activity[0].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae333) "Termin für Augenuntersuchung"
-* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b) "Termin für Patientenschulung und Ernährungsberatung"
-* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae631) "Angeforderte Laboruntersuchung"
-// * activity[+].outcomeReference = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae333) "Zielwerte Hba1c"
-
-// // Careplan careteam
-// Instance: example-iv-4a-careplan-diabetes-careteam
-// InstanceOf: CareTeam
-// Usage: #inline
-// * name = "Careteam von Dr. IV Ärztin"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * participant[0].role = $cs-sct#133932002 "IV Koordinatorin"
-// * participant[=].role.text = "IV Koordinatorin"
-// // * participant[+].role = $cs-sct#224535009 "Registered nurse"
-// // * participant[=].role.text = "Registered Nurse"
-// // * participant[=].member = Reference(Practitioner/cc-prac-smith-julie)
-// * participant[+].role = $cs-sct#62247001 "Family medicine specialist"
-// * participant[=].role.text = "Hausärztin"
-// * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// // * participant[+].role = $cs-sct#11911009 "Nephrologist"
-// // * participant[=].role.text = "Nephrologist"
-// // * participant[=].member = Reference(Practitioner/cc-prac-jones-vince)
-// // * participant[+].role = $cs-sct#159033005 "Dietician"
-// // * participant[=].role.text = "Dietician"
-// // * participant[=].member = Reference(Practitioner/cc-prac-gonzalez-maria)
-// // * participant[+].role = $cs-sct#106328005 "Social worker"
-// // * participant[=].role.text = "Renal Social Worker"
-// // * participant[=].member = Reference(Practitioner/cc-prac-johnson-sam)
-// // * participant[+].role = $cs-sct#159011008 "Retail pharmacist"
-// // * participant[=].role.text = "Community Pharmacist"
-// // * participant[=].member = Reference(Practitioner/cc-prac-walkowski-ellen)
-
-// // **********************************************************
-
-// // Diabetes Appointment for eye exam
-Instance: example-iv-4a-careplan-diabetes-eye-exam
-InstanceOf: Appointment
-Usage: #inline
-* status = #proposed
-* serviceCategory = #27 "Überweisung zum Facharzt"
-* serviceType = #318 "Diabetes" // http://hl7.org/fhir/ValueSet/service-type 
-* specialty = #394594003 "Ophthalmology"  // http://hl7.org/fhir/ValueSet/c80-practice-codes Fachrichtung
-* appointmentType = #CHECKUP //http://terminology.hl7.org/ValueSet/v2-0276
-//* reasonCode = #161445009 "H/O: diabetes mellitus" // http://hl7.org/fhir/ValueSet/encounter-reason
-* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-* description = "Augenärztliche Kontrolle auf diabetische Retinopathie"
-* created = "2023-03-17T08:00:00+01:00"
-* participant.actor = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* participant.status = #accepted 
-* requestedPeriod.start = "2023-03-17"
-* requestedPeriod.end = "2023-04-17"
-
-
-// Diabetes Appointment for Nutrition Training
-Instance: example-iv-4a-careplan-diabetes-nutrition-training
-InstanceOf: Appointment
-Usage: #inline
-* status = #booked
-// * serviceCategory = #13 "Education & Learning"
-* serviceCategory.coding[0] = $cs-sct#428274007 "Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II"
-* serviceCategory.text = "Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II"
-* serviceType = #488 "Diabetes Schulung" // http://hl7.org/fhir/ValueSet/service-type 
-//* specialty = #408475000 "Diabetic medicine"  // http://hl7.org/fhir/ValueSet/c80-practice-codes Fachrichtung
-* appointmentType = #ROUTINE //http://terminology.hl7.org/ValueSet/v2-0276
-//* reasonCode = #161445009 "H/O: diabetes mellitus" // http://hl7.org/fhir/ValueSet/encounter-reason
-* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-* description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
-* start = "2023-03-20T08:00:00+00:00"
-* end = "2023-03-20T10:00:00+00:00"
-* created = "2023-03-17T08:00:00+01:00"
-* participant[0].actor = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* participant[=].status = #accepted 
-* participant[+].actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
-* participant[=].status = #accepted 
-
-
-// Diabetes Careplan angeforderte Laboruntersuchung
-Instance: example-iv-4a-careplan-diabetes-labor
-InstanceOf: ServiceRequest
-Usage: #inline
-* text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Angeforderte Laboruntersuchung</p>\n    </div>"
-* status = #active
-* intent = #order  
-* category.coding[0] = $cs-sct#266753000 "Überweisung für Labortests"
-* priority = #urgent
-* code.coding = $cs-loinc#4548-4 
-* code.text = "HbA1c"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-* authoredOn = "2023-03-17T08:00:00+01:00"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
+* status = #completed
+* intent = #order
+* priority = #routine 
+* code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
+* code.text = "Laboruntersuchung"
+//* description = "Kontrolle HbA1c"
+//* executionPeriod.start = "2025-06-03T08:00:00+01:00" // Datum der Auftragserteilung
+//* executionPeriod.end = "2025-07-10T08:00:00+01:00" // Datum der Erledigung
+* authoredOn = "2025-03-22T08:00:00+01:00"
+* lastModified = "2025-07-15T08:00:00+01:00"
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performerType = $cs-sct#61246008 "Laborfacharzt" 
+* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
+//* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+//* restriction.period.start = "2025-04-01T08:00:00+01:00" // Wann soll der Task erledigt werden
+//* restriction.period.end = "2025-04-07T08:00:00+01:00"
 
 
-
-// // Diabetes Careplan Zielwerte HbA1c 
-// Instance: example-iv-4a-careplan-diabetes-hba1c-monitoring-target
-// InstanceOf: Goal
-// Usage: #inline
+// Diabetes Careplan Zielwerte HbA1c 
+Instance: example-iv-5-poc-transcation-careplan-diabetes-hba1c-zielwert
+InstanceOf: Goal
+Usage: #inline
+* lifecycleStatus = #proposed 
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * priority = $goal-priority#high-priority "High Priority"
-// * priority.text = "hoch"
-// * description.text = "Hämoglobin A1c stabilisieren"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * startDate = "2023-03-17"
-// * target.measure = $cs-loinc#4548-4 "Hämoglobin A1c total im Blut"
-// * target.measure.text = "Hämoglobin A1c total im Blut"
-// * target.detailQuantity.comparator = #<
-// * target.detailQuantity = 7 http://unitsofmeasure.org/#% "%"
-// * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-// * note.text = "Überwachen Sie regelmäßig den A1C-Wert, um das Gesamtziel von 6,0 zu erreichen."
+* category.coding[0] = $goal-category#dietary "Diät"
+* priority = $goal-priority#high-priority "hoch"
+//* priority.text = "hoch"
+* description.text = "Hämoglobin A1c stabilisieren"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* startDate = "2025-03-22"
+* target.measure = $cs-loinc#4548-4 "Hämoglobin A1c total im Blut"
+* target.measure.text = "Hämoglobin A1c total im Blut" //todo prüfen, welcher text angezeigt wird
+* target.detailQuantity.comparator = #<
+* target.detailQuantity = 6.0 '%' "%"
+* expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+//* note.text = "Überwachen Sie regelmäßig den HbA1c-Wert, um das Gesamtziel von 6,0 zu erreichen."
 
-// // Diabetes Careplan Ziel Bewegung 
-// Instance: example-iv-4a-careplan-diabetes-exercise
-// InstanceOf: Goal
-// Usage: #inline
+// Diabetes Careplan Ziel Bewegung 
+Instance: example-iv-5-poc-transcation-careplan-diabetes-exercise
+InstanceOf: Goal
+Usage: #inline
+* lifecycleStatus = #proposed 
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * description.text = "Mindestens 30 Minuten pro Tag Sport treiben"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * startDate = "2017-12-07"
-// * target.measure = $cs-sct#226029000 "Exercises"
-// * target.measure.text = "Bewegung"
-// * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-
-
-
-// Instance: cc-goal-mae-bp-systolic
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * priority = $goal-priority#medium-priority "Medium Priority"
-// * priority.text = "medium"
-// * description.text = "Systolic blood pressure"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2017-06-30"
-// * target.measure = $cs-loinc#8480-6 "Systolic blood pressure"
-// * target.measure.text = "Systolic blood pressure"
-// * target.detailQuantity.comparator = #<
-// * target.detailQuantity = 140 'mm[Hg]' "mmHg"
-// * expressedBy = Reference(Practitioner/cc-prac-carlson-john) "Dr. John Carlson, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd) "Chronic kidney disease"
-
-// Instance: cc-goal-mae-bp-diastolic
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * description.text = "Diastolic blood pressure"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2019-01-12"
-// * target.measure = $cs-loinc#8462-4 "Diastolic blood pressure"
-// * target.measure.text = "Diastolic blood pressure"
-// * target.detailQuantity.comparator = #<
-// * target.detailQuantity = 80 'mm[Hg]' "mmHg"
-// * expressedBy = Reference(Practitioner/cc-prac-carlson-john) "Dr. John Carlson, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd) "Chronic kidney disease"
-
-// Instance: cc-goal-mae-lab-phos
-// InstanceOf: Goal
-// Usage: #inline
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
-// * lifecycleStatus = #active
-// * priority = $goal-priority#high-priority "High Priority"
-// * priority.text = "high"
-// * description.text = "Phosphorus in blood"
-// * subject = Reference(Patient/cc-pat-mae)
-// * startDate = "2018-02-20"
-// * target.measure = $cs-loinc#2777-1 "Phosphate [Mass/volume] in Serum or Plasma"
-// * target.measure.text = "Serum phosphorus"
-// * target.detailRange.low = 2.5 'mg/dL' "mg/dL"
-// * target.detailRange.high = 4.5 'mg/dL' "mg/dL"
-// * expressedBy = Reference(Practitioner/cc-prac-jones-vince) "Dr. Vince Jones, MD"
-// * addresses = Reference(Condition/cc-cond-mae-ckd)
-// * note[0].text = "Normal working kidneys can remove extra phosphorus in your blood. When you have chronic kidney disease (CKD), your kidneys cannot remove phosphorus very well. High phosphorus levels can cause damage to your body. Extra phosphorus causes body changes that pull calcium out of your bones, making them weak. High phosphorus and calcium levels also lead to dangerous calcium deposits in blood vessels, lungs, eyes, and heart. Phosphorus and calcium control are very important for your overall health."
-// * note[+].text = "Source https://www.kidney.org/atoz/content/phosphorus"
-
-
-
-
-// // RequestOrchestration: HbA1c Monitoring
-// Instance: example-iv-4a-careplan-diabetes-hba1c-monitoring
-// InstanceOf: RequestOrchestration
-// Usage: #inline
-// * status = #completed
-// * intent = #plan
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * action[0].title = "Monitor HbA1c Levels"
-// * action[0].description = "Compare current HbA1c to target value (e.g., < 7.0%)."
-// * action[0].goal = Reference(Goal/hba1c-target)
-// * action[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/action-type"
-// * action[0].type.coding[0].code = "update"
-// * action[0].participant[0].type = #practitioner
-// * action[0].participant[0].actor = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin -> Dr. Labor" 
-
-
+* category.coding[0] = $goal-category#behavioral "Verhalten"
+* priority = $goal-priority#high-priority "hoch"
+//* priority.text = "hoch"
+* description.text = "Mindestens 30 Minuten pro Tag Sport treiben"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* startDate = "2025-03-22"
+* target.measure = $cs-sct#226029000 "Bewegung"
+* target.measure.text = "Bewegung"
+* expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+// **********************************************************
 
 // Medication Summary
 
-Instance: example-iv-4a-medication-summary-1
-InstanceOf: AtApsMedicationStatement
+Instance: example-iv-5-poc-transcation-medicationplan-1
+InstanceOf: AtApsMedicationRequest
 Usage: #inline
 * status = #active
+* intent = #plan
 * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-* dosage.text = "S:0-0-1-0"
-* dosage.sequence = 1
-// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Orale Einnahme"
-* dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
-Instance: example-iv-4a-medication-summary-2
-InstanceOf: AtApsMedicationStatement
+//* supportingInformation
+* authoredOn = "2016-11-02T11:00:05+02:00"      
+* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
+* dosageInstruction.text = "S:1-0-1-0"
+* dosageInstruction.sequence = 2
+* dosageInstruction.route = $cs-sct#26643006 "Orale Einnahme"
+* dosageInstruction.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+
+
+Instance: example-iv-5-poc-transcation-medicationplan-2
+InstanceOf: AtApsMedicationRequest
 Usage: #inline
 * status = #active
+* intent = #plan
 * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectivePeriod.start = "2023-03-17T08:00:00+01:00"
-* dosage.text = "S:0-0-1-0"
-* dosage.sequence = 1
-// * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// * dosage.timing.repeat.dayOfWeek = #fri
-* dosage.route = $cs-sct#26643006 "Orale Einnahme"
-* dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+//* supportingInformation
+* authoredOn = "2025-07-15T08:00:00+01:00"
+* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
+* dosageInstruction.text = "S:1-0-1-0"
+* dosageInstruction.sequence = 2
+* dosageInstruction.route = $cs-sct#26643006 "Orale Einnahme"
+* dosageInstruction.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+//* dosageInstruction.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+
+
+// Instance: example-iv-5-poc-transcation-medication-summary-1
+// InstanceOf: AtApsMedicationStatement
+// Usage: #inline
+// * status = #active
+// * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
+// * dosage.text = "S:1-0-1-0"
+// * dosage.sequence = 2
+// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// // * dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
+// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+
+// Instance: example-iv-5-poc-transcation-medication-summary-2
+// InstanceOf: AtApsMedicationStatement
+// Usage: #inline
+// * status = #active
+// * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * effectivePeriod.start = "2025-07-15T08:00:00+01:00"
+// * dosage.text = "S:1-0-1-0"
+// * dosage.sequence = 2
+// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
+// // * dosage.timing.repeat.dayOfWeek = #fri
+// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
+// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 // Allergies and Intolerances   
 
-Instance: example-iv-4a-allergy-1
+Instance: example-iv-5-poc-transcation-allergy-1
 InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
 Usage: #inline
 * clinicalStatus = $cs-allergyintolerance-clinical#active "Active"
@@ -654,7 +713,7 @@ Usage: #inline
 
 // History of Procedures
 
-Instance: example-iv-4a-procedure-history-1
+Instance: example-iv-5-poc-transcation-procedure-history-1
 InstanceOf: AtApsProcedure
 Usage: #inline
 * status = #completed
@@ -665,7 +724,7 @@ Usage: #inline
 
 // Medical Devices
 
-Instance: example-iv-4a-medical-deviceUse-Hueftprothese
+Instance: example-iv-5-poc-transcation-medical-deviceUse-Hueftprothese
 InstanceOf: AtApsDeviceUseStatement
 Usage: #inline
 * status = #active
@@ -678,7 +737,7 @@ Usage: #inline
 * bodySite = $cs-sct#362905007 "Gesamtes linkes Hüftgelenk"
 * bodySite.coding[0].display = "Gesamtes linkes Hüftgelenk"
 
-Instance: example-iv-4a-medical-device-Hueftprothese
+Instance: example-iv-5-poc-transcation-medical-device-Hueftprothese
 InstanceOf: AtApsDevice
 Usage: #inline
 * type = $cs-sct#67270000 "Hüftprothese"
@@ -687,7 +746,7 @@ Usage: #inline
 * deviceName.type = #other
 * version.value = "123456"
 
-// Instance: example-iv-4a-deviceUse-Insulinpumpe  
+// Instance: example-iv-5-poc-transcation-deviceUse-Insulinpumpe  
 // InstanceOf: AtApsDeviceUseStatement
 // Usage: #inline
 // * status = #active
@@ -697,7 +756,7 @@ Usage: #inline
 // * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 // * timingDateTime.extension.valueCode = #unknown
 
-// Instance: example-iv-4a-device-Insulinpumpe
+// Instance: example-iv-5-poc-transcation-device-Insulinpumpe
 // InstanceOf: AtApsDevice
 // Usage: #inline
 // * type = $cs-sct#69805005 "Insulin pump"
@@ -706,7 +765,7 @@ Usage: #inline
 // * deviceName.type = #other
 // * version.value = "Insulin pump"
 
-Instance: example-iv-4a-Immunization-1
+Instance: example-iv-5-poc-transcation-Immunization-1
 InstanceOf: AtApsImmunization
 Usage: #inline
 * status = #completed
@@ -728,7 +787,7 @@ Usage: #inline
 // Diagnostic Results
 
 // Diagnostic Results - Performer
-Instance: example-iv-4a-diagnostic-result-performer-1
+Instance: example-iv-5-poc-transcation-diagnostic-result-performer-1
 InstanceOf: AtApsOrganization
 Usage: #inline
 // * identifier.system = "urn:ietf:rfc:3986"
@@ -749,7 +808,7 @@ Usage: #inline
 * address.country = "AUT"
 
 // Diagnostic Results - Specimen - Blut
-Instance: example-iv-4a-diagnostic-specimen-1
+Instance: example-iv-5-poc-transcation-diagnostic-specimen-1
 InstanceOf: AtApsSpecimen
 Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
@@ -758,46 +817,70 @@ Usage: #inline
 
 
 // Diagnostic Results Blut
-Instance: example-iv-4a-diagnostic-result-1
+Instance: example-iv-5-poc-transcation-diagnostic-result-1
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2023-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * valueQuantity = 250 'mg/dL' "mg/dL"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+* specimen.display = "Blutprobe" 
 
-Instance: example-iv-4a-diagnostic-result-2
+Instance: example-iv-5-poc-transcation-diagnostic-result-2
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2023-03-16T09:30:00+01:00"
+* effectiveDateTime = "2025-03-17T09:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 * valueQuantity = 8.1 '%' "%"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
-Instance: example-iv-4a-diagnostic-result-3
+Instance: example-iv-5-poc-transcation-diagnostic-result-3
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
-* id = "example-iv-4a-diagnostic-result-2"
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#2160-0 "Kreatinin in Serum"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2023-03-16T09:30:00+01:00"
+* effectiveDateTime = "2025-03-17T09:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 * valueQuantity = 1.2 'mg/dL' "mg/dL"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
+Instance: example-iv-5-poc-transcation-diagnostic-result-4
+InstanceOf: AtApsObservationResultsLaboratoryPathology
+Usage: #inline
+* status = #final
+* category = $cs-observation-category#laboratory "Laboratory"
+* code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* effectiveDateTime = "2025-07-10T08:00:00+01:00"
+* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+* valueQuantity = 7.1 '%' "%"
+* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+
+Instance: example-iv-5-poc-transcation-diagnostic-result-5
+InstanceOf: AtApsObservationResultsLaboratoryPathology
+Usage: #inline
+* status = #final
+* category = $cs-observation-category#laboratory "Laboratory"
+* code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* effectiveDateTime = "2025-04-05T08:00:00+01:00"
+* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* valueQuantity = 200 'mg/dL' "mg/dL"
+* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+
 
 // // Diagnostic Results - Specimen Urin
-// Instance: example-iv-4a-diagnostic-specimen-2
+// Instance: example-iv-5-poc-transcation-diagnostic-specimen-2
 // InstanceOf: AtApsSpecimen
 // Usage: #inline
 // * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
@@ -805,7 +888,7 @@ Usage: #inline
 // * type = $cs-sct#122575003 "Urine specimen"
 
 // // Diagnostic Results - Urindiagnostik
-// Instance: example-iv-4a-diagnostic-result-8
+// Instance: example-iv-5-poc-transcation-diagnostic-result-8
 // InstanceOf: AtApsObservationResultsLaboratoryPathology
 // Usage: #inline
 // * status = #final
@@ -822,7 +905,7 @@ Usage: #inline
 // * hasMember[+] = Reference(urn:uuid:b675680e-9469-41b1-adc1-093904e3a1d2) "Urobilinogen in Urine"
 // * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen"
 
-// Instance: example-iv-4a-diagnostic-result-9
+// Instance: example-iv-5-poc-transcation-diagnostic-result-9
 // InstanceOf: AtApsObservationResultsLaboratoryPathology
 // Usage: #inline
 // * status = #final
@@ -832,9 +915,9 @@ Usage: #inline
 // * effectiveDateTime = "2025-02-13T14:31:30+00:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * valueCodeableConcept = $cs-sct#260415000 "Not detected (qualifier value)"
-// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-4a-diagnostic-specimen-2)"
+// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-5-poc-transcation-diagnostic-specimen-2)"
 
-// Instance: example-iv-4a-diagnostic-result-10
+// Instance: example-iv-5-poc-transcation-diagnostic-result-10
 // InstanceOf: AtApsObservationResultsLaboratoryPathology
 // Usage: #inline
 // * status = #final
@@ -844,9 +927,9 @@ Usage: #inline
 // * effectiveDateTime = "2025-02-13T14:31:30+00:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * valueCodeableConcept = $cs-sct#260415000 "Not detected (qualifier value)"
-// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-4a-diagnostic-specimen-2)"
+// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-5-poc-transcation-diagnostic-specimen-2)"
 
-// Instance: example-iv-4a-diagnostic-result-11
+// Instance: example-iv-5-poc-transcation-diagnostic-result-11
 // InstanceOf: AtApsObservationResultsLaboratoryPathology
 // Usage: #inline
 // * status = #final
@@ -856,9 +939,9 @@ Usage: #inline
 // * effectiveDateTime = "2025-02-13T14:31:30+00:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * valueCodeableConcept = $cs-sct#260415000 "Not detected (qualifier value)"
-// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-4a-diagnostic-specimen-2)"
+// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-5-poc-transcation-diagnostic-specimen-2)"
 
-// Instance: example-iv-4a-diagnostic-result-12
+// Instance: example-iv-5-poc-transcation-diagnostic-result-12
 // InstanceOf: AtApsObservationResultsLaboratoryPathology
 // Usage: #inline
 // * status = #final
@@ -868,9 +951,9 @@ Usage: #inline
 // * effectiveDateTime = "2025-02-13T14:31:30+00:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * valueCodeableConcept = $cs-sct#260415000 "Not detected (qualifier value)"
-// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-4a-diagnostic-specimen-2)"
+// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-5-poc-transcation-diagnostic-specimen-2)"
 
-// Instance: example-iv-4a-diagnostic-result-13
+// Instance: example-iv-5-poc-transcation-diagnostic-result-13
 // InstanceOf: AtApsObservationResultsLaboratoryPathology
 // Usage: #inline
 // * status = #final
@@ -880,9 +963,9 @@ Usage: #inline
 // * effectiveDateTime = "2025-02-13T14:31:30+00:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * valueCodeableConcept = $cs-sct#260415000 "Not detected (qualifier value)"
-// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-4a-diagnostic-specimen-2)"
+// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-5-poc-transcation-diagnostic-specimen-2)"
 
-// Instance: example-iv-4a-diagnostic-result-14
+// Instance: example-iv-5-poc-transcation-diagnostic-result-14
 // InstanceOf: AtApsObservationResultsLaboratoryPathology
 // Usage: #inline
 // * status = #final
@@ -892,13 +975,13 @@ Usage: #inline
 // * effectiveDateTime = "2025-02-13T14:31:30+00:00"
 // * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
 // * valueCodeableConcept = $cs-sct#260415000 "Not detected (qualifier value)"
-// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-4a-diagnostic-specimen-2)"
+// * specimen = Reference(urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9) "Urine specimen (example-iv-5-poc-transcation-diagnostic-specimen-2)"
 
 
 
 // Vitalparameter (Vital Signs)
 
-Instance: example-iv-4a-vital-sign-1
+Instance: example-iv-5-poc-transcation-vital-sign-1
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -909,7 +992,7 @@ Usage: #inline
 * effectiveDateTime = "2020-02-15T08:00:00+01:00"
 * valueQuantity = 173 'cm' "cm"
 
-Instance: example-iv-4a-vital-sign-2
+Instance: example-iv-5-poc-transcation-vital-sign-2
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -920,7 +1003,7 @@ Usage: #inline
 * effectiveDateTime = "2020-02-15T08:00:00+01:00"
 * valueQuantity = 90 'kg' "kg"
 
-Instance: example-iv-4a-vital-sign-3
+Instance: example-iv-5-poc-transcation-vital-sign-3
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -932,7 +1015,7 @@ Usage: #inline
 * valueQuantity = 30.07 'kg/m2' "kg/m2"
 // * interpretation = $cs-v3-ObservationInterpretation#H "High"
 
-Instance: example-iv-4a-vital-sign-4
+Instance: example-iv-5-poc-transcation-vital-sign-4
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -946,7 +1029,7 @@ Usage: #inline
 * component[+].code = $cs-loinc#8462-4 "Diastolischer Blutdruck"
 * component[=].valueQuantity = 80 'mm[Hg]' "mm[Hg]"
 
-Instance: example-iv-4a-vital-sign-5
+Instance: example-iv-5-poc-transcation-vital-sign-5
 InstanceOf: AtApsObservationVitalSigns
 Usage: #inline
 * status = #final
@@ -959,7 +1042,7 @@ Usage: #inline
 
 // Past History of Illness
 
-Instance: example-iv-4a-illness-history-1
+Instance: example-iv-5-poc-transcation-illness-history-1
 InstanceOf: AtApsCondition
 Usage: #inline
 * clinicalStatus = $cs-condition-clinical#resolved "Resolved"
@@ -972,7 +1055,7 @@ Usage: #inline
 
 // Social History
 
-Instance: example-iv-4a-social-history-1
+Instance: example-iv-5-poc-transcation-social-history-1
 InstanceOf: AtApsObservationTobaccoUse
 Usage: #inline
 * status = #final
@@ -980,10 +1063,10 @@ Usage: #inline
 * code = $cs-loinc#72166-2 "Raucherstatus"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* effectiveDateTime = "2023-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * valueCodeableConcept = $cs-sct#8517006 "Ehemalig rauchende Person"
 
-Instance: example-iv-4a-social-history-2
+Instance: example-iv-5-poc-transcation-social-history-2
 InstanceOf: AtApsObservationAlcoholUse
 Usage: #inline
 * status = #final
@@ -992,11 +1075,11 @@ Usage: #inline
 * code.coding.display = "Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* effectiveDateTime = "2023-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * valueQuantity = 2 '/d' "Gläser Wein pro Tag"
 
 
-Instance: example-iv-4a-social-history-3
+Instance: example-iv-5-poc-transcation-social-history-3
 InstanceOf: AtApsObservation
 Usage: #inline
 * status = #final
@@ -1005,12 +1088,12 @@ Usage: #inline
 * code = $cs-sct#61686008 "Körperliche Aktivität"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* effectiveDateTime = "2023-03-15T08:00:00+01:00"
+* effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * valueRatio.numerator = 2.5 'h' "Stunden"
 * valueRatio.numerator.comparator = #>
 * valueRatio.denominator = 1 'wk' "Woche"
 
-Instance: example-iv-4a-organization
+Instance: example-iv-5-poc-transcation-organization
 InstanceOf: AtApsOrganization
 Usage: #inline
 * name = "Zentrale Anwendung APS, BMSGPK"
@@ -1019,7 +1102,7 @@ Usage: #inline
 * address.line = "Stubenring 1"
 
 // Arzt
-Instance: example-iv-4a-practitioner-1
+Instance: example-iv-5-poc-transcation-practitioner-1
 InstanceOf: AtApsPractitioner
 Usage: #inline
 // * identifier.system = "urn:ietf:rfc:3986"
@@ -1032,8 +1115,22 @@ Usage: #inline
 * address.postalCode = "1200"
 * address.line = "Treustraße 38"
 
+// DGKP
+Instance: example-iv-5-poc-transcation-careteam-fallkoordination
+InstanceOf: AtApsPractitioner
+Usage: #inline
+// * identifier.system = "urn:ietf:rfc:3986"
+// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* name.prefix[0] = "DGKP"
+* name.family = "Nutrix"
+* name.given[0] = "Roman"
+* address.city = "Wien"
+* address.postalCode = "1010"
+* address.line = "Karlsplatz 1"
+
 // APS Generator
-Instance: example-iv-4a-author-device
+Instance: example-iv-5-poc-transcation-author-device
 InstanceOf: AtApsDevice
 Usage: #inline
 * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
@@ -1045,7 +1142,7 @@ Usage: #inline
 * version.value = "1.0"
 
 // Practitioner Arzt
-Instance: example-iv-4a-practitioner-iv
+Instance: example-iv-5-poc-transcation-practitioner-iv
 InstanceOf: AtApsPractitioner
 Usage: #inline
 // * identifier.system = "urn:ietf:rfc:3986"
@@ -1060,7 +1157,7 @@ Usage: #inline
 
 // Patient
 
-Instance: example-iv-4a-patient
+Instance: example-iv-5-poc-transcation-patient
 InstanceOf: AtApsPatient
 Usage: #inline
 * id = "001"

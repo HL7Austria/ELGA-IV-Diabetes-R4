@@ -3,7 +3,7 @@
 
 
 Instance: example-iv-3
-InstanceOf: DiabBundle
+InstanceOf: AtApsBundle
 Title: "example-iv-3"
 Description: "Patient Summary: Patient Journey 3 (17.03.2025)"
 Usage: #example
@@ -124,7 +124,7 @@ Usage: #example
 * entry[=].resource = example-iv-3-social-history-3  // Körperliche Aktivität 2,5h/Wo
 
 Instance: example-iv-3-composition
-InstanceOf: DiabComposition
+InstanceOf: AtApsComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
@@ -287,7 +287,7 @@ Usage: #inline
 
 // Careplan Default   ***********************************
 Instance: example-iv-3-careplan-default
-InstanceOf: DiabCareplan
+InstanceOf: AtApsCarePlan
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Allgemeiner Behandlungsplan</p>\n    </div>"

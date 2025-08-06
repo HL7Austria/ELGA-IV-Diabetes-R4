@@ -1,4 +1,4 @@
-ValueSet: DiabCareplanEducationVS
+ValueSet: AtApsCarePlanEducationVS
 Id: diab-careplan-education-vs
 Title: "Diabetes Behandlungsplan Schulungen VS"
 Description: "Diabetes Behandlungsplan Schulungen VS"

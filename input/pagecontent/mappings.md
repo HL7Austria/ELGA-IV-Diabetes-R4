@@ -5,7 +5,7 @@ Die folende Tabelle zeigt das Mapping des Datenmodells basierend auf dem "Rahmen
 | Themenbereich | Ausprägung | Dokumentation - Zielwert | Mindest-Frequenz | Über-/Zuweisung/Verordnung | Leistung erbracht (Check) | Zusatzinfo | Austrian Patient Summary Mapping |
 |:---|:---|:---|:---|:---|:---|:---|:---|
 | Diagnose seit Jahr | Textfeld | | | | | | Problem / Condition.recordedDate |
-| Fallkoordination | Textfeld | | | | | | Plan of Care / Careplan.CareTeam.participant.role und .member |
+| Fallkoordination| Textfeld | | | | | | Plan of Care / Careplan.CareTeam.participant.role und .member |
 | med. Fallführung | Textfeld & IV-GDA -Liste | | | | | | Plan of Care / Careplan.CareTeam.participant.role und .member |
 | Diagnose | Diabetes mellitus type 2 (disorder) | | | | | | Problem / Condition.code |
 | | Diabetes mellitus type 1 (disorder) | | | | | | Problem / Condition.code |

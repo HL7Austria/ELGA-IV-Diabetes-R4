@@ -5,7 +5,7 @@ Alias: $goal-category = http://terminology.hl7.org/CodeSystem/goal-category
 
 
 Instance: example-iv-5
-InstanceOf: DiabBundle
+InstanceOf: AtApsBundle
 Title: "example-iv-5"
 Description: "Patient Summary: Patient Journey 5 (09.06.2025)"
 Usage: #example
@@ -28,9 +28,9 @@ Usage: #example
 // Practitioner Hausärztin
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f473"
 * entry[=].resource = example-iv-5-practitioner-1  // Dr. Hanna Hausärztin
-// Fallkoordination 
+// Fallkoordination
 * entry[+].fullUrl = "urn:uuid:75db30ee-7028-486c-929a-c5126837f477"
-* entry[=].resource = example-iv-5-careteam-fallkoordination  // DGKP Roman Nutrix
+* entry[=].resource = example-iv-5-careteam-fallkoordination // DGKP Roman Nutrix
 //Careplan careteam
 * entry[+].fullUrl = "urn:uuid:75db30ee-5555-486c-929a-c5126837f473"
 * entry[=].resource = example-iv-5-careplan-diabetes-careteam
@@ -162,7 +162,7 @@ Usage: #example
 * entry[=].resource = example-iv-5-social-history-3  // Körperliche Aktivität 2,5h/Wo
 
 Instance: example-iv-5-composition
-InstanceOf: DiabComposition
+InstanceOf: AtApsComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
@@ -339,7 +339,7 @@ Usage: #inline
 
 // Careplan Diabetes ***************************************
 Instance: example-iv-5-careplan-diabetes-1
-InstanceOf: DiabCareplan
+InstanceOf: AtApsCarePlan
 Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Behandlungsplan Diabetes</p>\n  </div>"
@@ -376,8 +376,8 @@ Usage: #inline
 * participant[0].role = $cs-sct#133932002 "Medizinische Fallführung"
 * participant[=].role.text = "Medizinische Fallführung"
 * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* participant[+].role = $cs-sct#133932002 "Fallkoordination "
-* participant[=].role.text = "Fallkoordination "
+* participant[+].role = $cs-sct#133932002 "Fallkoordination"
+* participant[=].role.text = "Fallkoordination"
 * participant[=].member = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f477) "DGKP Roman Nutrix"
 // * participant[+].role = $cs-sct#62247001 "Family medicine specialist"
 // * participant[=].role.text = "Hausärztin"

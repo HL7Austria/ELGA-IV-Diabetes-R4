@@ -4,7 +4,7 @@
 
 
 Instance: example-iv-1
-InstanceOf: DiabBundle
+InstanceOf: AtApsBundle
 Title: "example-iv-1"
 Description: "Patient Summary: Patient Journey 1 (15.03.2025)"
 Usage: #example
@@ -78,7 +78,7 @@ Usage: #example
 * entry[=].resource = example-iv-1-social-history-3  // Körperliche Aktivität 2,5h/Wo
 
 Instance: example-iv-1-composition
-InstanceOf: DiabComposition
+InstanceOf: AtApsComposition
 Usage: #inline
 // * language = #de-AT
 * status = #final
