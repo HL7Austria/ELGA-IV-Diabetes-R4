@@ -1,7 +1,7 @@
 Instance: example-iv-poc-patient-testpatient
 InstanceOf: AtApsPatient
 Usage: #example
-* id = "001"
+* id = "example-iv-poc-patient-testpatient-001"
 * identifier[socialSecurityNumber].type = $cs-v2-0203#SS "Social Security number"
 * identifier[socialSecurityNumber].system = "urn:oid:1.2.40.0.10.1.4.3.1"
 * identifier[socialSecurityNumber].value = "1234121153"

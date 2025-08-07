@@ -263,7 +263,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * date = "2025-03-22T11:01:30+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
-* title = "Patient Summary" 
+* title = "Austrian Patient Summary" 
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
 * extension[countryOfAffiliation].valueString = "AT"
 
@@ -1105,9 +1105,9 @@ Usage: #inline
 Instance: example-iv-5-poc-transcation-practitioner-1
 InstanceOf: AtApsPractitioner
 Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
 * name.family = "Hausärztin"
 * name.given[0] = "Hanna"
@@ -1119,9 +1119,9 @@ Usage: #inline
 Instance: example-iv-5-poc-transcation-careteam-fallkoordination
 InstanceOf: AtApsPractitioner
 Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "DGKP"
 * name.family = "Nutrix"
 * name.given[0] = "Roman"
@@ -1145,9 +1145,9 @@ Usage: #inline
 Instance: example-iv-5-poc-transcation-practitioner-iv
 InstanceOf: AtApsPractitioner
 Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
 * name.family = "IV Diätologin"
 * name.given[0] = "Melanie"
@@ -1156,11 +1156,10 @@ Usage: #inline
 * address.line = "Praterstern 5"
 
 // Patient
-
 Instance: example-iv-5-poc-transcation-patient
 InstanceOf: AtApsPatient
 Usage: #inline
-* id = "001"
+* id = "example-iv-5-poc-transcation-patient-001"
 * identifier[socialSecurityNumber].type = $cs-v2-0203#SS "Social Security number"
 * identifier[socialSecurityNumber].system = "urn:oid:1.2.40.0.10.1.4.3.1"
 * identifier[socialSecurityNumber].value = "1234121153"
@@ -1171,12 +1170,15 @@ Usage: #inline
 * identifier[localPatientId].assigner.display = "Ein GDA in Österreich"
 * name.family = "Testpatient"
 * name.given[0] = "Anton"
-* gender = #male // 1..1 in AT Core
-* birthDate = "1953-11-12" // 1..1 in IPS
+* gender = #male 
+* birthDate = "1953-11-12"
 * address.line = "Rotenturmstraße 14"
 * address.use = #home
 * address.city = "Wien"
 * address.postalCode = "1010"
 * address.country = "AUT"
 * maritalStatus = $cs-v3-MaritalStatus#M "Married"
+//* generalPractitioner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Gabriele IV-Ärztin"
+
+
 
