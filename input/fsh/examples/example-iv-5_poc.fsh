@@ -107,7 +107,11 @@ Usage: #example
 // * entry[=].resource = example-iv-5-poc-diagnostic-result-14
 // Diagnostic Results - Performer
 * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = example-iv-5-poc-diagnostic-result-performer-1
+* entry[=].resource = example-iv-5-poc-diagnostic-result-performer-1-practitionerrole // Dr. Humpel, Amadeus Spital - Labor
+* entry[+].fullUrl = "urn:uuid:849c865f-b087-46cc-aad9-24a307fb3d0a"
+* entry[=].resource = example-iv-5-poc-diagnostic-result-performer-1-practitioner // Dr. Humpel
+* entry[+].fullUrl = "urn:uuid:d45feefd-1020-47a2-9d7c-564fb82f2acc"
+* entry[=].resource = example-iv-5-poc-diagnostic-result-performer-1-organization // Amadeus Spital - Labor
 // Diagnostic Results - Specimen
 * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
 * entry[=].resource = example-iv-5-poc-diagnostic-specimen-1  //Blutprobe
@@ -698,13 +702,35 @@ Usage: #inline
 
 // Diagnostic Results
 
-// Diagnostic Results - Performer
-Instance: example-iv-5-poc-diagnostic-result-performer-1
+// Diagnostic Results - Performer - PractitionerRole
+Instance: example-iv-5-poc-diagnostic-result-performer-1-practitionerrole
+InstanceOf: AtApsPractitionerRole
+Usage: #inline
+* practitioner = Reference(urn:uuid:849c865f-b087-46cc-aad9-24a307fb3d0a) "Dr. Humpel"
+* practitioner.type = "Practitioner"
+* organization = Reference(urn:uuid:d45feefd-1020-47a2-9d7c-564fb82f2acc) "Amadeus Spital - Labor"
+* organization.type = "Organization"
+
+// Diagnostic Results - Performer - Practitioner
+Instance: example-iv-5-poc-diagnostic-result-performer-1-practitioner
+InstanceOf: AtApsPractitioner
+Usage: #inline
+* identifier.system = "urn:oid:1.2.99.3.4.5.6"
+* identifier.value = "4444"
+* identifier.assigner.display = "Amadeus Spital - Labor"
+* name.family = "Humpel"
+* name.given = "Florian"
+* name.prefix.extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
+* name.prefix.extension.valueCode = #AC
+* name.prefix = "Dr."
+
+// Diagnostic Results - Performer - Organisation
+Instance: example-iv-5-poc-diagnostic-result-performer-1-organization
 InstanceOf: AtApsOrganization
 Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.34.99.4613"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.99.3.4.5.6"
+* identifier.assigner.display = "GDA Index"
 * name = "Amadeus Spital - Labor"
 * telecom[0].system = #phone
 * telecom[=].value = "+43.1.3453446.0"
@@ -750,7 +776,7 @@ Usage: #inline
 * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * effectiveDateTime = "2025-03-17T09:30:00+01:00"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Dr. Humpel, Amadeus Spital - Labor"
 * valueQuantity = 8.1 '%' "%"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
@@ -762,7 +788,7 @@ Usage: #inline
 * code = $cs-loinc#2160-0 "Kreatinin in Serum"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * effectiveDateTime = "2025-03-17T09:30:00+01:00"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Dr. Humpel, Amadeus Spital - Labor"
 * valueQuantity = 1.2 'mg/dL' "mg/dL"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
@@ -774,7 +800,7 @@ Usage: #inline
 * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
 * effectiveDateTime = "2025-07-10T08:00:00+01:00"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Dr. Humpel, Amadeus Spital - Labor"
 * valueQuantity = 7.1 '%' "%"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
