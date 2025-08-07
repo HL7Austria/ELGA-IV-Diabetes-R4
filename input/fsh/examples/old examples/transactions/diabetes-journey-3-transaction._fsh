@@ -33,7 +33,7 @@ Usage: #example
 * entry[=].request.url = "Observation"
 // Care Plan
 * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b895"
-* entry[=].resource = ex-diab-journey-3-careplan
+* entry[=].resource = ex-diab-journey-3-CarePlan
 * entry[=].request.method = #POST
 * entry[=].request.url = "CarePlan"
 
@@ -103,7 +103,7 @@ Usage: #inline
 
 
 // Care Plan
-Instance: ex-diab-journey-3-careplan
+Instance: ex-diab-journey-3-CarePlan
 InstanceOf: CarePlan
 Usage: #inline
 * text.status = #additional

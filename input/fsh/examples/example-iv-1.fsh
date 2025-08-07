@@ -93,7 +93,7 @@ Usage: #inline
 // Medication Summary
 * section[sectionMedications].title = "Medikationsliste"  // Medikationsplan
 * section[sectionMedications].code = $cs-loinc#10160-0 "Medikationsanamnese"
-* section[sectionMedications].text.status = #empty
+* section[sectionMedications].text.status = #generated
 * section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p></div>"
 * section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL  5MG"
 
@@ -101,14 +101,14 @@ Usage: #inline
 // Allergies and Intolerances
 * section[sectionAllergies].title = "Allergien und Intoleranzen"
 * section[sectionAllergies].code = $cs-loinc#48765-2 "Allergien und unerwünschte Wirkungen"
-* section[sectionAllergies].text.status = #empty
+* section[sectionAllergies].text.status = #generated
 * section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergie gegen Benzylpenicillin-Natrium.</p></div>"
 * section[sectionAllergies].entry[allergyOrIntolerance][0] = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Allergie gegen Benzylpenicillin-Natrium"
 
 // Problem List
 * section[sectionProblems].title = "Gesundheitsprobleme und Risiken"
 * section[sectionProblems].code = $cs-loinc#11450-4 "Problemliste"
-* section[sectionProblems].text.status = #empty
+* section[sectionProblems].text.status = #generated
 * section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Arterielle Hypertonie</p><p>Adipositas</p><p>Familienanamnese: Vorzeitige koronare Herzerkrankung, Diabetes mellitus</p></div>"
 * section[sectionProblems].entry[problem][0] = Reference(urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde) "Arterielle Hypertonie"
 * section[sectionProblems].entry[problem][+] = Reference(urn:uuid:8d3a18fb-3610-4bfb-9aa4-1169cc6dd2dd) "Adipositas"
@@ -119,7 +119,7 @@ Usage: #inline
 // History of Procedures
 * section[sectionProceduresHx].title = "Eingriffe und Therapien"
 * section[sectionProceduresHx].code = $cs-loinc#47519-4 "Anamnese der Prozeduren oder Maßnahmen"
-* section[sectionProceduresHx].text.status = #empty
+* section[sectionProceduresHx].text.status = #generated
 * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Totalersatz des linken Hüftgelenks</p></div>"
 * section[sectionProceduresHx].entry[procedure][0] = Reference(urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a) "Totalersatz des linken Hüftgelenks"
 // * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
@@ -128,7 +128,7 @@ Usage: #inline
 // Medical Devices
 * section[sectionMedicalDevices].title = "Implantate, medizinische Geräte und Heilbehelfe"
 * section[sectionMedicalDevices].code = $cs-loinc#46264-8 "Anamnese zum Einsatz von Medizinprodukten"
-* section[sectionMedicalDevices].text.status = #empty
+* section[sectionMedicalDevices].text.status = #generated
 // * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Keine Implantate</p></div>"
 // * section[sectionMedicalDevices].emptyReason = $cs-list-empty-reason#nilknown
 * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hüftprothese</p></div>"
@@ -137,14 +137,14 @@ Usage: #inline
 // Impfungen (Immunization)
 * section[sectionImmunizations].title = "Impfungen"
 * section[sectionImmunizations].code = $cs-loinc#11369-6 "Impfungen"
-* section[sectionImmunizations].text.status = #empty
+* section[sectionImmunizations].text.status = #generated
 * section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Impfung gegen Diphtherie-Pertussis-Poliomyelitis-Tetanus</p></div>"
 * section[sectionImmunizations].entry[immunization][0]  = Reference(urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607) "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
 
 // Vitalparameter (Vital Signs)
 * section[sectionVitalSigns].title = "Vitalparameter"
 * section[sectionVitalSigns].code = $cs-loinc#8716-3 "Vitalparameter"
-* section[sectionVitalSigns].text.status = #empty
+* section[sectionVitalSigns].text.status = #generated
 * section[sectionVitalSigns].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Körpergröße: 173 cm</p><p>Körpergewicht: 90 kg</p><p>BMI: 30.07 (high)</p></div>"
 * section[sectionVitalSigns].entry[vitalSign][0] = Reference(urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142) "Körpergröße: 173 cm"
 * section[sectionVitalSigns].entry[vitalSign][+] = Reference(urn:uuid:428259da-e0f7-4780-b1e3-c177515edd37) "Körpergewicht: 90 kg"
@@ -153,7 +153,7 @@ Usage: #inline
 // Past History of Illness
 * section[sectionPastIllnessHx].title = "Vergangene Gesundheitsprobleme und Risiken"
 * section[sectionPastIllnessHx].code = $cs-loinc#11348-0 "Vergangene Gesundheitsprobleme und Risiken"
-* section[sectionPastIllnessHx].text.status = #empty
+* section[sectionPastIllnessHx].text.status = #generated
 * section[sectionPastIllnessHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Masernerkrankung in der Kindheit.</p></div>"
 * section[sectionPastIllnessHx].entry[pastProblem][0] = Reference(urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4) "Vergangene Masernerkrankung"
 
@@ -161,7 +161,7 @@ Usage: #inline
 // Social History
 * section[sectionSocialHistory].title = "Lebensstil, soziale Umstände und Verhalten"
 * section[sectionSocialHistory].code = $cs-loinc#29762-2 "Sozialanamnese"
-* section[sectionSocialHistory].text.status = #empty
+* section[sectionSocialHistory].text.status = #generated
 * section[sectionSocialHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ehemaliger Raucher,  Person</p><p>Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier</p><p>Körperliche Aktivität 2,5h/Wo</p></div>"
 * section[sectionSocialHistory].entry[smokingTobaccoUse][0] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c98411e) "Ehemalig rauchende Person"
 * section[sectionSocialHistory].entry[alcoholUse][+] = Reference(urn:uuid:d0a5bbf1-6d01-4d44-bac5-05f12c984112) "Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier"

@@ -16,7 +16,7 @@ Description: "Diabetes Composition, abgeleitet vom der APS."
 // * section[sectionPlanOfCare].entry ^slicing.rules = #open
 //* section[sectionPlanOfCare].entry only Reference(CarePlan or DocumentReference )
 //* section[sectionPlanOfCare].entry contains
-//    carePlan 0..*    
+//    CarePlan 0..*    
 //    AtApsCarePlan 0..*
 //* section[sectionPlanOfCare].entry[carePlan] only Reference(CarePlan)
 * section[sectionPlanOfCare].entry[carePlan] only Reference(AtApsCarePlan)

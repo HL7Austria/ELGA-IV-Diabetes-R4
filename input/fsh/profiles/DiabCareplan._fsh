@@ -1,10 +1,10 @@
 Profile: AtApsCarePlan
 Parent: AtApsCarePlan  
-Id: diab-careplan
+Id: diab-CarePlan
 Title: "Diabetes CarePlan"
-Description: "Dokumentation einer Diabetes-Behandlungsplans (Careplan)."
+Description: "Dokumentation einer Diabetes-Behandlungsplans (CarePlan)."
 * . ^short = "Diabetes Behandlungsplan"
-* . ^definition = "Dokumentation eines Diabetes-Behandlungsplans (Careplan)."
+* . ^definition = "Dokumentation eines Diabetes-Behandlungsplans (CarePlan)."
 // * instantiatesUri 1..1 
 // * instantiatesUri ^short = "Instanziiert externe Definition der Schulung"
 //* instantiatesUri = "https://www.sozialministerium.at/Themen/Gesundheit/Gesundheitssystem/Gesundheitssystem-und-Qualitaetssicherung/Qualitaetsstandards/Rahmenkonzept-Integrierte-Versorgung-Diabetes-mellitus-Typ-2.html" (exactly)
