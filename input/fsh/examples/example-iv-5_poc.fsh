@@ -107,14 +107,14 @@ Usage: #example
 // * entry[=].resource = example-iv-5-poc-diagnostic-result-14
 // Diagnostic Results - Performer
 * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = example-iv-5-poc-diagnostic-result-performer-1-practitionerrole // Dr. Humpel, Amadeus Spital - Labor
+* entry[=].resource = example-iv-5-poc-diagnostic-result-4-performer-1-practitionerrole // Dr. Humpel, Amadeus Spital - Labor
 * entry[+].fullUrl = "urn:uuid:849c865f-b087-46cc-aad9-24a307fb3d0a"
-* entry[=].resource = example-iv-5-poc-diagnostic-result-performer-1-practitioner // Dr. Humpel
+* entry[=].resource = example-iv-5-poc-diagnostic-result-4-performer-1-practitioner // Dr. Humpel
 * entry[+].fullUrl = "urn:uuid:d45feefd-1020-47a2-9d7c-564fb82f2acc"
-* entry[=].resource = example-iv-5-poc-diagnostic-result-performer-1-organization // Amadeus Spital - Labor
+* entry[=].resource = example-iv-5-poc-diagnostic-result-4-performer-1-organization // Amadeus Spital - Labor
 // Diagnostic Results - Specimen
 * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
-* entry[=].resource = example-iv-5-poc-diagnostic-specimen-1  //Blutprobe
+* entry[=].resource = example-iv-5-poc-diagnostic-result-4-specimen-1  //Blutprobe
 
 // Vitalparameter (Vital Signs)
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
@@ -703,7 +703,7 @@ Usage: #inline
 // Diagnostic Results
 
 // Diagnostic Results - Performer - PractitionerRole
-Instance: example-iv-5-poc-diagnostic-result-performer-1-practitionerrole
+Instance: example-iv-5-poc-diagnostic-result-4-performer-1-practitionerrole
 InstanceOf: AtApsPractitionerRole
 Usage: #inline
 * practitioner = Reference(urn:uuid:849c865f-b087-46cc-aad9-24a307fb3d0a) "Dr. Humpel"
@@ -712,7 +712,7 @@ Usage: #inline
 * organization.type = "Organization"
 
 // Diagnostic Results - Performer - Practitioner
-Instance: example-iv-5-poc-diagnostic-result-performer-1-practitioner
+Instance: example-iv-5-poc-diagnostic-result-4-performer-1-practitioner
 InstanceOf: AtApsPractitioner
 Usage: #inline
 * identifier.system = "urn:oid:1.2.99.3.4.5.6"
@@ -725,7 +725,7 @@ Usage: #inline
 * name.prefix = "Dr."
 
 // Diagnostic Results - Performer - Organisation
-Instance: example-iv-5-poc-diagnostic-result-performer-1-organization
+Instance: example-iv-5-poc-diagnostic-result-4-performer-1-organization
 InstanceOf: AtApsOrganization
 Usage: #inline
 * identifier.system = "urn:ietf:rfc:3986"
@@ -746,12 +746,18 @@ Usage: #inline
 * address.country = "AUT"
 
 // Diagnostic Results - Specimen - Blut
-Instance: example-iv-5-poc-diagnostic-specimen-1
+Instance: example-iv-5-poc-diagnostic-result-4-specimen-1
 InstanceOf: AtApsSpecimen
 Usage: #inline
+* identifier.system = "urn:oid:1.2.99.3.4.5.6"
+* identifier.value = "BL-080212-02"
+* type = $sct#258580003 "Vollblut"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* status = $cs-specimen-status#unavailable "Unavailable"
-* type = $cs-sct#119297000 "Blutprobe"
+* subject.type = "Patient"
+* receivedTime = "2025-07-11T06:35:00+02:00"
+* collection.collectedDateTime = "2025-07-11T06:35:00+02:00"
+* collection.bodySite.coding[0] = $cs-v3-ActSite#LACF
+* collection.bodySite.coding[+] = $cs-v3-NullFlavor#OTH
 
 
 // Diagnostic Results Blut
@@ -786,7 +792,7 @@ Usage: #inline
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#2160-0 "Kreatinin in Serum"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectiveDateTime = "2025-03-17T09:30:00+01:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Dr. Humpel, Amadeus Spital - Labor"
 * valueQuantity = 1.2 'mg/dL' "mg/dL"
@@ -795,14 +801,23 @@ Usage: #inline
 Instance: example-iv-5-poc-diagnostic-result-4
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
+* identifier.system = "urn:oid:1.2.99.3.4.5.6"
+* identifier.value = "OBS-3-17"
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
 * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2025-07-10T08:00:00+01:00"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* effectiveDateTime = "2025-07-11T06:35:00+02:00"
+* issued = "2025-07-11T06:35:00+02:00"
 * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Dr. Humpel, Amadeus Spital - Labor"
+* performer.type = "PractitionerRole"
 * valueQuantity = 7.1 '%' "%"
 * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+* interpretation.coding[0] = $cs-v3-ObservationInterpretation#H
+* interpretation.coding[+] = $cs-v3-NullFlavor#OTH
+* referenceRange.low = 4.4 '%' "%"
+* referenceRange.high = 6.4 '%' "%"
+* referenceRange.type = $cs-referencerange-meaning#normal
 
 Instance: example-iv-5-poc-diagnostic-result-5
 InstanceOf: AtApsObservationResultsLaboratoryPathology
