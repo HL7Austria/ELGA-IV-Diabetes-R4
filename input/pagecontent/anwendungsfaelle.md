@@ -24,7 +24,7 @@ In den nächsten Tagen geht Anton in ein Labor um die angeordneten Werte ermitte
     
     Dr. Hausärztin vereinbart mit Anton einen Kontrolltermin in 3 Monaten. Alle Informationen sind in Antons ELGA-IV-Dokumentation ersichtlich([Patient Journey 4](Bundle-example-iv-4.html)).<br><br>
 
-><br>_Die **Fallkoordination** ist für Patientinnen und Patienten die erste Anlaufstelle für administrative Fragen und nicht-ärztliche Anliegen im Zusammenhang mit der chronischen Erkrankung. Sie stellt eine auf die individuellen und situationsbezogenen patientenspezifischen Bedürfnisse zugeschnittene transsektorale Versorgung sicher. Die Fallkoordination fungiert als Lotse für die Patientinnen und Patienten durch das Gesundheitssystem und hilft dabei, die richtige Anlaufstelle zu finden bzw. kann je nach entsprechender Ausbildung auch selbst Fragestellungen klären. Die Fallkoordination agiert im Rahmen ihrer berufsrechtlichen Kompetenzen und trägt dafür Sorge, dass die/der Patient:in die erforderlichen Leistungen erhält und in Anspruch nimmt, z.B. Kontrolluntersuchungen, Diabetesschulung oder Ernährungsberatung. <br><br>
+><br>_Die **Fallkoordination** ist für Patientinnen und Patienten die erste Anlaufstelle für administrative Fragen und nicht-ärztliche Anliegen im Zusammenhang mit der chronischen Erkrankung. Sie stellt eine auf die individuellen und situationsbezogenen patientenspezifischen Bedürfnisse zugeschnittene transsektorale Versorgung sicher. Die Fallkoordinationfungiert als Lotse für die Patientinnen und Patienten durch das Gesundheitssystem und hilft dabei, die richtige Anlaufstelle zu finden bzw. kann je nach entsprechender Ausbildung auch selbst Fragestellungen klären. Die Fallkoordinationagiert im Rahmen ihrer berufsrechtlichen Kompetenzen und trägt dafür Sorge, dass die/der Patient:in die erforderlichen Leistungen erhält und in Anspruch nimmt, z.B. Kontrolluntersuchungen, Diabetesschulung oder Ernährungsberatung. <br><br>
 Bei der **Versorgungscheckliste** handelt es sich um eine standardisierte Aufgabenliste für die Versorgung von Menschen mit Diabetes mellitus Typ 2, die zum Teil auch mit Mindestfrequenzen versehen ist. Diese Aufgabenliste orientiert sich an den bestehenden med. Leitlinien und enthält bspw. Parameter für Laboruntersuchungen, Arten von Kontrolluntersuchungen, Patientenschulungen oder Parameter zur Zielwertfestlegung. Diese Versorgungscheckliste ist eine Unterstützung für die Medizinischen Fallführung und dient ihr als Vorlage, um individuelle Behandlungspläne für ihre Patient:innen zu erstellen._<br><br>
 
 - **März – Juni 2025:** Anton beginnt mit der Medikamenteneinnahme, geht täglich länger mit dem Hund spazieren und macht sich einen Kontrolltermin bei seinem Augenarzt aus, bei dem er schon seit 20 Jahren wegen seiner Altersweitsichtigkeit in Behandlung ist. Anton weiß nicht, wo er die Patientenschulungen in Anspruch nehmen kann, und kontaktiert Herrn Nutrix, seinen Fallkoordinator. Herr Nutrix klärt ihn über die Möglichkeiten auf und vermittelt ihn an eine geeignete Stelle. Zeitgleich erkundigt sich Herr Nutrix, wie es ihm geht und ob Anton die Medikamente gut verträgt. Am nächsten Tag meldet sich Anton für eine Patientenschulung mit einer Ernährungsberatung an. Er besucht die Patientenschulung mit Ernährungsberatung. Anton vergisst darauf, dass er nach 3 Monaten mit der ausgestellten Laborzuweisung sein Blut untersuchen lassen sollte.<br><br>
@@ -68,40 +68,38 @@ style D fill:#BBDEFB,stroke-width:4px
 
 
 <pre class="mermaid">
-   gantt
+gantt
   title Patient Journey – Anton Testpatient (Diabetes Typ 2)
   dateFormat  YYYY-MM-DD
-  section März 2025
-  Erstkontakt mit Hausärztin             :done, a1, 2025-03-14, 1d
+  section März 2025 - Erstbesuch
+  Erstkontakt mit Hausärztin             :milestone, a1, 2025-03-14, 1d
   Blutzuckermessung + körperliche Untersuchung :done, a2, 2025-03-14, 1d
-  Laborzuweisung (HbA1c, Harn)           :done, a3, 2025-03-14, 1d
-  Laboruntersuchung                      :done, a4, after a3, 3d
+  Laborzuweisung (HbA1c, Harn)           :active, a3, 2025-03-14, 2025-03-17
+  Laboruntersuchung                      :active, a4, after a3, 2d
 
   section März 2025 – Folgeuntersuchung
-  Arztbesuch – Diagnose Diabetes Typ 2   :done, a5, 2025-03-22, 1d
-  Start integrierte Versorgung           :done, a6, 2025-03-22, 1d
-  Erstellen Behandlungsplan              :done, a7, 2025-03-22, 1d
-  Medikation Metformin                   :done, a8, 2025-03-22, 1d
-  Zuweisung Labor in 3 Monaten (Ziel HbA1c 6%) :done, a9, 2025-03-22, 1d
-  Zuweisung Augenarzt, Schulung, Ernährung :done, a10, 2025-03-22, 1d
+  Arztbesuch – Diagnose Diabetes Typ 2, Start Integrierte Versorgung   :milestone, a5, 2025-03-22, 1d
+  Erstellen Behandlungsplan                                      :done, a7, 2025-03-22, 1d
+  Medikamenteneinnahme (Metformin 1x täglich)               :active, b1, 2025-03-22, 2025-07-15
+  Zuweisung Labor in 3 Monaten (Ziel HbA1c 6%)          :active, a9, 2025-03-22, 2025-06-22
+  Zuweisung Augenarzt                                   :active, a10, 2025-03-22, 1d
+  Zuweisung Patientenschulung und Ernährungsberatung     :active, a10, 2025-03-22, 2025-04-02
 
-  section März – Juni 2025
-  Medikamenteneinnahme (Metformin 1x täglich) :active, b1, 2025-03-23, 2025-07-15
-  Bewegung (Spaziergänge)               :active, b2, 2025-03-23, 2025-07-15
+  section April 2025
+  Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II                    : milestone, 2025-04-02
+  Anpassung Lebensstil (Spaziergänge, Ernährung)               :active, b2, 2025-04-02, 2025-07-15
   Terminvereinbarung Augenarzt          :done, b3, 2025-04-01, 1d
-  Kontakt mit Fallkoordination (Schulung) :done, b4, 2025-04-10, 1d
-  Teilnahme an Patientenschulung & Ernährung :done, b5, 2025-04-15, 2d
-  Labor vergessen                       :crit, b6, 2025-06-15, 10d
-  Erinnerung durch Fallkoordination     :done, b7, 2025-07-10, 1d
+  Labor vergessen                       :crit, b6, 2025-06-22, 2025-07-07
+  Erinnerung Labor durch Fallkoordination    :milestone, b7, 2025-07-07, 1d
   Nachgeholte Laboruntersuchung         :done, b8, 2025-07-11, 1d
 
   section Juli 2025
-  Kontrolltermin bei Hausärztin         :done, c1, 2025-07-15, 1d
+  Kontrolltermin bei Hausärztin         :milestone, c1, 2025-07-15, 1d
   Laborergebnisse und Medikation prüfen :done, c2, 2025-07-15, 1d
-  Anpassung Metformin (2x täglich)      :done, c3, 2025-07-15, 1d
-  Statusaktualisierung im Behandlungsplan :done, c4, 2025-07-15, 1d
+  Zielwerte prüfen, Behandlungsplan aktualisieren          :done, a7, 2025-07-15, 1d
+  Anpassung Metformin (2x täglich)      :active, c3, 2025-07-15, 2025-12-31
+  Anpassung Lebensstil (Spaziergänge, Ernährung)          :active, c4, 2025-07-15, 2025-12-31
 
   section Weiterer Verlauf
-  Vierteljährliche Kontrolltermine      :active, d1, 2025-10-15, 2025-12-31
-  Regelmäßige Schulung/Beratung         :active, d2, 2025-07-15, 2025-12-31
+  Regelmäßige Kontrolltermine und Schulungen         :active, d2, 2025-07-15, 2025-12-31
 </pre>
