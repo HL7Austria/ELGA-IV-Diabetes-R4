@@ -437,7 +437,7 @@ Usage: #inline
 * id = "001"
 * identifier[socialSecurityNumber].type = $cs-v2-0203#SS "Social Security number"
 * identifier[socialSecurityNumber].system = "urn:oid:1.2.40.0.10.1.4.3.1"
-* identifier[socialSecurityNumber].value = "1234121153"
+* identifier[socialSecurityNumber].value = "1236121153"
 * identifier[socialSecurityNumber].assigner.display = "Dachverband der österreichischen Sozialversicherungsträger"
 * identifier[localPatientId].type = $cs-v2-0203#PI "Patient internal identifier"
 * identifier[localPatientId].system = "urn:oid:1.2.3.4.5"

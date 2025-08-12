@@ -1,4 +1,4 @@
-Instance: example-iv-poc-author-device-aps
+Instance: example-iv-author-device-aps
 InstanceOf: AtApsDevice
 Usage: #example
 * id = "example-iv-poc-author-device-aps-001"
