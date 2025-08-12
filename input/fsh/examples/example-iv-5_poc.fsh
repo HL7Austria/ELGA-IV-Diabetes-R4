@@ -115,9 +115,13 @@ Usage: #example
 * entry[+].fullUrl = "urn:uuid:26d8cedc-b202-4620-84c0-d5c7d602ac66"
 
 // Diagnostic Results - Specimen
+* entry[+].fullUrl = "urn:uuid:7c5eb3b3-94a7-49c8-978c-8accb79107d5"
+* entry[=].resource = example-iv-5-poc-diagnosticreport-1-specimen-1  //Blutprobe
 * entry[+].fullUrl = "urn:uuid:523614bb-79a7-44b4-b8fd-e2dc8ba28cbd"
 * entry[=].resource = example-iv-5-poc-diagnosticreport-2-specimen-1  //Blutprobe
 * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
+* entry[=].resource = example-iv-5-poc-diagnosticreport-4-specimen-1  //Blutprobe
+* entry[+].fullUrl = "6dcc6f6f-d8a7-492f-82d0-eb42b918514b"
 * entry[=].resource = example-iv-5-poc-diagnosticreport-4-specimen-1  //Blutprobe
 
 // Vitalparameter (Vital Signs)
@@ -751,6 +755,20 @@ Usage: #inline
 * address.country = "AUT"
 
 // Diagnostic Results - Specimen - Blut
+Instance: example-iv-5-poc-diagnosticreport-1-specimen-1
+InstanceOf: AtApsSpecimen
+Usage: #inline
+* identifier.system = "urn:oid:1.2.40.0.10.99.1.2.3.4.500"
+* identifier.value = "2394583"
+* identifier.assigner.display = "Dr. Hanna Hausärztin - Specimen"
+* type = $sct#258580003
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* subject.type = "Patient"
+* receivedTime = "2025-03-14T08:00:00+01:00"
+* collection.collectedDateTime = "2025-03-14T08:00:00+01:00"
+* collection.bodySite.coding[0] = $cs-v3-ActSite#LACF
+* collection.bodySite.coding[+] = $cs-v3-NullFlavor#OTH
+
 Instance: example-iv-5-poc-diagnosticreport-2-specimen-1
 InstanceOf: AtApsSpecimen
 Usage: #inline
@@ -777,20 +795,43 @@ Usage: #inline
 * collection.bodySite.coding[0] = $cs-v3-ActSite#LACF
 * collection.bodySite.coding[+] = $cs-v3-NullFlavor#OTH
 
+Instance: example-iv-5-poc-diagnosticreport-5-specimen-1
+InstanceOf: AtApsSpecimen
+Usage: #inline
+* identifier.system = "urn:oid:1.2.40.0.10.99.1.2.3.4.500"
+* identifier.value = "5930495"
+* identifier.assigner.display = "Dr. Hanna Hausärztin - Specimen"
+* type = $sct#258580003
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* subject.type = "Patient"
+* receivedTime = "2025-07-15T08:00:00+01:00"
+* collection.collectedDateTime = "2025-07-15T08:00:00+01:00"
+* collection.bodySite.coding[0] = $cs-v3-ActSite#LACF
+* collection.bodySite.coding[+] = $cs-v3-NullFlavor#OTH
+
 
 // Diagnostic Results Blut
 Instance: example-iv-5-poc-diagnostic-result-1
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
+* identifier.system = "urn:oid:1.2.40.0.10.99.1.2.3.4.600"
+* identifier.value = "OBS-3-17"
+* identifier.assigner.display = "Dr. Hanna Hausärztin - Laboruntersuchungen"
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
-* code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
+* code = $cs-loinc#32016-8 "Glucose Kap."
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * effectiveDateTime = "2025-03-14T08:00:00+01:00"
+* issued = "2025-03-14T09:00:00+01:00"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performer.type = "PractitionerRole"
 * valueQuantity = 250 'mg/dL' "mg/dL"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
-* specimen.display = "Blutprobe"
+* specimen = Reference(urn:uuid:7c5eb3b3-94a7-49c8-978c-8accb79107d5) "Blutprobe"
+* interpretation.coding[0] = $cs-v3-ObservationInterpretation#HH
+* interpretation.coding[+] = $cs-v3-NullFlavor#OTH
+* referenceRange.low = 74 'mg/dL' "mg/dL"
+* referenceRange.high = 106 'mg/dL' "mg/dL"
+* referenceRange.type = $cs-referencerange-meaning#normal
 
 Instance: example-iv-5-poc-diagnostic-result-2
 InstanceOf: AtApsObservationResultsLaboratoryPathology
@@ -861,14 +902,24 @@ Usage: #inline
 Instance: example-iv-5-poc-diagnostic-result-5
 InstanceOf: AtApsObservationResultsLaboratoryPathology
 Usage: #inline
+* identifier.system = "urn:oid:1.2.40.0.10.99.1.2.3.4.600"
+* identifier.value = "OBS-3-17"
+* identifier.assigner.display = "Dr. Hanna Hausärztin - Laboruntersuchungen"
 * status = #final
 * category = $cs-observation-category#laboratory "Laboratory"
-* code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
+* code = $cs-loinc#32016-8 "Glucose Kap."
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2025-07-05T08:00:00+01:00"
+* effectiveDateTime = "2025-07-15T08:00:00+01:00"
+* issued = "2025-07-15T09:00:00+01:00"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performer.type = "PractitionerRole"
 * valueQuantity = 200 'mg/dL' "mg/dL"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+* specimen = Reference(urn:uuid:6dcc6f6f-d8a7-492f-82d0-eb42b918514b) "Blutprobe"
+* interpretation.coding[0] = $cs-v3-ObservationInterpretation#HH
+* interpretation.coding[+] = $cs-v3-NullFlavor#OTH
+* referenceRange.low = 74 'mg/dL' "mg/dL"
+* referenceRange.high = 106 'mg/dL' "mg/dL"
+* referenceRange.type = $cs-referencerange-meaning#normal
 
 
 // // Diagnostic Results - Specimen Urin
