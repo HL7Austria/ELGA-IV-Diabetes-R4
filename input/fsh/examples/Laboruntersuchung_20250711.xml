@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ELGA_Stylesheet_v1.0.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pharm="urn:ihe:pharm:medication" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:ips="urn:hl7-org:ips" xmlns:hl7at="urn:hl7-at:v3">
+    <realmCode code="AT"/>
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <templateId root="1.2.40.0.34.6.0.11.0.1"/>
+    <templateId root="1.2.40.0.34.7.4.9.3"/>
+    <templateId root="1.2.40.0.34.6.0.11.0.11"/>
+    <id root="1.2.99.3.4.5.6.100" extension="122082.1" assigningAuthorityName="Amadeus Spital - Laborbefund"/>
+    <code code="11502-2" displayName="Laboratory report" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+        <translation code="11502-2" displayName="Laboratory report" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+    </code>
+    <title>Allgemeiner Laborbefund</title>
+    <hl7at:terminologyDate value="20250706"/>
+    <hl7at:formatCode code="urn:hl7-at:lab:3.0.0+20211214" codeSystem="1.2.40.0.34.5.37" displayName="HL7 Austria Labor- und Mikrobiologiebefund 3.0.0+20211214"/>
+    <hl7at:practiceSettingCode code="F028" displayName="Labordiagnostik" codeSystem="1.2.40.0.34.5.12" codeSystemName="ELGA_PracticeSetting"/>
+    <effectiveTime value="20250711063500+0200"/>
+    <confidentialityCode code="N" displayName="normal" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7:Confidentiality"/>
+    <languageCode code="de-AT"/>
+    <setId root="1.2.99.3.4.5.6.100" extension="122082" assigningAuthorityName="Amadeus Spital - Laborbefund"/>
+    <versionNumber value="1"/>
+
+    <recordTarget>
+        <patientRole>
+            <id root="1.2.99.3.4.5.6.200" extension="99382345" assigningAuthorityName="Amadeus Spital - Patienten"/>
+            <id root="1.2.40.0.10.1.4.3.1" extension="1236121153" assigningAuthorityName="Dachverband der österreichischen Sozialversicherungsträger"/>
+            <addr use="HP">
+                <streetAddressLine>Rotenturmstraße 14</streetAddressLine>
+                <postalCode>1010</postalCode>
+                <city>Wien</city>
+                <country>AUT</country>
+            </addr>
+            <patient>
+                <name>
+                    <given>Anton</given>
+                    <family>Testpatient</family>
+                </name>
+                <administrativeGenderCode code="M" displayName="Male" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7:AdministrativeGender"/>
+                <birthTime value="19531112"/>
+                <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2" codeSystemName="HL7:MaritalStatus"/>
+            </patient>
+        </patientRole>
+    </recordTarget>
+
+    <author>
+        <functionCode code="OA" codeSystem="1.2.99.3.4.5.6.300" codeSystemName="Amadeus Spital - Funktionscodes" displayName="Diensthabender Oberarzt"/>
+        <time value="20250711103000+0200"/>
+        <assignedAuthor>
+            <id root="1.2.99.3.4.5.6.400" extension="1111" assigningAuthorityName="Amadeus Spital - Ärzte"/>
+            <code code="124" codeSystem="1.2.40.0.34.5.160" codeSystemName="ELGA_Fachaerzte" displayName="Fachärztin/Facharzt für Medizinische und Chemische Labordiagnostik"/>
+            <telecom use="WP" value="tel:+43.1.3453446.1111"/>
+            <assignedPerson>
+                <name>
+                    <prefix>Dr.</prefix>
+                    <family>Isabella</family>
+                    <given>Stern</given>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="1.2.99.3.4.5.6" assigningAuthorityName="GDA Index"/>
+                <name>Amadeus Spital - Labor</name>
+                <telecom value="tel:+43.1.3453446.0"/>
+                <telecom value="fax:+43.1.3453446.4674"/>
+                <telecom value="mailto:info@amadeusspital.at"/>
+                <telecom value="http:https://www.amadeusspital.at"/>
+                <addr>
+                    <streetName>Währinger Gürtel</streetName>
+                    <houseNumber>18-20</houseNumber>
+                    <postalCode>1090</postalCode>
+                    <city>Wien</city>
+                    <country>AUT</country>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <author>
+        <time value="20250711104000+0200"/>
+        <assignedAuthor>
+            <id nullFlavor="NI"/>
+            <assignedAuthoringDevice>
+                <manufacturerModelName>LAB-IS Manufacturer Ltd.</manufacturerModelName>
+                <softwareName>LIS-Haydn</softwareName>
+            </assignedAuthoringDevice>
+            <representedOrganization>
+                <id root="1.2.99.3.4.5.6" assigningAuthorityName="GDA Index"/>
+                <name>Amadeus Spital - Labor</name>
+                <telecom value="tel:+43.1.3453446.0"/>
+                <telecom value="fax:+43.1.3453446.4674"/>
+                <telecom value="mailto:info@amadeusspital.at"/>
+                <telecom value="http:https://www.amadeusspital.at"/>
+                <addr>
+                    <streetName>Währinger Gürtel</streetName>
+                    <houseNumber>18-20</houseNumber>
+                    <postalCode>1090</postalCode>
+                    <city>Wien</city>
+                    <country>AUT</country>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="1.2.99.3.4.5.6" assigningAuthorityName="GDA Index"/>
+                <name>Amadeus Spital - Labor</name>
+                <telecom value="tel:+43.1.3453446.0"/>
+                <telecom value="fax:+43.1.3453446.4674"/>
+                <telecom value="mailto:info@amadeusspital.at"/>
+                <telecom value="http:https://www.amadeusspital.at"/>
+                <addr>
+                    <streetName>Währinger Gürtel</streetName>
+                    <houseNumber>18-20</houseNumber>
+                    <postalCode>1090</postalCode>
+                    <city>Wien</city>
+                    <country>AUT</country>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+
+    <legalAuthenticator>
+        <time value="20250711103500+0200"/>
+        <signatureCode code="S"/>
+        <assignedEntity>
+            <id root="1.2.99.3.4.5.6.400" extension="1111" assigningAuthorityName="Amadeus Spital - Ärzte"/>
+            <addr nullFlavor="UNK"/>
+            <assignedPerson>
+                <name>
+                    <prefix>Univ.-Prof.Dr.</prefix>
+                    <family>Sigrid</family>
+                    <given>Kollmann</given>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="1.2.99.3.4.5.6" assigningAuthorityName="GDA Index"/>
+                <name>Amadeus Spital - Labor</name>
+                <telecom value="tel:+43.1.3453446.0"/>
+                <telecom value="fax:+43.1.3453446.4674"/>
+                <telecom value="mailto:info@amadeusspital.at"/>
+                <telecom value="http:https://www.amadeusspital.at"/>
+                <addr>
+                    <streetName>Währinger Gürtel</streetName>
+                    <houseNumber>18-20</houseNumber>
+                    <postalCode>1090</postalCode>
+                    <city>Wien</city>
+                    <country>AUT</country>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+
+    <participant typeCode="REF">
+        <templateId root="1.2.40.0.34.6.0.11.1.42"/>
+        <templateId root="1.3.6.1.4.1.19376.1.3.3.1.6"/>
+        <time value="20250322090000+0100"/>
+        <associatedEntity classCode="PROV">
+            <id root="1.2.40.0.10.99.1.2.3.4" assigningAuthorityName="GDA Index"/>
+            <addr>
+                <streetAddressLine>Treustraße 38</streetAddressLine>
+                <city>Wien</city>
+                <postalCode>1200</postalCode>
+                <country>AUT</country>
+            </addr>
+            <telecom nullFlavor="UNK"/>
+            <associatedPerson>
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <family>Hausärztlich</family>
+                    <given>Hanna</given>
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+
+    <inFulfillmentOf typeCode="FLFS">
+        <order classCode="ACT" moodCode="RQO">
+            <id extension="121201-023" root="1.2.40.0.10.99.1.2.3.4" assigningAuthorityName="Dr. Hausärztlich"/>
+        </order>
+    </inFulfillmentOf>
+
+    <documentationOf>
+        <serviceEvent>
+            <id root="1.2.40.0.34.6.0.11.2.93" />
+            <code code="10" codeSystem="1.2.40.0.34.5.11" codeSystemName="ELGA_LaborparameterErgaenzung" displayName="Probeninformation"/>
+            <effectiveTime>
+                <low value="20250711062000+0200"/>
+                <high value="20250711103500+0200"/>
+            </effectiveTime>
+            <performer typeCode="PRF">
+                <templateId root="1.2.40.0.34.6.0.11.9.24"/>
+                <templateId root="1.3.6.1.4.1.19376.1.3.3.1.7"/>
+                <time value="20250711063500+0200"/>
+                <assignedEntity>
+                    <id root="1.2.99.3.4.5.6.400" extension="4444" assigningAuthorityName="Amadeus Spital - Ärzte"/>
+                    <addr nullFlavor="UNK"/>
+                    <telecom nullFlavor="UNK"/>
+                    <assignedPerson>
+                        <name>
+                            <prefix qualifier="AC">Dr.</prefix>
+                            <family>Humpel</family>
+                            <given>Florian</given>
+                        </name>
+                    </assignedPerson>
+                    <representedOrganization>
+                        <id root="1.2.99.3.4.5.6" assigningAuthorityName="GDA Index"/>
+                        <name>Amadeus Spital - Labor</name>
+                        <telecom value="tel:+43.1.3453446.0"/>
+                        <telecom value="fax:+43.1.3453446.4674"/>
+                        <telecom value="mailto:info@amadeusspital.at"/>
+                        <telecom value="http:https://www.amadeusspital.at"/>
+                        <addr>
+                            <streetName>Währinger Gürtel</streetName>
+                            <houseNumber>18-20</houseNumber>
+                            <postalCode>1090</postalCode>
+                            <city>Wien</city>
+                            <country>AUT</country>
+                        </addr>
+                    </representedOrganization>
+                </assignedEntity>
+            </performer>
+        </serviceEvent>
+    </documentationOf>
+
+    <documentationOf>
+        <serviceEvent>
+            <id root="1.2.40.0.34.6.0.11.2.102" />
+            <code code="500" codeSystem="1.2.40.0.34.5.11" codeSystemName="ELGA_LaborparameterErgaenzung" displayName="Klinische Chemie/Proteindiagnostik"/>
+            <effectiveTime>
+                <low value="20250711062000+0200"/>
+                <high value="20250711103500+0200"/>
+            </effectiveTime>
+        </serviceEvent>
+    </documentationOf>
+
+    <documentationOf>
+        <serviceEvent>
+            <id root="1.2.40.0.34.6.0.11.2.103" />
+            <code code="20" codeSystem="1.2.40.0.34.5.11" displayName="Befundbewertung" codeSystemName="ELGA_LaborparameterErgaenzung"/>
+            <effectiveTime>
+                <low value="20250711062000+0200"/>
+                <high value="20250711103500+0200"/>
+            </effectiveTime>
+        </serviceEvent>
+    </documentationOf>
+
+    <component typeCode="COMP">
+        <structuredBody classCode="DOCBODY">
+            <component typeCode="COMP">
+                <section classCode="DOCSECT">
+                    <templateId root="1.2.40.0.34.6.0.11.2.93"/>
+                    <code code="10" codeSystem="1.2.40.0.34.5.11" codeSystemName="ELGA_LaborparameterErgaenzung" displayName="Probeninformation"/>
+                    <title>Probeninformation</title>
+                    <text>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th styleCode="xELGA_colw:15">Material-ID</th>
+                                    <th styleCode="xELGA_colw:13">Probenentnahme</th>
+                                    <th styleCode="xELGA_colw:22">Untersuchtes Material</th>
+                                    <th styleCode="xELGA_colw:15">Probenentnahme durch</th>
+                                    <th styleCode="xELGA_colw:17">Probeneingang</th>
+                                    <th styleCode="xELGA_colw:19">Bemerkung Labor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ID="SPEC-1-1">
+                                    <td>BL-121201-02</td>
+                                    <td>11.07.2025 06:35</td>
+                                    <td>BLUT, fossa cubitalis l.</td>
+                                    <td>Dr. Humpel</td>
+                                    <td>11.07.2025 06:35</td>
+                                    <td/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.2.40.0.34.6.0.11.3.160"/>
+                            <code code="10" codeSystem="1.2.40.0.34.5.11" codeSystemName="ELGA_LaborparameterErgaenzung" displayName="Probeninformation"/>
+                            <statusCode code="completed"/>
+                            <entryRelationship typeCode="COMP">
+                                <procedure classCode="PROC" moodCode="EVN">
+                                    <templateId root="1.2.40.0.34.6.0.11.3.161"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.3.1.2"/>
+                                    <code code="33882-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Collection date of Specimen"/>
+                                    <effectiveTime value="20250711063500+0200"/>
+                                    <targetSiteCode code="LACF" codeSystem="2.16.840.1.113883.5.1052" codeSystemName="HL7:ActSite" displayName="left antecubital fossa"/>
+                                    <performer typeCode="PRF">
+                                        <templateId root="1.2.40.0.34.6.0.11.9.24"/>
+                                        <templateId root="1.3.6.1.4.1.19376.1.3.3.1.7"/>
+                                        <time value="20250711063500+0200"/>
+                                        <assignedEntity>
+                                            <id nullFlavor="NI"/>
+                                            <addr nullFlavor="UNK"/>
+                                            <telecom nullFlavor="UNK"/>
+                                            <assignedPerson>
+                                                <name>
+                                                    <family>Humpel</family>
+                                                    <given>Florian</given>
+                                                    <prefix qualifier="AC">Dr.</prefix>
+                                                </name>
+                                            </assignedPerson>
+                                            <representedOrganization>
+                                                <id root="1.2.99.3.4.5.6" assigningAuthorityName="GDA Index"/>
+                                                <name>Amadeus Spital - Labor</name>
+                                                <telecom value="tel:+43.1.3453446.0"/>
+                                                <telecom value="fax:+43.1.3453446.4674"/>
+                                                <telecom value="mailto:info@amadeusspital.at"/>
+                                                <telecom value="http:https://www.amadeusspital.at"/>
+                                                <addr>
+                                                    <streetName>Währinger Gürtel</streetName>
+                                                    <houseNumber>18-20</houseNumber>
+                                                    <postalCode>1090</postalCode>
+                                                    <city>Wien</city>
+                                                    <country>AUT</country>
+                                                </addr>
+                                            </representedOrganization>
+                                        </assignedEntity>
+                                    </performer>
+                                    <participant typeCode="PRD">
+                                        <participantRole classCode="SPEC">
+                                            <id extension="BL-121201-02" root="1.2.99.3.4.5.6.500" assigningAuthorityName="Amadeus Spital - Specimen"/>
+                                            <playingEntity>
+                                                <code code="258580003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Whole blood sample"/>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship typeCode="COMP">
+                                        <act classCode="ACT" moodCode="EVN">
+                                            <templateId root="1.2.40.0.34.6.0.11.3.162"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.3.1.3"/>
+                                            <code code="SPRECEIVE" codeSystem="1.3.5.1.4.1.19376.1.5.3.2"/>
+                                            <effectiveTime value="20250711063500+0200"/>
+                                        </act>
+                                    </entryRelationship>
+                                </procedure>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+
+            <component typeCode="COMP">
+                <section classCode="DOCSECT">
+                    <templateId root="1.2.40.0.34.6.0.11.2.102"/>
+                    <code code="500" codeSystem="1.2.40.0.34.5.11" codeSystemName="ELGA_LaborparameterErgaenzung" displayName="Klinische Chemie/Proteindiagnostik"/>
+                    <title>Klinische Chemie/Proteindiagnostik</title>
+                    <text>
+                        <paragraph styleCode="xELGA_h3">Klinische Chemie</paragraph>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th styleCode="xELGA_colw:40">Analyse</th>
+                                    <th>Ergebnis</th>
+                                    <th>Einheit</th>
+                                    <th>Referenzbereiche</th>
+                                    <th styleCode="xELGA_colw:10">Interpretation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ID="OBS-3-17" styleCode="xELGA_red">
+                                    <td>Hämoglobin A1c</td>
+                                    <td>7.1</td>
+                                    <td>%</td>
+                                    <td ID="OBSREF-3-17">4.4-6.4</td>
+                                    <td>+</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <templateId root="1.2.40.0.34.6.0.11.3.25"/>
+                        <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+                        <act classCode="ACT" moodCode="EVN">
+                            <code code="500" codeSystem="1.2.40.0.34.5.11" codeSystemName="ELGA_LaborparameterErgaenzung" displayName="Klinische Chemie/Proteindiagnostik"/>
+                            <statusCode code="completed"/>
+                            <entryRelationship typeCode="COMP">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    <templateId root="1.2.40.0.34.6.0.11.3.26"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.3.1.4"/>
+                                    <code code="05180" codeSystem="1.2.40.0.34.5.11" codeSystemName="ELGA_LaborparameterErgaenzung" displayName="Klinische Chemie"/>
+                                    <statusCode code="completed"/>
+                                    <component typeCode="COMP">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="1.2.40.0.34.6.0.11.3.27"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                                            <id extension="OBS-3-17" root="1.2.99.3.4.5.6.600" assigningAuthorityName="Amadeus Spital - Laboruntersuchungen"/>
+                                            <code code="4548-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Hämoglobin A1c"/>
+                                            <text>
+                                                <reference value="#OBS-3-17"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20250711063500+0200"/>
+                                            <value unit="%" value="7.1" xsi:type="PQ"/>
+                                            <interpretationCode code="H" codeSystemName="HL7:ObservationInterpretation" codeSystem="2.16.840.1.113883.5.83" displayName="Normal"/>
+                                            <referenceRange typeCode="REFV">
+                                                <observationRange classCode="OBS" moodCode="EVN.CRT">
+                                                    <text>
+                                                        <reference value="#OBSREF-3-17"/>
+                                                    </text>
+                                                    <value xsi:type="IVL_PQ">
+                                                        <low value="4.4" unit="%"/>
+                                                        <high value="6.4" unit="%"/>
+                                                    </value>
+                                                    <interpretationCode code="N" codeSystemName="HL7:ObservationInterpretation" codeSystem="2.16.840.1.113883.5.83" displayName="Normal"/>
+                                                </observationRange>
+                                            </referenceRange>
+                                        </observation>
+                                    </component>
+                                </organizer>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+
+            <component typeCode="COMP">
+                <section classCode="DOCSECT">
+                    <templateId root="1.2.40.0.34.6.0.11.2.103"/>
+                    <code code="20" codeSystem="1.2.40.0.34.5.11" displayName="Befundbewertung" codeSystemName="ELGA_LaborparameterErgaenzung"/>
+                    <title>Befundbewertung</title>
+                    <text>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Befundbewertung</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <paragraph>
+                                            <content ID="commonComment1">Leicht erhöhter HbA1c.</content>
+                                        </paragraph>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.2.40.0.34.6.0.11.3.11"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.40"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                            <code code="48767-8" displayName="Annotation comment" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                            <text>
+                                <reference value="#commonComment1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>
