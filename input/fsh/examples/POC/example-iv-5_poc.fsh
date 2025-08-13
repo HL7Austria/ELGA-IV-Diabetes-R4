@@ -181,7 +181,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * date = "2025-03-22T11:01:30+01:00"
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
-* title = "Patient Summary"
+* title = "Austrian Patient Summary"
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
 * extension[countryOfAffiliation].valueString = "AT"
 
@@ -372,11 +372,11 @@ Usage: #inline
 * goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 * activity[0].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111) "Task Augenuntersuchung"
-* activity[0].reference.display = "Task Augenuntersuchung"
+// * activity[0].reference.display = "Task Augenuntersuchung"
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c) "Task Patientenschulung und Ernährungsberatung"
-* activity[+].reference.display = "Task Patientenschulung und Ernährungsberatung"
+// * activity[+].reference.display = "Task Patientenschulung und Ernährungsberatung"
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699) "Angeforderte Laboruntersuchung"  // neue Laboruntersuchung
-* activity[+].reference.display = "Angeforderte Laboruntersuchung"
+// * activity[+].reference.display = "Angeforderte Laboruntersuchung"
 * activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) "Abgeschlossene Laboruntersuchung"  // vom Standard Behanldungsplan
 //* activity[+].outcomeReference = Reference(urn:uuid:39cd75da-3333-46a9-a703-89d8b65ae555) "Zielwerte Hba1c"
 
@@ -522,8 +522,7 @@ Usage: #inline
 * lifecycleStatus = #proposed
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-* category.coding[0] = $goal-category#dietary "Dietary"
-* category.text = "Diät"
+* category.coding[0] = $goal-category#dietary "Diät"
 * priority = $goal-priority#high-priority "hoch"
 //* priority.text = "hoch"
 * description.text = "Hämoglobin A1c stabilisieren"
@@ -544,10 +543,8 @@ Usage: #inline
 * lifecycleStatus = #proposed
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-* category.coding[0] = $goal-category#behavioral "Behavioral"
-* category.text = "Verhalten"
-* priority = $goal-priority#high-priority "high-priority"
-* priority.text = "hoch"
+* category.coding[0] = $goal-category#behavioral "Verhalten"
+* priority = $goal-priority#high-priority "hoch"
 * description.text = "Mindestens 30 Minuten pro Tag Sport treiben"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * startDate = "2025-03-22"
@@ -1144,9 +1141,9 @@ Usage: #inline
 Instance: example-iv-5-poc-practitioner-1
 InstanceOf: AtApsPractitioner
 Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
 * name.family = "Hausärztin"
 * name.given[0] = "Hanna"
@@ -1158,9 +1155,9 @@ Usage: #inline
 Instance: example-iv-5-poc-careteam-fallkoordination
 InstanceOf: AtApsPractitioner
 Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "DGKP"
 * name.family = "Nutrix"
 * name.given[0] = "Roman"
@@ -1184,9 +1181,9 @@ Usage: #inline
 Instance: example-iv-5-poc-practitioner-iv
 InstanceOf: AtApsPractitioner
 Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
+* identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
 * name.family = "IV Diätologin"
 * name.given[0] = "Melanie"
@@ -1195,7 +1192,6 @@ Usage: #inline
 * address.line = "Praterstern 5"
 
 // Patient
-
 Instance: example-iv-5-poc-patient
 InstanceOf: AtApsPatient
 Usage: #inline
@@ -1210,8 +1206,8 @@ Usage: #inline
 * identifier[localPatientId].assigner.display = "Ein GDA in Österreich"
 * name.family = "Testpatient"
 * name.given[0] = "Anton"
-* gender = #male // 1..1 in AT Core
-* birthDate = "1953-11-12" // 1..1 in IPS
+* gender = #male
+* birthDate = "1953-11-12"
 * address.line = "Rotenturmstraße 14"
 * address.use = #home
 * address.city = "Wien"

@@ -630,7 +630,6 @@ Usage: #inline
 // * achievementStatus.text = "In Progress"
 * category.coding[0] = $goal-category#behavioral "Verhalten"
 * priority = $goal-priority#high-priority "hoch"
-//* priority.text = "hoch"
 * description.text = "Mindestens 30 Minuten pro Tag Sport treiben"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * startDate = "2025-03-22"
