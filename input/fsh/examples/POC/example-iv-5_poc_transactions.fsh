@@ -119,42 +119,49 @@ Usage: #example
 * entry[=].request.url = "Immunization"
 
 // Diagnostic Results
-* entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
-* entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-1 // Blutzuckerwert 
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
+// * entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-1 // Blutzuckerwert
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
 
-* entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"
-* entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-2 // HbA1c Wert
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"
+// * entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-2 // HbA1c Wert
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
 
-* entry[+].fullUrl = "urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"
-* entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-3 // Kreatininwert
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"
+// * entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-3 // Kreatininwert
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
 
-* entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f92"
-* entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-4 // HbA1c Kontrolle
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f92"
+// * entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-4 // HbA1c Kontrolle
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
 
-* entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd655"
-* entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-5 // Blutzuckerwert Kontrolle
-* entry[=].request.method = #POST
-* entry[=].request.url = "Immunization"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd655"
+// * entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-5 // Blutzuckerwert Kontrolle
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
 
 // Diagnostic Results - Performer
-* entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
-* entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-performer-1
-* entry[=].request.method = #POST
-* entry[=].request.url = "Organization"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
+// * entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-result-performer-1
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Organization"
 
 // Diagnostic Results - Specimen
-* entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
-* entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-specimen-1  //Blutprobe
-* entry[=].request.method = #POST
-* entry[=].request.url = "Specimen"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
+// * entry[=].resource = example-iv-5-poc-transcation-oc-diagnostic-specimen-1  //Blutprobe
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Specimen"
 
 // Vitalparameter (Vital Signs)
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
@@ -783,96 +790,103 @@ Usage: #inline
 // Diagnostic Results
 
 // Diagnostic Results - Performer
-Instance: example-iv-5-poc-transcation-oc-diagnostic-result-performer-1
-InstanceOf: AtApsOrganization
-Usage: #inline
-// * identifier.system = "urn:ietf:rfc:3986"
-// * identifier.value = "urn:oid:1.2.40.0.34.99.4613"
-// * identifier.assigner.display = "Bundesministerium für Gesundheit"
-* name = "Amadeus Spital - Labor"
-* telecom[0].system = #phone
-* telecom[=].value = "+43.1.3453446.0"
-* telecom[+].system = #fax
-* telecom[=].value = "+43.1.3453446.4674"
-* telecom[+].system = #email
-* telecom[=].value = "info@amadeusspital.at"
-* telecom[+].system = #url
-* telecom[=].value = "https://www.amadeusspital.at"
-* address.line = "Währinger Gürtel 18-20"
-* address.city = "Wien"
-* address.postalCode = "1090"
-* address.country = "AUT"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// Instance: example-iv-5-poc-transcation-oc-diagnostic-result-performer-1
+// InstanceOf: AtApsOrganization
+// Usage: #inline
+// // * identifier.system = "urn:ietf:rfc:3986"
+// // * identifier.value = "urn:oid:1.2.40.0.34.99.4613"
+// // * identifier.assigner.display = "Bundesministerium für Gesundheit"
+// * name = "Amadeus Spital - Labor"
+// * telecom[0].system = #phone
+// * telecom[=].value = "+43.1.3453446.0"
+// * telecom[+].system = #fax
+// * telecom[=].value = "+43.1.3453446.4674"
+// * telecom[+].system = #email
+// * telecom[=].value = "info@amadeusspital.at"
+// * telecom[+].system = #url
+// * telecom[=].value = "https://www.amadeusspital.at"
+// * address.line = "Währinger Gürtel 18-20"
+// * address.city = "Wien"
+// * address.postalCode = "1090"
+// * address.country = "AUT"
 
 // Diagnostic Results - Specimen - Blut
-Instance: example-iv-5-poc-transcation-oc-diagnostic-specimen-1
-InstanceOf: AtApsSpecimen
-Usage: #inline
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* status = $cs-specimen-status#unavailable "Unavailable"
-* type = $cs-sct#119297000 "Blutprobe"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// Instance: example-iv-5-poc-transcation-oc-diagnostic-specimen-1
+// InstanceOf: AtApsSpecimen
+// Usage: #inline
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * status = $cs-specimen-status#unavailable "Unavailable"
+// * type = $cs-sct#119297000 "Blutprobe"
 
 
 // Diagnostic Results Blut
-Instance: example-iv-5-poc-transcation-oc-diagnostic-result-1
-InstanceOf: AtApsObservationResultsLaboratoryPathology
-Usage: #inline
-* status = #final
-* category = $cs-observation-category#laboratory "Laboratory"
-* code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2025-03-14T08:00:00+01:00"
-* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* valueQuantity = 250 'mg/dL' "mg/dL"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
-* specimen.display = "Blutprobe" 
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// Instance: example-iv-5-poc-transcation-oc-diagnostic-result-1
+// InstanceOf: AtApsObservationResultsLaboratoryPathology
+// Usage: #inline
+// * status = #final
+// * category = $cs-observation-category#laboratory "Laboratory"
+// * code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * effectiveDateTime = "2025-03-14T08:00:00+01:00"
+// * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+// * valueQuantity = 250 'mg/dL' "mg/dL"
+// * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+// * specimen.display = "Blutprobe"
 
-Instance: example-iv-5-poc-transcation-oc-diagnostic-result-2
-InstanceOf: AtApsObservationResultsLaboratoryPathology
-Usage: #inline
-* status = #final
-* category = $cs-observation-category#laboratory "Laboratory"
-* code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2025-03-17T09:30:00+01:00"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
-* valueQuantity = 8.1 '%' "%"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// Instance: example-iv-5-poc-transcation-oc-diagnostic-result-2
+// InstanceOf: AtApsObservationResultsLaboratoryPathology
+// Usage: #inline
+// * status = #final
+// * category = $cs-observation-category#laboratory "Laboratory"
+// * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+// * effectiveDateTime = "2025-03-17T09:30:00+01:00"
+// * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+// * valueQuantity = 8.1 '%' "%"
+// * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
-Instance: example-iv-5-poc-transcation-oc-diagnostic-result-3
-InstanceOf: AtApsObservationResultsLaboratoryPathology
-Usage: #inline
-* status = #final
-* category = $cs-observation-category#laboratory "Laboratory"
-* code = $cs-loinc#2160-0 "Kreatinin in Serum"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2025-03-17T09:30:00+01:00"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
-* valueQuantity = 1.2 'mg/dL' "mg/dL"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// Instance: example-iv-5-poc-transcation-oc-diagnostic-result-3
+// InstanceOf: AtApsObservationResultsLaboratoryPathology
+// Usage: #inline
+// * status = #final
+// * category = $cs-observation-category#laboratory "Laboratory"
+// * code = $cs-loinc#2160-0 "Kreatinin in Serum"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+// * effectiveDateTime = "2025-03-17T09:30:00+01:00"
+// * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+// * valueQuantity = 1.2 'mg/dL' "mg/dL"
+// * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
-Instance: example-iv-5-poc-transcation-oc-diagnostic-result-4
-InstanceOf: AtApsObservationResultsLaboratoryPathology
-Usage: #inline
-* status = #final
-* category = $cs-observation-category#laboratory "Laboratory"
-* code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
-* effectiveDateTime = "2025-07-10T08:00:00+01:00"
-* performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
-* valueQuantity = 7.1 '%' "%"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// Instance: example-iv-5-poc-transcation-oc-diagnostic-result-4
+// InstanceOf: AtApsObservationResultsLaboratoryPathology
+// Usage: #inline
+// * status = #final
+// * category = $cs-observation-category#laboratory "Laboratory"
+// * code = $cs-loinc#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8)
+// * effectiveDateTime = "2025-07-10T08:00:00+01:00"
+// * performer = Reference(urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6) "Amadeus Spital - Labor"
+// * valueQuantity = 7.1 '%' "%"
+// * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
-Instance: example-iv-5-poc-transcation-oc-diagnostic-result-5
-InstanceOf: AtApsObservationResultsLaboratoryPathology
-Usage: #inline
-* status = #final
-* category = $cs-observation-category#laboratory "Laboratory"
-* code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* effectiveDateTime = "2025-04-05T08:00:00+01:00"
-* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* valueQuantity = 200 'mg/dL' "mg/dL"
-* specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// Instance: example-iv-5-poc-transcation-oc-diagnostic-result-5
+// InstanceOf: AtApsObservationResultsLaboratoryPathology
+// Usage: #inline
+// * status = #final
+// * category = $cs-observation-category#laboratory "Laboratory"
+// * code = $cs-loinc#32016-8 "Glucose im kapillaren Blut 1h postprandial"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * effectiveDateTime = "2025-04-05T08:00:00+01:00"
+// * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+// * valueQuantity = 200 'mg/dL' "mg/dL"
+// * specimen = Reference(urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7) "Blutprobe"
 
 
 // // Diagnostic Results - Specimen Urin
