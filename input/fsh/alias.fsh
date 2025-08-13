@@ -71,6 +71,9 @@ Alias: $cs-allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/a
 Alias: $cs-v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $cs-allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $cs-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason
+Alias: $cs-v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
+Alias: $cs-v3-ActSite = http://terminology.hl7.org/CodeSystem/v3-ActSite
+Alias: $cs-referencerange-meaning = http://terminology.hl7.org/CodeSystem/referencerange-meaning
 // termgit.elga.gv.at
 Alias: $cs-asp-liste = https://termgit.elga.gv.at/CodeSystem/asp-liste
 Alias: $cs-elga-laborparameterergaenzung = https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung
