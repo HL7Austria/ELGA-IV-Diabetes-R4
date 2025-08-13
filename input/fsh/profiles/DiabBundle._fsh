@@ -1,4 +1,4 @@
-Profile: DiabBundle
+Profile: AtApsBundle
 Parent: AtApsBundle
 Id: diab-bundle
 Title: "Diab Bundle"
@@ -13,7 +13,7 @@ Description: "Diabetes Bundle, abgeleitet von der APS."
 // * entry ^slicing.ordered = false
 
 //* entry contains
-//    DiabCareplan 0..*
+//    AtApsCarePlan 0..*
 
-* entry[CarePlan].resource 1..
-* entry[CarePlan].resource only DiabCareplan
+* entry[carePlan].resource 1..
+* entry[carePlan].resource only AtApsCarePlan

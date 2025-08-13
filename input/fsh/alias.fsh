@@ -45,7 +45,9 @@ Alias: $elga-specimentype = https://termgit.elga.gv.at/ValueSet/elga-specimentyp
 Alias: $eimpf-impfstoffe = https://termgit.elga.gv.at/ValueSet/eimpf-impfstoffe
 Alias: $eimpf-historischeimpfstoffe = https://termgit.elga.gv.at/ValueSet/eimpf-historischeimpfstoffe
 
-
+Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
+Alias: $goal-priority = http://terminology.hl7.org/CodeSystem/goal-priority
+Alias: $goal-category = http://terminology.hl7.org/CodeSystem/goal-category
 
 
 
