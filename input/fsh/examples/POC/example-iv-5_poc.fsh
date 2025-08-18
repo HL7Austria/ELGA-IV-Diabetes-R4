@@ -522,7 +522,8 @@ Usage: #inline
 * lifecycleStatus = #proposed
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-* category.coding[0] = $goal-category#dietary "Diät"
+* category[0] = $goal-category#dietary "Dietary"
+* category[0].text = "Diät"
 * priority = $goal-priority#high-priority "hoch"
 //* priority.text = "hoch"
 * description.text = "Hämoglobin A1c stabilisieren"
@@ -560,16 +561,36 @@ Instance: example-iv-5-poc-medicationplan-1
 InstanceOf: AtApsMedicationRequest
 Usage: #inline
 * status = #active
-* intent = #plan
+* intent = #order
 * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-//* supportingInformation
-* authoredOn = "2016-11-02T11:00:05+02:00"
+* authoredOn = "2025-07-15T11:00:05+02:00"
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
-* dosageInstruction.text = "S:1-0-1-0"
-* dosageInstruction.sequence = 2
+//* reasonCode.text = "Diabetes mellitus Typ 2" // SNOMED code
+* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2" 
+* note.text = "Kontrolltermin: 17.10.2025" 
+* dosageInstruction.additionalInstruction.text = "Nach dem Essen einnehmen"
+* dosageInstruction.timing.repeat.boundsPeriod.start = "2025-07-15"
+// * dosageInstruction.timing.repeat.boundsPeriod.end = "2025-06-01"
+// * dosageInstruction.text = "S:1-0-1-0"
+* dosageInstruction.timing.repeat.when[0] = #MORN
+* dosageInstruction.timing.repeat.when[+] = #EVE
+// * dosageInstruction.doseAndRate.doseQuantity.value = 1
+// * dosageInstruction.sequence = 2
+* dosageInstruction.doseAndRate.doseQuantity = 1 $cs-elga-medikationmengenart#{TAB} "Tablet"
 * dosageInstruction.route = $cs-sct#26643006 "Orale Einnahme"
-* dosageInstruction.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+// * status = #active
+// * intent = #plan
+// * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// //* supportingInformation
+// * authoredOn = "2016-11-02T11:00:05+02:00"
+// * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
+// * dosageInstruction.text = "S:1-0-1-0"
+// * dosageInstruction.sequence = 2
+// * dosageInstruction.route = $cs-sct#26643006 "Orale Einnahme"
+// * dosageInstruction.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
+
 
 
 Instance: example-iv-5-poc-medicationplan-2
@@ -588,34 +609,6 @@ Usage: #inline
 * dosageInstruction.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 //* dosageInstruction.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 
-
-// Instance: example-iv-5-poc-medication-summary-1
-// InstanceOf: AtApsMedicationStatement
-// Usage: #inline
-// * status = #active
-// * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectivePeriod.start = "2016-11-02T11:00:05+02:00"
-// * dosage.text = "S:1-0-1-0"
-// * dosage.sequence = 2
-// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// // * dosage.timing.repeat.dayOfWeek = #fri
-// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
-// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
-
-// Instance: example-iv-5-poc-medication-summary-2
-// InstanceOf: AtApsMedicationStatement
-// Usage: #inline
-// * status = #active
-// * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectivePeriod.start = "2025-07-15T08:00:00+01:00"
-// * dosage.text = "S:1-0-1-0"
-// * dosage.sequence = 2
-// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// // * dosage.timing.repeat.dayOfWeek = #fri
-// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
-// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 // Allergies and Intolerances
 
@@ -737,7 +730,7 @@ Usage: #inline
 * telecom[+].system = #email
 * telecom[=].value = "info@amadeusspital.at"
 * telecom[+].system = #url
-* telecom[=].value = "tps://www.amadeusspital.at"
+* telecom[=].value = "https://www.amadeusspital.at"
 * address.line.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
 * address.line.extension[=].valueString = "Währinger Gürtel"
 * address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
@@ -1095,7 +1088,8 @@ Instance: example-iv-5-poc-social-history-1
 InstanceOf: AtApsObservationTobaccoUse
 Usage: #inline
 * status = #final
-* category[0] = $cs-observation-category#social-history "Lebensstil"
+* category[0] = $cs-observation-category#social-history "Social History"
+* category[0].text = "Lebensstil"
 * code = $cs-loinc#72166-2 "Raucherstatus"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
@@ -1106,7 +1100,8 @@ Instance: example-iv-5-poc-social-history-2
 InstanceOf: AtApsObservationAlcoholUse
 Usage: #inline
 * status = #final
-* category[0] = $cs-observation-category#social-history "Lebensstil"
+* category[0] = $cs-observation-category#social-history "Social History"
+* category[0].text = "Lebensstil"
 * code = $cs-loinc#74013-4 "Alcoholic drinks per day"
 * code.coding.display = "Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
@@ -1119,8 +1114,8 @@ Instance: example-iv-5-poc-social-history-3
 InstanceOf: AtApsObservation
 Usage: #inline
 * status = #final
-// * category.coding[0] = $cs-observation-category#social-history "Lebensstil"
-* category[0] = $cs-observation-category#social-history "Lebensstil"
+* category[0] = $cs-observation-category#social-history "Social History"
+* category[0].text = "Lebensstil"
 * code = $cs-sct#61686008 "Körperliche Aktivität"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"

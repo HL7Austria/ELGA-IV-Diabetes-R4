@@ -509,7 +509,8 @@ Usage: #inline
 * lifecycleStatus = #proposed 
 // * achievementStatus = $goal-achievement#in-progress "In Progress"
 // * achievementStatus.text = "In Progress"
-* category.coding[0] = $goal-category#dietary "Diät"
+* category[0] = $goal-category#dietary "Dietary"
+* category[0].text = "Diät"
 * priority = $goal-priority#high-priority "hoch"
 //* priority.text = "hoch"
 * description.text = "Hämoglobin A1c stabilisieren"
@@ -933,7 +934,8 @@ Instance: example-iv-5-social-history-1
 InstanceOf: AtApsObservationTobaccoUse
 Usage: #inline
 * status = #final
-* category[0] = $cs-observation-category#social-history "Lebensstil"
+* category[0] = $cs-observation-category#social-history "Social History"
+* category[0].text = "Lebensstil"
 * code = $cs-loinc#72166-2 "Raucherstatus"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
@@ -944,7 +946,8 @@ Instance: example-iv-5-social-history-2
 InstanceOf: AtApsObservationAlcoholUse
 Usage: #inline
 * status = #final
-* category[0] = $cs-observation-category#social-history "Lebensstil"
+* category[0] = $cs-observation-category#social-history "Social History"
+* category[0].text = "Lebensstil"
 * code = $cs-loinc#74013-4 "Alcoholic drinks per day"
 * code.coding.display = "Alkoholische Getränke pro Tag, 1-2 Gläser Wein/Bier"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
@@ -958,7 +961,8 @@ InstanceOf: AtApsObservation
 Usage: #inline
 * status = #final
 // * category.coding[0] = $cs-observation-category#social-history "Lebensstil"
-* category[0] = $cs-observation-category#social-history "Lebensstil"
+* category[0] = $cs-observation-category#social-history "Social History"
+* category[0].text = "Lebensstil"
 * code = $cs-sct#61686008 "Körperliche Aktivität"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
