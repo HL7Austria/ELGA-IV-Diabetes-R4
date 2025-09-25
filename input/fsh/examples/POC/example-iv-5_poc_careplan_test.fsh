@@ -115,20 +115,24 @@ Usage: #example
 
 // CarePlan Diabetes - Augenuntersuchung - Task
 * entry[+].fullUrl = "urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111"
-* entry[=].resource = example-iv-5-poc-careplan-test-task-augenuntersuchung
+* entry[=].resource = example-iv-5-poc-careplan-test-servicereqest-augenuntersuchung
 // CarePlan Diabetes - Schulung - Task 
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c"
-* entry[=].resource = example-iv-5-poc-careplan-test-task-nutrition-training
+* entry[=].resource = example-iv-5-poc-careplan-test-servicerequest-nutrition-training
 // CarePlan Diabetes - Patientenschulung - Task 
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a7777"
 * entry[=].resource = example-iv-5-poc-careplan-test-task-patientenschulung
 
 // Task Laboruntersuchung // vom Default CarePlan
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234"
-* entry[=].resource = example-iv-5-poc-careplan-test-task-labor-1  // abgeschlossene Laboruntersuchung
+* entry[=].resource = example-iv-5-poc-careplan-test-servicerequest-labor-1  // abgeschlossene Laboruntersuchung
 // CarePlan Diabetes - Anforderung neue Laboruntersuchung 
 * entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699"
-* entry[=].resource = example-iv-5-poc-careplan-test-task-labor-2
+* entry[=].resource = example-iv-5-poc-careplan-test-servicerequest-labor-2 
+
+// CarePlan Diabetes - Task wöchentliche Gewichtskontrolle
+* entry[+].fullUrl = "urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae691"
+* entry[=].resource = example-iv-5-poc-careplan-test-task-gewicht-1
 
 // // Main-CarePlan Zielwerte Goals
 * entry[+].fullUrl = "urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae556"
@@ -251,8 +255,8 @@ Usage: #inline
 * section[sectionPlanOfCare].code = $cs-loinc#18776-5 "Behandlungsplan - Notiz"
 * section[sectionPlanOfCare].text.status = #generated
 * section[sectionPlanOfCare].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Behandlungsplan Diabetes: Patientenschulung und Ernährungsberatung, Augenuntersuchung, Laboruntersuchung, Zielvereinbarungen</p></div>"
-* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae333) "Behandlungsplan Diabetes - Main Plan"
-* section[sectionPlanOfCare].entry[carePlan][+] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae331) "Behandlungsplan Diätologie - Sub Plan"
+* section[sectionPlanOfCare].entry[carePlan][0] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae333) "Behandlungsplan" // Diabetes - Main Plan"
+//* section[sectionPlanOfCare].entry[carePlan][+] = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae331) "Behandlungsplan Diätologie - Sub Plan"
 
 
 // Lebensstil (Social History)
@@ -340,7 +344,7 @@ Usage: #inline
 * intent = #plan
 //* category.coding[0] = $cs-loinc#18776-5 // "Plan of care note" 
 //* category.text = "Behandlungsplan"  
-* title = "Gesamtbehandlungsplan"
+* title = "Behandlungsplan"
 * description = "Übersicht und Koordination aller Maßnahmen, Ziele und Termine"
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 //* period.start = "2025-03-23T08:00:00+01:00"
@@ -349,17 +353,17 @@ Usage: #inline
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 //* contributor[0] = Reference(urn:uuid:75db30ee-5555-486c-929a-c5126837f473) "Careteam von Dr. Hausärztin"  //Who provided the content of the care plan
 * careTeam = Reference(urn:uuid:75db30ee-5555-486c-929a-c5126837f473) "Careteam von Dr. Hausärztin"
-* goal[0] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae556) "Ziel Ernährung"
+* goal[0] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae556) "Ziel Ernährung"
 * goal[+] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae333) "Ziel Bewegung"
 * goal[+] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae777) "Ziel HbA1c"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 * activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a7777) //"Task Patientenschulung"
 * activity[=].reference.display = "Task Patientenschulung"
-* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c) //"Task Ernährungsberatung"
+* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c) //"ServiceRequest Ernährungsberatung"
 * activity[=].reference.display = "Task Ernährungsberatung"
-* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699) //"Laboruntersuchung"  
+* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae699) //"ServiceRequest Laboruntersuchung"  
 * activity[=].reference.display = "Laboruntersuchung"
-* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) //"Laboruntersuchung"  
+* activity[+].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65a1234) //"ServiceRequestLaboruntersuchung"  
 * activity[=].reference.display = "Laboruntersuchung"
 * activity[+].reference = Reference(urn:uuid:39cd75da-1111-46a9-a703-89d8b65ae111) //"ServiceRequest Augenuntersuchung"
 * activity[=].reference.display = "ServiceRequest Augenuntersuchung"
@@ -386,7 +390,7 @@ Usage: #inline
 // * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  
 // * contributor[0] = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
 // * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-// * goal[0] = Reference(urn:uuid:39cd75da-9999-46a9-a703-89d8b65ae556) "Ziel Ernährung"
+// * goal[0] = Reference(urn:uuid:39cd75da-4444-46a9-a703-89d8b65ae556) "Ziel Ernährung"
 // * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 // * activity[0].reference = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae62c) "Task Ernährungsberatung"
 
@@ -424,14 +428,14 @@ Usage: #inline
 
 // **********************************************************
 // CarePlan ServiceRequest Augenutersuchung
-Instance: example-iv-5-poc-careplan-test-task-augenuntersuchung
+Instance: example-iv-5-poc-careplan-test-servicereqest-augenuntersuchung
 InstanceOf: ServiceRequest
 Usage: #inline
 // * text.status = #additional
 // * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene augenärztliche Kontrolle auf diabetische Retinopathie</p>\n    </div>"
 * status = #active
 * intent = #plan 
-* category.coding[0] = $cs-sct#308479007 "Überweisung an Augenarzt/Augenärztin "  
+* category.coding[0] = $cs-sct#308479007 "Überweisung an Augenarzt/Augenärztin"  
 //* category.coding[0].display = "Überweisung an Augenarzt/Augenärztin"
 * priority = #routine 
 * code.coding[0] = $cs-sct#722161008 "Untersuchung der diabetischen Netzhaut"   // Task Type
@@ -470,34 +474,52 @@ Usage: #inline
 // * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 // * restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 
-
-// CarePlan Task Ernährungsberatung
-Instance: example-iv-5-poc-careplan-test-task-nutrition-training
-InstanceOf: Task
+// **********************************************************
+// CarePlan ServiceRequest Ernährungsberatung
+Instance: example-iv-5-poc-careplan-test-servicerequest-nutrition-training
+InstanceOf: ServiceRequest
 Usage: #inline
 // * text.status = #additional
 // * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Ernährungsberatung bei Diabetes mellitus Typ II</p>\n    </div>"
 * status = #completed
 * intent = #plan 
+* category.coding[0] = $cs-sct#183530004 "Überweisung zu Diabetologen/Diabetologin"  
 * priority = #routine 
 * code.coding[0] = $cs-sct#428274007 //"Ernährungsberatung bei Diabetes mellitus Typ II"  
 * code.coding[0].display = "Ernährungsberatung bei Diabetes mellitus Typ II"
-* description = "Diese Schulung beinhaltet detaillierte Ernährungsempfehlungen für Diabetes mellitus Typ II Patienten"
-// * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
-// * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
-* authoredOn = "2025-03-23T08:00:00+01:00"
-* lastModified = "2025-04-02T08:30:00+01:00"
-// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* authoredOn = "2025-03-22T08:00:00+01:00"
+* occurrencePeriod.start = "2025-03-22T08:00:00+00:00" // Datum der Auftragserteilung
+* occurrencePeriod.end = "2025-04-27T08:30:00+01:00" // Datum der Erledigung
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. Diätologin"  
 * performerType = $cs-sct#768827000 "Nutritionist" 
-* performerType.text = "Dr. IV Diätologin"
-* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
+* performerType.text = "Diätologin"
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-//* input[0].type =   TODO Goal
-//* input[0].value =   TODO Gol
-//* output[0].type =  TODO Dokument oder Valueset
-//* output[0].value =  TODO Dokument oder Valueset
+//* patientInstruction = "Machen Sie bitte einen Termin zur Ernährungsberatung aus."  
+
+// CarePlan Task Ernährungsberatung
+// Instance: example-iv-5-poc-careplan-test-task-nutrition-training
+// InstanceOf: Task
+// Usage: #inline
+// // * text.status = #additional
+// // * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Ernährungsberatung bei Diabetes mellitus Typ II</p>\n    </div>"
+// * status = #completed
+// * intent = #plan 
+// * priority = #routine 
+// * code.coding[0] = $cs-sct#428274007 //"Ernährungsberatung bei Diabetes mellitus Typ II"  
+// * code.coding[0].display = "Ernährungsberatung bei Diabetes mellitus Typ II"
+// * description = "Diese Schulung beinhaltet detaillierte Ernährungsempfehlungen für Diabetes mellitus Typ II Patienten"
+// // * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
+// // * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
+// * authoredOn = "2025-03-23T08:00:00+01:00"
+// * lastModified = "2025-04-02T08:30:00+01:00"
+// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+// * performerType = $cs-sct#768827000 "Nutritionist" 
+// * performerType.text = "Dr. IV Diätologin"
+// * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
+// * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 
 
 // CarePlan Task Patientenschulung
@@ -508,68 +530,136 @@ Usage: #inline
 //* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Patientenschulung bei Diabetes mellitus Typ II</p>\n    </div>"
 * status = #completed
 * intent = #plan 
+* category.coding[0] = $cs-sct#409073007 //"Education" 
+* category.text = "Laboruntersuchung"
 * priority = #routine 
-* code.coding[0] = $cs-sct#428274007 "Patientenschulung bei Diabetes mellitus Typ II"   // Task Type
-* code.coding[0].display = "Patientenschulung bei Diabetes mellitus Typ II"
-//* description = "Diese Schulung beinhaltet detaillierte Ernährungsinformationten für Diabetes mellitus Typ II Patienten"
+* code.coding[0] = $cs-sct#311401005 //"Edukation des Patienten / der Patientin"  
+* code.coding[0].display = "Diabetes Patientenschulung"
+* description = "Patient wurde in den Grundlagen des Diabetes mellitus Typ II geschult."
 // * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
 // * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
 * authoredOn = "2025-03-23T08:00:00+01:00"
-//* lastModified = "2025-04-02T08:30:00+01:00"
+* lastModified = "2025-03-23T08:30:00+01:00"
 * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-// * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-// * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f472) "Dr. IV Diätologin"
+* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 
+// CarePlan ServiceRequest Laboruntersuchung
+Instance: example-iv-5-poc-careplan-test-servicerequest-labor-1
+InstanceOf: ServiceRequest
+Usage: #inline
+// * text.status = #additional
+// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Laboruntersuchung</p>\n    </div>"
+* status = #active
+* intent = #plan 
+* category.coding[0] = $cs-sct#108252007 //"Laboratory procedure" 
+* category.text = "Überweisung Laboruntersuchung"
+* priority = #routine 
+* code.coding[0] = $cs-sct#15220000 //"Laboruntersuchung"
+* code.coding[0].display = "Laboruntersuchung"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* authoredOn = 2025-03-14T08:00:00+01:00
+* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+* performerType = $cs-sct#61246008 //"Laborfacharzt" 
+* performerType.text = "Laborfacharzt"
+* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+* patientInstruction = "Suchen Sie vor dem nächsten Kontrolltermin das Labor auf."  
 
 // Diabetes CarePlan abgeschlossene Laboruntersuchung
-Instance: example-iv-5-poc-careplan-test-task-labor-1
-InstanceOf: Task
-Usage: #inline
-* text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Laboruntersuchung</p>\n    </div>"
-* status = #completed
-* intent = #order
-* priority = #urgent
-* code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
-* code.text = "Laboruntersuchung"
-//* description = "Abklärung mögl. Diabetes II"
-// * executionPeriod.start = 2025-03-17T08:00:00+01:00 // Datum der Auftragserteilung
-// * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
-* authoredOn = 2025-03-14T08:00:00+01:00
-* lastModified = 2025-03-17T08:30:00+01:00
+// Instance: example-iv-5-poc-careplan-test-task-labor-1
+// InstanceOf: Task
+// Usage: #inline
+// * text.status = #additional
+// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Offene Laboruntersuchung</p>\n    </div>"
+// * status = #completed
+// * intent = #order
+// * priority = #urgent
+// * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
+// * code.text = "Laboruntersuchung"
+// //* description = "Abklärung mögl. Diabetes II"
+// // * executionPeriod.start = 2025-03-17T08:00:00+01:00 // Datum der Auftragserteilung
+// // * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
+// * authoredOn = 2025-03-14T08:00:00+01:00
+// * lastModified = 2025-03-17T08:30:00+01:00
 // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+// * performerType = $cs-sct#61246008 "Laborfacharzt" 
+// * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
+// //* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm" 
+
+// CarePlan ServiceRequest Laboruntersuchung
+Instance: example-iv-5-poc-careplan-test-servicerequest-labor-2
+InstanceOf: ServiceRequest
+Usage: #inline
+// * text.status = #additional
+// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
+* status = #completed
+* intent = #plan 
+* category.coding[0] = $cs-sct#108252007 //"Laboratory procedure" 
+* category.text = "Überweisung Laboruntersuchung"
+* code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
+* priority = #routine 
+* code.coding[0] = $cs-sct#15220000 //"Laboruntersuchung"
+* code.coding[0].display = "Laboruntersuchung"
+* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+* authoredOn =   "2025-03-22T08:00:00+01:00"
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* performerType = $cs-sct#61246008 "Laborfacharzt" 
-* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
-//* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
-* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* performerType = $cs-sct#61246008 //"Laborfacharzt" 
+* performerType.text = "Laborfacharzt"
+* reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+* patientInstruction = "Suchen Sie vor dem nächsten Kontrolltermin das Labor auf."  
 
 // Diabetes CarePlan neue angeforderte Laboruntersuchung
-Instance: example-iv-5-poc-careplan-test-task-labor-2
+// Instance: example-iv-5-poc-careplan-test-task-labor-2
+// InstanceOf: Task
+// Usage: #inline
+// * text.status = #additional
+// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
+// * status = #completed
+// * intent = #plan
+// * priority = #routine 
+// * code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
+// * code.text = "Laboruntersuchung"
+// //* description = "Kontrolle HbA1c"
+// //* executionPeriod.start = "2025-06-03T08:00:00+01:00" // Datum der Auftragserteilung
+// //* executionPeriod.end = "2025-07-10T08:00:00+01:00" // Datum der Erledigung
+// * authoredOn = "2025-03-22T08:00:00+01:00"
+// * lastModified = "2025-07-15T08:00:00+01:00"
+// // * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+// * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
+// * performerType = $cs-sct#61246008 "Laborfacharzt" 
+// * owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
+// //* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
+// * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
+
+// CarePlan Task Gewichtsreduktion
+Instance: example-iv-5-poc-careplan-test-task-gewicht-1
 InstanceOf: Task
 Usage: #inline
-* text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Abgeschlossene Laboruntersuchung</p>\n    </div>"
-* status = #completed
-* intent = #order
+//* text.status = #additional
+//* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <p>Wöchentliche Gewichtskontrolle</p>\n    </div>"
+* status = #in-progress
+* intent = #plan 
 * priority = #routine 
-* code.coding[0] = $cs-sct#15220000 "Laboruntersuchung" 
-* code.text = "Laboruntersuchung"
-//* description = "Kontrolle HbA1c"
-//* executionPeriod.start = "2025-06-03T08:00:00+01:00" // Datum der Auftragserteilung
-//* executionPeriod.end = "2025-07-10T08:00:00+01:00" // Datum der Erledigung
-* authoredOn = "2025-03-22T08:00:00+01:00"
-* lastModified = "2025-07-15T08:00:00+01:00"
-// * for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
+* code.coding[0] = $cs-sct#388962008 //"Weight control"  
+* code.coding[0].display = "Gewichtskontrolle"
+* description = "Wöchentliche Gewichtskontrolle zur Überwachung der Gewichtsreduktion"
+// * executionPeriod.start = "2025-03-20T08:00:00+00:00" // Datum der Auftragserteilung
+// * executionPeriod.end = 2025-03-17T08:30:00+01:00 // Datum der Erledigung
+* authoredOn = "2025-03-23T08:00:00+01:00"
+//* lastModified = "2025-03-25T08:30:00+01:00"
+* for = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
 * requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-* performerType = $cs-sct#61246008 "Laborfacharzt" 
-* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"  // evtl. Laborarzt
-//* focus = Reference(urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae639) "Vorsorgeuntersuchungsprogramm"
+* owner = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * reasonReference = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
-* restriction.recipient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient" 
-//* restriction.period.start = "2025-04-01T08:00:00+01:00" // Wann soll der Task erledigt werden
-//* restriction.period.end = "2025-04-07T08:00:00+01:00"
+// Eingaben: Gewichtsmessungen
+// Gewichtsmessung 
+* input[0].type = $cs-sct#27113001 "Body weight"
+* input[0].type.text = "Körpergewicht"
+* input[0].valueQuantity = 105.0 'kg' "Kilogramm"
+// * output[0].type = $cs-sct#27113001 "Body weight"  // wenn task abgeschlossen
+
 
 
 // **********************************************************
@@ -602,8 +692,8 @@ Instance: example-iv-5-poc-careplan-test-diabetes-goal-hba1c
 InstanceOf: Goal
 Usage: #inline
 * lifecycleStatus = #active 
-// * achievementStatus = $goal-achievement#in-progress "In Progress"
-// * achievementStatus.text = "In Progress"
+* achievementStatus = $goal-achievement#in-progress // "In Progress"
+* achievementStatus.text = "In Progress"
 * category[0] = $goal-category#dietary "Dietary"
 * category[0].text = "Diät"
 * priority = $goal-priority#high-priority "hoch"
@@ -638,9 +728,6 @@ Usage: #inline
 * expressedBy = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * addresses = Reference(urn:uuid:a3a9be59-ec61-4cab-92a9-9cbab6aec437) "Diabetes mellitus Typ 2"
 // **********************************************************
-
-
-
 
 
 // Medication Plan
@@ -1137,7 +1224,7 @@ Usage: #inline
 * identifier.value = "urn:oid:1.2.40.0.10.99.1.2.3.4"
 * identifier.assigner.display = "Bundesministerium für Gesundheit"
 * name.prefix[0] = "Dr."
-* name.family = "IV Diätologin"
+* name.family = "Diätologin"
 * name.given[0] = "Melanie"
 * address.city = "Wien"
 * address.postalCode = "1020"

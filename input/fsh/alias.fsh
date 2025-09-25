@@ -91,7 +91,8 @@ Alias: $cs-elga-medikationmengenart = https://termgit.elga.gv.at/ValueSet/elga-m
 // value sets
 // FHIR
 Alias: $vs-observation-interpretation = http://hl7.org/fhir/ValueSet/observation-interpretation
-Alias: $vs-request-status = http://hl7.org/fhir/ValueSet/request-status
+Alias: $vs-request-status = http://hl7.org/fhir/request-status
+
 // IPS
 Alias: $vs-results-coded-values-laboratory-pathology-uv-ips = http://hl7.org/fhir/uv/ips/ValueSet/results-coded-values-laboratory-pathology-uv-ips
 Alias: $vs-problem-type-uv-ips = http://hl7.org/fhir/uv/ips/ValueSet/problem-type-uv-ips
