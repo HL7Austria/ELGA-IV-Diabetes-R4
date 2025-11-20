@@ -179,7 +179,7 @@ Usage: #inline
 * author = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f474) "APS Generator"
 * title = "Austrian Patient Summary"
 * custodian = Reference(urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6) "Zentrale Anwendung APS"
-* extension[countryOfAffiliation].valueString = "AT"
+// * extension[countryOfAffiliation].valueString = "AT"
 
 // Medikationsliste (Medication Summary)
 * section[sectionMedications].title = "Medikationsliste"  // Medikationsplan
