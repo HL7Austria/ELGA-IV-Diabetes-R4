@@ -83,7 +83,6 @@ Usage: #example
 * entry[=].request.method = #POST
 * entry[=].request.url = "Condition"
 
-
 // History of Procedures Hüftersatz
 * entry[+].fullUrl = "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"
 * entry[=].resource = ex-5-poc-tx-1-conditions-procedure-history-1  // Totalersatz des linken Hüftgelenks
@@ -101,17 +100,11 @@ Usage: #example
 * entry[=].request.method = #POST
 * entry[=].request.url = "Device"
 
-
-
-
-
 // Past History of Illness
 * entry[+].fullUrl = "urn:uuid:82301518-66ca-4b4c-821d-087adf643cc4"  
 * entry[=].resource = ex-5-poc-tx-1-conditions-illness-history-1  // Masernerkrankung in der Kindheit
 * entry[=].request.method = #POST
 * entry[=].request.url = "Condition"
-
-
 
 Instance: ex-5-poc-tx-1-conditions-composition
 InstanceOf: AtApsComposition
@@ -129,18 +122,16 @@ Usage: #inline
 // Medikationsliste (Medication Summary)
 * section[sectionMedications].title = "Medikationsliste"  // Medikationsplan
 * section[sectionMedications].code = $cs-loinc#10160-0 "Medikationsanamnese"
-* section[sectionProblems].text.status = #generated
-* section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
-* section[sectionProblems].emptyReason = $cs-list-empty-reason#unavailable
-
+* section[sectionMedications].text.status = #generated
+* section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
+* section[sectionMedications].emptyReason = $cs-list-empty-reason#unavailable
 
 // Allergien und Intoleranzen (Allergies and Intolerances)
 * section[sectionAllergies].title = "Allergien und Intoleranzen"
 * section[sectionAllergies].code = $cs-loinc#48765-2 "Allergien und unerwünschte Wirkungen"
-* section[sectionProblems].text.status = #generated
-* section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
-* section[sectionProblems].emptyReason = $cs-list-empty-reason#unavailable
-
+* section[sectionAllergies].text.status = #generated
+* section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergie gegen Benzylpenicillin-Natrium.</p></div>"
+* section[sectionAllergies].entry[allergyOrIntolerance][0] = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Allergie gegen Benzylpenicillin-Natrium"
 
 // Gesundheitsprobleme und Risiken (Problems)
 * section[sectionProblems].title = "Gesundheitsprobleme und Risiken"
@@ -160,15 +151,11 @@ Usage: #inline
 * section[sectionProceduresHx].text.status = #generated
 * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Totalersatz des linken Hüftgelenks</p></div>"
 * section[sectionProceduresHx].entry[procedure][0] = Reference(urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a) "Totalersatz des linken Hüftgelenks"
-// * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
-// * section[sectionProceduresHx].emptyReason = $cs-list-empty-reason#nilknown
 
 // Implantate, medizinische Geräte und Heilbehelfe (Medical Devices)
 * section[sectionMedicalDevices].title = "Implantate, medizinische Geräte und Heilbehelfe"
 * section[sectionMedicalDevices].code = $cs-loinc#46264-8 "Anamnese zum Einsatz von Medizinprodukten"
 * section[sectionMedicalDevices].text.status = #generated
-// * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Keine Implantate</p></div>"
-// * section[sectionMedicalDevices].emptyReason = $cs-list-empty-reason#nilknown
 * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hüftprothese</p></div>"
 * section[sectionMedicalDevices].entry[deviceStatement][0] = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a11) "Hüftprothese"
 
@@ -180,24 +167,12 @@ Usage: #inline
 * section[sectionImmunizations].emptyReason = $cs-list-empty-reason#unavailable
 
 
-// Diagnostische Resultate (Results)
-// * section[sectionResults].title = "Diagnostische Resultate"
-// * section[sectionResults].code = $cs-loinc#30954-2 "Relevante diagnostische Tests oder Labordaten"
-// * section[sectionResults].text.status = #generated
-// * section[sectionResults].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Glucose im kapillaren Blut 1h postprandial</p><p>Hemoglobin A1c/Hemoglobin im Blut: 8.1 %</p><p>Kreatinin in Serum: 1.2 mg/dL</p></div>"
-// * section[sectionResults].entry[resultsObservationLaboratoryPathology][0] = Reference(urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654) "Glucose im kapillaren Blut 1h postprandial"
-// * section[sectionResults].entry[resultsObservationLaboratoryPathology][+] = Reference(urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91) "Hemoglobin A1c/Hemoglobin.total in Blood"
-// * section[sectionResults].entry[resultsObservationLaboratoryPathology][+] = Reference(urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a) "Kreatinin in Serum"
-// * section[sectionResults].entry[resultsObservationLaboratoryPathology][+] = Reference(urn:uuid:4fe4b16a-14cb-4fd6-9da6-02c4b3797fdc) "Urindiagnostik"
-
 // Vitalparameter (Vital Signs)
 * section[sectionVitalSigns].title = "Vitalparameter"
 * section[sectionVitalSigns].code = $cs-loinc#8716-3 "Vitalparameter"
 * section[sectionVitalSigns].text.status = #generated
 * section[sectionVitalSigns].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
 * section[sectionVitalSigns].emptyReason = $cs-list-empty-reason#unavailable
-
-
 
 // Vergangene Gesundheitsprobleme und Risiken (History of  Past Illness)
 * section[sectionPastIllnessHx].title = "Vergangene Gesundheitsprobleme und Risiken"
@@ -227,7 +202,6 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * recordedDate = "2016-11-01T08:30:00+01:00"  
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-
 
 Instance: ex-5-poc-tx-1-conditions-problem-2
 InstanceOf: AtApsCondition
@@ -274,69 +248,6 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * recordedDate = "2022-02-08T08:30:00+01:00"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
-
-// Medication Summary
-
-Instance: ex-5-poc-tx-1-conditions-medicationplan-1
-InstanceOf: AtApsMedicationRequest
-Usage: #inline
-* status = #active
-* intent = #plan
-* medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-//* supportingInformation
-* authoredOn = "2016-11-02T11:00:05+02:00"      
-* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
-* dosageInstruction.text = "S:1-0-1-0"
-* dosageInstruction.sequence = 2
-* dosageInstruction.route = $cs-sct#26643006 "Orale Einnahme"
-* dosageInstruction.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
-
-
-Instance: ex-5-poc-tx-1-conditions-medicationplan-2
-InstanceOf: AtApsMedicationRequest
-Usage: #inline
-* status = #active
-* intent = #plan
-* medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-//* supportingInformation
-* authoredOn = "2025-07-15T08:00:00+01:00"
-* requester = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
-* dosageInstruction.text = "S:1-0-1-0"
-* dosageInstruction.sequence = 2
-* dosageInstruction.route = $cs-sct#26643006 "Orale Einnahme"
-* dosageInstruction.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
-//* dosageInstruction.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-
-
-// Instance: ex-5-poc-tx-1-conditions-medication-summary-1
-// InstanceOf: AtApsMedicationStatement
-// Usage: #inline
-// * status = #active
-// * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-// * dosage.text = "S:1-0-1-0"
-// * dosage.sequence = 2
-// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// // * dosage.timing.repeat.dayOfWeek = #fri
-// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
-// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
-
-// Instance: ex-5-poc-tx-1-conditions-medication-summary-2
-// InstanceOf: AtApsMedicationStatement
-// Usage: #inline
-// * status = #active
-// * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectivePeriod.start = "2025-07-15T08:00:00+01:00"
-// * dosage.text = "S:1-0-1-0"
-// * dosage.sequence = 2
-// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// // * dosage.timing.repeat.dayOfWeek = #fri
-// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
-// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
 
 // Allergies and Intolerances   
 
@@ -403,8 +314,6 @@ Usage: #inline
 // * deviceName.type = #other
 // * version.value = "Insulin pump"
 
-
-
 // Past History of Illness
 
 Instance: ex-5-poc-tx-1-conditions-illness-history-1
@@ -417,7 +326,6 @@ Usage: #inline
 * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
 * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * recordedDate = "1960-01-02"
-
 
 Instance: ex-5-poc-tx-1-conditions-organization
 InstanceOf: AtApsOrganization
