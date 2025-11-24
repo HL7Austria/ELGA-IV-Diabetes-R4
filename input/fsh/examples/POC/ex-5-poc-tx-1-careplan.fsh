@@ -67,29 +67,28 @@ Usage: #example
 * entry[=].request.method = #POST
 * entry[=].request.url = "MedicationRequest"
 
-// Allergies and Intolerances
-* entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
-* entry[=].resource = ex-5-poc-tx-1-careplan-allergy-1 // Benzylpenicillin-Natrium
-* entry[=].request.method = #POST
-* entry[=].request.url = "AllergyIntolerance"
+// // Allergies and Intolerances
+// * entry[+].fullUrl = "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b"
+// * entry[=].resource = ex-5-poc-tx-1-careplan-allergy-1 // Benzylpenicillin-Natrium
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "AllergyIntolerance"
 
+// // History of Procedures Hüftersatz
+// * entry[+].fullUrl = "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"
+// * entry[=].resource = ex-5-poc-tx-1-careplan-procedure-history-1  // Totalersatz des linken Hüftgelenks
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Procedure"
 
-// History of Procedures Hüftersatz
-* entry[+].fullUrl = "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a"
-* entry[=].resource = ex-5-poc-tx-1-careplan-procedure-history-1  // Totalersatz des linken Hüftgelenks
-* entry[=].request.method = #POST
-* entry[=].request.url = "Procedure"
+// // Medical Devices Hüftimplantat
+// * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a11"
+// * entry[=].resource = ex-5-poc-tx-1-careplan-medical-deviceUse-Hueftprothese
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "DeviceUseStatement"
 
-// Medical Devices Hüftimplantat
-* entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a11"
-* entry[=].resource = ex-5-poc-tx-1-careplan-medical-deviceUse-Hueftprothese
-* entry[=].request.method = #POST
-* entry[=].request.url = "DeviceUseStatement"
-
-* entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22"
-* entry[=].resource = ex-5-poc-tx-1-careplan-medical-device-Hueftprothese
-* entry[=].request.method = #POST
-* entry[=].request.url = "Device"
+// * entry[+].fullUrl = "urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22"
+// * entry[=].resource = ex-5-poc-tx-1-careplan-medical-device-Hueftprothese
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Device"
 
 // Impfungen (Immunization)
 * entry[+].fullUrl = "urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607"
@@ -97,6 +96,50 @@ Usage: #example
 * entry[=].request.method = #POST
 * entry[=].request.url = "Immunization"
 
+// Diagnostic Results
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"
+// * entry[=].resource = ex-5-poc-tx-1-conditions-diagnostic-result-1 // Blutzuckerwert
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
+
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"
+// * entry[=].resource = ex-5-poc-tx-1-conditions-diagnostic-result-2 // HbA1c Wert
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
+
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:d16dce15-bc5a-48a5-910e-6ac039785a2a"
+// * entry[=].resource = ex-5-poc-tx-1-conditions-diagnostic-result-3 // Kreatininwert
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
+
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f92"
+// * entry[=].resource = ex-5-poc-tx-1-conditions-diagnostic-result-4 // HbA1c Kontrolle
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
+
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd655"
+// * entry[=].resource = ex-5-poc-tx-1-conditions-diagnostic-result-5 // Blutzuckerwert Kontrolle
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Observation"
+
+// Diagnostic Results - Performer
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"
+// * entry[=].resource = ex-5-poc-tx-1-conditions-diagnostic-result-performer-1
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Organization"
+
+// Diagnostic Results - Specimen
+// GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
+// * entry[+].fullUrl = "urn:uuid:e3567418-073e-4fd7-af4e-5fd7ee4785f7"
+// * entry[=].resource = ex-5-poc-tx-1-conditions-diagnostic-specimen-1  //Blutprobe
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Specimen"
 
 // Vitalparameter (Vital Signs)
 * entry[+].fullUrl = "urn:uuid:74c5e186-d765-4c93-a624-c9b0746e8142"
@@ -204,8 +247,6 @@ Usage: #inline
 * section[sectionMedications].code = $cs-loinc#10160-0 "Medikationsanamnese"
 * section[sectionMedications].text.status = #generated
 * section[sectionMedications].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ramipril 5 mg 1-0-0-0, Start 15.06.2016</p><p>Metformin 500 mg 1-0-1-0, Start 22.03.2025</p></div>"
-// * section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076) "RAMIPRIL 1A TBL 5MG"
-// * section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5011) "METFORMIN HEX FTBL 500MG"
 * section[sectionMedications].entry[medicationStatement][0] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5088) "RAMIPRIL 1A TBL 5MG"
 * section[sectionMedications].entry[medicationStatement][+] = Reference(urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5099) "METFORMIN HEX FTBL 500MG"
 
@@ -213,8 +254,10 @@ Usage: #inline
 * section[sectionAllergies].title = "Allergien und Intoleranzen"
 * section[sectionAllergies].code = $cs-loinc#48765-2 "Allergien und unerwünschte Wirkungen"
 * section[sectionAllergies].text.status = #generated
-* section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergie gegen Benzylpenicillin-Natrium.</p></div>"
-* section[sectionAllergies].entry[allergyOrIntolerance][0] = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Allergie gegen Benzylpenicillin-Natrium"
+// * section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Allergie gegen Benzylpenicillin-Natrium.</p></div>"
+// * section[sectionAllergies].entry[allergyOrIntolerance][0] = Reference(urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b) "Allergie gegen Benzylpenicillin-Natrium"
+* section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
+* section[sectionAllergies].emptyReason = $cs-list-empty-reason#unavailable
 
 // Gesundheitsprobleme und Risiken (Problems)
 * section[sectionProblems].title = "Gesundheitsprobleme und Risiken"
@@ -223,24 +266,25 @@ Usage: #inline
 * section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
 * section[sectionProblems].emptyReason = $cs-list-empty-reason#unavailable
 
-
 // Eingriffe und Therapien (History of Procedures)
 * section[sectionProceduresHx].title = "Eingriffe und Therapien"
 * section[sectionProceduresHx].code = $cs-loinc#47519-4 "Anamnese der Prozeduren oder Maßnahmen"
 * section[sectionProceduresHx].text.status = #generated
-* section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Totalersatz des linken Hüftgelenks</p></div>"
-* section[sectionProceduresHx].entry[procedure][0] = Reference(urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a) "Totalersatz des linken Hüftgelenks"
-// * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
-// * section[sectionProceduresHx].emptyReason = $cs-list-empty-reason#nilknown
+// * section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Totalersatz des linken Hüftgelenks</p></div>"
+// * section[sectionProceduresHx].entry[procedure][0] = Reference(urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a) "Totalersatz des linken Hüftgelenks"
+* section[sectionProceduresHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
+* section[sectionProceduresHx].emptyReason = $cs-list-empty-reason#unavailable
 
 // Implantate, medizinische Geräte und Heilbehelfe (Medical Devices)
 * section[sectionMedicalDevices].title = "Implantate, medizinische Geräte und Heilbehelfe"
 * section[sectionMedicalDevices].code = $cs-loinc#46264-8 "Anamnese zum Einsatz von Medizinprodukten"
 * section[sectionMedicalDevices].text.status = #generated
+* section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">unavailable</div>"
+* section[sectionMedicalDevices].emptyReason = $cs-list-empty-reason#unavailable
 // * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Keine Implantate</p></div>"
 // * section[sectionMedicalDevices].emptyReason = $cs-list-empty-reason#nilknown
-* section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hüftprothese</p></div>"
-* section[sectionMedicalDevices].entry[deviceStatement][0] = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a11) "Hüftprothese"
+// * section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hüftprothese</p></div>"
+// * section[sectionMedicalDevices].entry[deviceStatement][0] = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a11) "Hüftprothese"
 
 // Impfungen (Immunization)
 * section[sectionImmunizations].title = "Impfungen"
@@ -298,7 +342,7 @@ Usage: #inline
 
 
 //**********************************************************************************/
-// Problems
+// Problems -> im Bsp careplan
 
 
 
@@ -542,79 +586,48 @@ Usage: #inline
 //* dosageInstruction.timing.repeat.when = $cs-event-timing#NIGHT "Night"
 
 
-// Instance: ex-5-poc-tx-1-careplan-medication-summary-1
-// InstanceOf: AtApsMedicationStatement
-// Usage: #inline
-// * status = #active
-// * medicationCodeableConcept = $cs-asp-liste#2450888 "RAMIPRIL 1A TBL  5MG"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectivePeriod.start = "2016-11-02T11:00:05+02:00"              
-// * dosage.text = "S:1-0-1-0"
-// * dosage.sequence = 2
-// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// // * dosage.timing.repeat.dayOfWeek = #fri
-// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
-// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
-
-// Instance: ex-5-poc-tx-1-careplan-medication-summary-2
-// InstanceOf: AtApsMedicationStatement
-// Usage: #inline
-// * status = #active
-// * medicationCodeableConcept = $cs-asp-liste#1294446 "METFORMIN HEX FTBL  500MG"
-// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-// * effectivePeriod.start = "2025-07-15T08:00:00+01:00"
-// * dosage.text = "S:1-0-1-0"
-// * dosage.sequence = 2
-// // * dosage.timing.repeat.when = $cs-event-timing#NIGHT "Night"
-// // * dosage.timing.repeat.dayOfWeek = #fri
-// * dosage.route = $cs-sct#26643006 "Orale Einnahme"
-// * dosage.doseAndRate.doseQuantity = 2 $cs-elga-medikationmengenart#{TAB} "Tablet"
-
 // Allergies and Intolerances   
-
-Instance: ex-5-poc-tx-1-careplan-allergy-1
-InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
-Usage: #inline
-* clinicalStatus = $cs-allergyintolerance-clinical#active "Active"
-* criticality = #high
-* code = $cs-sct#89055006 "Benzylpenicillin-Natrium"
-* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
+// Instance: ex-5-poc-tx-1-careplan-allergy-1
+// InstanceOf: AtApsAllergyIntolerance // DiabAllergyIntolerance
+// Usage: #inline
+// * clinicalStatus = $cs-allergyintolerance-clinical#active "Active"
+// * criticality = #high
+// * code = $cs-sct#89055006 "Benzylpenicillin-Natrium"
+// * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * asserter = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hausärztin"
 
 // History of Procedures
-
-Instance: ex-5-poc-tx-1-careplan-procedure-history-1
-InstanceOf: AtApsProcedure
-Usage: #inline
-* status = #completed
-* code = $cs-sct#770606008 "Totalersatz des linken Hüftgelenks"
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* performedDateTime = "2020-12-23T08:30:00+01:00"
-* focalDevice.manipulated = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22) "Hüftprothese"
+// Instance: ex-5-poc-tx-1-careplan-procedure-history-1
+// InstanceOf: AtApsProcedure
+// Usage: #inline
+// * status = #completed
+// * code = $cs-sct#770606008 "Totalersatz des linken Hüftgelenks"
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * performedDateTime = "2020-12-23T08:30:00+01:00"
+// * focalDevice.manipulated = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22) "Hüftprothese"
 
 // Medical Devices
+// Instance: ex-5-poc-tx-1-careplan-medical-deviceUse-Hueftprothese
+// InstanceOf: AtApsDeviceUseStatement
+// Usage: #inline
+// * status = #active
+// * subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * device = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22) "Hüftprothese"
+// * device.display = "Implantat: Hüftprothese"
+// // * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+// // * timingDateTime.extension.valueCode = #unknown
+// * timingPeriod.start = "2020-12-23T08:30:00+01:00"
+// * bodySite = $cs-sct#362905007 "Gesamtes linkes Hüftgelenk"
+// * bodySite.coding[0].display = "Gesamtes linkes Hüftgelenk"
 
-Instance: ex-5-poc-tx-1-careplan-medical-deviceUse-Hueftprothese
-InstanceOf: AtApsDeviceUseStatement
-Usage: #inline
-* status = #active
-* subject = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* device = Reference(urn:uuid:490dab5c-271e-4736-8a6b-5f6f089d0a22) "Hüftprothese"
-* device.display = "Implantat: Hüftprothese"
-// * timingDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-// * timingDateTime.extension.valueCode = #unknown
-* timingPeriod.start = "2020-12-23T08:30:00+01:00"
-* bodySite = $cs-sct#362905007 "Gesamtes linkes Hüftgelenk"
-* bodySite.coding[0].display = "Gesamtes linkes Hüftgelenk"
-
-Instance: ex-5-poc-tx-1-careplan-medical-device-Hueftprothese
-InstanceOf: AtApsDevice
-Usage: #inline
-* type = $cs-sct#67270000 "Hüftprothese"
-* patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
-* deviceName.name = "Hüftprothese"
-* deviceName.type = #other
-* version.value = "123456"
+// Instance: ex-5-poc-tx-1-careplan-medical-device-Hueftprothese
+// InstanceOf: AtApsDevice
+// Usage: #inline
+// * type = $cs-sct#67270000 "Hüftprothese"
+// * patient = Reference(urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8) "Anton Testpatient"
+// * deviceName.name = "Hüftprothese"
+// * deviceName.type = #other
+// * version.value = "123456"
 
 // Instance: ex-5-poc-tx-1-careplan-deviceUse-Insulinpumpe  
 // InstanceOf: AtApsDeviceUseStatement
@@ -655,7 +668,6 @@ Usage: #inline
 * protocolApplied[0].targetDisease[+] = $vs-eimpf-immunizationtarget#76902006 "Tetanus"
 
 // Diagnostic Results
-
 // Diagnostic Results - Performer
 // GKL20250813: nicht anlegen, weil diese Info über CDA2FHIR Transformation in APS kommen soll
 // Instance: ex-5-poc-tx-1-careplan-diagnostic-result-performer-1
@@ -944,7 +956,6 @@ Usage: #inline
 * performer = Reference(urn:uuid:75db30ee-7028-486c-929a-c5126837f473) "Dr. Hanna Hausärztin"
 * effectiveDateTime = "2025-03-14T08:00:00+01:00"
 * valueQuantity = 2 '/d' "Gläser Wein pro Tag"
-
 
 Instance: ex-5-poc-tx-1-careplan-social-history-3
 InstanceOf: AtApsObservation
